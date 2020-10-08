@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="clsWork"
+            type="com.jeannypr.scientificstudy.Classwork.model.ActivityModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        android:paddingBottom="1dp">
+
+        <LinearLayout
+            android:id="@+id/feeSummaryRow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:orientation="horizontal"
+            android:weightSum="100"
+            tools:targetApi="m">
+
+            <LinearLayout
+                android:layout_width="@dimen/feeSummaryRow_innerWrapper_width"
+                android:layout_height="match_parent"
+                android:layout_weight="30"
+                android:background="@color/black7"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="2dp"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/activityType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:background="@drawable/tint_border"
+                    android:gravity="center"
+                    android:paddingLeft="15dp"
+                    android:paddingTop="5dp"
+                    android:paddingRight="15dp"
+                    android:paddingBottom="5dp"
+                    android:rotation="-15"
+                    android:text=""
+                    android:textColor="@color/mBlack"
+                    android:textSize="@dimen/sm_size_text" />
+            </LinearLayout>
+            <!--android:layout_width="@dimen/feeSummaryRow_statusImg_width"-->
+            <!--android:layout_height="@dimen/feeSummaryRow_statusImg_height"-->
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="100"
+                android:background="@color/white"
+                android:padding="8dp">
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:ellipsize="end"
+                    android:gravity="start|center_vertical"
+                    android:maxLines="2"
+                    android:padding="2dp"
+                    android:text="@{clsWork.Title.substring(0,1).toUpperCase()+clsWork.Title.substring(1).toLowerCase()}"
+                    android:textColor="@color/mBlack"
+                    android:textSize="@dimen/sm_size_text"
+                    app:fontFamily="@font/open_sans_bold" />
+
+                <TextView
+                    android:id="@+id/className"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/title"
+                    android:gravity="start|center_vertical"
+                    android:padding="2dp"
+                    android:text="@{clsWork.ClassName}"
+                    android:textColor="@color/mBlack"
+                    android:textSize="@dimen/sm_size_text" />
+                <!--@{` (`+clsWork.SubjectName+`)`}-->
+                <LinearLayout
+                    android:id="@+id/subjectRow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/className"
+                    android:orientation="horizontal"
+                    android:padding="2dp">
+
+                    <ImageView
+                        android:id="@+id/icBook"
+                        android:layout_width="17dp"
+                        android:layout_height="17dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginRight="3dp"
+                        android:contentDescription="@string/default_cont_desc"
+                        android:src="@drawable/book"
+                        android:tint="@color/black"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/subject"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@{clsWork.SubjectName.substring(0,1).toUpperCase()+clsWork.SubjectName.substring(1).toLowerCase()}"
+                        android:textColor="@color/mBlack"
+                        android:textSize="@dimen/sm_size_text" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/teacherRow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/subjectRow"
+                    android:layout_alignParentStart="true"
+                    android:layout_toStartOf="@+id/isAssigned"
+                    android:orientation="horizontal"
+                    android:padding="2dp">
+
+                    <ImageView
+                        android:id="@+id/icTeacher"
+                        android:layout_width="17dp"
+                        android:layout_height="17dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginRight="3dp"
+                        android:contentDescription="@string/default_cont_desc"
+                        android:src="@drawable/teaching"
+                        android:tint="@color/black"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/teacher"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textColor="@color/mBlack"
+                        android:textSize="@dimen/sm_size_text" />
+
+                </LinearLayout>
+                <!--@{clsWork.TeacherName}-->
+
+                <TextView
+                    android:id="@+id/isAssigned"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/teacherRow"
+                    android:layout_alignParentEnd="true"
+                    android:background="@drawable/black_bg_blue_border"
+                    android:gravity="center"
+                    android:paddingLeft="@dimen/isAssigned_paddingL"
+                    android:paddingTop="@dimen/isAssigned_paddingT"
+                    android:paddingRight="@dimen/isAssigned_paddingL"
+                    android:paddingBottom="@dimen/isAssigned_paddingT"
+                    android:textColor="@color/mBlack"
+                    android:textSize="@dimen/sm_size_text" />
+
+                <LinearLayout
+                    android:id="@+id/lytSubDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/teacherRow"
+                    android:layout_marginStart="3dp"
+                    android:background="@drawable/red_bg_round_corner"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:padding="2dp">
+
+                    <ImageView
+                        android:id="@+id/dateIcon"
+                        android:layout_width="@dimen/row_event_icDatepicker_width"
+                        android:layout_height="@dimen/row_event_icDatepicker_width"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="2dp"
+                        android:contentDescription="@string/default_cont_desc"
+                        android:src="@drawable/datepicker_white"
+                        android:tint="@color/white"
+                        app:layout_constraintEnd_toStartOf="@+id/startDate"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/divider" />
+
+                    <TextView
+                        android:id="@+id/submissionDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="2dp"
+                        android:layout_marginEnd="10dp"
+                        android:text='@{clsWork.ActivitySubmissionDate == null ? "" : clsWork.ActivitySubmissionDate}'
+                        android:textColor="@color/white"
+                        app:layout_constraintEnd_toStartOf="@+id/timeIcon"
+                        app:layout_constraintStart_toEndOf="@id/startDateIcon"
+                        app:layout_constraintTop_toBottomOf="@+id/divider" />
+
+                </LinearLayout>
+
+                <!--  <TextView
+                      android:id="@+id/submissionDate"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:layout_below="@+id/teacherRow"
+                      android:padding="2dp"
+                      android:gravity="start"
+                      android:text='@{clsWork.ActivitySubmissionDate == null ? "" : clsWork.ActivitySubmissionDate}'
+                      android:textColor="@color/black"
+                      android:textSize="@dimen/sm_size_text" />-->
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</layout>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/leaveDayRow"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="1dp"
+    android:background="@color/white"
+    android:padding="@dimen/pLeft1">
+
+    <TextView
+        android:id="@+id/dateTab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp"
+        android:text="Fri 22 feb, 2018"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/md_size_text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <!--android:background="@drawable/white_bg_blue_border"-->
+    <!--  <ToggleButton
+          android:id="@+id/fullHalfTab"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignParentEnd="true"
+          android:layout_alignParentRight="true"
+          android:layout_centerVertical="true"
+          android:background="@drawable/round_corner_green_bg"
+          android:checked="true"
+          android:paddingLeft="12dp"
+          android:paddingRight="12dp"
+          android:textColor="@color/white"
+          android:textOn="@string/fulldayToggleBtn" />-->
+    <TextView
+        android:id="@+id/holidayTitle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_centerVertical="true"
+        android:ellipsize="end"
+        android:gravity="start"
+        android:maxLines="1"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp"
+        android:textColor="@color/black9"
+        android:textSize="@dimen/md_size_text"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/vg_title"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/slider"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/blue_bg_round_corner"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/vg_slider"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:targetApi="m">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/sliderBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="26dp"
+            android:layout_marginBottom="2dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginTop="2dp"
+            app:backgroundTint="@color/transparent"
+            app:borderWidth="0dp"
+            app:fabSize="mini"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <!--app:layout_constraintStart_toStartOf="parent"
+        android:src="@drawable/ic_right_arrow"-->
+        <TextView
+            android:id="@+id/sliderLbl"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:text="F"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/sliderBtn"
+            app:layout_constraintTop_toTopOf="parent" />
+        <!--app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/sliderBtn"-->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/vg_slider"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="@dimen/vg_slider_perc" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/vg_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.70" />
+</androidx.constraintlayout.widget.ConstraintLayout>

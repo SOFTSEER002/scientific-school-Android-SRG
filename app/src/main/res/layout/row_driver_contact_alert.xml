@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/pTop1">
+
+    <TextView
+        android:id="@+id/lbl"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="start"
+        android:text="@string/trans_routelist_calldialog_lbl"
+        android:textColor="@color/black9"
+        android:textSize="@dimen/md_size_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--
+        <ImageView
+            android:id="@+id/ic_driverName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleX=".5"
+            android:scaleY=".5"
+            android:src="@drawable/ic_dot"
+            android:tint="@color/colorPrimary"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lbl" />
+    -->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/rowassignedDriver"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:foreground="?android:attr/selectableItemBackground"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lbl"
+        tools:targetApi="m">
+
+        <ImageView
+            android:id="@+id/ic_driverName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleX=".5"
+            android:scaleY=".5"
+            android:src="@drawable/ic_dot"
+            android:tint="@color/colorPrimary"
+            app:layout_constraintEnd_toEndOf="@id/vg"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="@string/default_cont_desc" />
+
+
+        <TextView
+            android:id="@+id/drivernameLbl"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/black9"
+            android:textSize="@dimen/md_size_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/vg"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/drivernameTxt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/routelist_calldialog_drvernameLbl"
+            android:textColor="@color/black9"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/vg"
+            app:layout_constraintTop_toBottomOf="@+id/drivernameLbl" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/vg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent=".10" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--  <TextView
+          android:id="@+id/drivernameLbl"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="5dp"
+          android:foreground="?android:attr/selectableItemBackground"
+          android:textColor="@color/black9"
+          android:textSize="@dimen/md_size_text"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="@id/vg"
+          app:layout_constraintTop_toBottomOf="@+id/lbl" />
+
+      <TextView
+          android:id="@+id/drivernameTxt"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="@string/routelist_calldialog_drvernameLbl"
+          android:textColor="@color/black9"
+          app:layout_constraintStart_toStartOf="@id/vg"
+          app:layout_constraintTop_toBottomOf="@+id/drivernameLbl" />-->
+
+
+    <!--
+        <ImageView
+            android:id="@+id/ic_driverName1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleX=".5"
+            android:scaleY=".5"
+            android:src="@drawable/ic_dot"
+            android:tint="@color/colorPrimary"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rowassignedDriver" />
+    -->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/rowjourneyDriver"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:foreground="?android:attr/selectableItemBackground"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rowassignedDriver"
+        tools:targetApi="m">
+
+        <ImageView
+            android:id="@+id/ic_driverName1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleX=".5"
+            android:scaleY=".5"
+            android:src="@drawable/ic_dot"
+            android:tint="@color/colorPrimary"
+            app:layout_constraintEnd_toEndOf="@id/vg1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="@string/default_cont_desc" />
+
+        <TextView
+            android:id="@+id/selectdriverName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/black9"
+            android:textSize="@dimen/md_size_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/vg1"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/selectdriverTxt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/routelist_calldialog_selectdriverNameLbl"
+            android:textColor="@color/black9"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/vg1"
+            app:layout_constraintTop_toBottomOf="@+id/selectdriverName" />
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/vg1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent=".10" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--   <TextView
+           android:id="@+id/selectdriverName"
+           android:layout_width="0dp"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="5dp"
+           android:foreground="?android:attr/selectableItemBackground"
+           android:textColor="@color/black9"
+           android:textSize="@dimen/md_size_text"
+           app:layout_constraintEnd_toEndOf="parent"
+           app:layout_constraintStart_toStartOf="@id/vg"
+           app:layout_constraintTop_toBottomOf="@+id/rowassignedDriver" />
+
+       <TextView
+           android:id="@+id/selectdriverTxt"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="@string/routelist_calldialog_selectdriverNameLbl"
+           android:textColor="@color/black9"
+           app:layout_constraintStart_toStartOf="@id/vg"
+           app:layout_constraintTop_toBottomOf="@+id/selectdriverName" />-->
+
+    <!--
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/vg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent=".10" />
+    -->
+</androidx.constraintlayout.widget.ConstraintLayout>

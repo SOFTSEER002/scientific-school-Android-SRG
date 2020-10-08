@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <!-- <data>
+
+         <variable
+             name="viewModel"
+             type="com.jeannypr.scientificstudy.Dashboard.model.TodayTabItemDetail" />
+     </data>-->
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:paddingTop="12dp"
+        app:layout_constraintTop_toBottomOf="@+id/regSection">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/messengerSection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:paddingTop="12dp"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/tvMessengerTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableStart="@mipmap/messenger"
+                android:drawablePadding="8dp"
+                android:gravity="center"
+                android:text="@string/messenger"
+                android:textColor="#555555"
+                android:textSize="@dimen/lg_size_text"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/messengerTabs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvMessengerTitle"
+                app:tabGravity="center"
+                app:tabIndicatorColor="@color/colorAccent"
+                app:tabMaxWidth="0dp"
+                app:tabMode="fixed" />
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/viewpager"
+                android:layout_width="match_parent"
+                android:layout_height="450dp"
+                app:layout_constraintTop_toBottomOf="@+id/messengerTabs" />
+
+            <ProgressBar
+                android:id="@+id/pb"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:indeterminate="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/chatSection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="12dp"
+            app:layout_constraintTop_toBottomOf="@+id/messengerSection">
+
+            <TextView
+                android:id="@+id/tvChatTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/chat"
+                android:textColor="@color/green10"
+                android:textSize="@dimen/lg_size_text"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/staffChatBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:minHeight="50dp"
+                android:text="@string/staffBtn"
+                android:textAllCaps="false"
+                android:textSize="@dimen/md_size_text"
+                app:backgroundTint="@color/yellow5"
+                app:cornerRadius="6dp"
+                app:layout_constraintEnd_toStartOf="@+id/classChatBtn"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvChatTitle" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/classChatBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="8dp"
+                android:minHeight="50dp"
+                android:text="@string/group"
+                android:textAllCaps="false"
+                android:textSize="@dimen/md_size_text"
+                app:backgroundTint="@color/pink3"
+                app:cornerRadius="6dp"
+                app:layout_constraintEnd_toStartOf="@+id/inboxChatBtn"
+                app:layout_constraintStart_toEndOf="@+id/staffChatBtn"
+                app:layout_constraintTop_toBottomOf="@+id/tvChatTitle" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/inboxChatBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="8dp"
+                android:minHeight="50dp"
+                android:text="@string/private_inbox"
+                android:textAllCaps="false"
+                android:textSize="@dimen/md_size_text"
+                app:backgroundTint="@color/blue8"
+                app:cornerRadius="6dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/classChatBtn"
+                app:layout_constraintTop_toBottomOf="@+id/tvChatTitle" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

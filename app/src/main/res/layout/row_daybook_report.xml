@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="transcation"
+            type="com.jeannypr.scientificstudy.Inventory.model.DayBookModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:paddingBottom="0.5dp"
+        android:paddingTop="0.5dp">
+
+        <LinearLayout
+            android:id="@+id/feeSummaryRow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:layout_marginTop="@dimen/feeSummaryRow_marginTop"
+            android:background="@drawable/bg_with_dots"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/feeSummaryRow_paddingLeft"
+            android:paddingRight="@dimen/feeSummaryRow_paddingLeft"
+            android:weightSum="100">
+
+            <LinearLayout
+                android:layout_width="@dimen/feeSummaryRow_innerWrapper_width"
+                android:layout_height="match_parent"
+                android:layout_weight="35"
+                android:background="@color/black7"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="4dp">
+
+                <TextView
+                    android:id="@+id/transcationDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="6dp"
+                    android:gravity="center_horizontal"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sm_size_text" />
+
+                <TextView
+                    android:id="@+id/paymentMode"
+                    android:layout_width="@dimen/feeSummaryRow_statusImg_width"
+                    android:layout_height="@dimen/feeSummaryRow_statusImg_height"
+                    android:layout_marginTop="2dp"
+                    android:background="@drawable/tint_border"
+                    android:gravity="center"
+                    android:rotation="-10"
+                    android:text="@{transcation.VoucharName}"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/sm_size_text" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="65"
+                android:background="@color/white"
+                android:padding="6dp">
+
+                <LinearLayout
+                    android:id="@+id/title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/studentName_datewiseCollection"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/open_sans_semibold"
+                        android:gravity="start|center_vertical"
+                        android:text="@{transcation.LedgerName}"
+                        android:textAllCaps="true"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/sm_size_text" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/payableRow"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/title"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="start|center_vertical"
+                        android:text="Vouchar No : "
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/sm_size_text" />
+
+
+                    <TextView
+                        android:id="@+id/admNo_datewiseCollection"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@{transcation.VoucharNo}"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/sm_size_text" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/paidRow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/payableRow"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/txtAmount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="start|center_vertical"
+                        android:text=""
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/sm_size_text" />
+
+                    <!--
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="19dp"
+                                        android:layout_gravity="center_vertical"
+                                        android:src="@drawable/rupee"
+                                        android:tint="@color/colorPrimary" />
+                    -->
+
+                    <TextView
+                        android:id="@+id/amountTranscationCollection"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text=""
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/sm_size_text" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/paidRow"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/narrationLbl"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="start|center_vertical"
+                        android:text="Narration : "
+                        android:visibility="gone"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/sm_size_text" />
+
+
+                    <TextView
+                        android:id="@+id/narrationVal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:gravity="center"
+                        android:maxLines="1"
+                        android:text="@{transcation.Note}"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/sm_size_text" />
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+</layout>
+

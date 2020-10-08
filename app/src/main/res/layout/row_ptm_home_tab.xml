@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.jeannypr.scientificstudy.Dashboard.model.HomeTabItemDetail" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/ptmRow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#F5F1FF"
+        android:paddingStart="8dp"
+        android:paddingTop="8dp"
+        android:paddingEnd="8dp"
+        android:paddingBottom="15dp"
+        android:visibility="visible"
+        app:layout_constraintTop_toBottomOf="@+id/republicdayRow">
+
+        <TextView
+            android:id="@+id/ptm_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/mRight1"
+            android:layout_marginEnd="8dp"
+            android:ellipsize="end"
+            android:gravity="start"
+            android:maxLines="1"
+            android:text="@{viewModel.Title}"
+            android:textColor="#8C3FFF"
+            android:textSize="@dimen/lg_size_text"
+            app:layout_constraintEnd_toEndOf="@+id/ptm_gv"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/ptm_date"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@{viewModel.StratDate}"
+            android:textColor="@color/black"
+            android:textSize="@dimen/md_size_text"
+            app:layout_constraintEnd_toEndOf="@id/ptm_gv"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ptm_title" />
+
+        <TextView
+            android:id="@+id/ptm_time"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/mRight0"
+            android:layout_marginEnd="8dp"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:text="@{viewModel.venue}"
+            android:textColor="@color/black"
+            android:textSize="@dimen/md_size_text"
+            android:visibility='@{viewModel.ExtraKeys.startTime.equals("") ? View.GONE  : View.VISIBLE}'
+            app:layout_constraintEnd_toEndOf="@id/ptm_gv"
+            app:layout_constraintHorizontal_bias=".01"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ptm_date" />
+        <!--android:background="#8C3FFF"-->
+        <!--android:text='@{viewModel.ExtraKeys.endTime.equals("") ? viewModel.ExtraKeys.startTime : String.format("%s-%s",viewModel.ExtraKeys.startTime,viewModel.ExtraKeys.endTime)}'-->
+
+        <com.jeannypr.scientificstudy.UI.ImFlexboxLayout
+            android:id="@+id/descRow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ptm_Img"
+            app:viewPartMain="@+id/bdayDesc"
+            app:viewPartSlave="@+id/readMoreRow">
+
+            <TextView
+                android:id="@+id/bdayDesc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end|bottom"
+                android:autoLink="all"
+                android:clickable="true"
+                android:focusable="true"
+                android:focusableInTouchMode="false"
+                android:gravity="start|top"
+                android:maxLength="110"
+                android:paddingEnd="2dp"
+                android:textColor="@color/black2"
+                android:textColorLink="@color/blue2"
+                android:textIsSelectable="true"
+                android:textSize="@dimen/sm_size_text" />
+
+            <LinearLayout
+                android:id="@+id/readMoreRow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="4dp"
+                android:foreground="?android:selectableItemBackground"
+                android:gravity="end"
+                android:minWidth="60dp"
+                android:orientation="horizontal"
+                android:visibility='@{viewModel.description.equals("") ? View.GONE : View.VISIBLE}'
+                tools:targetApi="m">
+
+                <TextView
+                    android:id="@+id/readMore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end|bottom"
+                    android:gravity="end"
+                    android:maxLines="1"
+                    android:text="@string/readMore"
+                    android:textColor="@color/pink5"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+        </com.jeannypr.scientificstudy.UI.ImFlexboxLayout>
+
+        <TextView
+            android:id="@+id/checkInIcPtm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:drawableStart="@mipmap/navigation_md"
+            android:drawablePadding="4dp"
+            android:enabled="@{viewModel.extraKeys.checkedIn ? false : true}"
+            android:foreground="?android:selectableItemBackground"
+            android:text="@{viewModel.extraKeys.checkedIn ? @string/checkedIn : @string/checkIn}"
+            android:textColor="@color/black9"
+            android:textSize="@dimen/md_size_text"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/descRow"
+            app:layout_constraintVertical_bias=".9"
+            tools:targetApi="m" />
+
+        <Spinner
+            android:id="@+id/goingLblPtm"
+            style="@style/Widget.AppCompat.Spinner.Underlined"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:enabled="@{viewModel.extraKeys.checkedIn ? false : true}"
+            android:entries="@array/rsvp"
+            android:gravity="end"
+            android:spinnerMode="dropdown"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/descRow" />
+
+        <ImageView
+            android:id="@+id/ptm_Img"
+            android:layout_width="0dp"
+            android:layout_height="120dp"
+            android:src="@drawable/ptm_md"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/ptm_gv"
+            app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="@string/default_cont_desc" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/ptm_gv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent=".7" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

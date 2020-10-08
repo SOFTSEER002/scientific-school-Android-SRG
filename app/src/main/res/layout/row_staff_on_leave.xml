@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <!--//Created by babulal-->
+<layout>
+
+    <data>
+
+        <variable
+            name="OnLeve"
+            type="com.jeannypr.scientificstudy.leave.model.MonthWiseLeaveModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="1dp"
+        android:background="@color/white"
+        android:padding="@dimen/standard_12">
+
+
+        <TextView
+            android:id="@+id/staffName"
+            android:layout_width="@dimen/studentName_width"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:padding="@dimen/dashboardIc_padding"
+            android:text="@{OnLeve.TeacherName}"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/sDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dashboardIc_padding"
+            android:text="@{OnLeve.FromDate}"
+            android:textColor="@color/black2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/staffName" />
+
+        <TextView
+            android:id="@+id/hyphen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/mLeft0"
+            android:padding="@dimen/dashboardIc_padding"
+            android:text="-"
+            app:layout_constraintStart_toEndOf="@id/sDate"
+            app:layout_constraintTop_toBottomOf="@id/staffName" />
+
+        <TextView
+            android:id="@+id/eDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dashboardIc_padding"
+            android:text="@{OnLeve.ToDate}"
+            android:textColor="@color/black2"
+            app:layout_constraintStart_toEndOf="@id/hyphen"
+            app:layout_constraintTop_toBottomOf="@id/staffName" />
+
+        <TextView
+            android:id="@+id/totalLeaves"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="@dimen/pRight1"
+            android:paddingTop="@dimen/dashboardIc_padding"
+            android:text="@{OnLeve.NoOFDays}"
+            android:textColor="@color/colorPrimary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/appliedDate" />
+
+<!--
+        <View
+            android:id="@+id/divider1"
+            android:layout_width="20dp"
+            android:layout_height="2dp"
+            android:layout_marginRight="@dimen/mRight0"
+            android:background="@color/colorPrimary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/totalLeaves" />
+-->
+
+
+        <TextView
+            android:id="@+id/reasonLeave"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:padding="@dimen/dashboardIc_padding"
+            android:text="@{OnLeve.Reason}"
+            android:textColor="@color/black2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/eDate" />
+
+
+        <TextView
+            android:id="@+id/appliedDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:padding="@dimen/dashboardIc_padding"
+            android:text="@{OnLeve.AppliedOn}"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

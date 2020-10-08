@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/mTop0">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".70" />
+
+    <TextView
+        android:id="@+id/teacherNameOutDoor"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginStart="4dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textColor="@color/mBlack"
+        android:textSize="@dimen/md_size_text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/dayOutDoor"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:maxLines="1"
+        android:textColor="@color/mGrey"
+        android:textSize="@dimen/sm_size_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/guideline"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/fulldayOutDoor"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:background="@drawable/round_corner_green_bg"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:maxLines="1"
+        android:textColor="@color/white"
+        android:textSize="@dimen/md_size_text"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/teacherNameOutDoor"
+        app:layout_constraintTop_toBottomOf="@+id/dayOutDoor" />
+
+    <TextView
+        android:id="@+id/halfdayOutDoor"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:background="@drawable/halfday_round_corner"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:maxLines="1"
+        android:textColor="@color/white"
+        android:textSize="@dimen/md_size_text"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/teacherNameOutDoor"
+        app:layout_constraintTop_toBottomOf="@+id/dayOutDoor" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="@dimen/standard_12"
+        android:background="@color/black6"
+        app:layout_constraintTop_toBottomOf="@+id/teacherNameOutDoor" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout><!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:paddingBottom="0.5dp"
+        android:paddingTop="0.5dp">
+
+        <LinearLayout
+            android:id="@+id/attendanceSummaryRow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:layout_marginTop="1dp"
+            android:background="@drawable/bg_with_dots"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/feeSummaryRow_paddingLeft"
+            android:paddingRight="@dimen/feeSummaryRow_paddingLeft"
+            android:weightSum="100">
+
+            <LinearLayout
+                android:layout_width="@dimen/feeSummaryRow_innerWrapper_width"
+                android:layout_height="match_parent"
+                android:layout_weight="35"
+                android:background="@color/black7"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="4dp">
+
+                <TextView
+                    android:id="@+id/dayOutDoor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="6dp"
+                    android:gravity="center_horizontal"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sm_size_text" />
+
+                <TextView
+                    android:id="@+id/halfdayOutDoor"
+                    android:layout_width="@dimen/feeSummaryRow_statusImg_width"
+                    android:layout_height="@dimen/feeSummaryRow_statusImg_height"
+                    android:layout_marginTop="2dp"
+                    android:background="@drawable/tint_border"
+                    android:gravity="center"
+                    android:rotation="-8"
+                    android:text="HalfDay"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/sm_size_text" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="65"
+                android:background="@color/white"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/teacherNameOutDoor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/open_sans_semibold"
+                    android:gravity="start|center_vertical"
+                    android:text="Akriti Raj"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sm_size_text" />
+
+                <TextView
+                    android:id="@+id/teacherDesigation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/teacherNameOutDoor"
+                    android:gravity="center"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sm_size_text" />
+
+                <TextView
+                    android:id="@+id/teacherNotes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/teacherDesigation"
+                    android:gravity="center"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sm_size_text" />
+
+                &lt;!&ndash;
+                            <LinearLayout
+                                android:id="@+id/title"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="5dp"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/teacherNameOutDoor"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/open_sans_semibold"
+                                    android:gravity="start|center_vertical"
+                                    android:text="Akriti Raj"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/sm_size_text" />
+                            </LinearLayout>
+                &ndash;&gt;
+
+                &lt;!&ndash;
+                            <LinearLayout
+                                android:id="@+id/desigationRow"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/title"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="start|center_vertical"
+                                    android:text="Desigation : "
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/sm_size_text" />
+
+
+                                <TextView
+                                    android:id="@+id/teacherDesigation"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text=""
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/sm_size_text" />
+                            </LinearLayout>
+                &ndash;&gt;
+
+                &lt;!&ndash;
+                            <LinearLayout
+                                android:id="@+id/paidRow"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/desigationRow"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="start|center_vertical"
+                                    android:text="Notes : "
+                                    android:textColor="@color/colorPrimary"
+                                    android:textSize="@dimen/sm_size_text" />
+
+                                <TextView
+                                    android:id="@+id/teacherNotes"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text=""
+                                    android:textColor="@color/colorPrimary"
+                                    android:textSize="@dimen/sm_size_text" />
+                            </LinearLayout>
+                &ndash;&gt;
+
+            </RelativeLayout>
+
+        </LinearLayout>
+    </LinearLayout>-->

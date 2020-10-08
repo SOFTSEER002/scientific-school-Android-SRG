@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.jeannypr.scientificstudy.Dashboard.model.HomeTabItemDetail" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/holidaySection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#E9F3FF"
+        android:paddingStart="8dp"
+        android:paddingTop="8dp"
+        android:paddingEnd="8dp"
+        android:paddingBottom="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/titleRow"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/holiday_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/mTop1"
+                android:ellipsize="end"
+                android:gravity="start"
+                android:maxLines="1"
+                android:text="@{viewModel.Title}"
+                android:textColor="#468AFF"
+                android:textSize="@dimen/lg_size_text"
+                app:layout_constraintEnd_toStartOf="@+id/holiday_Img"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/holiday_msg"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:gravity="start"
+                android:maxLines="1"
+                android:text="@{viewModel.Subtitle}"
+                android:textColor="@color/black"
+                android:textSize="@dimen/md_size_text"
+                app:layout_constraintEnd_toStartOf="@+id/holiday_Img"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/holiday_title" />
+
+            <TextView
+                android:id="@+id/tvSdate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:gravity="start"
+                android:maxLines="1"
+                android:text='@{String.format("%s To",viewModel.StratDate)}'
+                android:textColor="@color/black"
+                android:textSize="@dimen/md_size_text"
+                app:layout_constraintEnd_toStartOf="@+id/holiday_Img"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/holiday_msg" />
+
+            <TextView
+                android:id="@+id/tvEdate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:gravity="start"
+                android:maxLines="1"
+                android:text='@{viewModel.EndDate}'
+                android:textColor="@color/black"
+                android:textSize="@dimen/md_size_text"
+                app:layout_constraintEnd_toStartOf="@+id/holiday_Img"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvSdate" />
+
+            <TextView
+                android:id="@+id/reminderDate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:gravity="start"
+                android:maxLines="1"
+                android:textColor="@color/indigo"
+                android:textSize="@dimen/md_size_text"
+                app:layout_constraintEnd_toStartOf="@+id/holiday_Img"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvEdate" />
+
+            <ImageView
+                android:id="@+id/holiday_Img"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/default_cont_desc"
+                android:src="@mipmap/holiday_2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/holidayGuide"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/holidayGuide"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent=".7" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.jeannypr.scientificstudy.UI.ImFlexboxLayout
+            android:id="@+id/descRow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/titleRow"
+            app:viewPartMain="@+id/bdayDesc"
+            app:viewPartSlave="@+id/readMoreRow">
+
+            <TextView
+                android:id="@+id/bdayDesc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end|bottom"
+                android:focusableInTouchMode="false"
+                android:gravity="start|top"
+                android:maxLength="110"
+                android:paddingEnd="2dp"
+                android:text="@{viewModel.description}"
+                android:textColor="@color/black2"
+                android:textSize="@dimen/sm_size_text" />
+
+            <LinearLayout
+                android:id="@+id/readMoreRow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="4dp"
+                android:foreground="?android:selectableItemBackground"
+                android:gravity="end"
+                android:minWidth="60dp"
+                android:orientation="horizontal"
+                android:visibility='@{viewModel.description.equals("") ? View.GONE : View.VISIBLE}'
+                tools:targetApi="m">
+
+                <TextView
+                    android:id="@+id/readMore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end|bottom"
+                    android:gravity="end"
+                    android:maxLines="1"
+                    android:text="@string/readMore"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+        </com.jeannypr.scientificstudy.UI.ImFlexboxLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/reminderBtn"
+            style="@style/Widget.MaterialComponents.Button"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginTop="6dp"
+            android:backgroundTint="#468AFF "
+            android:ellipsize="end"
+            android:text="Remind me"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            app:cornerRadius="4dp"
+            app:icon="@mipmap/remind_me_xs"
+            app:iconSize="15dp"
+            app:iconTint="@color/white"
+            app:layout_constraintEnd_toStartOf="@id/funBtn"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/descRow"
+            app:strokeColor="@color/blue22" />
+        <!--android:visibility="@{viewModel.adapterPosition == 0 ? View.VISIBLE : View.GONE}"-->
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/funBtn"
+            style="@style/Widget.MaterialComponents.Button"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginStart="@dimen/mLeft0"
+            android:layout_marginTop="6dp"
+            android:backgroundTint="@color/blue23"
+            android:ellipsize="end"
+            android:text="Find Fun"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:visibility="gone"
+            app:cornerRadius="4dp"
+            app:icon="@mipmap/find_fun_xs"
+            app:iconSize="15dp"
+            app:iconTint="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/reminderBtn"
+            app:layout_constraintTop_toBottomOf="@+id/descRow"
+            app:strokeColor="@color/blue23" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

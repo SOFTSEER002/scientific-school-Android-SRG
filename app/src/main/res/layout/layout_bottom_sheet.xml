@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layoutBottomSheet"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minHeight="400dp"
+    android:orientation="vertical"
+    android:padding="16dp"
+    app:behavior_hideable="true"
+    app:behavior_peekHeight="100dp"
+    app:layout_behavior="@string/bottom_sheet_behavior">
+
+    <ImageButton
+        android:id="@+id/imgIc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent"
+        android:scaleX=".7"
+        android:scaleY=".7"
+        android:src="@drawable/ic_gallery_lg"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/img"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:gravity="start|center_vertical"
+        android:padding="10dp"
+
+        android:text="Gallery"
+        android:textColor="@color/black"
+        android:textSize="@dimen/md_size_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/imgIc"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/underline1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="12dp"
+        android:background="@color/black9"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgIc" />
+
+    <ImageButton
+        android:id="@+id/youtubeIc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@color/transparent"
+        android:scaleX=".7"
+        android:scaleY=".7"
+        android:src="@drawable/ic_youtube_lg"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/underline1" />
+
+    <TextView
+        android:id="@+id/youtubeLink"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="12dp"
+        android:gravity="start|center_vertical"
+        android:padding="10dp"
+        android:text="Youtube Links"
+        android:textColor="@color/black"
+        android:textSize="@dimen/md_size_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/youtubeIc"
+        app:layout_constraintTop_toBottomOf="@+id/underline1" />
+
+    <View
+        android:id="@+id/underline2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="12dp"
+        android:background="@color/black9"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/youtubeIc" />
+
+    <ImageButton
+        android:id="@+id/externalLinkIc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@color/transparent"
+        android:scaleX=".7"
+        android:scaleY=".7"
+        android:src="@drawable/ic_link_lg"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/underline2" />
+
+    <TextView
+        android:id="@+id/externalLink"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="12dp"
+        android:gravity="start|center_vertical"
+        android:padding="10dp"
+        android:text="External Link"
+        android:textColor="@color/black"
+        android:textSize="@dimen/md_size_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/externalLinkIc"
+        app:layout_constraintTop_toBottomOf="@+id/underline2" />
+
+    <View
+        android:id="@+id/underline3"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="12dp"
+        android:background="@color/black9"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/externalLinkIc" />
+
+    <ImageButton
+        android:id="@+id/documentIc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@color/transparent"
+        android:scaleX=".7"
+        android:scaleY=".7"
+        android:src="@drawable/ic_docs_lg"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/underline3" />
+
+    <TextView
+        android:id="@+id/document"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="12dp"
+        android:gravity="start|center_vertical"
+        android:padding="10dp"
+        android:text="Documents"
+        android:textColor="@color/black"
+        android:textSize="@dimen/md_size_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/documentIc"
+        app:layout_constraintTop_toBottomOf="@+id/underline3" />
+
+    <View
+        android:id="@+id/underline4"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="12dp"
+        android:background="@color/black9"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/documentIc" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

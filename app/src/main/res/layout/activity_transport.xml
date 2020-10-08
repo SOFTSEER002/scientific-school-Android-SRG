@@ -1,0 +1,565 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBar"
+        android:layout_width="match_parent"
+        android:layout_height="300dp">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/collapsingToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:contentScrim="@color/colorPrimary"
+            app:expandedTitleMarginEnd="64dp"
+            app:expandedTitleMarginStart="18dp"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fitsSystemWindows="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/transport_header"
+                app:layout_collapseMode="parallax"
+                android:contentDescription="@string/default_cont_desc" />
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?android:attr/actionBarSize"
+                android:elevation="7dp"
+                app:layout_collapseMode="pin" />
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            style="@style/viewProfileMainContainer"
+            android:layout_marginBottom="60dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/contentContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="4dp"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/vg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent=".12" />
+
+                <ImageView
+                    android:id="@+id/stoppageIc"
+                    style="@style/profileInfoIcon"
+                    android:src="@drawable/stoppage"
+                    app:layout_constraintEnd_toEndOf="@+id/vg"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:contentDescription="@string/default_cont_desc" />
+
+                <TextView
+                    style="@style/profileInfoTitle"
+                    android:gravity="start|center_vertical"
+                    android:text="Stoppage"
+                    app:layout_constraintStart_toStartOf="@+id/vg"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/stoppageName"
+                    style="@style/profileInfoTitleVal"
+                    android:gravity="end|center_vertical"
+                    android:text=""
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:id="@+id/divider1"
+                    android:layout_width="0dp"
+                    android:layout_height="0.5dp"
+                    android:background="@color/black6"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/vg"
+                    app:layout_constraintTop_toBottomOf="@id/stoppageIc" />
+
+                <TextView
+                    android:id="@+id/transportTypeTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:text="Transport Type"
+                    android:textColor="@color/yellow"
+                    android:textSize="@dimen/md_size_text"
+                    android:textStyle="bold"
+                    app:layout_constraintTop_toBottomOf="@+id/divider1" />
+
+                <ImageView
+                    android:id="@+id/transportIc"
+                    style="@style/profileInfoIcon"
+                    android:src="@drawable/transport2"
+                    app:layout_constraintEnd_toEndOf="@+id/vg"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/transportTypeTxt"
+                    android:contentDescription="@string/default_cont_desc" />
+
+                <TextView
+                    style="@style/profileInfoTitle"
+                    android:gravity="start"
+                    android:text="Transport Type"
+                    app:layout_constraintStart_toStartOf="@+id/vg"
+                    app:layout_constraintTop_toBottomOf="@+id/transportTypeTxt" />
+
+                <TextView
+                    android:id="@+id/transportType"
+                    style="@style/profileInfoTitleVal"
+                    android:gravity="end"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/transportTypeTxt" />
+
+                <View
+                    android:id="@+id/transportDiv"
+                    android:layout_width="0dp"
+                    android:layout_height="0.5dp"
+                    android:background="@color/black6"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/vg"
+                    app:layout_constraintTop_toBottomOf="@id/transportIc" />
+
+                <ImageView
+                    android:id="@+id/pickupIc"
+                    style="@style/profileInfoIcon"
+                    android:src="@drawable/pickup"
+                    app:layout_constraintEnd_toEndOf="@+id/vg"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/transportDiv"
+                    android:contentDescription="@string/default_cont_desc" />
+
+                <TextView
+                    style="@style/profileInfoTitle"
+                    android:layout_marginTop="4dp"
+                    android:gravity="start|center_vertical"
+                    android:text="Pickup"
+                    app:layout_constraintStart_toStartOf="@+id/vg"
+                    app:layout_constraintTop_toBottomOf="@+id/transportDiv" />
+
+                <TextView
+                    android:id="@+id/pickup"
+                    style="@style/profileInfoTitleVal"
+                    android:layout_marginTop="4dp"
+                    android:gravity="end|center_vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/transportDiv" />
+
+                <View
+                    android:id="@+id/pickupDiv"
+                    android:layout_width="0dp"
+                    android:layout_height="0.5dp"
+                    android:background="@color/black6"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/vg"
+                    app:layout_constraintTop_toBottomOf="@id/pickupIc" />
+
+                <ImageView
+                    android:id="@+id/dropIc"
+                    style="@style/profileInfoIcon"
+                    android:src="@drawable/pickup"
+                    app:layout_constraintEnd_toEndOf="@+id/vg"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/pickupDiv"
+                    android:contentDescription="@string/default_cont_desc" />
+
+                <TextView
+                    style="@style/profileInfoTitle"
+                    android:layout_marginTop="4dp"
+                    android:gravity="start|center_vertical"
+                    android:text="Drop"
+                    app:layout_constraintStart_toStartOf="@+id/vg"
+                    app:layout_constraintTop_toBottomOf="@+id/pickupDiv" />
+
+                <TextView
+                    android:id="@+id/drop"
+                    style="@style/profileInfoTitleVal"
+                    android:layout_marginTop="4dp"
+                    android:gravity="end|center_vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/pickupDiv" />
+
+                <View
+                    android:id="@+id/dropDiv"
+                    android:layout_width="0dp"
+                    android:layout_height="0.5dp"
+                    android:background="@color/black6"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/vg"
+                    app:layout_constraintTop_toBottomOf="@id/dropIc" />
+
+                <TextView
+                    android:id="@+id/routeInchageTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:text="Route Incharge"
+                    android:textColor="@color/yellow"
+                    android:textSize="@dimen/md_size_text"
+                    android:textStyle="bold"
+                    app:layout_constraintTop_toBottomOf="@+id/dropDiv" />
+
+                <ImageView
+                    android:id="@+id/routeInchageIc"
+                    style="@style/profileInfoIcon"
+                    android:src="@drawable/name"
+                    app:layout_constraintEnd_toEndOf="@+id/vg"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/routeInchageTxt"
+                    android:contentDescription="@string/default_cont_desc" />
+
+                <TextView
+                    style="@style/profileInfoTitle"
+                    android:layout_marginTop="4dp"
+                    android:gravity="start|center_vertical"
+                    android:text="Name"
+                    app:layout_constraintStart_toStartOf="@+id/vg"
+                    app:layout_constraintTop_toBottomOf="@+id/routeInchageTxt" />
+
+                <TextView
+                    android:id="@+id/inchargeName"
+                    style="@style/profileInfoTitleVal"
+                    android:layout_marginTop="4dp"
+                    android:gravity="end|center_vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/routeInchageTxt" />
+
+                <View
+                    android:id="@+id/routeInchageDiv"
+                    android:layout_width="0dp"
+                    android:layout_height="0.5dp"
+                    android:background="@color/black6"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/vg"
+                    app:layout_constraintTop_toBottomOf="@id/routeInchageIc" />
+
+                <ImageView
+                    android:id="@+id/contactIc"
+                    style="@style/profileInfoIcon"
+                    android:src="@drawable/mobile"
+                    app:layout_constraintEnd_toEndOf="@+id/vg"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/routeInchageDiv"
+                    android:contentDescription="@string/default_cont_desc" />
+
+                <TextView
+                    style="@style/profileInfoTitle"
+                    android:layout_marginTop="4dp"
+                    android:gravity="start|center_vertical"
+                    android:text="Contact"
+                    app:layout_constraintStart_toStartOf="@+id/vg"
+                    app:layout_constraintTop_toBottomOf="@+id/routeInchageDiv" />
+
+                <TextView
+                    android:id="@+id/inchargeContact"
+                    style="@style/profileInfoTitleVal"
+                    android:layout_marginTop="4dp"
+                    android:gravity="end|center_vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/routeInchageDiv" />
+
+                <View
+                    android:id="@+id/contactDiv"
+                    android:layout_width="0dp"
+                    android:layout_height="0.5dp"
+                    android:background="@color/black6"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/vg"
+                    app:layout_constraintTop_toBottomOf="@id/contactIc" />
+
+                <TextView
+                    android:id="@+id/vehicleTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:text="Vehicle"
+                    android:textColor="@color/yellow"
+                    android:textSize="@dimen/md_size_text"
+                    android:textStyle="bold"
+                    app:layout_constraintTop_toBottomOf="@+id/contactDiv" />
+
+                <ImageView
+                    android:id="@+id/vehicleIc"
+                    style="@style/profileInfoIcon"
+                    android:src="@drawable/transport2"
+                    app:layout_constraintEnd_toEndOf="@+id/vg"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/vehicleTxt"
+                    android:contentDescription="@string/default_cont_desc" />
+
+                <TextView
+                    style="@style/profileInfoTitle"
+                    android:gravity="start"
+                    android:text="Vehicle Type"
+                    app:layout_constraintStart_toStartOf="@+id/vg"
+                    app:layout_constraintTop_toBottomOf="@+id/vehicleTxt" />
+
+                <TextView
+                    android:id="@+id/vehicleType"
+                    style="@style/profileInfoTitleVal"
+                    android:gravity="end"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/vehicleTxt" />
+
+
+                <View
+                    android:id="@+id/vehicleTypeDiv"
+                    android:layout_width="0dp"
+                    android:layout_height="0.5dp"
+                    android:background="@color/black6"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/vg"
+                    app:layout_constraintTop_toBottomOf="@id/vehicleIc" />
+
+                <ImageView
+                    android:id="@+id/vehicleNoIc"
+                    style="@style/profileInfoIcon"
+                    android:src="@drawable/vehicle_number"
+                    app:layout_constraintEnd_toEndOf="@+id/vg"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/vehicleTypeDiv"
+                    android:contentDescription="@string/default_cont_desc" />
+
+                <TextView
+                    style="@style/profileInfoTitle"
+                    android:layout_marginTop="4dp"
+                    android:gravity="start|center_vertical"
+                    android:text="Vehicle No."
+                    app:layout_constraintStart_toStartOf="@+id/vg"
+                    app:layout_constraintTop_toBottomOf="@+id/vehicleTypeDiv" />
+
+                <TextView
+                    android:id="@+id/vehicleNo"
+                    style="@style/profileInfoTitleVal"
+                    android:layout_marginTop="4dp"
+                    android:gravity="end|center_vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/vehicleTypeDiv" />
+
+                <View
+                    android:id="@+id/vehicleNoDiv"
+                    android:layout_width="0dp"
+                    android:layout_height="0.5dp"
+                    android:background="@color/black6"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/vg"
+                    app:layout_constraintTop_toBottomOf="@id/vehicleNoIc" />
+
+                <TextView
+                    android:id="@+id/driverTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:text="Driver"
+                    android:textColor="@color/yellow"
+                    android:textSize="@dimen/md_size_text"
+                    android:textStyle="bold"
+                    app:layout_constraintTop_toBottomOf="@+id/vehicleNoDiv" />
+
+
+                <ImageView
+                    android:id="@+id/driverIc"
+                    style="@style/profileInfoIcon"
+                    android:src="@drawable/name"
+                    app:layout_constraintEnd_toEndOf="@+id/vg"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/driverTxt"
+                    android:contentDescription="@string/default_cont_desc" />
+
+                <TextView
+                    style="@style/profileInfoTitle"
+                    android:layout_marginTop="@dimen/mTop0"
+                    android:gravity="start|center_vertical"
+                    android:text="Name"
+                    app:layout_constraintStart_toStartOf="@+id/vg"
+                    app:layout_constraintTop_toBottomOf="@+id/driverTxt" />
+
+                <TextView
+                    android:id="@+id/drivername"
+                    style="@style/profileInfoTitleVal"
+                    android:layout_marginTop="@dimen/mTop0"
+                    android:gravity="end|center_vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/driverTxt" />
+
+                <View
+                    android:id="@+id/driverDiv"
+                    android:layout_width="0dp"
+                    android:layout_height="0.5dp"
+                    android:background="@color/black6"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/vg"
+                    app:layout_constraintTop_toBottomOf="@id/driverIc" />
+
+                <ImageView
+                    android:id="@+id/mobileIc"
+                    style="@style/profileInfoIcon"
+                    android:src="@drawable/mobile"
+                    app:layout_constraintEnd_toEndOf="@+id/vg"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/driverDiv"
+                    android:contentDescription="@string/default_cont_desc" />
+
+                <TextView
+                    style="@style/profileInfoTitle"
+                    android:layout_marginTop="4dp"
+                    android:gravity="start|center_vertical"
+                    android:text="Contact"
+                    app:layout_constraintStart_toStartOf="@+id/vg"
+                    app:layout_constraintTop_toBottomOf="@+id/driverDiv" />
+
+                <TextView
+                    android:id="@+id/driverContact1"
+                    style="@style/profileInfoTitleVal"
+                    android:layout_marginTop="4dp"
+                    android:gravity="end|center_vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/driverDiv" />
+
+                <View
+                    android:id="@+id/mobileDiv"
+                    android:layout_width="0dp"
+                    android:layout_height="0.5dp"
+                    android:background="@color/black6"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/vg"
+                    app:layout_constraintTop_toBottomOf="@id/mobileIc" />
+
+
+                <ImageView
+                    android:id="@+id/mobileImgIc"
+                    style="@style/profileInfoIcon"
+                    android:src="@drawable/mobile"
+                    app:layout_constraintEnd_toEndOf="@+id/vg"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/mobileDiv"
+                    android:contentDescription="@string/default_cont_desc" />
+
+                <TextView
+                    style="@style/profileInfoTitle"
+                    android:layout_marginTop="4dp"
+                    android:gravity="start|center_vertical"
+                    android:text="Contact"
+                    app:layout_constraintStart_toStartOf="@+id/vg"
+                    app:layout_constraintTop_toBottomOf="@+id/mobileDiv" />
+
+                <TextView
+                    android:id="@+id/driverContact2"
+                    style="@style/profileInfoTitleVal"
+                    android:layout_marginTop="4dp"
+                    android:gravity="end|center_vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/mobileDiv" />
+
+                <View
+                    android:id="@+id/contact1Div"
+                    android:layout_width="0dp"
+                    android:layout_height="0.5dp"
+                    android:background="@color/black6"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/vg"
+                    app:layout_constraintTop_toBottomOf="@id/mobileImgIc" />
+
+                <TextView
+                    android:id="@+id/emergencyContactsTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:paddingTop="4dp"
+                    android:text="Emergency Contacts"
+                    android:textColor="@color/yellow"
+                    android:textSize="@dimen/md_size_text"
+                    android:textStyle="bold"
+                    app:layout_constraintTop_toBottomOf="@+id/contact1Div" />
+
+                <LinearLayout
+                    android:id="@+id/emergencyContactsContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintTop_toBottomOf="@+id/emergencyContactsTxt" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <include
+                layout="@layout/activity_no_record"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="35dp"
+                android:indeterminate="true"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/extend_fab_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|bottom"
+        android:layout_marginBottom="@dimen/mBottom0"
+        android:elevation="8dp">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/trackLoctionBtn"
+            style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/trackLoctionBtn"
+            android:visibility="gone"
+            app:backgroundTint="@color/orange5"
+            app:cornerRadius="56dp"
+            app:icon="@drawable/ic_track_location"
+            app:iconTint="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:padding="@dimen/pTop1"
+    tools:context=".Base.activity.MainActivity"
+    tools:showIn="@layout/app_bar_main2">
+
+    <TextView
+        android:id="@+id/lbl"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:gravity="start"
+        android:padding="4dp"
+        android:text="@string/driver_frag_notify_lbl"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/md_size_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:targetApi="m" />
+
+    <View
+        android:id="@+id/divider1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/black6"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@+id/lbl" />
+
+    <RadioGroup
+        android:id="@+id/messages"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/mTop0"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider1"
+        tools:layout_editor_absoluteX="0dp">
+
+        <RadioButton
+            android:id="@+id/puncture_rad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/mLeft1"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:paddingStart="@dimen/pLeft1"
+            android:text="@string/messages_puncture_rad"
+            android:textSize="@dimen/md_size_text"
+            tools:targetApi="m" />
+        <!--android:background="@drawable/lg_radio_btn_states"
+        android:button="@color/transparent"-->
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/mBottom1">
+
+            <TextView
+                android:id="@+id/PunctureSubtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/messages_PunctureSubtitle"
+                android:textSize="@dimen/sm_size_text"
+                app:layout_constraintStart_toStartOf="@id/vg1"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/black6"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/vg1"
+                app:layout_constraintTop_toBottomOf="@+id/PunctureSubtitle" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/vg1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent=".18" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <RadioButton
+            android:id="@+id/traffic_rad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/mLeft1"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:paddingStart="@dimen/pLeft1"
+            android:text="@string/messages_traffic_rad"
+            android:textSize="@dimen/md_size_text"
+            tools:targetApi="m" />
+        <!--android:button="@drawable/lg_radio_btn_states"-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/mBottom1">
+
+            <TextView
+                android:id="@+id/trafficSubtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/messages_trafficSubtitle"
+                android:textSize="@dimen/sm_size_text"
+                app:layout_constraintStart_toStartOf="@id/vg2"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/black6"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/vg2"
+                app:layout_constraintTop_toBottomOf="@+id/trafficSubtitle" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/vg2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent=".17" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <RadioButton
+            android:id="@+id/accident_rad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/mLeft1"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:paddingStart="@dimen/pLeft1"
+            android:text="@string/messages_accident_rad"
+            android:visibility="gone"
+            tools:targetApi="m" />
+        <!--android:button="@drawable/lg_radio_btn_states"-->
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/mBottom1"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/accidentSubtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/messages_accidentSubtitle"
+                android:textSize="@dimen/sm_size_text"
+                app:layout_constraintStart_toStartOf="@id/vg3"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/black6"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/vg3"
+                app:layout_constraintTop_toBottomOf="@+id/accidentSubtitle" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/vg3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent=".18" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <RadioButton
+            android:id="@+id/other_rad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/mLeft1"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:paddingStart="@dimen/pLeft1"
+            android:text="@string/messages_other_rad"
+            android:textSize="@dimen/md_size_text"
+            tools:targetApi="m" />
+        <!--android:button="@drawable/lg_radio_btn_states"-->
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/mBottom1">
+
+            <TextView
+                android:id="@+id/otherSubtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/messages_otherSubtitle"
+                android:textSize="@dimen/sm_size_text"
+                app:layout_constraintStart_toStartOf="@id/vg4"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/black6"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/vg4"
+                app:layout_constraintTop_toBottomOf="@+id/otherSubtitle" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/vg4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent=".18" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </RadioGroup>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/notesContainer"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/mTop1"
+        android:hint="@string/notify_parents_notes_hint"
+        app:boxBackgroundColor="@android:color/transparent"
+        app:errorEnabled="true"
+        app:layout_constraintTop_toBottomOf="@+id/messages">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/notes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:imeActionLabel="@string/ImeActionDone"
+            android:imeOptions="actionDone"
+            android:inputType="text"
+            android:minHeight="60dp"
+            android:textSize="@dimen/sm_size_text" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/sendNotificationBtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/mTop0"
+        android:paddingBottom="@dimen/pBottom0"
+        android:text="@string/drivre_notificationBtn"
+        android:textSize="@dimen/md_size_text"
+        app:backgroundTint="@color/orange5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/notesContainer" />
+
+    <ImageView
+        android:id="@+id/infoIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/driver_sendNotifBtn_infoIcon"
+        android:contentDescription="@string/default_cont_desc"
+        android:src="@drawable/ic_action_info"
+        app:layout_constraintEnd_toEndOf="@id/guideline1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/sendNotificationBtn" />
+
+    <TextView
+        android:id="@+id/msg"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/mTop0"
+        android:text="@string/notify_subtitle"
+        android:textSize="@dimen/sm_size_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/guideline1"
+        app:layout_constraintTop_toBottomOf="@+id/sendNotificationBtn" />
+
+    <!--orange 500 - #FF9800
+    yellow -500- #FFEB3B-->
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".10" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

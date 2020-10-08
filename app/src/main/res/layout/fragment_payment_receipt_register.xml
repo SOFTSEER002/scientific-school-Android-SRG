@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/black7">
+
+    <ImageView
+        android:id="@+id/fromDateIc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="6dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="6dp"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:scaleX="0.7"
+        android:scaleY="0.7"
+        android:src="@drawable/ic_datepicker"
+        android:tint="@color/colorPrimary"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/default_cont_desc"
+        tools:targetApi="m" />
+
+    <TextView
+        android:id="@+id/fromDateVal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:layout_toEndOf="@+id/fromDateIc"
+        android:layout_toRightOf="@+id/fromDateIc"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:text=""
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/sm_size_text"
+        app:layout_constraintStart_toEndOf="@id/fromDateIc"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:targetApi="m" />
+
+    <ImageView
+        android:id="@+id/toDateIc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="6dp"
+        android:layout_marginLeft="22dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="6dp"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:scaleX="0.7"
+        android:scaleY="0.7"
+        android:src="@drawable/ic_datepicker"
+        android:tint="@color/colorPrimary"
+        app:layout_constraintEnd_toStartOf="@id/toDateVal"
+        app:layout_constraintStart_toEndOf="@id/fromDateVal"
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/default_cont_desc"
+        tools:targetApi="m" />
+
+    <TextView
+        android:id="@+id/toDateVal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="14dp"
+        android:layout_marginTop="14dp"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:text=""
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/sm_size_text"
+        app:layout_constraintStart_toEndOf="@id/toDateIc"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:targetApi="m" />
+
+    <ImageView
+        android:id="@+id/filterBtn"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginEnd="@dimen/mRight0"
+        android:layout_marginRight="@dimen/mRight0"
+        android:layout_marginTop="@dimen/mTop0"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:src="@drawable/right_arrow_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/default_cont_desc"
+        tools:targetApi="m" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginTop="6dp"
+        android:background="@color/black6"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fromDateIc" />
+
+    <Spinner
+        android:id="@+id/filter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:entries="@array/countryArray"
+        android:padding="2dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider" />
+
+    <RelativeLayout
+        android:id="@+id/grossTotal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:background="@color/white"
+        android:padding="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/filter">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Total Collection"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/sm_size_text" />
+
+        <!--
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:layout_toLeftOf="@+id/totalCollection"
+                    android:layout_toStartOf="@+id/totalCollection"
+                    android:scaleX="1"
+                    android:scaleY="1"
+                    android:src="@drawable/rupee"
+                    android:tint="@color/colorPrimary" />
+        -->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:layout_toLeftOf="@+id/totalCollection"
+            android:layout_toStartOf="@+id/totalCollection"
+            android:text="Rs."
+            android:textSize="@dimen/sm_size_text"
+            android:textColor="@color/colorPrimary" />
+
+
+        <TextView
+            android:id="@+id/totalCollection"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="2dp"
+            android:text=""
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/sm_size_text" />
+    </RelativeLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="35dp"
+        android:indeterminate="true"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/purchaseSummary"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="5dp"
+        android:paddingBottom="2dp"
+        android:scrollbars="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/grossTotal" />
+
+    <include
+        layout="@layout/activity_no_record"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/grossTotal" />
+
+    <com.jeannypr.scientificstudy.FloatingActionButton.MovableFloatingActionButton
+        android:id="@+id/createTransBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="60dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:tint="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@android:drawable/ic_input_add" />
+</androidx.constraintlayout.widget.ConstraintLayout>

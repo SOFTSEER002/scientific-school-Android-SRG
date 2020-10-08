@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:left="@dimen/wallUnderline_left"
+        android:right="@dimen/wallUnderline_left"
+        android:bottom="@dimen/wallUnderline_top"
+        >
+        <!--@dimen/wallUnderline_top-->
+        <shape
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:shape="line">
+            <stroke
+                android:width="@dimen/viewProfile_underline_width"
+                android:color="@color/red" />
+            <size android:height="@dimen/viewProfile_underline_height" />
+        </shape>
+    </item>
+</layer-list>

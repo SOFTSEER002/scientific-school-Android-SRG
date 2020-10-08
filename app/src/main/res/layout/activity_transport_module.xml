@@ -1,0 +1,876 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:subtitleTextColor="@color/white"
+            app:titleTextColor="@color/white" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/pTop0">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/trackLocationCard"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:foreground="?android:attr/selectableItemBackground"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/red_gradient"
+                    android:padding="@dimen/pTop1">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Track location of vehicles"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/lg_size_text"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/driverLbl"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/mTop0"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/trackLocationCard">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/indigo_gradient"
+                    android:padding="@dimen/pTop1">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@string/transport_driverLbl"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/lg_size_text"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <ImageView
+                android:id="@+id/routeReportIc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/mTop1"
+                android:src="@drawable/ic_report_32"
+                app:layout_constraintEnd_toStartOf="@id/vg"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/driverLbl"
+                android:contentDescription="@string/default_cont_desc" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/mTop1"
+                android:gravity="start"
+                android:text="Reports"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/md_size_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/vg"
+                app:layout_constraintTop_toBottomOf="@id/driverLbl" />
+
+            <View
+                android:id="@+id/divRoute"
+                android:layout_width="0dp"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="4dp"
+                android:background="@color/colorAccent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/routeReportIc" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/routeWiseRow"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:paddingTop="@dimen/mTop1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/divRoute"
+                tools:targetApi="m">
+
+                <ImageView
+                    android:id="@+id/routeIc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_bulleted_arrow_16"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/routeVg"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:contentDescription="@string/default_cont_desc" />
+
+                <TextView
+                    android:id="@+id/routeLbl"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Route Wise Details"
+                    android:textColor="@color/mBlack"
+                    android:textSize="@dimen/md_size_text"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/routeVg"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/routeVg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent=".15" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View
+                android:id="@+id/routeDiv"
+                android:layout_width="0dp"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="4dp"
+                android:background="@color/black6"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/vg"
+                app:layout_constraintTop_toBottomOf="@+id/routeWiseRow" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/stoppageWiseRow"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="?android:attr/selectableItemBackground"
+                android:paddingTop="@dimen/mTop1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/routeDiv">
+
+                <ImageView
+                    android:id="@+id/stoppageIc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_bulleted_arrow_16"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/stoppageVg"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:contentDescription="@string/default_cont_desc" />
+
+                <TextView
+                    android:id="@+id/stoppageLbl"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Stoppage Wise Details"
+                    android:textColor="@color/mBlack"
+                    android:textSize="@dimen/md_size_text"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/stoppageVg"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/stoppageVg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent=".15" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View
+                android:id="@+id/stoppageDiv"
+                android:layout_width="0dp"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="4dp"
+                android:background="@color/black6"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/vg"
+                app:layout_constraintTop_toBottomOf="@+id/stoppageWiseRow" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/classWiseRow"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="?android:attr/selectableItemBackground"
+                android:paddingTop="@dimen/mTop1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/stoppageDiv">
+
+                <ImageView
+                    android:id="@+id/classIc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_bulleted_arrow_16"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/classVg"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:contentDescription="@string/default_cont_desc" />
+
+                <TextView
+                    android:id="@+id/classLbl"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Class Wise Details"
+                    android:textColor="@color/mBlack"
+                    android:textSize="@dimen/md_size_text"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/classVg"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/classVg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent=".15" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="4dp"
+                android:background="@color/black6"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/vg"
+                app:layout_constraintTop_toBottomOf="@+id/classWiseRow" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/vg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent=".15" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    <!--
+    <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/appBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?android:attr/actionBarSize"
+                android:background="@color/colorPrimary"
+                app:layout_scrollFlags="scroll|enterAlways"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                app:subtitleTextColor="@color/white"
+                app:titleTextColor="@color/white" />
+        </android.support.design.widget.AppBarLayout>
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/pTop0">
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/routelistLbl"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/green6"
+                        android:padding="@dimen/pTop1">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="Track location of vehicles"
+                            android:textColor="@color/black9"
+                            android:textSize="@dimen/lg_size_text"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/driverLbl"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/mTop0"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/routelistLbl">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/amber1"
+                        android:padding="@dimen/pTop1">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="@string/transport_driverLbl"
+                            android:textColor="@color/black9"
+                            android:textSize="@dimen/lg_size_text"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </android.support.v7.widget.CardView>
+
+                <TextView
+                    android:id="@+id/collectionLbl"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/mTop0"
+                    android:background="#7f8cd2d9"
+                    android:gravity="center"
+                    android:padding="4dp"
+                    android:text="Reports"
+                    android:textColor="@color/black9"
+                    android:textSize="@dimen/md_size_text"
+                    android:textStyle="bold"
+                    android:translationZ="1dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/driverLbl" />
+
+                &lt;!&ndash;  <ImageView
+                      android:id="@+id/routeListIc"
+                      android:layout_width="@dimen/enterMarksIc_w"
+                      android:layout_height="@dimen/enterMarksIc_w"
+                      android:layout_marginTop="@dimen/mTop1"
+                      android:foreground="?android:attr/selectableItemBackground"
+                      android:src="@drawable/transport2"
+                      android:visibility="gone"
+                      app:layout_constraintEnd_toStartOf="@id/vg2"
+                      app:layout_constraintStart_toStartOf="parent"
+                      app:layout_constraintTop_toBottomOf="@+id/collectionLbl" />
+
+                  <TextView
+                      android:id="@+id/routelistLbl"
+                      android:layout_width="0dp"
+                      android:layout_height="wrap_content"
+                      android:foreground="?android:attr/selectableItemBackground"
+                      android:padding="@dimen/pTop1"
+                      android:text="@string/transport_routelistLbl"
+                      android:textColor="@color/black"
+                      android:textSize="@dimen/md_size_text"
+                      android:visibility="gone"
+                      app:layout_constraintEnd_toEndOf="parent"
+                      app:layout_constraintStart_toEndOf="@id/vg2"
+                      app:layout_constraintTop_toBottomOf="@+id/collectionLbl" />&ndash;&gt;
+
+                &lt;!&ndash;  <View
+                      android:id="@+id/divRoute"
+                      android:layout_width="0dp"
+                      android:layout_height="@dimen/div_h"
+                      android:background="@color/black6"
+                      android:visibility="visible"
+                      app:layout_constraintEnd_toEndOf="parent"
+                      app:layout_constraintStart_toStartOf="@id/vg2"
+                      app:layout_constraintTop_toBottomOf="@+id/routelistLbl" />&ndash;&gt;
+
+                &lt;!&ndash;  <ImageView
+                      android:id="@+id/driverIc"
+                      android:layout_width="@dimen/enterMarksIc_w"
+                      android:layout_height="@dimen/enterMarksIc_w"
+                      android:layout_marginTop="@dimen/mTop1"
+                      android:foreground="?android:attr/selectableItemBackground"
+                      android:src="@drawable/staff_wise_attendance"
+                      app:layout_constraintEnd_toStartOf="@id/vg2"
+                      app:layout_constraintStart_toStartOf="parent"
+                      app:layout_constraintTop_toBottomOf="@+id/divRoute" />
+
+
+                  <TextView
+                      android:id="@+id/driverLbl"
+                      android:layout_width="0dp"
+                      android:layout_height="wrap_content"
+                      android:foreground="?android:attr/selectableItemBackground"
+                      android:padding="@dimen/pTop1"
+                      android:text="@string/transport_driverLbl"
+                      android:textColor="@color/black"
+                      android:textSize="@dimen/md_size_text"
+                      app:layout_constraintEnd_toEndOf="parent"
+                      app:layout_constraintStart_toEndOf="@id/vg2"
+                      app:layout_constraintTop_toBottomOf="@+id/divRoute" />
+      &ndash;&gt;
+                &lt;!&ndash;   <View
+                       android:id="@+id/divDriver"
+                       android:layout_width="0dp"
+                       android:layout_height="@dimen/div_h"
+                       android:background="@color/black6"
+                       app:layout_constraintEnd_toEndOf="parent"
+                       app:layout_constraintStart_toStartOf="@id/vg2"
+                       app:layout_constraintTop_toBottomOf="@+id/driverLbl" />&ndash;&gt;
+
+                <ImageView
+                    android:id="@+id/routeIc"
+                    android:layout_width="@dimen/enterMarksIc_w"
+                    android:layout_height="@dimen/enterMarksIc_w"
+                    android:layout_marginTop="@dimen/mTop1"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:src="@drawable/transport2"
+                    app:layout_constraintEnd_toStartOf="@id/vg2"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/collectionLbl" />
+
+                <TextView
+                    android:id="@+id/routeLbl"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:padding="@dimen/pTop1"
+                    android:text="Route Wise Details"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/md_size_text"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/vg2"
+                    app:layout_constraintTop_toBottomOf="@+id/collectionLbl" />
+
+                <View
+                    android:id="@+id/div1"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/div_h"
+                    android:background="@color/black6"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/vg2"
+                    app:layout_constraintTop_toBottomOf="@+id/routeLbl" />
+
+                <ImageView
+                    android:id="@+id/stoppageIc"
+                    android:layout_width="@dimen/enterMarksIc_w"
+                    android:layout_height="@dimen/enterMarksIc_w"
+                    android:layout_marginTop="@dimen/mTop1"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:src="@drawable/stoppage"
+                    app:layout_constraintEnd_toStartOf="@id/vg2"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/div1" />
+
+                <TextView
+                    android:id="@+id/stoppageLbl"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:padding="@dimen/pTop1"
+                    android:text="Stoppage Wise Details"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/md_size_text"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/vg2"
+                    app:layout_constraintTop_toBottomOf="@+id/div1" />
+
+                <View
+                    android:id="@+id/div2"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/div_h"
+                    android:background="@color/black6"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/vg2"
+                    app:layout_constraintTop_toBottomOf="@+id/stoppageLbl" />
+
+                <ImageView
+                    android:id="@+id/classIc"
+                    android:layout_width="@dimen/enterMarksIc_w"
+                    android:layout_height="@dimen/enterMarksIc_w"
+                    android:layout_marginTop="@dimen/mTop1"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:src="@drawable/class_wise_attendance"
+                    app:layout_constraintEnd_toStartOf="@id/vg2"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/div2" />
+
+
+                <TextView
+                    android:id="@+id/classLbl"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:padding="@dimen/pTop1"
+                    android:text="Class Wise Details"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/md_size_text"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/vg2"
+                    app:layout_constraintTop_toBottomOf="@+id/div2" />
+
+                <View
+                    android:id="@+id/div3"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/div_h"
+                    android:background="@color/black6"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/vg2"
+                    app:layout_constraintTop_toBottomOf="@+id/classLbl" />
+
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/vg2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="@dimen/vg_div_perc" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </android.support.v4.widget.NestedScrollView>
+
+        &lt;!&ndash;<androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:padding="@dimen/pTop0"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/appBar">
+            &lt;!&ndash;Todo-body container and set padding, image dimen, guideline dimen&ndash;&gt;
+
+            <ImageView
+                android:id="@+id/routeListIc"
+                android:layout_width="@dimen/enterMarksIc_w"
+                android:layout_height="@dimen/enterMarksIc_w"
+                android:layout_marginTop="@dimen/mTop1"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:src="@drawable/transport2"
+                android:visibility="visible"
+                app:layout_constraintEnd_toStartOf="@id/vg2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/routelistLbl"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:padding="@dimen/pTop1"
+                android:text="@string/transport_routelistLbl"
+                android:textColor="@color/black"
+                android:textSize="@dimen/md_size_text"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/vg2"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/divRoute"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/div_h"
+                android:background="@color/black6"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/vg2"
+                app:layout_constraintTop_toBottomOf="@+id/routelistLbl" />
+
+            <ImageView
+                android:id="@+id/driverIc"
+                android:layout_width="@dimen/enterMarksIc_w"
+                android:layout_height="@dimen/enterMarksIc_w"
+                android:layout_marginTop="@dimen/mTop1"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:src="@drawable/staff_wise_attendance"
+                app:layout_constraintEnd_toStartOf="@id/vg2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/divRoute" />
+
+
+            <TextView
+                android:id="@+id/driverLbl"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:padding="@dimen/pTop1"
+                android:text="@string/transport_driverLbl"
+                android:textColor="@color/black"
+                android:textSize="@dimen/md_size_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/vg2"
+                app:layout_constraintTop_toBottomOf="@+id/divRoute" />
+
+            <View
+                android:id="@+id/divDriver"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/div_h"
+                android:background="@color/black6"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/vg2"
+                app:layout_constraintTop_toBottomOf="@+id/driverLbl" />
+
+            <ImageView
+                android:id="@+id/routeIc"
+                android:layout_width="@dimen/enterMarksIc_w"
+                android:layout_height="@dimen/enterMarksIc_w"
+                android:layout_marginTop="@dimen/mTop1"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:src="@drawable/transport2"
+                app:layout_constraintEnd_toStartOf="@id/vg2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/divDriver" />
+
+            <TextView
+                android:id="@+id/routeLbl"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:padding="@dimen/pTop1"
+                android:text="Route Wise Details"
+                android:textColor="@color/black"
+                android:textSize="@dimen/md_size_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/vg2"
+                app:layout_constraintTop_toBottomOf="@+id/divDriver" />
+
+            <View
+                android:id="@+id/div1"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/div_h"
+                android:background="@color/black6"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/vg2"
+                app:layout_constraintTop_toBottomOf="@+id/routeLbl" />
+
+            <ImageView
+                android:id="@+id/stoppageIc"
+                android:layout_width="@dimen/enterMarksIc_w"
+                android:layout_height="@dimen/enterMarksIc_w"
+                android:layout_marginTop="@dimen/mTop1"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:src="@drawable/stoppage"
+                app:layout_constraintEnd_toStartOf="@id/vg2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/div1" />
+
+            <TextView
+                android:id="@+id/stoppageLbl"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:padding="@dimen/pTop1"
+                android:text="Stoppage Wise Details"
+                android:textColor="@color/black"
+                android:textSize="@dimen/md_size_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/vg2"
+                app:layout_constraintTop_toBottomOf="@+id/div1" />
+
+            <View
+                android:id="@+id/div2"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/div_h"
+                android:background="@color/black6"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/vg2"
+                app:layout_constraintTop_toBottomOf="@+id/stoppageLbl" />
+
+            <ImageView
+                android:id="@+id/classIc"
+                android:layout_width="@dimen/enterMarksIc_w"
+                android:layout_height="@dimen/enterMarksIc_w"
+                android:layout_marginTop="@dimen/mTop1"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:src="@drawable/class_wise_attendance"
+                app:layout_constraintEnd_toStartOf="@id/vg2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/div2" />
+
+
+            <TextView
+                android:id="@+id/classLbl"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:padding="@dimen/pTop1"
+                android:text="Class Wise Details"
+                android:textColor="@color/black"
+                android:textSize="@dimen/md_size_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/vg2"
+                app:layout_constraintTop_toBottomOf="@+id/div2" />
+
+            <View
+                android:id="@+id/div3"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/div_h"
+                android:background="@color/black6"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/vg2"
+                app:layout_constraintTop_toBottomOf="@+id/classLbl" />
+
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/vg2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="@dimen/vg_div_perc" />
+
+            &lt;!&ndash;<ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/appBar">
+    >>>>>>> .merge-right.r15440
+
+                <LinearLayout style="@style/bodyContainer">
+
+                    <android.support.v7.widget.CardView
+                        android:id="@+id/routeRow"
+                        style="@style/firstCardView">
+
+                        <RelativeLayout style="@style/wrapperInsideCardView">
+
+                            <ImageView
+                                style="@style/leftDrawableOfCardView"
+                                android:src="@drawable/transport2" />
+
+    <<<<<<< .working
+                        <ImageView
+                            android:id="@+id/classBtn"
+                            style="@style/rightDrawableOfCardView"
+                            android:background="@drawable/right_arrow_btn" />
+                    </RelativeLayout>
+                </android.support.v7.widget.CardView>
+    ||||||| .merge-left.r15347
+                        <Button
+                            android:id="@+id/classBtn"
+                            style="@style/rightDrawableOfCardView"
+                            android:background="@drawable/right_arrow_btn" />
+                    </RelativeLayout>
+                </android.support.v7.widget.CardView>
+    =======
+                            <TextView
+                                style="@style/cardViewText"
+                                android:text="Route Wise Details" />
+    >>>>>>> .merge-right.r15440
+
+                            <Button
+                                android:id="@+id/routeBtn"
+                                style="@style/rightDrawableOfCardView"
+                                android:background="@drawable/right_arrow_btn" />
+                        </RelativeLayout>
+                    </android.support.v7.widget.CardView>
+
+                    <android.support.v7.widget.CardView
+                        android:id="@+id/stoppageRow"
+                        style="@style/cardView">
+
+                        <RelativeLayout style="@style/wrapperInsideCardView">
+
+                            <ImageView
+                                style="@style/leftDrawableOfCardView"
+                                android:src="@drawable/stoppage" />
+
+                            <TextView
+                                style="@style/cardViewText"
+                                android:text="Stoppage Wise Details" />
+
+                            <Button
+                                android:id="@+id/stoppageBtn"
+                                style="@style/rightDrawableOfCardView"
+                                android:background="@drawable/right_arrow_btn" />
+                        </RelativeLayout>
+                    </android.support.v7.widget.CardView>
+
+                    <android.support.v7.widget.CardView
+                        android:id="@+id/classRow"
+                        style="@style/cardView">
+
+                        <RelativeLayout style="@style/wrapperInsideCardView">
+
+                            <ImageView
+                                style="@style/leftDrawableOfCardView"
+                                android:src="@drawable/class_wise_attendance" />
+
+                            <TextView
+                                style="@style/cardViewText"
+                                android:text="Class Wise Details" />
+
+                            <Button
+                                android:id="@+id/classBtn"
+                                style="@style/rightDrawableOfCardView"
+                                android:background="@drawable/right_arrow_btn" />
+                        </RelativeLayout>
+                    </android.support.v7.widget.CardView>
+
+                </LinearLayout>
+            </ScrollView>&ndash;&gt;
+        </androidx.constraintlayout.widget.ConstraintLayout>&ndash;&gt;
+
+    </android.support.design.widget.CoordinatorLayout>-->

@@ -1,0 +1,1310 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/parentSection"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/home_tab_header_bg"
+            android:minHeight="220dp"
+            android:paddingStart="8dp"
+            android:paddingTop="8dp"
+            android:paddingEnd="8dp"
+            android:paddingBottom="15dp"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/notifyIc"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="4dp"
+                android:contentDescription="@string/default_cont_desc"
+                android:foreground="?android:selectableItemBackground"
+                android:src="@mipmap/notification_sm"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:targetApi="m" />
+
+            <ImageView
+                android:id="@+id/doctorIc"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="6dp"
+                android:contentDescription="@string/default_cont_desc"
+                android:foreground="?android:selectableItemBackground"
+                android:src="@mipmap/doctor_sm"
+                app:layout_constraintStart_toEndOf="@+id/notifyIc"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:targetApi="m" />
+
+            <ImageView
+                android:id="@+id/busIc"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="6dp"
+                android:contentDescription="@string/default_cont_desc"
+                android:foreground="?android:selectableItemBackground"
+                android:src="@mipmap/bus_sm"
+                app:layout_constraintStart_toEndOf="@+id/doctorIc"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:targetApi="m" />
+
+            <TextView
+                android:id="@+id/familyLbl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:drawableEnd="@mipmap/down_arrow_ic"
+                android:drawablePadding="6dp"
+                android:drawableTint="@color/black"
+                android:fontFamily="@font/roboto_medium"
+                android:gravity="center"
+                android:text="@string/roy_family"
+                android:textColor="@color/black9"
+                android:textSize="@dimen/lg_size_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/busIc"
+                tools:targetApi="m" />
+
+            <HorizontalScrollView
+                android:id="@+id/childrenScroll"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toStartOf="@+id/selectedChildImgRow"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/familyLbl">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minHeight="70dp">
+
+                    <FrameLayout
+                        android:id="@+id/frameLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:foreground="?android:selectableItemBackground"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_gravity="center"
+                            android:background="@drawable/first_letter_img_bg"
+                            android:src="@mipmap/profile_md"
+                            app:civ_border_color="@color/colorAccent" />
+
+                        <ImageView
+                            android:layout_width="12dp"
+                            android:layout_height="12dp"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginTop="13dp"
+                            android:contentDescription="@string/default_cont_desc"
+                            android:src="@mipmap/edit_md" />
+
+                        <ImageView
+                            android:layout_width="12dp"
+                            android:layout_height="12dp"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="-12dp"
+                            android:layout_marginTop="-13dp"
+                            android:contentDescription="@string/default_cont_desc"
+                            android:src="@mipmap/redheart_md" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:id="@+id/childFrmae2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:foreground="?android:selectableItemBackground"
+                        app:layout_constraintStart_toEndOf="@+id/frameLayout"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_gravity="center"
+                            android:background="@drawable/first_letter_img_bg"
+                            android:src="@mipmap/profile_md"
+                            app:civ_border_color="@color/colorAccent" />
+
+                        <ImageView
+                            android:layout_width="12dp"
+                            android:layout_height="12dp"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginTop="13dp"
+                            android:contentDescription="@string/default_cont_desc"
+                            android:src="@mipmap/edit_md" />
+
+                        <ImageView
+                            android:layout_width="12dp"
+                            android:layout_height="12dp"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="-12dp"
+                            android:layout_marginTop="-13dp"
+                            android:contentDescription="@string/default_cont_desc"
+                            android:src="@mipmap/redheart_md" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:id="@+id/childFrmae3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:foreground="?android:selectableItemBackground"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/childFrmae2">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_gravity="center"
+                            android:background="@drawable/first_letter_img_bg"
+                            android:src="@mipmap/profile_md"
+                            app:civ_border_color="@color/colorAccent" />
+
+                        <ImageView
+                            android:layout_width="12dp"
+                            android:layout_height="12dp"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginTop="13dp"
+                            android:contentDescription="@string/default_cont_desc"
+                            android:src="@mipmap/edit_md" />
+
+                        <ImageView
+                            android:layout_width="12dp"
+                            android:layout_height="12dp"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="-12dp"
+                            android:layout_marginTop="-13dp"
+                            android:contentDescription="@string/default_cont_desc"
+                            android:src="@mipmap/redheart_md" />
+                    </FrameLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </HorizontalScrollView>
+
+            <FrameLayout
+                android:id="@+id/selectedChildImgRow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/familyLbl">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/selectedChildImg"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/first_letter_img_bg"
+                    android:src="@mipmap/profile_md"
+                    app:civ_border_color="@color/colorAccent" />
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="30dp"
+                    android:contentDescription="@string/default_cont_desc"
+                    android:src="@mipmap/edit_md" />
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/selectedChildName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/prashant"
+                android:textColor="@color/black9"
+                android:textSize="@dimen/md_size_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/selectedChildImgRow" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/announcementSection"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@color/blue17"
+            android:paddingStart="8dp"
+            android:paddingTop="8dp"
+            android:paddingEnd="8dp"
+            android:paddingBottom="15dp"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/parentSection">
+
+            <ImageView
+                android:id="@+id/sclLogo"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:contentDescription="@string/default_cont_desc"
+                android:src="@mipmap/logo_principlesec_md"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/title_anno"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:ellipsize="end"
+                android:gravity="start"
+                android:maxLines="1"
+                android:text="Dear Parents,"
+                android:textColor="@color/black9"
+                android:textSize="@dimen/md_size_text"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/sclLogo"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/desc_anno"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="7dp"
+                android:ellipsize="end"
+                android:gravity="start"
+                android:maxLines="2"
+                android:text="Dear Parent, Mr. Roy, Please help your kids to do complete his homework"
+                android:textColor="@color/black9"
+                android:textSize="@dimen/sm_size_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/sclLogo"
+                app:layout_constraintTop_toBottomOf="@+id/title_anno" />
+
+            <TextView
+                android:id="@+id/allowsment"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:gravity="end"
+                android:text="- Principal"
+                android:textColor="@color/black"
+                android:textSize="@dimen/md_size_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/sclLogo"
+                app:layout_constraintTop_toBottomOf="@+id/desc_anno" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <HorizontalScrollView
+            android:id="@+id/holidayScroll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            app:layout_constraintTop_toBottomOf="@+id/announcementSection">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/holidaySection"
+                    android:layout_width="370dp"
+                    android:layout_height="wrap_content"
+                    android:background="@color/blue18"
+                    android:minHeight="280dp"
+                    android:paddingStart="8dp"
+                    android:paddingTop="8dp"
+                    android:paddingEnd="8dp"
+                    android:paddingBottom="15dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/holiday_title"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/mTop1"
+                        android:ellipsize="end"
+                        android:gravity="start"
+                        android:maxLines="1"
+                        android:text="Happy Holidays"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/lg_size_text"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toStartOf="@+id/holiday_Img"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/holiday_msg"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:gravity="start"
+                        android:maxLines="1"
+                        android:text="Summer Holiday"
+                        android:textColor="@color/indigo"
+                        android:textSize="@dimen/md_size_text"
+                        app:layout_constraintEnd_toStartOf="@+id/holiday_Img"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/holiday_title" />
+
+                    <TextView
+                        android:id="@+id/holiddy_date"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:ellipsize="end"
+                        android:gravity="start"
+                        android:maxLines="1"
+                        android:text="9th june,Sat - 10th june,Sun"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/md_size_text"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/holiday_Img" />
+
+                    <TextView
+                        android:id="@+id/holiday_summerLbl"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:gravity="start"
+                        android:maxLines="3"
+                        android:text="Dear Parent, Mr. Roy, Please help your kids to do complete his homework, Revise classwork, Also do not forget to have fun with him... "
+                        android:textColor="@color/black2"
+                        android:textSize="@dimen/sm_size_text"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/holiddy_date" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/reminderBtn"
+                        style="@style/Widget.MaterialComponents.Button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="6dp"
+                        android:backgroundTint="@color/blue22"
+                        android:ellipsize="end"
+                        android:text="Remind me"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        app:cornerRadius="4dp"
+                        app:icon="@mipmap/remind_me_xs"
+                        app:iconSize="15dp"
+                        app:iconTint="@color/white"
+                        app:layout_constraintEnd_toStartOf="@id/funBtn"
+                        app:layout_constraintHorizontal_chainStyle="packed"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/holiday_summerLbl"
+                        app:strokeColor="@color/blue22" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/funBtn"
+                        style="@style/Widget.MaterialComponents.Button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="@dimen/mLeft0"
+                        android:layout_marginTop="6dp"
+                        android:backgroundTint="@color/blue23"
+                        android:ellipsize="end"
+                        android:text="Find Fun"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        app:cornerRadius="4dp"
+                        app:icon="@mipmap/find_fun_xs"
+                        app:iconSize="15dp"
+                        app:iconTint="@color/white"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/reminderBtn"
+                        app:layout_constraintTop_toBottomOf="@+id/holiday_summerLbl"
+                        app:strokeColor="@color/blue23" />
+
+                    <ImageView
+                        android:id="@+id/holiday_Img"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@string/default_cont_desc"
+                        android:src="@mipmap/holiday_2"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@id/holidayGuide"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/holidayGuide"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent=".7" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/holidaySection2"
+                    android:layout_width="370dp"
+                    android:layout_height="wrap_content"
+                    android:background="@color/blue18"
+                    android:minHeight="280dp"
+                    android:paddingStart="8dp"
+                    android:paddingTop="8dp"
+                    android:paddingEnd="8dp"
+                    android:paddingBottom="15dp"
+                    app:layout_constraintStart_toEndOf="@+id/holidaySection"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/holiday_title2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/mTop1"
+                        android:ellipsize="end"
+                        android:gravity="start"
+                        android:maxLines="1"
+                        android:text="Happy Holidays"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/lg_size_text"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toStartOf="@+id/holiday_Img2"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/holiday_msg2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:gravity="start"
+                        android:maxLines="1"
+                        android:text="Summer Holiday"
+                        android:textColor="@color/indigo"
+                        android:textSize="@dimen/md_size_text"
+                        app:layout_constraintEnd_toStartOf="@+id/holiday_Img2"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/holiday_title2" />
+
+                    <TextView
+                        android:id="@+id/holiddy_date2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:ellipsize="end"
+                        android:gravity="start"
+                        android:maxLines="1"
+                        android:text="9th june,Sat - 10th june,Sun"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/md_size_text"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/holiday_Img2" />
+
+                    <TextView
+                        android:id="@+id/holiday_summerLbl2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:gravity="start"
+                        android:maxLines="3"
+                        android:text="Dear Parent, Mr. Roy, Please help your kids to do complete his homework, Revise classwork, Also do not forget to have fun with him... "
+                        android:textColor="@color/black2"
+                        android:textSize="@dimen/sm_size_text"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/holiddy_date2" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/reminderBtn2"
+                        style="@style/Widget.MaterialComponents.Button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="6dp"
+                        android:backgroundTint="@color/blue22"
+                        android:ellipsize="end"
+                        android:text="Remind me"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        app:cornerRadius="8dp"
+                        app:icon="@mipmap/remind_me_xs"
+                        app:iconSize="15dp"
+                        app:iconTint="@color/white"
+                        app:layout_constraintEnd_toStartOf="@id/funBtn2"
+                        app:layout_constraintHorizontal_chainStyle="packed"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/holiday_summerLbl2"
+                        app:strokeColor="@color/blue22" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/funBtn2"
+                        style="@style/Widget.MaterialComponents.Button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="@dimen/mLeft0"
+                        android:layout_marginTop="6dp"
+                        android:backgroundTint="@color/blue23"
+                        android:ellipsize="end"
+                        android:text="Find Fun"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        app:cornerRadius="8dp"
+                        app:icon="@mipmap/find_fun_xs"
+                        app:iconSize="15dp"
+                        app:iconTint="@color/white"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/reminderBtn2"
+                        app:layout_constraintTop_toBottomOf="@+id/holiday_summerLbl2"
+                        app:strokeColor="@color/blue23" />
+
+                    <ImageView
+                        android:id="@+id/holiday_Img2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@string/default_cont_desc"
+                        android:src="@mipmap/holiday_2"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@id/holidayGuide2"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/holidayGuide2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent=".7" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </HorizontalScrollView>
+
+        <HorizontalScrollView
+            android:id="@+id/bdayScroll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            app:layout_constraintTop_toBottomOf="@+id/holidayScroll">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/birthdayRow"
+                    android:layout_width="370dp"
+                    android:layout_height="wrap_content"
+                    android:background="@color/green14"
+                    android:minHeight="280dp"
+                    android:paddingStart="8dp"
+                    android:paddingTop="8dp"
+                    android:paddingEnd="8dp"
+                    android:paddingBottom="15dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/birthday_title"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Dear Mr. Roy"
+                        android:textColor="@color/green15"
+                        android:textSize="@dimen/lg_size_text"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/birthday_msg"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Happy Birthday To You"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/lg_size_text"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/birthday_title" />
+
+                    <ImageView
+                        android:id="@+id/birthdayImg"
+                        android:layout_width="220dp"
+                        android:layout_height="150dp"
+                        android:contentDescription="@string/default_cont_desc"
+                        android:src="@mipmap/bday"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/birthday_msg" />
+
+                    <TextView
+                        android:id="@+id/birthday_smgLbl"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:maxLines="3"
+                        android:paddingStart="6dp"
+                        android:paddingEnd="6dp"
+                        android:text="Wishes you a very happy birthday to you. Birthday is coming of your son on this saturday to celebrate..."
+                        android:textColor="@color/black2"
+                        android:textSize="@dimen/sm_size_text"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/birthdayImg" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/birthdayRow2"
+                    android:layout_width="370dp"
+                    android:layout_height="wrap_content"
+                    android:background="@color/green14"
+                    android:minHeight="280dp"
+                    android:paddingStart="8dp"
+                    android:paddingTop="8dp"
+                    android:paddingEnd="8dp"
+                    android:paddingBottom="15dp"
+                    app:layout_constraintStart_toEndOf="@+id/birthdayRow"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/birthday_title2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Dear Mr. Roy"
+                        android:textColor="@color/green15"
+                        android:textSize="@dimen/lg_size_text"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/birthday_msg2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Happy Birthday To You"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/lg_size_text"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/birthday_title2" />
+
+                    <ImageView
+                        android:id="@+id/birthdayImg2"
+                        android:layout_width="220dp"
+                        android:layout_height="150dp"
+                        android:contentDescription="@string/default_cont_desc"
+                        android:src="@mipmap/bday"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/birthday_msg2" />
+
+                    <TextView
+                        android:id="@+id/birthday_smgLbl2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:maxLines="3"
+                        android:paddingStart="6dp"
+                        android:paddingEnd="6dp"
+                        android:text="Wishes you a very happy birthday to you. Birthday is coming of your son on this saturday to celebrate..."
+                        android:textColor="@color/black2"
+                        android:textSize="@dimen/sm_size_text"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/birthdayImg2" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </HorizontalScrollView>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/sundayRow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/blue20"
+            android:minHeight="280dp"
+            android:paddingStart="8dp"
+            android:paddingTop="8dp"
+            android:paddingEnd="8dp"
+            android:paddingBottom="15dp"
+            android:visibility="visible"
+            app:layout_constraintTop_toBottomOf="@+id/bdayScroll">
+
+            <TextView
+                android:id="@+id/sunday_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Happy Sunday"
+                android:textColor="@color/blue21"
+                android:textSize="@dimen/lg_size_text"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/sundayImg"
+                android:layout_width="220dp"
+                android:layout_height="130dp"
+                android:src="@mipmap/sunday_md"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/sunday_title"
+                android:contentDescription="@string/default_cont_desc" />
+
+            <TextView
+                android:id="@+id/sunday_smgLbl"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="3"
+                android:paddingStart="6dp"
+                android:paddingEnd="6dp"
+                android:text="Dear Parent, Mr. Roy, Please help your kids to do complete his homework, Revise classwork, Also do not forget to have fun with him... "
+                android:textColor="@color/black2"
+                android:textSize="@dimen/sm_size_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/sundayImg" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/sundayfunBtn"
+                style="@style/Widget.MaterialComponents.Button"
+                android:layout_width="120dp"
+                android:layout_height="50dp"
+                android:backgroundTint="@color/blue24"
+                android:elevation="3dp"
+                android:gravity="center"
+                android:text="Find Fun"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/md_size_text"
+                app:cornerRadius="4dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/sunday_smgLbl" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/fatherdayRow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg1"
+            android:paddingStart="8dp"
+            android:paddingTop="8dp"
+            android:paddingEnd="8dp"
+            android:paddingBottom="15dp"
+            android:visibility="visible"
+            app:layout_constraintTop_toBottomOf="@+id/sundayRow">
+
+            <TextView
+                android:id="@+id/fday_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="@dimen/mRight1"
+                android:gravity="start"
+                android:text="Happy Father's Day"
+                android:textColor="@color/mRed"
+                android:textSize="@dimen/lg_size_text"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/fday_gv"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/fday_Img"
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:src="@mipmap/fathersday_md"
+                app:layout_constraintEnd_toEndOf="@id/fday_gv"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:contentDescription="@string/default_cont_desc" />
+
+            <!-- <com.google.android.material.button.MaterialButton
+                 android:id="@+id/fday_funBtn"
+                 style="@style/Widget.MaterialComponents.Button"
+                 android:layout_width="120dp"
+                 android:layout_height="50dp"
+                 android:layout_marginStart="8dp"
+                 android:layout_marginTop="6dp"
+                 android:background="@color/blue9"
+                 android:backgroundTint="@color/red_gradient_dark"
+                 android:gravity="center"
+                 android:text="Find Fun"
+                 android:textAllCaps="false"
+                 android:textColor="@color/white"
+                 android:textSize="@dimen/md_size_text"
+                 app:cornerRadius="4dp"
+                 app:layout_constraintStart_toStartOf="@id/fday_gv"
+                 app:layout_constraintTop_toBottomOf="@+id/fday_title" />-->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/fday_funBtn"
+                style="@style/Widget.AppCompat.Button"
+                android:layout_width="120dp"
+                android:layout_height="37dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/father_day_btn_bg"
+                android:gravity="center"
+                android:text="Find Fun"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/md_size_text"
+                app:layout_constraintStart_toStartOf="@id/fday_gv"
+                app:layout_constraintTop_toBottomOf="@+id/fday_title" />
+
+            <TextView
+                android:id="@+id/fday_smgLbl"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:gravity="start"
+                android:maxLines="3"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:text="Dear Parent, Mr. Roy, Please help your kids to do complete his homework, Revise classwork, Also do not forget to have fun with him... "
+                android:textColor="@color/black2"
+                android:textSize="@dimen/sm_size_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fday_Img" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/fday_gv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent=".3" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/republicdayRow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/republic_gradient"
+            android:paddingStart="8dp"
+            android:paddingTop="8dp"
+            android:paddingEnd="8dp"
+            android:paddingBottom="15dp"
+            android:visibility="visible"
+            app:layout_constraintTop_toBottomOf="@+id/fatherdayRow">
+
+            <ImageView
+                android:id="@+id/republic_Img"
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:contentDescription="@string/default_cont_desc"
+                android:src="@mipmap/republicday_md"
+                app:layout_constraintEnd_toEndOf="@id/republic_gv"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/repulic_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="@dimen/mRight1"
+                android:gravity="start"
+                android:maxLines="1"
+                android:text="Republic Day"
+                android:textColor="@color/purple5"
+                android:textSize="@dimen/lg_size_text"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/republic_gv"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/republic_date"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:maxLines="1"
+                android:text="Saturday - 26th june"
+                android:textColor="@color/black"
+                android:textSize="@dimen/md_size_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/republic_gv"
+                app:layout_constraintTop_toBottomOf="@+id/repulic_title" />
+
+            <TextView
+                android:id="@+id/republic_time"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="@dimen/mRight0"
+                android:background="@drawable/purple_bg_round_corner"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:text="10:00am - 11:00am"
+                android:textColor="@color/white"
+                android:textSize="@dimen/md_size_text"
+                app:layout_constraintStart_toStartOf="@id/republic_gv"
+                app:layout_constraintTop_toBottomOf="@+id/republic_date" />
+
+            <TextView
+                android:id="@+id/republic_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="Venu Name"
+                android:textColor="@color/purple5"
+                android:textSize="@dimen/md_size_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/republic_gv"
+                app:layout_constraintTop_toBottomOf="@+id/republic_time" />
+
+            <TextView
+                android:id="@+id/repubic_msg"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="3"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:text="Lorem Ipusm is simple dummy text of the printing and typesting industry. Lorem Ipusm has been ths indstury's standrd dummy...."
+                android:textColor="@color/black2"
+                android:textSize="@dimen/sm_size_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/republic_Img" />
+
+            <!--  <ImageView
+                  android:id="@+id/checkInIc"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_marginStart="4dp"
+                  android:src="@mipmap/navigation_md"
+                  app:layout_constraintBottom_toBottomOf="parent"
+                  app:layout_constraintStart_toStartOf="parent"
+                  app:layout_constraintTop_toBottomOf="@+id/repubic_msg"
+                   />-->
+
+            <TextView
+                android:id="@+id/checkInIc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:drawableStart="@mipmap/navigation_md"
+                android:drawablePadding="4dp"
+                android:foreground="?android:selectableItemBackground"
+                android:text="Check In"
+                android:textColor="@color/black9"
+                android:textSize="@dimen/md_size_text"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/repubic_msg"
+                tools:targetApi="m" />
+
+            <!-- <com.google.android.material.button.MaterialButton
+                 android:id="@+id/checkInIc"
+                 style="@style/Widget.MaterialComponents.Button.TextButton"
+                 android:layout_width="wrap_content"
+                 android:layout_height="40dp"
+                 android:ellipsize="end"
+                 android:gravity="center"
+                 android:inputType="textCapWords"
+                 android:maxLines="1"
+                 android:text="Check In"
+                 android:textColor="@color/pink2"
+                 app:cornerRadius="8dp"
+                 app:icon="@mipmap/navigation_md"
+                 app:iconSize="15dp"
+                 app:layout_constraintStart_toStartOf="parent"
+                 app:layout_constraintTop_toBottomOf="@+id/repubic_msg" />-->
+
+
+            <TextView
+                android:id="@+id/goingLbl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:drawableStart="@mipmap/not_going_md"
+                android:drawablePadding="4dp"
+                android:foreground="?android:selectableItemBackground"
+                android:text="Sorry not attending"
+                android:textColor="@color/mRed"
+                android:textSize="@dimen/md_size_text"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/repubic_msg"
+                app:layout_constraintVertical_bias=".95"
+                tools:targetApi="m" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/republic_gv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent=".3" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/ptmRow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg1"
+            android:paddingStart="8dp"
+            android:paddingTop="8dp"
+            android:paddingEnd="8dp"
+            android:paddingBottom="15dp"
+            android:visibility="visible"
+            app:layout_constraintTop_toBottomOf="@+id/republicdayRow">
+
+            <TextView
+                android:id="@+id/ptm_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/mRight1"
+                android:layout_marginEnd="8dp"
+                android:ellipsize="end"
+                android:gravity="start"
+                android:maxLines="1"
+                android:text="Parent's Meeting"
+                android:textColor="@color/mRed"
+                android:textSize="@dimen/lg_size_text"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/ptm_gv"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/ptm_date"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="Saturday - 14th june 2019"
+                android:textColor="@color/black"
+                android:textSize="@dimen/md_size_text"
+                app:layout_constraintEnd_toEndOf="@id/ptm_gv"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ptm_title" />
+
+            <TextView
+                android:id="@+id/ptm_time"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/mRight0"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/ptm_date_gradient"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:text="10:00am - 11:00am"
+                android:textColor="@color/white"
+                android:textSize="@dimen/md_size_text"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ptm_date" />
+
+            <TextView
+                android:id="@+id/ptm_msg"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="3"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:text="Lorem Ipusm is simple dummy text of the printing and typesting industry. Lorem Ipusm has been ths indstury's standrd dummy...."
+                android:textColor="@color/black2"
+                android:textSize="@dimen/sm_size_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ptm_Img" />
+
+            <TextView
+                android:id="@+id/checkInIcPtm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:drawableStart="@mipmap/navigation_md"
+                android:drawablePadding="4dp"
+                android:foreground="?android:selectableItemBackground"
+                android:text="Check In"
+                android:textColor="@color/black9"
+                android:textSize="@dimen/md_size_text"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ptm_msg"
+                app:layout_constraintVertical_bias=".9"
+                tools:targetApi="m" />
+
+            <!-- <ImageView
+                 android:id="@+id/checkInIcPtm"
+                 android:layout_width="70dp"
+                 android:layout_height="70dp"
+                 android:layout_marginStart="4dp"
+                 android:src="@drawable/navigation_md"
+                 app:layout_constraintBottom_toBottomOf="parent"
+                 app:layout_constraintStart_toStartOf="parent"
+                 app:layout_constraintTop_toBottomOf="@+id/ptm_msg"
+                 app:layout_constraintVertical_bias=".9" />-->
+
+            <!--            <TextView-->
+            <!--                android:id="@+id/checkInLblPtm"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:text="Check in"-->
+            <!--                android:textColor="@color/black"-->
+            <!--                android:textSize="@dimen/md_size_text"-->
+            <!--                app:layout_constraintBottom_toBottomOf="parent"-->
+            <!--                app:layout_constraintStart_toStartOf="parent"-->
+            <!--                app:layout_constraintTop_toBottomOf="@+id/checkInIcPtm"-->
+            <!--                app:layout_constraintVertical_bias=".9" />-->
+
+            <TextView
+                android:id="@+id/goingLblPtm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:drawableStart="@mipmap/going_md"
+                android:drawablePadding="4dp"
+                android:text="Yes going"
+                android:textColor="@color/green15"
+                android:textSize="@dimen/md_size_text"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ptm_msg"
+                app:layout_constraintVertical_bias=".95" />
+
+            <ImageView
+                android:id="@+id/ptm_Img"
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:src="@drawable/ptm_md"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/ptm_gv"
+                app:layout_constraintTop_toTopOf="parent"
+                android:contentDescription="@string/default_cont_desc" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/ptm_gv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent=".7" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/newsRow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/green16"
+            android:paddingStart="8dp"
+            android:paddingTop="8dp"
+            android:paddingEnd="8dp"
+            android:paddingBottom="40dp"
+            android:visibility="visible"
+            app:layout_constraintTop_toBottomOf="@+id/ptmRow">
+
+            <TextView
+                android:id="@+id/news_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="News"
+                android:textColor="@color/black9"
+                android:textSize="@dimen/lg_size_text"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/news_date"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Saturday - 14th june 2019"
+                android:textColor="@color/black"
+                android:textSize="@dimen/md_size_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/news_title" />
+
+            <ImageView
+                android:id="@+id/news_Img"
+                android:layout_width="220dp"
+                android:layout_height="130dp"
+                android:src="@mipmap/news_bg"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/news_date"
+                android:contentDescription="@string/default_cont_desc" />
+
+            <TextView
+                android:id="@+id/news_desc"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="This is news description."
+                android:textColor="@color/black9"
+                android:textSize="@dimen/md_size_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/news_Img" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/noNewsRow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="6dp"
+                android:background="@drawable/news_grey_bg"
+                android:minHeight="180dp"
+                android:visibility="visible"
+                app:layout_constraintTop_toBottomOf="@+id/news_desc">
+
+                <ImageView
+                    android:id="@+id/news_Img2"
+                    android:layout_width="220dp"
+                    android:layout_height="130dp"
+                    android:src="@mipmap/news_bg"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:contentDescription="@string/default_cont_desc" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/no_news_desc"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:text="When section will be displayed with original image."
+                android:textColor="@color/black9"
+                android:textSize="@dimen/md_size_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/noNewsRow" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

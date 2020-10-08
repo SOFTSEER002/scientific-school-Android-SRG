@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:subtitleTextColor="@color/white"
+            app:titleTextColor="@color/white" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/bodyContainer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appBar">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/radAttendance"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:theme="@style/CardView.Light">
+
+            <RadioGroup
+                android:id="@+id/radAudience"
+                style="@style/radioGroupAttendanceModule"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <!--  <RadioButton
+                      android:id="@+id/radTeacher"
+                      style="@style/radioBtn"
+                      android:checked="true"
+                      android:text="Teachers" />
+
+               <RadioButton
+                   android:id="@+id/radStudent"
+                   style="@style/radioBtn"
+                   android:checked="false"
+                   android:text="Students" />-->
+
+                <RadioButton
+                    android:id="@+id/radTeacher"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/colorAccent"
+                    android:checked="true"
+                    android:text="Teachers"
+                    android:textSize="@dimen/lg_size_text" />
+
+                <RadioButton
+                    android:id="@+id/radStudent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:buttonTint="@color/colorAccent"
+                    android:checked="false"
+                    android:text="Students"
+                    android:textSize="@dimen/lg_size_text" />
+            </RadioGroup>
+
+        </androidx.cardview.widget.CardView>
+
+        <!--    <RadioGroup
+                android:id="@+id/radAudience"
+                style="@style/radioGroupAttendanceModule"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <RadioButton
+                    android:id="@+id/radTeacher"
+                    style="@style/radioBtn"
+                    android:checked="true"
+                    android:text="Teachers" />
+
+                <RadioButton
+                    android:id="@+id/radStudent"
+                    style="@style/radioBtn"
+                    android:checked="false"
+                    android:text="Students" />
+            </RadioGroup>-->
+
+        <RelativeLayout
+            android:id="@+id/fragment_container"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:padding="@dimen/mTop0"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/radAttendance">
+
+        </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

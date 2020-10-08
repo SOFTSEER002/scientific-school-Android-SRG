@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="history"
+            type="com.jeannypr.scientificstudy.leave.model.LeaveHistoryModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/historyRow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="1dp"
+        android:background="@color/white"
+        android:padding="@dimen/pTop1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appBar">
+        <!--android:padding="@dimen/pLeft0"-->
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/vg_slider"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="@dimen/vg_slider" />
+
+        <ImageView
+            android:id="@+id/dateIc"
+            android:layout_width="17dp"
+            android:layout_height="17dp"
+            android:src="@drawable/ic_datepicker"
+            android:tint="@color/black9"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="@string/default_cont_desc" />
+
+        <TextView
+            android:id="@+id/sDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:textColor="@color/black9"
+            android:textSize="@dimen/sm_size_text"
+            app:layout_constraintStart_toEndOf="@id/dateIc"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/eDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black9"
+            android:textSize="@dimen/sm_size_text"
+            app:layout_constraintStart_toEndOf="@id/sDate"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/totalDays"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:gravity="end"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/md_size_text"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:targetApi="m" />
+
+        <View
+            android:id="@+id/totalDaysDivider"
+            android:layout_width="@dimen/w_leaveDetail"
+            android:layout_height="1dp"
+            android:background="@color/colorPrimary"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/totalDays" />
+        <!--65dp,95dp-->
+        <!-- <TextView
+             android:id="@+id/reason"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="This is raeson for taking leave."
+             android:textColor="@color/black2"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintTop_toBottomOf="@id/sDate" />
+     -->
+
+        <TextView
+            android:id="@+id/reasonLbl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="2dp"
+            android:text='@{history.Reason != null ?"Reason : " : ""}'
+            android:textColor="@color/black9"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/totalDays" />
+
+        <TextView
+            android:id="@+id/reason"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:focusableInTouchMode="false"
+            android:padding="2dp"
+            android:text='@{history.Reason != null ?history.Reason : ""}'
+            android:textColor="@color/black9"
+            android:textSize="@dimen/sm_size_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/reasonLbl"
+            app:layout_constraintTop_toBottomOf="@id/totalDays" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

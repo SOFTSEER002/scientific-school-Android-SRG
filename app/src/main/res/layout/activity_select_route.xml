@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:subtitleTextColor="@color/white"
+            app:title=""
+            app:titleTextColor="@color/white" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <TextView
+        android:id="@+id/subTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/mLeft1"
+        android:layout_marginTop="@dimen/mTop0"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:gravity="start|center_vertical"
+        android:padding="4dp"
+        android:text="@string/route_selectMode"
+        android:textSize="@dimen/sm_size_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appBar"
+        tools:targetApi="m" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginLeft="@dimen/mTop1"
+        android:layout_marginRight="@dimen/mTop1"
+        android:background="@color/black6"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@+id/subTitle" />
+
+
+    <RadioGroup
+        android:id="@+id/radMode"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="start|center_vertical"
+        android:orientation="horizontal"
+        android:padding="@dimen/mBottom0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider">
+
+        <!--  <RadioButton
+              android:id="@+id/radPickup"
+              style="@style/radioBtn"
+              android:foreground="?android:attr/selectableItemBackground"
+              android:text="@string/radRoute_radPickup" />
+
+          <RadioButton
+              android:id="@+id/radDrop"
+              style="@style/radioBtn"
+              android:foreground="?android:attr/selectableItemBackground"
+              android:text="@string/radRoute_radDrop" />-->
+
+        <RadioButton
+            android:id="@+id/radPickup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/colorAccent"
+            android:checked="true"
+            android:text="@string/radRoute_radPickup"
+            android:textSize="@dimen/lg_size_text" />
+
+        <RadioButton
+            android:id="@+id/radDrop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:buttonTint="@color/colorAccent"
+            android:checked="false"
+            android:text="@string/radRoute_radDrop"
+            android:textSize="@dimen/lg_size_text" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/lbl"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/mLeft1"
+        android:layout_marginLeft="@dimen/mLeft1"
+        android:layout_marginTop="@dimen/mTop1"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:gravity="start|center_vertical"
+        android:padding="4dp"
+        android:text="@string/selectRoute_lbl"
+        android:textSize="@dimen/sm_size_text"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radMode"
+        tools:targetApi="m" />
+
+    <View
+        android:id="@+id/divider1"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginLeft="@dimen/mTop1"
+        android:layout_marginRight="@dimen/mTop1"
+        android:background="@color/black6"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@+id/lbl" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/routeListCountainer"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/mTop0"
+        android:layout_marginBottom="@dimen/mBottom0"
+        android:paddingBottom="2dp"
+        android:scrollbars="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider1" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:indeterminate="true"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <include
+        layout="@layout/activity_no_record"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider1" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--
+           <android.support.design.chip.ChipGroup
+               android:id="@+id/chipGroup"
+               android:layout_width="0dp"
+               android:layout_height="0dp"
+               android:padding="@dimen/pTop1"
+               app:singleSelection="true"
+               app:layout_constraintBottom_toBottomOf="parent"
+               app:layout_constraintEnd_toEndOf="parent"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintTop_toBottomOf="@+id/divider1">
+
+               <android.support.design.chip.Chip
+                   android:id="@+id/r1"
+                   style="@style/Widget.MaterialComponents.Chip.Choice"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:text="Route 1 - Delhi"
+                   android:textAlignment="center"
+                   android:textColor="@color/white"
+                   android:textSize="@dimen/md_size_text"
+                   app:chipBackgroundColor="@color/colorPrimary"
+                   app:chipMinHeight="50dp" />
+
+               <android.support.design.chip.Chip
+                   android:id="@+id/r2"
+                   style="@style/Widget.MaterialComponents.Chip.Choice"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:minHeight="50dp"
+                   android:text="Route 2 - Indirapuram"
+                   android:textAlignment="center" />
+
+               <android.support.design.chip.Chip
+                   style="@style/Widget.MaterialComponents.Chip.Choice"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:minHeight="50dp"
+                   android:text="Route 3 - Noida"
+                   android:textAlignment="center" />
+
+           </android.support.design.chip.ChipGroup>
+
+           <androidx.constraintlayout.widget.ConstraintLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:padding="@dimen/pTop1"
+               app:layout_constraintTop_toBottomOf="@+id/divider1">
+
+               <com.google.android.material.button.MaterialButton
+                   android:id="@+id/r0"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:text="Route1"
+                   app:layout_constraintTop_toTopOf="parent" />
+
+               <com.google.android.material.button.MaterialButton
+                   android:id="@+id/r1"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:text="Route2"
+                   app:cornerRadius="8dp"
+                   app:layout_constraintTop_toBottomOf="@+id/r0" />
+
+               <com.google.android.material.button.MaterialButton
+                   android:id="@+id/r2"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:text="Route3"
+                   app:layout_constraintTop_toBottomOf="@+id/r1" />
+           </androidx.constraintlayout.widget.ConstraintLayout>-->

@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/historyRow"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="1dp"
+    android:background="@color/black10"
+    android:paddingStart="@dimen/pLeft0"
+    android:paddingTop="@dimen/pTop0"
+    android:paddingEnd="@dimen/pRight0"
+    android:paddingBottom="@dimen/pBottom1">
+    <!--android:padding="@dimen/pLeft0"-->
+    <TextView
+        android:id="@+id/teacherName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/mRight0"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textAllCaps="true"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/md_size_text"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@id/vg_slider"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/leaveTypeIc"
+        android:layout_width="17dp"
+        android:layout_height="17dp"
+        android:layout_marginRight="4dp"
+        android:contentDescription="@string/default_cont_desc"
+        android:src="@drawable/calender3"
+        android:tint="@color/black9"
+        android:visibility="gone"
+        app:layout_constraintEnd_toStartOf="@id/leaveType"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/teacherName" />
+
+    <TextView
+        android:id="@+id/leaveType"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/mRight0"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text=""
+        android:textColor="@color/black9"
+        android:textSize="@dimen/md_size_text"
+        app:layout_constraintEnd_toStartOf="@id/vg_slider"
+        app:layout_constraintStart_toEndOf="@id/leaveTypeIc"
+        app:layout_constraintTop_toBottomOf="@id/teacherName" />
+
+    <!-- <TextView
+         android:id="@+id/status"
+         android:layout_width="0dp"
+         android:layout_height="wrap_content"
+         android:layout_marginTop="2dp"
+         android:background="@drawable/round_corner_red_bg"
+         android:drawableLeft="@drawable/cross_in_circle"
+         android:drawablePadding="@dimen/mLeft0"
+         android:gravity="center"
+         android:minHeight="@dimen/h_status"
+         android:paddingBottom="2dp"
+         android:paddingLeft="@dimen/pLeft0"
+         android:paddingRight="@dimen/pRight0"
+         android:paddingTop="2dp"
+         android:textColor="@color/white"
+         android:textSize="@dimen/md_size_text"
+         app:layout_constraintEnd_toEndOf="parent"
+         app:layout_constraintStart_toEndOf="@id/vg_slider"
+         app:layout_constraintTop_toTopOf="parent" />-->
+    <TextView
+        android:id="@+id/status"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:background="@drawable/round_corner_red_bg"
+        android:gravity="center"
+        android:minHeight="@dimen/h_status"
+        android:paddingLeft="@dimen/pLeft0"
+        android:paddingTop="2dp"
+        android:paddingRight="@dimen/pRight0"
+        android:paddingBottom="2dp"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sm_size_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/vg_slider"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/slider"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/blue_bg_round_corner"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/vg_slider"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- <android.support.design.widget.FloatingActionButton
+             android:id="@+id/sliderBtn"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_marginBottom="4dp"
+             android:layout_marginLeft="4dp"
+             android:layout_marginTop="4dp"
+             android:visibility="visible"
+             app:backgroundTint="@color/white"
+             app:borderWidth="0dp"
+             app:fabSize="mini"
+             app:layout_constraintBottom_toBottomOf="parent"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintTop_toTopOf="parent" />-->
+
+        <ImageView
+            android:id="@+id/sliderBtn"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginLeft="4dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp"
+            android:contentDescription="@string/default_cont_desc"
+            android:src="@drawable/blue_circle"
+            android:tint="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/sliderLbl"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sm_size_text"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/sliderBtn"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/vg_slider"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="@dimen/vg_slider" />
+
+    <ImageView
+        android:id="@+id/dateIc"
+        android:layout_width="17dp"
+        android:layout_height="17dp"
+        android:contentDescription="@string/default_cont_desc"
+        android:src="@drawable/ic_datepicker"
+        android:tint="@color/black9"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/leaveType" />
+
+    <TextView
+        android:id="@+id/sDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="4dp"
+        android:textColor="@color/black9"
+        android:textSize="@dimen/sm_size_text"
+        app:layout_constraintStart_toEndOf="@id/dateIc"
+        app:layout_constraintTop_toBottomOf="@id/leaveType" />
+
+    <TextView
+        android:id="@+id/eDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black9"
+        android:textSize="@dimen/sm_size_text"
+        app:layout_constraintStart_toEndOf="@id/sDate"
+        app:layout_constraintTop_toBottomOf="@id/leaveType" />
+
+
+    <TextView
+        android:id="@+id/totalDays"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:gravity="end"
+        android:padding="@dimen/p_totalLeaveDays"
+        android:text="102 days"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/md_size_text"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/eDate"
+        app:layout_constraintTop_toBottomOf="@id/leaveType"
+        tools:targetApi="m" />
+
+    <View
+        android:layout_width="@dimen/w_leaveDetail"
+        android:layout_height="1dp"
+        android:background="@color/colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/totalDays" />
+    <!--65dp,95dp-->
+    <!-- <TextView
+         android:id="@+id/reason"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text="This is raeson for taking leave."
+         android:textColor="@color/black2"
+         app:layout_constraintStart_toStartOf="parent"
+         app:layout_constraintTop_toBottomOf="@id/sDate" />
+ -->
+
+    <TextView
+        android:id="@+id/reasonLbl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/mTop1"
+        android:padding="2dp"
+        android:text="Reason : "
+        android:textColor="@color/black9"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/sDate" />
+
+    <TextView
+        android:id="@+id/reason"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/mTop1"
+        android:gravity="start"
+        android:textColor="@color/black9"
+        android:textSize="@dimen/sm_size_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/reasonLbl"
+        app:layout_constraintTop_toBottomOf="@id/sDate" />
+
+    <!-- <com.jeannypr.scientificstudy.UI.ImFlexboxLayout
+         android:id="@+id/reasonRow"
+         android:layout_width="0dp"
+         android:layout_height="wrap_content"
+         android:layout_marginTop="@dimen/mTop1"
+         android:gravity="start|center_vertical"
+         app:layout_constraintEnd_toEndOf="parent"
+         app:layout_constraintStart_toEndOf="@id/reasonLbl"
+         app:layout_constraintTop_toBottomOf="@id/sDate"
+         app:viewPartMain="@+id/reason"
+         app:viewPartSlave="@+id/reasonArrowRow">
+
+         <TextView
+             android:id="@+id/reasonTxt"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_gravity="end|bottom"
+             android:focusableInTouchMode="false"
+             android:gravity="start|top"
+             android:text=""
+             android:textColor="@color/black9"
+             android:textSize="@dimen/sm_size_text" />
+
+         <LinearLayout
+             android:id="@+id/reasonArrowRow"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_marginEnd="@dimen/mRight0"
+             android:layout_marginLeft="@dimen/mLeft1"
+             android:layout_marginRight="@dimen/mRight0"
+             android:layout_marginStart="@dimen/mLeft1"
+             android:foreground="?android:attr/selectableItemBackground"
+             android:gravity="end"
+             android:minWidth="12dp"
+             android:orientation="horizontal"
+             android:padding="@dimen/pLeft0"
+             android:visibility="gone">
+
+             <ImageView
+                 android:id="@+id/reasonArrowIc"
+                 android:layout_width="wrap_content"
+                 android:layout_height="10dp"
+                 android:layout_gravity="end|bottom"
+                 android:layout_marginBottom="1dp"
+                 android:layout_marginEnd="4dp"
+                 android:layout_marginRight="4dp"
+                 android:gravity="end"
+                 android:paddingTop="2dp"
+                 android:src="@drawable/down_arrow"
+                 android:visibility="visible" />
+
+         </LinearLayout>
+
+     </com.jeannypr.scientificstudy.UI.ImFlexboxLayout>-->
+
+    <TextView
+        android:id="@+id/noteLbl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="2dp"
+        android:text="Approver's note : "
+        android:textColor="@color/black9"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/reason" />
+
+    <TextView
+        android:id="@+id/approversNote"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:gravity="start"
+        android:textColor="@color/black9"
+        android:textSize="@dimen/sm_size_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/noteLbl"
+        app:layout_constraintTop_toBottomOf="@id/reason" />
+
+    <!-- <com.jeannypr.scientificstudy.UI.ImFlexboxLayout
+         android:id="@+id/approversNoteRow"
+         android:layout_width="0dp"
+         android:layout_height="wrap_content"
+         android:layout_marginTop="1dp"
+         android:gravity="start|center_vertical"
+         android:visibility="visible"
+         app:layout_constraintEnd_toEndOf="parent"
+         app:layout_constraintStart_toEndOf="@id/noteLbl"
+         app:layout_constraintTop_toBottomOf="@id/reasonRow"
+         app:viewPartMain="@+id/approversNote"
+         app:viewPartSlave="@+id/approversNoteArrowRow">
+
+         <TextView
+             android:id="@+id/approversNote"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_gravity="end|bottom"
+             android:focusableInTouchMode="false"
+             android:gravity="start|top"
+             android:text=""
+             android:textColor="@color/black9"
+             android:textSize="@dimen/sm_size_text" />
+
+         <LinearLayout
+             android:id="@+id/approversNoteArrowRow"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_marginEnd="@dimen/mRight0"
+             android:layout_marginLeft="@dimen/mLeft1"
+             android:layout_marginRight="@dimen/mRight0"
+             android:layout_marginStart="@dimen/mLeft1"
+             android:foreground="?android:attr/selectableItemBackground"
+             android:gravity="end"
+             android:minWidth="12dp"
+             android:orientation="horizontal"
+             android:padding="@dimen/pLeft0"
+             android:visibility="gone">
+
+             <ImageView
+                 android:id="@+id/approversNoteArrowIc"
+                 android:layout_width="wrap_content"
+                 android:layout_height="12dp"
+                 android:layout_gravity="end|bottom"
+                 android:layout_marginBottom="1dp"
+                 android:layout_marginEnd="4dp"
+                 android:layout_marginRight="4dp"
+                 android:gravity="end"
+                 android:src="@drawable/down_arrow"
+                 android:visibility="gone" />
+
+         </LinearLayout>
+
+     </com.jeannypr.scientificstudy.UI.ImFlexboxLayout>-->
+</androidx.constraintlayout.widget.ConstraintLayout>

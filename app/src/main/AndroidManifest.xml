@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.jeannypr.scientificstudy">
+
+    <uses-sdk tools:overrideLibrary="com.android.camera" />
+
+    <supports-screens
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:smallScreens="true"
+        android:xlargeScreens="true" />
+
+    <!--networkSecurityConfig is added to allow http call in pie-->
+    <application
+        android:name=".application.SptApp"
+        android:allowBackup="true"
+        android:icon="@mipmap/logo"
+        android:label="@string/flavored_app_name"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:roundIcon="@mipmap/logo"
+        android:supportsRtl="true"
+        android:theme="@style/MaterialTheme"
+        tools:ignore="GoogleAppIndexingWarning"
+        tools:replace="android:label"
+        tools:targetApi="n">
+
+        <!--tools:replace="android:appComponentFactory,label"
+        android:appComponentFactory="@string/app_name"-->
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.myFileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/paths" />
+        </provider>
+
+        <!--  <receiver android:name=".Utilities.NetworkChangeReceiver">
+              <intent-filter>
+                  <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+              </intent-filter>
+          </receiver>-->
+
+        <receiver android:name=".Utilities.SMSListener">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+            </intent-filter>
+        </receiver>
+
+        <activity android:name=".Utilities.SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".Base.activity.MainActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:windowSoftInputMode="adjustNothing" />
+        <activity
+            android:name=".Login.activity.LoginActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity android:name=".Login.activity.GetSchoolKeyActivity" />
+        <activity android:name=".Login.activity.EnterSchoolKeyActivity" />
+        <activity android:name=".Login.activity.ForgetPasswordActivity" />
+        <activity android:name=".Student.activity.StudentModuleActivity" />
+        <activity android:name=".Student.activity.StudentListActivity" />
+        <activity android:name=".Student.activity.StudentProfileActivity" />
+        <activity android:name=".Teacher.activity.TeacherListActivity" />
+        <activity android:name=".Class.activity.ClassListActivity" />
+        <activity android:name=".Attendance.activity.AttendanceModuleActivity" />
+        <activity android:name=".Attendance.activity.TakeStudentAttendanceActivity" />
+        <activity android:name=".Attendance.activity.TeacherAttendanceActivity" />
+        <activity android:name=".Teacher.activity.TeacherProfileActivity" />
+        <activity android:name=".Exam.activity.EnterMarksActivity" />
+        <activity android:name=".Exam.activity.EnterMarkSelectClassActivity" />
+        <activity android:name=".Exam.activity.EnterRemarksActivity" />
+        <activity android:name=".SptWall.activity.SptWallActivity" />
+        <activity android:name=".SptWall.activity.CreatePostActivity" />
+        <!--  <activity android:name=".Dashboard.ParentDashboardActivity" />
+          <activity android:name=".Dashboard.AdminDashboardActivity" />-->
+        <!--<activity android:name=".Fee.activity.FeeSummaryActivity" android:parentActivityName=".Dashboard.ParentDashboardActivity"/>-->
+        <activity android:name=".Fee.activity.FeeSummaryActivity" />
+        <activity android:name=".Fee.activity.FeeInstallmentDetailActivity" />
+        <activity android:name=".Student.activity.ClassTeachersActivity" />
+
+        <activity
+            android:name=".Chat.activity.ChatActivity"
+            android:label="@string/title_activity_chat"
+            android:theme="@style/AppBaseTheme" />
+
+        <activity android:name=".Chat.activity.ChatGroupActivity">
+            <intent-filter>
+                <action android:name="chat" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".Chat.activity.ChatParentListActivity" />
+        <activity android:name=".Holiday.activity.HolidayActivity" />
+        <!-- <activity android:name=".Dashboard.TeacherDashboardActivity" />-->
+        <activity android:name=".Transport.activity.TransportActivity" />
+        <activity android:name=".Teacher.activity.MyClassListActivity" />
+        <activity android:name=".Student.activity.MonthwiseAttendanceSummaryActivity" />
+        <activity android:name=".Teacher.activity.SelfAttendanceActivity" />
+
+        <activity android:name=".Fee.activity.FeeModuleActivity" />
+        <activity android:name=".Fee.activity.ClassWiseCollectionActivity" />
+        <activity android:name=".Fee.activity.DateWiseCollectionActivity" />
+        <activity android:name=".Fee.activity.MonthWiseCollectionActivity" />
+        <activity android:name=".Fee.activity.ConsolidatedDuesActivity" />
+        <activity android:name=".Fee.activity.SelectInstallmentActivity" />
+        <activity android:name=".Transport.activity.TransportModuleActivity" />
+        <activity android:name=".Transport.activity.StoppageSummaryActivity" />
+        <activity android:name=".Transport.activity.ClassDetailActivity" />
+        <activity android:name=".Transport.activity.StoppageDetailActivity" />
+        <activity android:name=".Transport.activity.RouteDetailActivity" />
+        <activity android:name=".Transport.activity.RouteSummaryActivity" />
+        <activity android:name=".Transport.activity.ClassSummaryActivity" />
+        <activity android:name=".Fee.activity.InstallmentSummaryActivity" />
+        <!--<activity android:name=".Dashboard.SubjectTeacherDashboardActivity" />-->
+        <activity android:name=".Classwork.activity.CwHwListActivity" />
+
+        <activity android:name=".Classwork.activity.CwHwDetailActivity">
+            <!--  <intent-filter>
+                  &lt;!&ndash;here action name is click_action sent by firebase notification request.
+                  change click action on server side.
+                  pass "diary" instead of different value for cw and hw&ndash;&gt;
+                  <action android:name="classwork" />
+                  <category android:name="android.intent.category.DEFAULT" />
+              </intent-filter>-->
+        </activity>
+
+        <activity android:name=".Timetable.activity.TimetableModuleActivity" />
+        <activity android:name=".Exam.activity.ExamListActivity" />
+        <activity android:name=".Exam.activity.ExamRoaster" />
+        <activity android:name=".Classwork.activity.CreateCwHwActivity" />
+        <activity android:name=".Classwork.activity.SelectClassAndSectionActivity" />
+        <activity android:name=".SptWall.activity.SelectAudience" />
+        <activity android:name=".Inventory.activity.InventoryModuleActivity" />
+        <activity android:name=".Inventory.activity.PurchaseSaleSummaryActivity" />
+        <activity android:name=".Inventory.activity.PurchaseSaleDetailActivity" />
+        <activity android:name=".Inventory.activity.PaymentReceiptDetailActivity" />
+        <activity android:name="com.android.camera.CropImage" />
+        <activity android:name=".Chat.activity.HelpActivity" />
+        <activity android:name=".Attendance.activity.StudentWiseAttenenceActivity" />
+        <activity
+            android:name=".leave.activity.LeaveModuleActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity android:name=".Base.activity.BaseActivity" />
+        <activity android:name=".Attendance.activity.DateWiseStudentAttendanceActivity" />
+        <activity android:name=".Attendance.activity.DayWiseTeacherAttendanceActivity" />
+        <activity android:name=".Attendance.activity.MonthWiseStudentAttendanceActivity" />
+        <activity android:name=".Attendance.activity.StaffWiseAttenenceActivity" />
+        <activity android:name=".Attendance.activity.MonthWiseTeacherAttendanceActivity" />
+        <activity android:name=".Attendance.activity.ExtraDayAttendanceActivity" />
+        <activity android:name=".Attendance.activity.OutDoorAttendanceActivity" />
+        <activity android:name=".leave.activity.SelectLeaveDaysActivity" />
+        <activity android:name=".Student.activity.StudentLeaveHistoryActivity" />
+        <activity android:name=".Student.activity.RequestStudentLeaveActivity" />
+        <activity android:name=".Timetable.activity.StudentTimetableModuleActivity" />
+        <activity android:name=".Timetable.activity.StaffTimetableModuleActivity" />
+        <!--   <activity android:name=".ThemeTest.ThemeTestActivity" />-->
+        <activity android:name=".Exam.activity.AbsentReportExamActivity" />
+        <activity android:name=".Inventory.activity.PaymentReceiptTransactionActivity" />
+        <activity android:name=".Inventory.activity.PaymentReceiptItemsActivity" />
+        <activity android:name=".Inventory.activity.DayBookActivity" />
+        <activity android:name=".Exam.activity.TeacherSubjectActivity" />
+        <activity android:name=".Inventory.activity.MonthWisePurchaseSaleSummaryActivity" />
+        <activity android:name=".Inventory.activity.MonthWisePurchaseSaleDetailActivity" />
+        <activity android:name=".Inventory.activity.LedgerReportActivity" />
+        <activity android:name=".Inventory.activity.PurchaseSaleTransactionActivity" />
+        <activity android:name=".Inventory.activity.PurchaseSaleItemsActivity" />
+        <activity android:name=".Exam.activity.ClassSubjectActivity" />
+        <activity android:name=".Fee.activity.FeeDuesSelectInstallmentActivity" />
+        <activity android:name=".Fee.activity.DueReportActivity" />
+        <activity android:name=".Registration.activity.RegistrationModuleActivity" />
+        <activity android:name=".Registration.activity.RegistrationReportActivity" />
+        <activity android:name=".Registration.activity.ClassWiseRegistrationActivity" />
+        <activity android:name=".Registration.activity.ClassWiseCollectionActivity" />
+        <activity android:name=".leave.activity.StaffOnLeaveTodayReportActivity" />
+        <activity android:name=".leave.activity.MonthWiseLeaveReportActivity" />
+        <activity android:name=".leave.activity.StaffWiseMonthLeaveSummaryActivity" />
+        <activity android:name=".Transport.activity.SelectRouteActivity" />
+        <activity android:name=".Transport.activity.SelectVehicleActivity" />
+        <activity android:name=".Transport.activity.DriversListActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Transport.activity.DriverProfileActivity" />
+        <activity android:name=".Transport.activity.RouteListActivity" />
+        <activity android:name=".Notification.activity.NotificationsActivity" />
+        <activity android:name=".Dashboard.Activity.AppSettingActivity" />
+        <activity android:name=".Dashboard.Activity.NotificationSettingActivity" />
+        <activity android:name=".Fee.activity.DailyCollectionActivity" />
+        <activity android:name=".Fee.activity.AllowDiscountActivity" />
+        <activity android:name=".Student.activity.AddEditStudentActivity" />
+        <activity android:name=".Teacher.activity.AddEditStaffActivity" />
+        <activity android:name=".Registration.activity.TakeRegistrationActivity" />
+        <activity android:name=".Events.activity.AddNewsNoticeActivity" />
+
+        <activity android:name=".Article.activity.BlogModuleActivity" />
+        <activity android:name=".LearnSubject.activity.SubjectDetailsActivity" />
+        <activity android:name=".LearnSubject.activity.SubjectContentActivity" />
+        <activity android:name=".LearnSubject.activity.LearnListActivity" />
+        <activity android:name=".Article.activity.ArticleDetailsActivity" />
+        <activity
+            android:name=".Article.activity.AddArticleActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:windowSoftInputMode="adjustPan" />
+        <activity android:name=".Holiday.activity.AddEditHolidayActivity" />
+        <activity android:name=".Events.activity.AddEventPtmActivity" />
+        <activity android:name=".Syllabus.activity.SyllabusListActivity" />
+        <activity android:name=".Student.FeedbackActivity" />
+        <activity android:name=".Login.activity.AdmissionActivity" />
+        <activity android:name=".Login.activity.AuthenticationActivity" />
+        <activity android:name=".Login.activity.ResetPasswordActivity" />
+        <activity android:name=".Login.activity.UnableToLoginActivity" />
+        <activity
+            android:name=".Classwork.activity.HWDetailActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Classwork.activity.HWChattingActivity"
+            android:windowSoftInputMode="adjustPan" />
+
+        <provider
+            android:name=".Utilities.LegacyCompatFileProvider"
+            android:authorities="${applicationId}.file"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/paths" />
+        </provider>
+
+        <!-- Firebase Notifications -->
+        <service
+            android:name=".Firebase.Notification.MyFirebaseMessagingService"
+            android:stopWithTask="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <service android:name=".Firebase.Notification.NotificationActionService" />
+        <service android:name=".Utilities.CheckSessionService" />
+        <service android:name=".Utilities.CompleteJourneyService" />
+        <service
+            android:name=".Utilities.TrackLocationTask"
+            android:exported="false" />
+
+
+        <!-- Set custom default icon. This is used when no icon is set for incoming notification messages.
+     See README(https://goo.gl/l4GJaQ) for more. -->
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@drawable/logo" />
+        <!-- Set color used with incoming notification messages. This is used when no color is set for the incoming
+             notification message. See README(https://goo.gl/6BKBk7) for more. -->
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/colorPrimaryDark" />
+
+    </application>
+
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.location.gps" />
+
+    <!--Take permission for foreground service for application targetting API 28.-->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <!--<uses-permission android:name="android.permission.SEND_SMS" />-->
+
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+</manifest>

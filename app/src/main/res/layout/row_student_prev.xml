@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rowClass"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:paddingEnd="@dimen/pRight0">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/studentImg"
+        android:layout_width="@dimen/studentImg_width"
+        android:layout_height="@dimen/studentImg_width"
+        android:layout_marginBottom="@dimen/mBottom0"
+        android:layout_marginTop="@dimen/mTop0"
+        android:src="@drawable/profile"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/vg1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/studentName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/mTop0"
+        android:ellipsize="end"
+        android:gravity="start"
+        android:maxLines="1"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sm_size_text"
+        app:layout_constraintEnd_toStartOf="@id/studentRoll"
+        app:layout_constraintStart_toStartOf="@id/vg1"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/studentAdmNo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/sm_size_text"
+        android:textStyle="italic"
+        app:layout_constraintStart_toStartOf="@id/vg1"
+        app:layout_constraintTop_toBottomOf="@+id/studentName" />
+
+    <TextView
+        android:id="@+id/studentRoll"
+        style="@style/studentRoll"
+        android:layout_width="@dimen/studentRoll_width"
+        android:layout_height="@dimen/studentRoll_width"
+        android:background="@drawable/text_oval"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sm_size_text"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@color/black6"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/vg1" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/vg1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.2" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        style="@style/listViewRowContainer"
+        android:minHeight="@dimen/student_row_minH">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/studentImg"
+            style="@style/studentImage" />
+
+        <TextView
+            android:id="@+id/studentName"
+            style="@style/studentName"
+            android:layout_toEndOf="@+id/studentImg"
+            android:layout_toRightOf="@+id/studentImg"
+            android:text="" />
+
+        <TextView
+            android:id="@+id/studentAdmNo"
+            style="@style/studentAdmNo"
+            android:layout_below="@+id/studentName"
+            android:layout_toEndOf="@+id/studentImg"
+            android:layout_toRightOf="@+id/studentImg"
+            android:text="" />
+
+        <TextView
+            android:id="@+id/studentRoll"
+            style="@style/studentRoll" />
+
+    </RelativeLayout>-->

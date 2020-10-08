@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/requestLeaveFm"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="2dp"
+    android:paddingLeft="6dp"
+    android:paddingRight="6dp"
+    android:paddingTop="6dp"
+    tools:context=".leave.fragment.RequestLeaveFragment">
+
+    <ImageView
+        android:id="@+id/staffListIc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:src="@drawable/staff4"
+        app:layout_constraintBottom_toTopOf="@+id/leaveType"
+        app:layout_constraintEnd_toStartOf="@id/VG_icon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/default_cont_desc" />
+
+    <Spinner
+        android:id="@+id/staffOrApproverList"
+        style="@style/Base.Widget.AppCompat.Spinner.Underlined"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:minHeight="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/VG_icon"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/leaveTypeIc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/calender4"
+        app:layout_constraintBottom_toTopOf="@+id/divider1"
+        app:layout_constraintEnd_toStartOf="@id/VG_icon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/staffOrApproverList"
+        android:contentDescription="@string/default_cont_desc" />
+
+    <Spinner
+        android:id="@+id/leaveType"
+        style="@style/Base.Widget.AppCompat.Spinner.Underlined"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:minHeight="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/VG_icon"
+        app:layout_constraintTop_toBottomOf="@+id/staffOrApproverList" />
+
+    <View
+        android:id="@+id/divider1"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/black6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/VG_icon"
+        app:layout_constraintTop_toBottomOf="@+id/leaveType" />
+
+    <ImageView
+        android:id="@+id/leaveDatesLblIc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/ic_datepicker2"
+        app:layout_constraintBottom_toTopOf="@+id/divider2"
+        app:layout_constraintEnd_toStartOf="@id/VG_icon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider1"
+        android:contentDescription="@string/default_cont_desc" />
+
+    <TextView
+        android:id="@+id/leaveDatesLbl"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="top"
+        android:minHeight="50dp"
+        android:text="Leave dates"
+        android:textColor="@color/black2"
+        android:textSize="@dimen/md_size_text"
+        app:layout_constraintEnd_toStartOf="@id/VG_sDate"
+        app:layout_constraintStart_toStartOf="@id/VG_icon"
+        app:layout_constraintTop_toBottomOf="@+id/divider1" />
+
+    <TextView
+        android:id="@+id/requestedLeave"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/white_bg_blue_border"
+        android:gravity="center"
+        android:paddingBottom="@dimen/p_requestedDays"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="@dimen/p_requestedDays"
+        android:text="Requested leaves: "
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/sm_size_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/VG_takenLeaves"
+        app:layout_constraintTop_toBottomOf="@+id/divider1" />
+
+    <TextView
+        android:id="@+id/startDate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:hint="Start date"
+        android:minHeight="50dp"
+        android:textColor="@color/black2"
+        android:textSize="@dimen/sm_size_text"
+        app:layout_constraintEnd_toStartOf="@id/VG_sDate"
+        app:layout_constraintStart_toStartOf="@id/VG_icon"
+        app:layout_constraintTop_toBottomOf="@+id/leaveDatesLbl" />
+
+    <View
+        android:id="@+id/datesDivider"
+        android:layout_width="1dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="@dimen/mBottom0"
+        android:layout_marginTop="@dimen/mTop0"
+        android:background="@color/black6"
+        app:layout_constraintBottom_toTopOf="@id/divider2"
+        app:layout_constraintEnd_toStartOf="@id/endDate"
+        app:layout_constraintStart_toEndOf="@id/startDate"
+        app:layout_constraintTop_toBottomOf="@+id/leaveDatesLbl" />
+
+    <TextView
+        android:id="@+id/endDate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:hint="End date"
+        android:minHeight="50dp"
+        android:textColor="@color/black2"
+        android:textSize="@dimen/sm_size_text"
+        app:layout_constraintEnd_toStartOf="@id/VG_eDate"
+        app:layout_constraintStart_toStartOf="@id/VG_sDate"
+        app:layout_constraintTop_toBottomOf="@+id/leaveDatesLbl" />
+
+    <ImageView
+        android:id="@+id/setFullOrHalfDay"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:scaleX="0.5"
+        android:scaleY="0.5"
+        android:src="@drawable/ic_right_arrow"
+        app:layout_constraintBottom_toTopOf="@id/divider2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/VG_eDate"
+        app:layout_constraintTop_toBottomOf="@+id/leaveDatesLbl"
+        android:contentDescription="@string/default_cont_desc"
+        tools:targetApi="m" />
+
+    <View
+        android:id="@+id/divider2"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/black6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/VG_icon"
+        app:layout_constraintTop_toBottomOf="@+id/startDate" />
+
+    <ImageView
+        android:id="@+id/leaveReasonIc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/notes"
+        app:layout_constraintBottom_toTopOf="@+id/approverNote"
+        app:layout_constraintEnd_toStartOf="@id/VG_icon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider2"
+        android:contentDescription="@string/default_cont_desc" />
+
+    <EditText
+        android:id="@+id/leaveReason"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center_vertical"
+        android:hint="Leave reason"
+        android:minHeight="50dp"
+        android:textColor="@color/black9"
+        android:textSize="@dimen/md_size_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/VG_icon"
+        app:layout_constraintTop_toBottomOf="@+id/divider2" />
+
+    <ImageView
+        android:id="@+id/approverNoteIc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/notes"
+        android:visibility="gone"
+        app:layout_constraintEnd_toStartOf="@id/VG_icon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/leaveReason"
+        android:contentDescription="@string/default_cont_desc" />
+
+    <EditText
+        android:id="@+id/approverNote"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center_vertical"
+        android:hint="Approver's note"
+        android:minHeight="50dp"
+        android:textColor="@color/black9"
+        android:textSize="@dimen/md_size_text"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/VG_icon"
+        app:layout_constraintTop_toBottomOf="@+id/leaveReasonIc" />
+
+    <!-- <ImageView
+         android:id="@+id/approversNoteIc"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:src="@drawable/notes"
+         app:layout_constraintEnd_toStartOf="@id/VG_icon"
+         app:layout_constraintStart_toStartOf="parent"
+         app:layout_constraintTop_toBottomOf="@+id/leaveReason" />
+
+     <EditText
+         android:id="@+id/approversNote"
+         android:layout_width="0dp"
+         android:layout_height="wrap_content"
+         android:gravity="center_vertical"
+         android:hint="Approver's notes"
+         android:minHeight="50dp"
+         android:textColor="@color/black3"
+         android:textSize="@dimen/sm_size_text"
+         app:layout_constraintEnd_toEndOf="parent"
+         app:layout_constraintStart_toStartOf="@id/VG_icon"
+         app:layout_constraintTop_toBottomOf="@+id/leaveReason" />-->
+
+    <TextView
+        android:id="@+id/requestBtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:background="@color/colorPrimary"
+        android:gravity="center"
+        android:padding="12dp"
+        android:text="Request Leave"
+        android:textColor="@color/white"
+        android:textSize="@dimen/lg_size_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/VG_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.2" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/VG_sDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".5" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/VG_eDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".8" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/VG_takenLeaves"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".5" />
+
+    <ProgressBar
+        android:id="@+id/pb"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/hg_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".05" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <!--<TextView--><!--android:id="@+id/requestBtn"--><!--android:layout_width="match_parent"--><!--android:layout_height="wrap_content"--><!--android:layout_alignParentBottom="true"--><!--android:background="@color/colorPrimary"--><!--android:gravity="center"--><!--android:padding="12dp"--><!--android:text="Request Leave"--><!--android:textColor="@color/white"--><!--android:textSize="@dimen/lg_size_text" />-->
+

@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+     <variable
+         name="free"
+         type="com.jeannypr.scientificstudy.Inventory.model.LedgerReportModel"/>
+    </data>
+
+    <LinearLayout
+        android:id="@+id/feeSummaryRow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/feeSummaryRow_marginTop"
+        android:background="@drawable/bg_with_dots"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/feeSummaryRow_paddingLeft"
+        android:paddingRight="@dimen/feeSummaryRow_paddingLeft"
+        android:weightSum="100">
+
+        <LinearLayout
+            android:layout_width="@dimen/feeSummaryRow_innerWrapper_width"
+            android:layout_height="match_parent"
+            android:layout_weight="35"
+            android:background="@color/black7"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/installmentDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="@dimen/sm_size_text" />
+
+            <ImageView
+                android:id="@+id/installmentStatusImg"
+                android:layout_width="@dimen/feeSummaryRow_statusImg_width"
+                android:layout_height="@dimen/feeSummaryRow_statusImg_height"
+                android:layout_gravity="center"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp"
+                android:src="@drawable/due"
+                android:contentDescription="@string/default_cont_desc" />
+
+            <TextView
+                android:id="@+id/dueDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/open_sans_semibold"
+                android:gravity="center_horizontal"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="@dimen/sm_size_text" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="65"
+            android:background="@color/white"
+            android:padding="6dp">
+
+            <LinearLayout
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/installmentTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/open_sans_semibold"
+                    android:gravity="start|center_vertical"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/md_size_text" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/payableRow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/title"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="start|center_vertical"
+                    android:text="PAYABLE : "
+                    android:textColor="@color/black2"
+                    android:textSize="@dimen/sm_size_text" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/rupee"
+                    android:tint="@color/black2"
+                    android:contentDescription="@string/default_cont_desc" />
+
+                <TextView
+                    android:id="@+id/payableAmount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text=""
+                    android:textColor="@color/black2"
+                    android:textSize="@dimen/sm_size_text" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/paidRow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/payableRow"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="start|center_vertical"
+                    android:text="PAID : "
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/sm_size_text" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/rupee"
+                    android:tint="@color/colorPrimary"
+                    android:contentDescription="@string/default_cont_desc" />
+
+                <TextView
+                    android:id="@+id/paidAmount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text=""
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/sm_size_text" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/paidRow"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="start|center_vertical"
+                    android:text="DUE : "
+                    android:textColor="@color/red"
+                    android:textSize="@dimen/sm_size_text" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/rupee"
+                    android:tint="@color/red"
+                    android:contentDescription="@string/default_cont_desc" />
+
+                <TextView
+                    android:id="@+id/dueAmount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text=""
+                    android:textColor="@color/red"
+                    android:textSize="@dimen/sm_size_text" />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+</layout>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="fee"
+            type="com.jeannypr.scientificstudy.Fee.model.ClassWiseDuesModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/row_Container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/mRight0"
+        android:background="@drawable/daily_collection_purple_bg"
+        android:foreground="?attr/selectableItemBackground"
+        android:padding="@dimen/mRight0"
+        tools:targetApi="m">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.60" />
+
+        <TextView
+            android:id="@+id/studentName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:gravity="start|center_vertical"
+            android:maxLines="1"
+            android:text="@{fee.getStudentName().substring(0,1).toUpperCase()+fee.getStudentName().substring(1).toLowerCase()}"
+            android:textColor="@color/mBlack"
+            app:layout_constraintTop_toTopOf="parent"
+            android:textSize="@dimen/md_size_text"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/guideline"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:targetApi="m" />
+
+        <TextView
+            android:id="@+id/fatherName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="start|center_vertical"
+            android:maxLines="1"
+            android:text="@{fee.getFatherName().substring(0,1).toUpperCase()+fee.getFatherName().substring(1).toLowerCase()}"
+            android:textColor="@color/mGrey"
+            android:textSize="@dimen/sm_size_text"
+            app:layout_constraintEnd_toEndOf="@id/guideline"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/studentName" />
+
+        <TextView
+            android:id="@+id/addmissionNo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="start|center_vertical"
+            android:text='@{"Adm no. "+fee.getAdmissionNumber()}'
+            android:textColor="@color/mGrey"
+            android:textSize="@dimen/sm_size_text"
+            app:layout_constraintEnd_toEndOf="@id/guideline"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fatherName" />
+
+        <TextView
+            android:id="@+id/amountVal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:maxLines="1"
+            android:text='@{"Rs. "+String.valueOf(fee.getAmount())}'
+            android:textColor="@color/colorAccent"
+            android:textSize="@dimen/md_size_text"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/guideline"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/callBtn"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:autoLink="phone"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:inputType="textCapWords"
+            android:maxLines="1"
+            android:text="@string/call"
+            android:textColor="@color/pink2"
+            app:cornerRadius="8dp"
+            app:icon="@android:drawable/ic_menu_call"
+            app:iconSize="15dp"
+            app:iconTint="@color/pink2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/guideline"
+            app:layout_constraintTop_toBottomOf="@+id/amountVal"
+            app:strokeColor="@color/pink2" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

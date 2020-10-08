@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/icEdit"
+        android:icon="@drawable/ic_pencil"
+        android:orderInCategory="100"
+        android:title="Edit"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/icRefresh"
+        android:icon="@drawable/ic_pencil"
+        android:orderInCategory="100"
+        android:title="Refresh"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/icDelete"
+        android:icon="@android:drawable/ic_delete"
+        android:orderInCategory="100"
+        android:title="Delete"
+        app:showAsAction="never" />
+</menu>

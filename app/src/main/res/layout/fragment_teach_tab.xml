@@ -1,0 +1,984 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:paddingStart="2dp"
+            android:paddingTop="2dp"
+            android:paddingEnd="2dp"
+            android:paddingBottom="65dp"
+            tools:context=".Base.activity.MainActivity">
+
+            <ProgressBar
+                android:id="@+id/pb"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:indeterminate="true"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/managementCV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:elevation="3dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/yellow_bg_teach_tab"
+                    android:padding="12dp">
+
+                    <TextView
+                        android:id="@+id/mngtSubtitle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="start"
+                        android:text="@string/manageStudentsOf"
+                        android:textColor="#ffa500"
+                        android:textSize="@dimen/lg_size_text"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/mngtSectionImg"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:contentDescription="@string/default_cont_desc"
+                        android:src="@drawable/student_teach_tab"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@id/mngtGuideline"
+                        app:layout_constraintTop_toBottomOf="@+id/mngtSubtitle" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/studentRow"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:foreground="?attr/selectableItemBackground"
+                        android:padding="4dp"
+                        app:layout_constraintEnd_toStartOf="@+id/mngtGuideline"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/mngtSubtitle"
+                        tools:targetApi="m">
+
+                        <ImageView
+                            android:id="@+id/bulletIc1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:contentDescription="@string/default_cont_desc"
+                            android:scaleX=".7"
+                            android:scaleY=".7"
+                            android:src="@drawable/ic_circle_bullet"
+                            android:tint="#eea236"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/studentLbl"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="4dp"
+                            android:gravity="start"
+                            android:text="@string/students"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/md_size_text"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/bulletIc1"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/staffRow"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:foreground="?attr/selectableItemBackground"
+                        android:padding="4dp"
+                        app:layout_constraintEnd_toStartOf="@+id/mngtGuideline"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/studentRow"
+                        tools:targetApi="m">
+
+                        <ImageView
+                            android:id="@+id/bulletIc2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:contentDescription="@string/default_cont_desc"
+                            android:scaleX=".7"
+                            android:scaleY=".7"
+                            android:src="@drawable/ic_circle_bullet2"
+                            android:tint="#eea236"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/staffLbl"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="4dp"
+                            android:gravity="start"
+                            android:text="@string/staff"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/md_size_text"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/bulletIc2"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/attendanceRow"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:foreground="?attr/selectableItemBackground"
+                        android:padding="4dp"
+                        app:layout_constraintEnd_toStartOf="@+id/mngtGuideline"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/staffRow"
+                        tools:targetApi="m">
+
+                        <ImageView
+                            android:id="@+id/bulletIc3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:contentDescription="@string/default_cont_desc"
+                            android:scaleX=".7"
+                            android:scaleY=".7"
+                            android:src="@drawable/ic_circle_bullet2"
+                            android:tint="#eea236"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/attendanceLbl"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="4dp"
+                            android:gravity="start"
+                            android:text="@string/attendance"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/md_size_text"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/bulletIc3"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="14dp"
+                        android:background="@drawable/orange_bg"
+                        android:gravity="center"
+                        android:maxLines="1"
+                        android:minWidth="120dp"
+                        android:padding="8dp"
+                        android:text="@string/manageStudents"
+                        android:textAllCaps="false"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/sm_size_text"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@id/mngtGuideline"
+                        app:layout_constraintTop_toBottomOf="@+id/mngtSectionImg" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/mngtGuideline"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.55" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/communicationCV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:elevation="3dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/managementCV">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/red_bg_teach_tab"
+                    android:padding="12dp">
+
+                    <TextView
+                        android:id="@+id/commSubtitle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="start"
+                        android:text="@string/shareTeachingSchedule"
+                        android:textColor="#ff5959"
+                        android:textSize="@dimen/lg_size_text"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/commSectionImg"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:contentDescription="@string/default_cont_desc"
+                        android:src="@drawable/ic_date_teach_tab"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@id/commGuideline"
+                        app:layout_constraintTop_toBottomOf="@+id/commSubtitle" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/noticeRow"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:foreground="?attr/selectableItemBackground"
+                        android:padding="4dp"
+                        app:layout_constraintEnd_toStartOf="@+id/commGuideline"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/commSubtitle"
+                        tools:targetApi="m">
+
+                        <ImageView
+                            android:id="@+id/noticeBullet"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:contentDescription="@string/default_cont_desc"
+                            android:scaleX=".7"
+                            android:scaleY=".7"
+                            android:src="@drawable/ic_circle_bullet"
+                            android:tint="#d43f3a"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/noticeLbl"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="4dp"
+                            android:gravity="start"
+                            android:text="@string/notice_module"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/md_size_text"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/noticeBullet"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/broadcastRow"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:foreground="?attr/selectableItemBackground"
+                        android:padding="4dp"
+                        app:layout_constraintEnd_toStartOf="@+id/commGuideline"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/noticeRow"
+                        tools:targetApi="m">
+
+                        <ImageView
+                            android:id="@+id/bcastBullet"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:contentDescription="@string/default_cont_desc"
+                            android:scaleX=".7"
+                            android:scaleY=".7"
+                            android:src="@drawable/ic_circle_bullet2"
+                            android:tint="#d43f3a"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/broadcastLbl"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="4dp"
+                            android:gravity="start"
+                            android:text="@string/broadcast"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/md_size_text"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/bcastBullet"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/chatRow"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:foreground="?attr/selectableItemBackground"
+                        android:padding="4dp"
+                        app:layout_constraintEnd_toStartOf="@+id/commGuideline"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/broadcastRow"
+                        tools:targetApi="m">
+
+                        <ImageView
+                            android:id="@+id/chatBullet"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:contentDescription="@string/default_cont_desc"
+                            android:scaleX=".7"
+                            android:scaleY=".7"
+                            android:src="@drawable/ic_circle_bullet2"
+                            android:tint="#d43f3a"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/chatLbl"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="4dp"
+                            android:gravity="start"
+                            android:text="@string/chat"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/md_size_text"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/chatBullet"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="14dp"
+                        android:background="@drawable/red_bg2"
+                        android:gravity="center"
+                        android:maxLines="1"
+                        android:minWidth="120dp"
+                        android:padding="8dp"
+                        android:text="@string/communicate"
+                        android:textAllCaps="false"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/sm_size_text"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@id/commGuideline"
+                        app:layout_constraintTop_toBottomOf="@+id/commSectionImg" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/commGuideline"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.55" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/academicCV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:elevation="3dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/communicationCV">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/green_bg_teach_tab"
+                    android:padding="12dp">
+
+                    <TextView
+                        android:id="@+id/academicSubtitle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="start"
+                        android:text="@string/buildContent"
+                        android:textColor="#15c115"
+                        android:textSize="@dimen/lg_size_text"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/academicSectionImg"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:contentDescription="@string/default_cont_desc"
+                        android:src="@drawable/ic_book_teach_tab"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@id/academicGuideline"
+                        app:layout_constraintTop_toBottomOf="@+id/academicSubtitle" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/LCMRow"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:foreground="?attr/selectableItemBackground"
+                        android:padding="4dp"
+                        app:layout_constraintEnd_toStartOf="@+id/academicGuideline"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/academicSubtitle"
+                        tools:targetApi="m">
+
+                        <ImageView
+                            android:id="@+id/LCMbullet"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:contentDescription="@string/default_cont_desc"
+                            android:scaleX=".7"
+                            android:scaleY=".7"
+                            android:src="@drawable/ic_circle_bullet"
+                            android:tint="#15c115"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/LCMLbl"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="4dp"
+                            android:gravity="start"
+                            android:text="@string/learningContent"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/md_size_text"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/LCMbullet"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/examRow"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:foreground="?attr/selectableItemBackground"
+                        android:padding="4dp"
+                        app:layout_constraintEnd_toStartOf="@+id/academicGuideline"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/LCMRow"
+                        tools:targetApi="m">
+
+                        <ImageView
+                            android:id="@+id/examBullet"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:contentDescription="@string/default_cont_desc"
+                            android:scaleX=".7"
+                            android:scaleY=".7"
+                            android:src="@drawable/ic_circle_bullet2"
+                            android:tint="#15c115"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/examLbl"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="4dp"
+                            android:gravity="start"
+                            android:text="@string/onlineAssess"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/md_size_text"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/examBullet"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/homeworkRow"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:foreground="?attr/selectableItemBackground"
+                        android:padding="4dp"
+                        app:layout_constraintEnd_toStartOf="@+id/academicGuideline"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/examRow"
+                        tools:targetApi="m">
+
+                        <ImageView
+                            android:id="@+id/HWbullet"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:contentDescription="@string/default_cont_desc"
+                            android:scaleX=".7"
+                            android:scaleY=".7"
+                            android:src="@drawable/ic_circle_bullet2"
+                            android:tint="#15c115"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/HWLbl"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="4dp"
+                            android:gravity="start"
+                            android:text="@string/homework"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/md_size_text"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/HWbullet"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/syllabusRow"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:foreground="?attr/selectableItemBackground"
+                        android:padding="4dp"
+                        app:layout_constraintEnd_toStartOf="@+id/academicGuideline"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/homeworkRow"
+                        tools:targetApi="m">
+
+                        <ImageView
+                            android:id="@+id/syllabusBullet"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:contentDescription="@string/default_cont_desc"
+                            android:scaleX=".7"
+                            android:scaleY=".7"
+                            android:src="@drawable/ic_circle_bullet2"
+                            android:tint="#15c115"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/syllabusLbl"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="4dp"
+                            android:gravity="start"
+                            android:text="@string/syllabus"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/md_size_text"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/syllabusBullet"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/lessonPlanRow"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:foreground="?attr/selectableItemBackground"
+                        android:padding="4dp"
+                        app:layout_constraintEnd_toStartOf="@+id/academicGuideline"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/syllabusRow"
+                        tools:targetApi="m">
+
+                        <ImageView
+                            android:id="@+id/lessonBullet"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:contentDescription="@string/default_cont_desc"
+                            android:scaleX=".7"
+                            android:scaleY=".7"
+                            android:src="@drawable/ic_circle_bullet2"
+                            android:tint="#15c115"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/lessonLbl"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="4dp"
+                            android:gravity="start"
+                            android:text="@string/lessonPlan"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/md_size_text"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/lessonBullet"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="14dp"
+                        android:background="@drawable/green_bg"
+                        android:gravity="center"
+                        android:maxLines="1"
+                        android:minWidth="120dp"
+                        android:padding="8dp"
+                        android:text="@string/academicContent"
+                        android:textAllCaps="false"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/sm_size_text"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@id/academicGuideline"
+                        app:layout_constraintTop_toBottomOf="@+id/academicSectionImg" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/academicGuideline"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.55" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/classCV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:elevation="3dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/academicCV">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/blue_bg_teach_tab"
+                    android:padding="12dp">
+
+                    <TextView
+                        android:id="@+id/classSubtitle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="start"
+                        android:text="@string/shareVideo"
+                        android:textColor="#0089ff"
+                        android:textSize="@dimen/lg_size_text"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/classSubtitle2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="start"
+                        android:text="@string/youCanUseBelow"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/md_size_text"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/classSubtitle" />
+
+                    <ImageView
+                        android:id="@+id/classSectionImg"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:contentDescription="@string/default_cont_desc"
+                        android:src="@drawable/zoom_ic"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@id/classGuideline"
+                        app:layout_constraintTop_toBottomOf="@+id/classSubtitle2" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/parentHelpDeskRow"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:foreground="?attr/selectableItemBackground"
+                        android:padding="4dp"
+                        app:layout_constraintEnd_toStartOf="@+id/classGuideline"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/classSubtitle2"
+                        tools:targetApi="m">
+
+                        <ImageView
+                            android:id="@+id/helpDeskBullet"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:contentDescription="@string/default_cont_desc"
+                            android:scaleX=".7"
+                            android:scaleY=".7"
+                            android:src="@drawable/ic_circle_bullet"
+                            android:tint="#0089ff"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/parentHelpDeskLbl"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="4dp"
+                            android:gravity="start"
+                            android:text="@string/helpArticles"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/md_size_text"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/helpDeskBullet"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/zoomRow"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:foreground="?attr/selectableItemBackground"
+                        android:padding="4dp"
+                        app:layout_constraintEnd_toStartOf="@+id/classGuideline"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/parentHelpDeskRow"
+                        tools:targetApi="m">
+
+                        <ImageView
+                            android:id="@+id/zoomBullet"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:contentDescription="@string/default_cont_desc"
+                            android:scaleX=".7"
+                            android:scaleY=".7"
+                            android:src="@drawable/ic_circle_bullet"
+                            android:tint="#0089ff"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/zoomLbl"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="4dp"
+                            android:gravity="start"
+                            android:text="@string/zoom"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/md_size_text"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/zoomBullet"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/larkRow"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:foreground="?attr/selectableItemBackground"
+                        android:padding="4dp"
+                        app:layout_constraintEnd_toStartOf="@+id/classGuideline"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/zoomRow"
+                        tools:targetApi="m">
+
+                        <ImageView
+                            android:id="@+id/larkBullet"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:contentDescription="@string/default_cont_desc"
+                            android:scaleX=".7"
+                            android:scaleY=".7"
+                            android:src="@drawable/ic_circle_bullet2"
+                            android:tint="#0089ff"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/larkLbl"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="4dp"
+                            android:gravity="start"
+                            android:text="@string/lark"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/md_size_text"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/larkBullet"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/googleRow"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:foreground="?attr/selectableItemBackground"
+                        android:padding="4dp"
+                        app:layout_constraintEnd_toStartOf="@+id/classGuideline"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/larkRow"
+                        tools:targetApi="m">
+
+                        <ImageView
+                            android:id="@+id/googleBullet"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:contentDescription="@string/default_cont_desc"
+                            android:scaleX=".7"
+                            android:scaleY=".7"
+                            android:src="@drawable/ic_circle_bullet2"
+                            android:tint="#0089ff"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/googleLbl"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="4dp"
+                            android:gravity="start"
+                            android:text="@string/googleMeet"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/md_size_text"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/googleBullet"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/msTeamRow"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:foreground="?attr/selectableItemBackground"
+                        android:padding="4dp"
+                        app:layout_constraintEnd_toStartOf="@+id/classGuideline"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/googleRow"
+                        tools:targetApi="m">
+
+                        <ImageView
+                            android:id="@+id/msTeamBullet"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:contentDescription="@string/default_cont_desc"
+                            android:scaleX=".7"
+                            android:scaleY=".7"
+                            android:src="@drawable/ic_circle_bullet2"
+                            android:tint="#0089ff"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/msTeamLbl"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="4dp"
+                            android:gravity="start"
+                            android:text="@string/msTeam"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/md_size_text"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/msTeamBullet"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="14dp"
+                        android:background="@drawable/blue_bg2"
+                        android:gravity="center"
+                        android:maxLines="1"
+                        android:minWidth="120dp"
+                        android:padding="8dp"
+                        android:text="@string/takeClass"
+                        android:textAllCaps="false"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/sm_size_text"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@id/classGuideline"
+                        app:layout_constraintTop_toBottomOf="@+id/classSectionImg" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/classGuideline"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.55" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/demo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:background="@drawable/blue_bg2"
+                android:gravity="center"
+                android:maxLines="1"
+                android:minWidth="120dp"
+                android:padding="8dp"
+                android:text="Demo"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sm_size_text"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/classCV" />
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:indeterminate="true"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

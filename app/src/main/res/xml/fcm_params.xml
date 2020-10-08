@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<defaultsMap>
+    <entry>
+        <key>force_update_required</key>
+        <value>false</value>
+    </entry>
+    <entry>
+        <key>force_update_current_version_code</key>
+        <value>48</value>
+    </entry>
+    <entry>
+        <key>force_update_store_url</key>
+        <value>https://play.google.com/store/apps/details?id=com.jeannypr.scientificstudy</value>
+    </entry>
+</defaultsMap>

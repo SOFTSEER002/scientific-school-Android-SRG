@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:theme="@style/Coordinator">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?android:attr/actionBarSize"
+                android:background="@color/colorPrimary"
+                app:layout_scrollFlags="scroll|enterAlways"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                app:subtitleTextColor="@color/white"
+                app:titleTextColor="@color/white" />
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <include
+                android:id="@+id/actionsRow"
+                layout="@layout/row_list_actions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone" />
+
+            <View
+                android:id="@+id/div"
+                android:layout_width="0dp"
+                android:layout_height="0.5dp"
+                android:background="@color/black6"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/actionsRow" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/list"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="@color/black6"
+                android:paddingBottom="2dp"
+                android:scrollbars="vertical"
+                android:visibility="visible"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/div" />
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:indeterminate="true"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!--   <include
+               android:id="@+id/actionsRow1"
+               layout="@layout/row_class_list"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="120dp"
+               android:indeterminate="true"
+               app:layout_constraintTop_toBottomOf="@+id/actionsRow" />-->
+
+
+        <include
+            layout="@layout/activity_no_record"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="35dp"
+            android:indeterminate="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    <!--   <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:orientation="vertical">
+
+           <android.support.design.widget.AppBarLayout
+               android:id="@+id/appBar"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+               app:layout_constraintLeft_toLeftOf="parent"
+               app:layout_constraintRight_toRightOf="parent"
+               app:layout_constraintTop_toTopOf="parent">
+
+               <android.support.v7.widget.Toolbar
+                   android:id="@+id/toolbar"
+                   android:layout_width="match_parent"
+                   android:layout_height="?android:attr/actionBarSize"
+                   android:background="@color/colorPrimary"
+                   app:layout_scrollFlags="scroll|enterAlways"
+                   app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                   app:subtitleTextColor="@color/white"
+                   app:titleTextColor="@color/white" />
+
+
+           </android.support.design.widget.AppBarLayout>
+
+           <TextView
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:background="@color/black6"
+               android:gravity="end"
+               android:paddingRight="@dimen/pRight0"
+               android:text="Students"
+               android:textColor="@color/black9"
+               android:textSize="@dimen/sm_size_text" />
+
+           <ProgressBar
+               android:id="@+id/progressBar"
+               style="?android:attr/progressBarStyle"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_gravity="center"
+               android:layout_marginTop="35dp"
+               android:indeterminate="true"
+               android:visibility="gone" />
+
+           <android.support.v7.widget.RecyclerView
+               android:id="@+id/list"
+               style="@style/listViewMainContainer"
+               android:orientation="vertical" />
+
+           <include layout="@layout/activity_no_record" />
+
+       </LinearLayout>-->
+
+</layout>

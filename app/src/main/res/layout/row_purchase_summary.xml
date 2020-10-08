@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/summaryRow"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="4dp"
+    android:background="@color/white"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:padding="8dp"
+    tools:targetApi="m">
+
+    <TextView
+        android:id="@+id/purchase"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="6dp"
+        android:gravity="start"
+        android:text=""
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/md_size_text"
+        app:layout_constraintEnd_toStartOf="@id/guideline95"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/arrowIc"
+        android:layout_width="0dp"
+        android:layout_height="16dp"
+        android:tint="@color/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/guideline95"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_right_arrow"
+        android:contentDescription="@string/default_cont_desc" />
+
+    <!--
+        <ImageView
+            android:id="@+id/rupeeIc"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:tint="@color/black2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/purchase"
+            app:srcCompat="@drawable/rupee" />
+    -->
+    <TextView
+        android:id="@+id/rupeeIc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rs."
+        android:textColor="@color/black"
+        android:textSize="@dimen/sm_size_text"
+        android:tint="@color/black2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/purchase" />
+
+    <TextView
+        android:id="@+id/totalAmount"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="start"
+        android:text=""
+        android:textColor="@color/black"
+        android:textSize="@dimen/sm_size_text"
+        app:layout_constraintEnd_toStartOf="@id/guideline70"
+        app:layout_constraintStart_toEndOf="@id/rupeeIc"
+        app:layout_constraintTop_toBottomOf="@id/purchase" />
+
+    <ImageView
+        android:id="@+id/datepickerIc"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginRight="4dp"
+        android:tint="@color/black2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/purchaseDate"
+        app:layout_constraintTop_toBottomOf="@+id/purchase"
+        app:srcCompat="@drawable/student_datepicker"
+        android:contentDescription="@string/default_cont_desc" />
+
+    <TextView
+        android:id="@+id/purchaseDate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textColor="@color/black"
+        android:textSize="@dimen/sm_size_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/purchase" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline95"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".95" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline70"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.70" />
+</androidx.constraintlayout.widget.ConstraintLayout>

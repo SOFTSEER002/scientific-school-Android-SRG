@@ -1,0 +1,19 @@
+Before build:
+	
+	1. version number and code in gradle 
+	2. check "todo".
+	3. Push build of all flavors
+	
+After build:
+	
+	1. Entry in database regarding version - 
+		- https://manage.scientificstudy.in/login#/mobileRelease
+		- support -> mobile release -> do entry for build
+	2. update version on fcm(remote config if required)
+	3. new list in trello for build including all items
+	4. Commit the code and Set a clean branch ,set name as build no. - SPT_BUILDS/SPT_APP_BUILD_73
+	5. Entry in sheet(Drive->Release summary and items)
+	6. Send mail to all team members regarding build	
+	7. send notification to all users to update app
+	8. inform to support team about tickets which has been resolved in this build
+	

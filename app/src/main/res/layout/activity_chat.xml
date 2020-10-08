@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#e9e9e9"
+        tools:context=".Chat.activity.ChatActivity">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?android:attr/actionBarSize"
+                android:background="@color/colorPrimary"
+                app:contentInsetStartWithNavigation="0dp"
+                app:layout_scrollFlags="scroll|enterAlways"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                app:subtitleTextColor="@color/white"
+                app:titleMarginStart="10dp"
+                app:titleTextColor="@color/white">
+
+                <!-- <ImageView
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:src="@drawable/profile" />
+
+                 <TextView
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:text="Title"
+                     android:textColor="@color/white"
+                     android:textSize="@dimen/md_size_text" />-->
+            </androidx.appcompat.widget.Toolbar>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/reyclerview_message_list"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/recycle_msgList_height"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="4dp"
+            android:scrollbars="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toTopOf="@+id/layout_chatbox"
+            app:layout_constraintEnd_toStartOf="@+id/layout_chatbox"
+            app:layout_constraintHorizontal_bias="0.063"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/appBar"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <LinearLayout
+            android:id="@+id/layout_chatbox"
+            android:layout_width="@dimen/chatBox_width"
+            android:layout_height="wrap_content"
+            android:minHeight="@dimen/chatBox_minHeight"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <EditText
+                android:id="@+id/edittext_chatbox"
+                android:layout_width="@dimen/edittext_chatbox_width"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/edittext_chatbox_marginLeft"
+                android:layout_marginRight="@dimen/edittext_chatbox_marginLeft"
+                android:layout_weight="1"
+                android:background="@drawable/rounded_chat_editbox"
+                android:hint="Type a message"
+                android:imeActionLabel="@string/action_send"
+                android:imeOptions="actionSend"
+                android:inputType="textMultiLine"
+                android:minHeight="@dimen/edittext_chatbox_height"
+                android:paddingStart="@dimen/edittext_chatbox_paddingLeft"
+                android:paddingLeft="@dimen/edittext_chatbox_paddingLeft"
+                android:paddingTop="@dimen/edittext_chatbox_paddingBottom"
+                android:paddingEnd="@dimen/edittext_chatbox_paddingLeft"
+                android:paddingRight="@dimen/edittext_chatbox_paddingLeft"
+                android:paddingBottom="@dimen/edittext_chatbox_paddingBottom"
+                android:textSize="@dimen/md_size_text">
+
+                <!--<requestFocus />-->
+            </EditText>
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/button_chatbox_send"
+                android:layout_width="@dimen/button_chatbox_send_h"
+                android:layout_height="@dimen/button_chatbox_send_h"
+                android:layout_gravity="center"
+                android:layout_marginEnd="@dimen/button_chatbox_send_marginRight"
+                android:tint="@color/white"
+                app:fabSize="normal"
+                app:srcCompat="@drawable/ic_send" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/cantReplyToChatMsg"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_info2_sm"
+            android:drawablePadding="8dp"
+            android:visibility="gone"
+            android:drawableTint="@color/red"
+            android:background="@drawable/border_whitebg_rounded_corner"
+            android:padding="14dp"
+            android:text="@string/cantReplyToChatMsg"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:targetApi="m" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

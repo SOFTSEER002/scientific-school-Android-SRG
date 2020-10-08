@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data class="RowTeacherBinding">
+
+        <variable
+            name="teacher"
+            type="com.jeannypr.scientificstudy.Teacher.model.TeacherModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/rowTeacher"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:padding="@dimen/pRight0">
+
+        <!--
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/teacherImg"
+                    android:layout_width="@dimen/studentImg_width"
+                    android:layout_height="@dimen/studentImg_width"
+                    android:layout_marginBottom="@dimen/mBottom0"
+                    android:layout_marginTop="@dimen/mTop0"
+                    android:src="@drawable/profile"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/vg1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+        -->
+
+        <FrameLayout
+            android:id="@+id/imgRow"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            app:layout_constraintEnd_toStartOf="@id/vg1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/teacherImg"
+                android:layout_width="@dimen/studentImg_width"
+                android:layout_height="@dimen/studentImg_width"
+                android:layout_gravity="center"
+                android:background="@drawable/first_letter_img_bg" />
+
+            <TextView
+                android:id="@+id/firstLetter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:maxLines="1"
+                android:textColor="@color/white"
+                android:textSize="@dimen/md_size_text" />
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/teacherName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/mTop0"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sm_size_text"
+            app:layout_constraintStart_toStartOf="@id/vg1"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/ic_email"
+            android:layout_width="@dimen/teacherEmailIcon_width"
+            android:layout_height="@dimen/teacherEmailIcon_height"
+            android:src="@android:drawable/ic_dialog_email"
+            app:layout_constraintStart_toStartOf="@id/vg1"
+            app:layout_constraintTop_toBottomOf="@+id/teacherName"
+            android:contentDescription="@string/default_cont_desc" />
+
+        <TextView
+            android:id="@+id/teacherEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@{teacher.Email}"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/sm_size_text"
+            android:textStyle="italic"
+            app:layout_constraintStart_toEndOf="@id/ic_email"
+            app:layout_constraintTop_toBottomOf="@+id/teacherName" />
+
+        <!--  <TextView
+              android:id="@+id/totalStudents"
+              style="@style/studentRoll"
+              android:layout_width="@dimen/studentRoll_width"
+              android:layout_height="@dimen/studentRoll_width"
+              android:background="@drawable/text_oval"
+              android:text="@{cls.getTotalNoStudents()}"
+              android:textColor="@color/white"
+              android:textSize="@dimen/sm_size_text"
+              android:textStyle="bold"
+              app:layout_constraintBottom_toBottomOf="parent"
+              app:layout_constraintEnd_toEndOf="parent"
+              app:layout_constraintTop_toTopOf="parent" />-->
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@color/black6"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/vg1" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/vg1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.2" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- <RelativeLayout style="@style/listViewRowContainer">
+
+         <de.hdodenhof.circleimageview.CircleImageView
+             android:id="@+id/teacherImg"
+             style="@style/studentImage" />
+         &lt;!&ndash;app:ImagePath="@{teacher.ImagePath}"&ndash;&gt;
+         <TextView
+             android:id="@+id/teacherName"
+             style="@style/studentName"
+             android:layout_alignParentTop="true"
+             android:layout_toEndOf="@+id/teacherImg"
+             android:layout_toRightOf="@+id/teacherImg"
+             android:text="@{teacher.Name}" />
+
+         <ImageView
+             android:id="@+id/ic_email"
+             android:layout_width="@dimen/teacherEmailIcon_width"
+             android:layout_height="@dimen/teacherEmailIcon_height"
+             android:layout_below="@+id/teacherName"
+             android:layout_toEndOf="@+id/teacherImg"
+             android:layout_toRightOf="@+id/teacherImg"
+             android:src="@android:drawable/ic_dialog_email" />
+
+         <TextView
+             android:id="@+id/teacherEmail"
+             style="@style/studentAdmNo"
+             android:layout_below="@+id/teacherName"
+             android:layout_toEndOf="@+id/ic_email"
+             android:layout_toRightOf="@+id/ic_email"
+             android:text="@{teacher.Email}" />
+
+     </RelativeLayout>-->
+</layout>
+

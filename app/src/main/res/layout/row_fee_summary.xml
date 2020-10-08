@@ -1,0 +1,286 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="fee"
+            type="com.jeannypr.scientificstudy.Fee.model.FeeSummaryModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/row_Container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dashboardIc_padding"
+        android:background="@drawable/daily_collection_red_bg"
+        android:padding="@dimen/mLeft0">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/vg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.60" />
+
+        <TextView
+            android:id="@+id/installmentTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="start|center_vertical"
+            android:text=""
+            android:textColor="@color/mBlack"
+            android:textSize="@dimen/md_size_text"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/vg"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/payableAmount"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="start|center_vertical"
+            android:text=""
+            android:textColor="@color/mGrey"
+            android:textSize="@dimen/sm_size_text"
+            app:layout_constraintEnd_toEndOf="@id/vg"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/installmentTitle" />
+
+        <TextView
+            android:id="@+id/paidAmount"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="start|center_vertical"
+            android:text=""
+            android:textColor="@color/mGrey"
+            android:textSize="@dimen/sm_size_text"
+            app:layout_constraintEnd_toEndOf="@id/vg"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/payableAmount" />
+
+        <TextView
+            android:id="@+id/dueAmount"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="start|center_vertical"
+            android:text=""
+            android:textColor="@color/mGrey"
+            android:textSize="@dimen/sm_size_text"
+            app:layout_constraintEnd_toEndOf="@id/vg"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/paidAmount" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/paymentConatiner"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/amount_mode_red_bg"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/vg"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/installmentDate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:maxLines="1"
+                android:text=""
+                android:textColor="@color/mBlack"
+                android:textSize="@dimen/md_size_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/installmentStatus"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:maxLines="1"
+                android:textColor="@color/white"
+                android:textSize="@dimen/md_size_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/installmentDate" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
+
+    <!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/feeSummaryRow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/feeSummaryRow_marginTop"
+        android:background="@drawable/bg_with_dots"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/feeSummaryRow_paddingLeft"
+        android:paddingRight="@dimen/feeSummaryRow_paddingLeft"
+        android:weightSum="100">
+
+        <LinearLayout
+            android:layout_width="@dimen/feeSummaryRow_innerWrapper_width"
+            android:layout_height="match_parent"
+            android:layout_weight="35"
+            android:background="@color/black7"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/installmentDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="@dimen/sm_size_text" />
+
+            <ImageView
+                android:id="@+id/installmentStatusImg"
+                android:layout_width="@dimen/feeSummaryRow_statusImg_width"
+                android:layout_height="@dimen/feeSummaryRow_statusImg_height"
+                android:layout_gravity="center"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp"
+                android:src="@drawable/due" />
+
+            <TextView
+                android:id="@+id/dueDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/open_sans_semibold"
+                android:gravity="center_horizontal"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="@dimen/sm_size_text" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="65"
+            android:background="@color/white"
+            android:padding="6dp">
+
+            <LinearLayout
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/installmentTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/open_sans_semibold"
+                    android:gravity="start|center_vertical"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/md_size_text" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/payableRow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/title"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="start|center_vertical"
+                    android:text="PAYABLE : "
+                    android:textColor="@color/black2"
+                    android:textSize="@dimen/sm_size_text" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/rupee"
+                    android:tint="@color/black2" />
+
+                <TextView
+                    android:id="@+id/payableAmount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text=""
+                    android:textColor="@color/black2"
+                    android:textSize="@dimen/sm_size_text" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/paidRow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/payableRow"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="start|center_vertical"
+                    android:text="PAID : "
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/sm_size_text" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/rupee"
+                    android:tint="@color/colorPrimary" />
+
+                <TextView
+                    android:id="@+id/paidAmount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text=""
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/sm_size_text" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/paidRow"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="start|center_vertical"
+                    android:text="DUE : "
+                    android:textColor="@color/red"
+                    android:textSize="@dimen/sm_size_text" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/rupee"
+                    android:tint="@color/red" />
+
+                <TextView
+                    android:id="@+id/dueAmount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text=""
+                    android:textColor="@color/red"
+                    android:textSize="@dimen/sm_size_text" />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>-->
+

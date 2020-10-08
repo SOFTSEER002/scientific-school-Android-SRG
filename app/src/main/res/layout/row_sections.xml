@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/section1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/white_bg_blue_border"
+        android:padding="5dp"
+        android:text="Section A"
+        android:textColor="@color/black"
+        android:visibility="visible" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/white_bg_blue_border"
+        android:padding="5dp"
+        android:text="Section A"
+        android:textColor="@color/black"
+        android:visibility="visible" />
+
+    <TextView
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/white_bg_blue_border"
+        android:padding="5dp"
+        android:text="Section A"
+        android:textColor="@color/black"
+        android:visibility="visible" />
+
+    <TextView
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/white_bg_blue_border"
+        android:padding="5dp"
+        android:text="Section A"
+        android:textColor="@color/black"
+        android:visibility="visible" />
+
+    <TextView
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/white_bg_blue_border"
+        android:padding="5dp"
+        android:text="Section A"
+        android:textColor="@color/black"
+        android:visibility="visible" />
+
+    <TextView
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/white_bg_blue_border"
+        android:padding="5dp"
+        android:text="Section A"
+        android:textColor="@color/black"
+        android:visibility="visible" />
+
+    <TextView
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/white_bg_blue_border"
+        android:padding="5dp"
+        android:text="Section A"
+        android:textColor="@color/black"
+        android:visibility="visible" />
+
+    <TextView
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/white_bg_blue_border"
+        android:padding="5dp"
+        android:text="Section A"
+        android:textColor="@color/black"
+        android:visibility="visible" />
+
+    <TextView
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/white_bg_blue_border"
+        android:padding="5dp"
+        android:text="Section A"
+        android:textColor="@color/black"
+        android:visibility="visible" />
+
+    <TextView
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/white_bg_blue_border"
+        android:padding="5dp"
+        android:text="Section A"
+        android:textColor="@color/black"
+        android:visibility="visible" />
+
+    <TextView
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/white_bg_blue_border"
+        android:padding="5dp"
+        android:text="Section A"
+        android:textColor="@color/black"
+        android:visibility="visible" />
+
+
+    <!--  <android.support.constraint.Barrier
+          android:id="@+id/barrier2"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          app:barrierDirection="end"
+          app:constraint_referenced_ids="section1" />
+
+      <android.support.constraint.Barrier
+          android:id="@+id/barrier3"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          app:barrierDirection="end"
+          app:constraint_referenced_ids="" />-->
+</LinearLayout>

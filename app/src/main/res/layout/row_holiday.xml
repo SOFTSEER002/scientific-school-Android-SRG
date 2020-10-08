@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp">
+
+    <TextView
+        android:id="@+id/holidayTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="start"
+        android:textColor="@color/black9"
+        android:textSize="@dimen/md_size_text"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".8" />
+
+    <ImageView
+        android:id="@+id/icHolidayDatepicker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/default_cont_desc"
+        android:scaleX="0.6"
+        android:scaleY="0.6"
+        android:src="@drawable/calender3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/holidayTitle" />
+
+    <TextView
+        android:id="@+id/holidayDate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="4dp"
+        android:gravity="start"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/sm_size_text"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintStart_toEndOf="@+id/icHolidayDatepicker"
+        app:layout_constraintTop_toBottomOf="@+id/holidayTitle"
+        tools:ignore="RtlHardcoded" />
+
+    <ImageView
+        android:id="@+id/icEdit"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@string/default_cont_desc"
+        android:foreground="?android:selectableItemBackground"
+        android:scaleX="0.4"
+        android:scaleY="0.4"
+        android:src="@drawable/ic_pencil"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/guideline"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:targetApi="m" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="12dp"
+        android:background="@color/black6"
+        app:layout_constraintTop_toBottomOf="@+id/icHolidayDatepicker" />
+</androidx.constraintlayout.widget.ConstraintLayout>

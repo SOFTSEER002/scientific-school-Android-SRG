@@ -1,0 +1,628 @@
+<resources>
+    <string name="app_name">Scientific Study</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_desc">Navigation header</string>
+
+    <!--popup menu-->
+    <string name="action_settings">Settings</string>
+
+    <!--Attendance Module-->
+
+    <string name="takeAttendance">Take attendance</string>
+    <string name="classWiseAttendance">Class Wise attendance</string>
+    <string name="monthWiseattendance">Month Wise Report</string>
+    <string name="studentWiseAttendance">Student Wise Report</string>
+    <string name="dayWiseAttendance">Day Wise Report</string>
+    <string name="extraDayReport">Extra Day Report</string>
+    <string name="outDoorReport">Out Door Report</string>
+    <string name="staffWiseAttendance">Staff Wise Report</string>
+    <string name="datewiseAttendance">Date wise Report</string>
+
+    <!--popup menu items-->
+
+    <!--Save Attendance-->
+
+    <!--dashboard-->
+    <string name="attendanceModule">Attendance</string>
+    <!--dashboard strings-->
+    <string name="title_activity_chat">ChatActivity</string>
+
+    <string name="take_photo">Take Photo</string>
+    <string name="choose_from_gallery">Choose from gallery</string>
+    <string name="select_option">Select Option...</string>
+    <string name="cancel">Cancel</string>
+    <string name="ok">OK</string>
+    <string name="alert">Alert</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="fulldayToggleBtn">Fullday</string>
+    <string name="halfdayToggleBtn">Halfday</string>
+
+    <string name="facebook_app_id">257115411651808</string>
+
+    <string name="driverDashboardHomeTab">Home</string>
+    <string name="driverDashboardNotifyTab">Notify</string>
+    <string name="driverDashboardLogoutTab">Logout</string>
+    <string name="driverDashboardEmergancyContact">Emergency</string>
+    <string name="driverdashboardStudent">Student</string>
+
+    <string name="adminDashboardHomeTab">Home</string>
+    <string name="adminDashboardTodayTab">Today</string>
+    <string name="adminDashboardTeachTab">Teach</string>
+    <string name="adminDashboardToolsTab">Tools</string>
+
+    <!--Parent tab-->
+    <string name="parentDashboardLearnTab">Learn</string>
+    <string name="parentDashboardCommunityTab">Community</string>
+
+    <string name="ImeActionDone">Done</string>
+    <string name="ImeActionNext">Next</string>
+    <string name="notify_parents_notes_hint">Notes</string>
+
+    <string name="somethingWrongMsg">Something went wrong. Please try again.</string>
+    <string name="somethingWrongNoDataMsg">Something went wrong. No data found. Please try again.</string>
+    <string name="noRecordMsg">No record found</string>
+
+    <string name="noLatLong">We are unable to track location due to some technical problem. Please try after some time. Sorry for the inconvenience.</string>
+    <string name="journeyCompleted_pick">The journey has completed. Your child has reached school</string>
+    <string name="journeyCompleted_drop">The journey has completed. All students have reached on their destination.</string>
+    <string name="picked_journeyMode">picked</string>
+    <string name="dropped_journeyMode">dropped</string>
+    <string name="noJourney">At this moment, no journey is going on.</string>
+    <string name="startedButNoLocation">Journey has started but we are unable to track location due to some problem. Sorry for the inconvenience.</string>
+
+    <string name="greetingsLbl">Hello</string>
+    <string name="messages_puncture_rad">Breakdown (Puncture)</string>
+    <string name="messages_PunctureSubtitle">Delay due to tyre puncture</string>
+    <string name="messages_traffic_rad">Traffic</string>
+    <string name="messages_trafficSubtitle">Delay due to traffic</string>
+    <string name="messages_accident_rad">Accident</string>
+    <string name="messages_accidentSubtitle">Delay due to accident</string>
+    <string name="messages_other_rad">Others</string>
+    <string name="messages_otherSubtitle">Delay due to some reason</string>
+
+    <string name="successMsg">Successfully notified</string>
+    <string name="failedMsg">Failed to notify</string>
+    <string name="driver_home_frag_userName">%S</string>
+    <string name="startJourneyBtn">Start Journey</string>
+    <string name="dialogTitle">Complete Journey</string>
+    <string name="dialogPositiveButtonOk">OK</string>
+    <string name="dialogMsg">Please complete your journey to logout.</string>
+    <string name="route_selectMode">Select mode</string>
+    <string name="radRoute_radPickup">Pickup</string>
+    <string name="radRoute_radDrop">Drop</string>
+    <string name="selectRoute_lbl">Select your route</string>
+
+    <string name="route_setToolbar">Start Journey</string>
+    <string name="vehicle_lbl">Select your vehicle</string>
+    <string name="vehicle_dialogTitle">Confirm Journey</string>
+    <string name="vehicle_positiveBtn">CONFIRM</string>
+    <string name="dialogNegativeButtonCancel">CANCEL</string>
+    <string name="route_assigned">Assigned Route</string>
+    <string name="vehicle_assigned">Assigned Vehicle</string>
+    <string name="successMsg_Journey">Journey has been successfully completed</string>
+    <string name="confirmJourneyMsg">You are going to complete your journey.</string>
+
+    <string name="driver_frag_jourBtn_dTitle">Location permission</string>
+    <string name="driver_frag_jBtn_dMsg">Please provide location permission to continue.</string>
+    <string name="driver_frag_dialog_Title">LocationTrack Permission</string>
+    <string name="driver_frag_dialog_Msg">Please provide location permission to start journey.</string>
+
+    <string name="driver_frag_startTime">Started @</string>
+    <string name="driver_frag_routeName">Via </string>
+    <string name="driver_frag_vehicleNo">By </string>
+    <string name="drivre_notificationBtn">Send notification</string>
+    <string name="driver_frag_notify_lbl">Choose message</string>
+
+    <string name="check_app_update">Check For Update</string>
+    <string name="nav_help">Get help</string>
+    <string name="nav_earn">Share and earn</string>
+    <string name="nav_share">Share the app</string>
+    <string name="nav_rating">Rate us</string>
+    <string name="nav_terms">Terms of use</string>
+    <string name="nav_about_us">About Scientific Study</string>
+    <string name="nav_logout">Logout</string>
+    <string name="trackLoctionBtn">Track Location</string>
+
+    <string name="changeLang_loadingMsg">Please wait while we are translating language. It may take some time</string>
+    <string-array name="languages">
+        <item>Language</item>
+        <item>English</item>
+        <item>हिंदी</item>
+        <item>தமிழ்</item>
+        <item>ਪੰਜਾਬੀ</item>
+        <item>मराठी</item>
+        <item>ગુજરાતી</item>
+        <item>বাঙালি</item>
+        <item>తెలుగు</item>
+        <item>ಕನ್ನಡ</item>
+        <item>മലയാളം</item>
+    </string-array>
+
+    <string name="notify_subtitle">Notification will be sent to parents of this route and admins.</string>
+    <string name="startJourneyConfirmLbl">You are going to start a new journey.</string>
+    <string name="notificationMsgErr">Please select message of the notification</string>
+    <string name="currentJourneyLbl">Current Journey</string>
+    <!--secret key - b133a8e2a312c6b3c00efe7c7d7d1da4-->
+    <string name="plogin_examlist_reportcardBtn">Download report card</string>
+    <string name="transport_driverLbl">Manage drivers</string>
+    <string name="transport_routelistLbl">Track location of vehicles</string>
+    <string name="trans_routelist_drivercall">Call</string>
+    <string name="trans_routelist_driverprofile">Profile</string>
+    <string name="trans_routelist_drivercNotifi">Share credential by sms</string>
+    <string name="trans_driverlist_journeyLbl">Last journey detail</string>
+    <string name="trans_driverlist_subHeader">Total</string>
+
+    <string name="trans_driverlist_dialog_dName">Are you sure to send user ID / password to</string>
+    <string name="trans_driverlist_dialogTitle">Confirmation</string>
+    <string name="trans_driverlist_Sms">These are your login credentials of Scientificstudy app.</string>
+    <string name="usernameLbl">Username: </string>
+    <string name="passwordLbl">Password: </string>
+
+    <string name="successs_Sms">Successfully sent</string>
+    <string name="failed_Sms">Failed to send sms. Please try again.</string>
+    <string name="dialogPositiveButtonDelete">DELETE</string>
+
+    <string name="selectedRouteLbl">Selected route is </string>
+    <string name="selectedVehicleLbl">Selected vehicle\'s model is</string>
+    <string name="selectedVehicleNo">is it\'s number and</string>
+    <string name="vehicleLbl2">it is a</string>
+    <string name="emergencyTitle">Please call on these numbers in case of any emergency</string>
+
+    <string name="drawer_setting_notificationTitle">Transport notification</string>
+    <string name="drawer_setting_notificationTxt">Notify on start journey</string>
+    <string name="drawer_setting_notificationSms">Send notification automatically when journey starts</string>
+    <string name="drawer_setting_notifycompleteTitle">Notify on complete journey</string>
+    <string name="drawer_setting_notifycompleteText">Send notification automatically after completing the journey</string>
+
+    <string name="trans_routelist_calldialog_lbl">Click on the driver name to whom you want to make call </string>
+    <string name="routelist_calldialog_drvernameLbl">He is the assigned driver.</string>
+    <string name="routelist_calldialog_selectdriverNameLbl">He is driving the vehicle right now.</string>
+    <string name="routlist_calldialog_Tilte">Contacts</string>
+
+    <string name="appsetting_successMsg">Saved successfully</string>
+    <string name="appsetting_failedMsg">Failed to save</string>
+    <string name="driverdashbordEmergencydialogTitle">Click on the contact number to whom you want to make call.</string>
+    <string name="driverdashbordEmergencydialogTxt">Contacts</string>
+    <string name="trans_driverlist_journeyTxt">Current journey detail</string>
+
+
+    <string name="login_enter_schoolKeyRow">Enter your school key</string>
+    <string name="login_get_schoolkey_subtitle">Please select your country, state, city and school to get your school key</string>
+    <string name="login_unableToLogin">Trouble signing in?</string>
+    <string name="forgetPassword">Forgot password?</string>
+    <string name="login_passwordRow">Password</string>
+    <string name="login_emailRow">User Name</string>
+    <string name="login_haveAccount1">Already have an account with us?</string>
+    <string name="login_forgetpassword_mobileRow">Enter your registered phone no</string>
+    <string name="login_forgetpassword_emailRow">Enter your registered email</string>
+    <string name="login_forgetpassword_orLbl">OR</string>
+
+    <string name="noUpdates">No updates</string>
+    <string name="noUpdatesMsg2">We\'ll let you know when we have something for you here.</string>
+
+    <string name="registration_module">Registration</string>
+    <string name="class_module">Students</string>
+    <string name="staff_module">Staff</string>
+    <string name="attendance_module">Attendance</string>
+    <string name="cw_module">Classwork</string>
+    <string name="hw_module">Homework</string>
+    <string name="exam_module">Exam</string>
+    <string name="fee_module">Fee</string>
+    <string name="my_teachers_module">My Teachers</string>
+
+    <string name="transport_module">Transport</string>
+    <string name="inventory_module">Inventory</string>
+    <string name="my_leave_module">My Leave</string>
+    <string name="accounts_module">Accounts</string>
+    <string name="my_timetable_module">"My Timetable</string>
+    <string name="staff_timetable_module">Staff Timetable</string>
+    <string name="student_timetable_module">Student Timetable</string>
+    <string name="leave_module">Leave</string>
+    <string name="self_attendance_module">Self Attendance</string>
+
+    <string name="account_trail_Message">You are currently on a trial account. Your trial period is going to expire in</string>
+    <string name="account_trail_Message2">We hope that you explore our features and be happy with it.
+	To upgrade to the paid account please get in touch with our sales/support team.</string>
+
+    <string name="account_expried_Message">Your trial period has expired. We hope that you enjoyed your experience with our ERP.
+	To upgrade to the paid account please get in touch with our sales/support team.</string>
+
+    <string name="contact_number">9137706300,+91-120-4210538</string>
+    <string name="email_Id">scientificstudyhelpdesk@gmail.com</string>
+
+    <string name="discount_message">Is allowed for discount, please share OTP for enabling discount.</string>
+    <string name="discount_alert_message">Your OTP is valid only for 10 minutes.</string>
+    <string name="discount_helpTxt">Enter Student Admission number to allow for discount.</string>
+
+
+    <string name="technicalError">There is some technical error please try after sometime.</string>
+    <string name="moduleNotGrantedMsg">You are not authorized to access this module. Please contact admin to get permission.</string>
+    <string name="moduleNotGrantedHeader">Unauthorized Module</string>
+
+    <string name="default_cont_desc">Image</string>
+    <string name="call">Call</string>
+
+    <string name="notification">Notification</string>
+    <string name="sms">Sms</string>
+    <string name="chat">Chat</string>
+
+    <string name="fee_reminder_label">Notify by</string>
+    <string name="whts_going_on">What\'s going on today?</string>
+    <string name="fees">Fees</string>
+    <string name="fee">Fee</string>
+    <string name="mrRadhe">Mr. Kumar has started taking fee at 4pmtoday.</string>
+    <string name="schoolCollected">School has collected Rs 4000 total as of now.</string>
+    <string name="closeChart">Close Chart</string>
+    <string name="goToFee">Go To Fees</string>
+    <string name="regAndAdm"><![CDATA[Registration & Admission]]></string>
+    <string name="teamHasStartedAdm">Team has started admission and registrations todat at 9 am. Team has done 84 registrations, 30 admissions and collected Rs 5000 today.</string>
+    <string name="regReports">Reg. Report</string>
+    <string name="schoolMessenger">School Messenger</string>
+    <string name="messenger">School Messenger</string>
+    <string name="parents">Parents</string>
+    <string name="staff">Staff</string>
+    <string name="writeText">Write your message here</string>
+    <string name="send">Send</string>
+    <string name="classes">Classes</string>
+    <string name="private_inbox">Private</string>
+    <string name="makeACall">Make a phone call</string>
+    <string name="principal">Principal</string>
+    <string name="admin">Admin</string>
+    <string name="all_staffs">All Staffs</string>
+    <string name="all_students">All Students</string>
+    <string name="today">Today</string>
+    <string name="onleave">On Leave</string>
+    <string name="mrRamShyamOnLeave">Erwin, Alex and Sheldon are on leave today.</string>
+    <string name="absent_today">Absent Today</string>
+    <string name="staffOnAbsent">5 staffs are absent today.</string>
+    <string name="approve_leave">Approve</string>
+    <string name="reject_leave">Reject</string>
+    <string name="attendance">Attendance</string>
+    <string name="leave">Leave</string>
+    <string name="my_leave">My Leave</string>
+    <string name="self_checkin">Self CheckIn</string>
+    <string name="star">*</string>
+    <string name="timetable">Timetable</string>
+    <string name="myTimetable">My Timetable</string>
+    <string name="classTimetable">Class Timetable</string>
+    <string name="staffTimetable">Staff Timetable</string>
+    <string name="academic">Academic</string>
+    <string name="homework">Homework</string>
+    <string name="classwork">Classwork</string>
+    <string name="exam">Exam</string>
+    <string name="accounts">Accounts</string>
+    <string name="account">Account</string>
+    <string name="inventory">Inventory</string>
+    <string name="transport">Transport</string>
+    <string name="audit">Audit and Usage</string>
+    <string name="auditHeading1">Mr Deepak, please review ERP usage report and do accordingly to improve communication engagement relationship with parents.</string>
+
+    <string name="parentsUsingApp"> Parents - using this App.</string>
+    <string name="parentsNotUsingApp"> Parents - not using this App.</string>
+    <string name="staffsUsingApp"> Staffs - using this App.</string>
+    <string name="staffsNotUsingApp"> Staffs - not using this App.</string>
+
+    <string name="auditDesc">This is data between </string>
+    <string name="addNote">Add Note</string>
+    <string name="advancedReview">Advanced Review</string>
+    <string name="lastEvent">Last event was created on</string>
+    <string name="reviewDate">05-sept-2019</string>
+    <string name="health">Health of student and staff</string>
+    <string name="noCamp">We do not have any health camp organized in last 6 months.</string>
+    <string name="requestCoordination"> Request Co-ordination</string>
+    <string name="learning">Learning of student</string>
+    <string name="learingDesc">This year we have 50 students enrolled for computer science.</string>
+    <string name="roy_family">Roy Family</string>
+    <string name="prashant">Prashant (You)</string>
+    <string name="success">Successfully saved</string>
+    <string name="noChildFound">No Child Found...</string>
+    <string name="contactAdmin">Please contact school admin.</string>
+    <string name="chooseChild">Choose Child to proceed...</string>
+    <string name="viewProfileOrSwitchChild">View Profile/Switch Child</string>
+    <string name="myFamily">My Family</string>
+    <string name="setReminder">Set reminder</string>
+    <string name="selectDate">Select date</string>
+    <string name="enterReminderNote">Enter reminder notes</string>
+    <string name="desc">Description</string>
+    <string name="readMore">...read more</string>
+    <string name="checkedIn">Checked In</string>
+    <string name="checkIn">Check In</string>
+    <string name="successfullyCheckedIn">Successfully checked in</string>
+    <string name="respondedSuccessfully">Responded Successfully</string>
+    <string name="broadcast">Broadcast</string>
+    <string name="sms_tab">SMS</string>
+    <string name="chat_tab">Chat</string>
+    <string name="feeDues">Fee Dues</string>
+    <string name="followup">Follow Up</string>
+    <string name="group">Group</string>
+    <string name="smsSentSuccessMsg">SMS sent successfully</string>
+    <string name="fee_reminder_tab">Fee Reminder</string>
+    <string name="fee_installment_failuer_msg">Unable to load fee installments. Please try again.</string>
+    <string name="default_to_installment">To Installment</string>
+    <string name="selectClass">Please select class</string>
+    <string name="selectFromInstallment">Select from installment</string>
+    <string name="selectToInstallment">Select to installment</string>
+    <string name="dateValidationMsg">Please select both start and end date.</string>
+    <string name="startDate">Start date</string>
+    <string name="endDate">End date</string>
+    <string name="startDate2">Start Date</string>
+    <string name="endDate2">End Date</string>
+    <string name="enterMsg">Please enter message</string>
+
+    <string name="sdateValidationMsg">Please select start date.</string>
+    <string name="edateValidationMsg">Please select end date.</string>
+    <string name="noOfReg">No. Of Registrations</string>
+    <string name="collection">Fee Collection</string>
+    <string name="viewChart">View Chart</string>
+    <string name="takeSurvey">Take Survey</string>
+    <string name="close">Close</string>
+    <string name="staffBtn">Staff</string>
+    <string name="clickHere">Click Here</string>
+    <string name="moduleNotPermitted">You do not have permission for this module. Please ask school admin or support person.</string>
+    <string name="permission">Permission</string>
+
+
+    <string name="care_share_your_experience"><![CDATA[Care & share your experience]]></string>
+    <string name="community">8 Ways to become a super stay at home dad</string>
+    <string name="anger">#Anger</string>
+    <string name="kids">Kids</string>
+    <string name="child">Child</string>
+    <string name="Share_your_Story"><![CDATA[Share your Story, Poem,\nArticles & anything]]></string>
+    <string name="goodBad"><![CDATA[Good Touch\n& Bad Touch]]></string>
+
+    <string name="marksNotSavedMsg">Marks could not be updated. Please try again.</string>
+    <string name="marksAlreadyUpdated">Someone already updated marks. Please refresh and update.</string>
+    <string name="marksSuccessMsg">Marks saved successfully</string>
+    <string name="couldNotLoadMarks">Could not load student marks!</string>
+    <string name="marksFreezedMsg">Marks entry has been freezed. Please contact admin.</string>
+    <string name="studentPersonalDetail">Student Personal Details</string>
+    <string name="personalDetail">Personal Details</string>
+    <string name="firstName">First Name</string>
+    <string name="studentAcademicDetail">Student Academic Details</string>
+    <string name="academicDetail">Academic Details</string>
+    <string name="admissionNo">Admission No.</string>
+    <string name="admission">Admission</string>
+    <string name="fatherDetail">Father\'s Details</string>
+    <string name="motherMobile">Mother Mobile</string>
+    <string name="motherEmail">Mother email</string>
+    <string name="selectClassMsg">Please select a class to view students.</string>
+    <string name="studentListNotFound">Student list could not be loaded. Please try again.</string>
+    <string name="attendanceCantTaken">Attendance can\'t be taken on holiday.</string>
+    <string name="lastName">Last name</string>
+    <string name="enterFirstName">Enter first name</string>
+    <string name="classNotFound">Classes could not be loaded. Please try again.</string>
+    <string name="enterMobileNo">Enter mobile number</string>
+    <string name="selectStatus">Select student status</string>
+    <string name="staffPersonalDetail">Staff Personal Detail</string>
+    <string name="selectGender">Select Gender</string>
+    <string name="selectRole">Select role</string>
+    <string name="phone">Phone</string>
+    <string name="paymentNote">Payment notes</string>
+    <string name="motherDetail">Mother\'s Details</string>
+    <string name="takeRegistration">Take Registration</string>
+
+    <string name="addClass">Add class</string>
+    <string name="addStudent">Add student</string>
+    <string name="editStudent">Edit Student</string>
+    <string name="addStaff">Add staff</string>
+    <string name="editStaff">Edit staff</string>
+    <string name="addEvent">Add event</string>
+    <string name="editEvent">Edit event</string>
+    <string name="addNews">Add news</string>
+    <string name="addNotice">Add notice</string>
+    <string name="addHoliday">Add holiday</string>
+    <string name="editHoliday">Edit holiday</string>
+    <string name="editNews">Edit news</string>
+    <string name="editNotice">Edit notice</string>
+
+    <string name="save">SAVE</string>
+    <string name="selectAcademic">Select academic year</string>
+    <string name="dobReg">Date of registration</string>
+    <string name="selectRegDate">Select registration date</string>
+    <string name="enterPhone">Enter mobile number</string>
+    <string name="enterMothersName">Enter mother\'s name</string>
+    <string name="enterFatherName">Enter father\'s name</string>
+    <string name="enterRegFee">Enter registration fee</string>
+    <string name="news">NEWS</string>
+    <string name="notice">NOTICE</string>
+    <string name="title">Title</string>
+    <string name="flashSdate">Flash Start Date</string>
+    <string name="flashEnddate">Flash End Date</string>
+    <string name="newsDesc">News</string>
+    <string name="selectsStartDate">Select start date</string>
+    <string name="publish">Publish</string>
+    <string name="enterTitle">Enter title</string>
+    <string name="selectAudience">Select audience</string>
+    <string name="selectHolidayFor">Select holiday for</string>
+    <string name="selectHolidayType">Select holiday type</string>
+    <string name="audience">Audience</string>
+    <string name="uploadDoc">Upload document</string>
+    <string name="browse">Browse</string>
+    <string name="noImageSelected">No image selected. Please try again.</string>
+    <string name="invalidImageSize">Size of file can not be greater than 20 MB</string>
+    <string name="setProfilePhoto">Set profile photo</string>
+    <string name="editProfile">Edit profile</string>
+
+    <string name="schoolAlbum">School photo album</string>
+    <string name="shareLink">Share admission link with friends &amp; family</string>
+    <string name="schoolUpdates">School social updates</string>
+    <string name="noUrlFound">Something went wrong. No url found.</string>
+    <string name="helpUrlError">Help url is not updated by school admin.</string>
+    <string name="urlError">Url is not updated by school admin.</string>
+    <string name="photosUrlError">Google photos link is not integrated with school account.</string>
+    <string name="fbUrlError">Facebook link is not integrated with school account.</string>
+    <string name="youtubeUrlError">Youtube video link is not integrated with school account.</string>
+    <string name="schoolNews">School News</string>
+    <string name="schoolNotice">School Notice</string>
+    <string name="schoolWall">SCHOOL WALL</string>
+    <string name="postErrorMsg">Posts could not be loaded. Please try again.</string>
+    <string name="academicyearNotFound">Academic years could not be loaded. Please try again later.</string>
+    <string name="regSourceNotFound">Registration sources could not be loaded. Please try again later.</string>
+    <string name="regFeeError">Registration fee not loaded.  Please try again.</string>
+    <string name="holidayListErrorMsg">Holiday list could not be loaded. Please try again.</string>
+    <string name="couldNotLoadHolidays">Could not load holiday list!</string>
+    <string name="Holiday">Holiday</string>
+    <string name="admNoNotFoundMsg">Unable to get Admission . Please try again.</string>
+    <string name="fatherName">Father name</string>
+    <string name="venue">Venue</string>
+    <string name="eventDetails">Event Details</string>
+    <string name="publishEvent">Publish Event</string>
+    <string name="eventStartsAt">Event starts at</string>
+    <string name="budget">Budget</string>
+    <string name="event">Event</string>
+    <string name="fileUploadError">Something went wrong. File can not be uploaded.</string>
+    <string name="eventTypesNotFound">Event type list not found</string>
+    <string name="selectEventLevel">Select event level</string>
+    <string name="selectEventType">Select event type</string>
+    <string name="savedSuccessfully">saved successfully</string>
+    <string name="dataEntry">Data entry</string>
+    <string name="search">Search</string>
+    <string name="failedToUpload">Failed to upload</string>
+    <string name="noInternetMsg">No internet connection found.</string>
+    <string name="noResultFound">No results found.</string>
+    <string name="noResultFoundDesc">We can\'t find any item matching your search.</string>
+    <string name="academicYear">Academic Year</string>
+    <string name="management">Management</string>
+    <string name="communication">Communication</string>
+    <string name="schoolAcademics">School Academics</string>
+    <string name="communicationNUpdate"><![CDATA[Communication & Updates]]></string>
+    <string name="groupMsg">Group Messages</string>
+    <string name="adminChatMsg">Send broadcast message to your groups or chat privately.</string>
+    <string name="sendNow">Send Now</string>
+    <string name="ptm">Parent Teacher Meeting</string>
+    <string name="findPtmDate">Find PTM Dates</string>
+    <string name="schoolFee">School Fees</string>
+    <string name="payFee">Pay Fees Online</string>
+    <string name="dueIns">Due Installments</string>
+    <string name="paidIns">Paid Installments</string>
+    <string name="survey">Survey</string>
+    <string name="helpdesk">Helpdesk</string>
+    <string name="news_module">News</string>
+    <string name="notice_module">Notice</string>
+    <string name="event_module">Event</string>
+    <string name="syllabus">Syllabus</string>
+    <string name="holiday_module">Holidays</string>
+    <string name="ptmMsg">Find parent teacher meeting schedules</string>
+    <string name="manageYourSchool">Manage your school</string>
+    <string name="manageStudents">Manage Students</string>
+    <string name="schoolAcademic">School Academics</string>
+    <string name="parentChatMsg">Communicate with your teachers and classmates</string>
+    <string name="ptmMsg2">Parent teacher meeting is important to your students. Schedule now a PTM</string>
+    <string name="ptmDate">PTM Dates</string>
+    <string name="exploreTT">Explore timetable of your school</string>
+    <string name="schoolTimetable">School Timetable</string>
+    <string name="myOwn">My Own</string>
+    <string name="findFun">Find Fun</string>
+    <string name="classListError">Could not load class list. Please try again.</string>
+    <string name="submitHwByWhtsap">Submit homework through whatsapp</string>
+    <string name="submitHwByEmail">Submit homework through email</string>
+    <string name="whtsapLink"><![CDATA[https://api.whatsapp.com/send?phone=%s&text=&source=&data=]]></string>
+    <string name="emailSubject">Homework</string>
+    <string name="feedbackDetail">Feedback Details</string>
+    <string name="sendFeedback">Send your feedback</string>
+    <string name="feedback">Feedback</string>
+    <string name="areYou">Are you a</string>
+    <string name="or">OR</string>
+    <string name="teacher">Teacher</string>
+    <string name="youAreA">You are a %s</string>
+    <string name="enterAdm">Enter admission no.</string>
+    <string name="go">Go</string>
+    <string name="sentOTP">We have sent you an OTP on your registered mobile ending</string>
+    <string name="verificationCode">Verification code</string>
+    <string name="next">Next</string>
+    <string name="enterDesc">Enter description</string>
+    <string name="hwSubmissionSubject">Homework submission - $1%s, $2%s by($3%s, $4%s)</string>
+    <string name="tryingToAutoCapture">Trying to Auto Capture</string>
+    <string name="userNotFoundContactAdmin">User details not found. Please contact to admin for login credentials.</string>
+    <string name="email">Email</string>
+    <string name="changePassword">Change password</string>
+    <string name="userName">User name</string>
+    <string name="oldPassword">Old Password</string>
+    <string name="newPassword">New password</string>
+    <string name="enterOldPassword">Enter old password</string>
+    <string name="enterNewPassword">Enter new password</string>
+    <string name="selectFeedbackType">Select feedback type</string>
+    <string name="noStudentMsg">We have 0 students in this class</string>
+    <string name="students">Students</string>
+    <string name="student">Student</string>
+    <string name="communicate">Communicate</string>
+    <string name="shareTeachingSchedule">Share teaching schedules with students</string>
+    <string name="academicContent">Academic Content</string>
+    <string name="manageStudentsOf">Manage students of your school</string>
+    <string name="buildContent">Build teaching and learning content</string>
+    <string name="learningContent">Academic Content</string>
+    <string name="onlineAssess">Assessment / Exams</string>
+    <string name="lark">Lark</string>
+    <string name="zoom">Zoom</string>
+    <string name="googleMeet">Google Meet</string>
+    <string name="takeClass">Take Class</string>
+    <string name="shareVideo">Share your video and screen</string>
+    <string name="youCanUseBelow">You can use below tools to share your video and screen</string>
+    <string name="unableToOpen">Unable to open the required url.  please try again later.</string>
+    <string name="myClassRoom">My Class-Room</string>
+    <string name="openStudyTable">Open Study-Table</string>
+    <string name="openYourStudyTable">Open your study-table to take online class and exams</string>
+    <string name="comingSoon">Coming soon!</string>
+    <string name="silentLoginErrorMsg">Invalid token - Unauthorized user. Please consult your school admin. Or email our customer support - scientificstudyhelpdesk@gmail.com.\n\n With your name, number, school name, student name, class.</string>
+    <string name="youCanTake">You can take attendance only when you are a class teacher.</string>
+    <string name="cantReplyToChatMsg">You do not have permission to chat with group. Please call school admin to give you access in case if it is needed.</string>
+    <string name="chatNow">Chat now</string>
+    <string name="unexpectedErrMsg">An unexpected error occured. Please try again later.</string>
+    <string name="lessonPlan">Lesson Plan</string>
+    <string name="msTeam">Microsoft Team</string>
+    <string name="misReport">Management Reports</string>
+    <string name="linkNotFoundMsg">There is a problem with this module. Please conatct school admin OR scientific study customer support</string>
+    <string name="parentHelpdesk">Helpdesk for students</string>
+    <string name="parentHelpdeskMsg">Share helpdesk portal with students and parents</string>
+    <string name="parentHelpdeskTitle">Resolve problems of students</string>
+    <string name="OpenInWeb">Open in Web</string>
+    <string name="browserMsg">This will open link in your phone browser. We suggest you to install Google chrome browser and set it as default application for browsing.</string>
+    <string name="helpArticles">Help Articles</string>
+    <string name="resolveProblems">Resolve problems of school</string>
+    <string name="shareHelpdesk">Share Helpdesk Portal with parents</string>
+    <string name="shareArticle">Share Articles / Training video / Coming Training with staff</string>
+    <string name="parentOrientation">New School - Parent Orientation Program</string>
+    <string name="staffOrientation">New School - Teacher Orientation Program</string>
+    <string name="myClsRoom">My Class-Room</string>
+    <string name="learningMaterial">Explore Learning materials</string>
+    <string name="takeOnlineAssess">Take Assessment / Exams</string>
+    <string name="completeHW">Complete Homework</string>
+    <string name="findCW">Find Classwork</string>
+    <string name="findSyllabus">Find Syllabus</string>
+    <string name="needHelp">Need Help?</string>
+    <string name="howToExams">How to take exams?</string>
+    <string name="howToAttend">How to attend online classes?</string>
+    <string name="contactScl">Contact School</string>
+    <string name="reachSS">Reach Scientific Study for APP issues</string>
+    <string name="dearParents">Dear parents,</string>
+    <string name="experienceProblem">In case if you experience any problems in taking exam or any APP related issues. We suggest you to install Google Chrome and use below link to login in web browser.</string>
+    <string name="showLoginCredentials">Show me my user ID and password for web login</string>
+    <string name="assignedOn">"Assigned On: "</string>
+    <string name="submissionDate">"Submission Date: "</string>
+    <string name="grades">"Grades: "</string>
+    <string name="attachments">Attachments</string>
+    <string name="assigned">Assigned</string>
+    <string name="inProgress">In Progress</string>
+    <string name="completed">Completed</string>
+    <string name="selectAll">Select all</string>
+    <string name="comments">Comments</string>
+    <string name="rework">Request rework</string>
+    <string name="markAsCompleted">Mark as completed</string>
+    <string name="pleaseSelectStudent">Please select student to perform operation.</string>
+    <string name="noStudentFound">No student found.</string>
+    <string name="pleaseTryAgain">Please try again.</string>
+    <string name="enterLink">Enter Link</string>
+    <string name="enterYoutubeLink">Enter youtube link</string>
+    <string name="hwDiscussion">Homework Discussion</string>
+    <string name="playingMediaPlayer">Playing Audio</string>
+    <string name="fileNotFound">File not found. Try again later.</string>
+    <string name="status">Status: %1$s</string>
+    <string name="youCanSubmit">You can submit your homework in web browser also. Click here.</string>
+
+    <!--Bullets-->
+
+</resources>

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fabMenuLayout"
+    android:visibility="gone"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="end"
+    android:background="#c7acaaaa"
+    android:gravity="bottom|end"
+    android:orientation="vertical"
+    android:padding="4dp">
+
+
+        <LinearLayout
+            android:id="@+id/externalLinkLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="External Link" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/externalLinkFab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                app:backgroundTint="@color/green"
+                android:tint="@color/white"
+                app:fabSize="mini"
+                app:srcCompat="@drawable/link" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/youtubeLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical">
+            <!--standard_23-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Youtube Links" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/youtubeFab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                app:backgroundTint="@color/red"
+                app:tint="@color/white"
+                app:fabSize="mini"
+                app:srcCompat="@drawable/youtube" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/galleryLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical">
+            <!--android:layout_marginBottom="@dimen/standard_23"-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Gallery" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/galleryFab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                app:backgroundTint="@color/orange"
+                android:tint="@android:color/white"
+                app:fabSize="mini"
+                app:srcCompat="@drawable/gallery2" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/audioLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:visibility="gone">
+            <!--standard_23-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Audio" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/audioFab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                app:backgroundTint="@color/yellow"
+                app:fabSize="mini"
+                app:srcCompat="@drawable/audio" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/documentsLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical">
+            <!--standard_23-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Documents" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/documentsFab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                app:backgroundTint="@color/colorPrimary"
+                android:tint="@color/white"
+                app:fabSize="mini"
+                app:srcCompat="@drawable/gallery2" />
+        </LinearLayout>
+    </LinearLayout>
+

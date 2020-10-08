@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.jeannypr.scientificstudy.Dashboard.model.TodayTabItemDetail" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/learningSection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#EDE7F6"
+        android:paddingStart="12dp"
+        android:paddingTop="12dp"
+        android:paddingEnd="12dp"
+        android:paddingBottom="15dp">
+
+        <TextView
+            android:id="@+id/tvLearningTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@{viewModel.title}"
+            android:textColor="#665EFF"
+            android:textSize="@dimen/lg_size_text"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/white_bg"
+            android:padding="12dp"
+            app:layout_constraintTop_toBottomOf="@+id/tvLearningTitle">
+
+            <com.jeannypr.scientificstudy.UI.ImFlexboxLayout
+                android:id="@+id/descRow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="4dp"
+                android:paddingBottom="4dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:viewPartMain="@+id/feeDesc"
+                app:viewPartSlave="@+id/readMoreRow">
+
+                <TextView
+                    android:id="@+id/feeDesc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end|bottom"
+                    android:focusableInTouchMode="false"
+                    android:gravity="start|top"
+                    android:maxLength="110"
+                    android:paddingEnd="2dp"
+                    android:text="@{viewModel.description}"
+                    android:textColor="@color/black2"
+                    android:textSize="@dimen/sm_size_text" />
+
+                <LinearLayout
+                    android:id="@+id/readMoreRow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="4dp"
+                    android:foreground="?android:selectableItemBackground"
+                    android:gravity="end"
+                    android:minWidth="60dp"
+                    android:orientation="horizontal"
+                    android:visibility='@{viewModel.description.equals("") ? View.GONE : View.VISIBLE}'
+                    tools:targetApi="m">
+
+                    <TextView
+                        android:id="@+id/readMore"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end|bottom"
+                        android:gravity="end"
+                        android:maxLines="1"
+                        android:text="@string/readMore"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+
+            </com.jeannypr.scientificstudy.UI.ImFlexboxLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/requestBtnLearnTab"
+                style="@style/Widget.MaterialComponents.Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:minHeight="50dp"
+                android:text="@string/requestCoordination"
+                android:textAllCaps="false"
+                android:enabled='@{viewModel.extraKeys.buttonOnClickLink.equals("") ? false : true}'
+                android:textSize="@dimen/sm_size_text"
+                app:backgroundTint="#665EFF"
+                app:cornerRadius="4dp"
+                app:icon="@mipmap/plus_ic"
+                app:iconGravity="start"
+                app:iconPadding="4dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/descRow" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

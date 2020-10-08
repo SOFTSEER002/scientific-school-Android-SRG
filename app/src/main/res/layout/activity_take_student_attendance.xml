@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/attendanceModuleHome"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:menu="@menu/student_attendance"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:subtitleTextColor="@color/white"
+            app:titleTextColor="@color/white" />
+
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <RelativeLayout
+        android:id="@+id/totalHeader"
+        style="@style/totalPresentAbsentHeader"
+        android:layout_below="@+id/appBar">
+
+        <TextView
+            android:id="@+id/txtPresent"
+            style="@style/presentLbl"
+            android:text="Present :" />
+
+        <TextView
+            android:id="@+id/totalPresent"
+            style="@style/totalPresent"
+            android:layout_toEndOf="@+id/txtPresent"
+            android:layout_toRightOf="@+id/txtPresent"
+            android:text="0" />
+
+        <TextView
+            android:id="@+id/txtAbsent"
+            style="@style/absentLbl"
+            android:layout_toEndOf="@+id/totalPresent"
+            android:layout_toRightOf="@+id/totalPresent"
+            android:text="Absent :" />
+
+        <TextView
+            android:id="@+id/totalAbsent"
+            style="@style/totalAbsent"
+            android:layout_toEndOf="@+id/txtAbsent"
+            android:layout_toRightOf="@+id/txtAbsent"
+            android:text="0" />
+
+        <TextView
+            android:id="@+id/selectedDate"
+            style="@style/totalAbsent"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="5dp"
+            android:textColor="@color/black"
+            android:textStyle="normal" />
+
+    </RelativeLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/totalHeader"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="20dp"
+        android:indeterminate="true"
+        android:visibility="visible" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/progressBar"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:orientation="vertical">
+
+        <ListView
+            android:id="@+id/student_attendance_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+    <com.jeannypr.scientificstudy.FloatingActionButton.MovableFloatingActionButton
+        android:id="@+id/btnSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_gravity="bottom|end"
+        app:tint="@color/white"
+        app:backgroundTint="@color/colorAccent"
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="10dp"
+        app:srcCompat="@drawable/right_tick_sm" />
+    <!--android:backgroundTint="@color/colorAccent"-->
+</RelativeLayout>

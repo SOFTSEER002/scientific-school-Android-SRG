@@ -1,0 +1,45 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="5dp"
+    android:layout_marginTop="10dp"
+    android:paddingEnd="5dp"
+    android:background="@color/white"
+    android:minHeight="50dp"
+    android:layout_gravity="end"
+    android:minWidth="300dp"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/row_activity_item_file">
+
+
+    <ImageView
+        android:id="@+id/icLink"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginStart="5dp"
+        android:src="@drawable/link"
+        app:layout_constraintEnd_toStartOf="@id/linkUrl"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:contentDescription="@string/default_cont_desc" />
+
+    <TextView
+        android:id="@+id/linkUrl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="107dp"
+        android:layout_marginStart="5dp"
+        android:text=""
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/sm_size_text"
+        app:layout_constraintStart_toEndOf="@id/icLink"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

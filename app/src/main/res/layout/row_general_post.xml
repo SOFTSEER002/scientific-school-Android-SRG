@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="post"
+            type="com.jeannypr.scientificstudy.SptWall.model.SptWallModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:paddingBottom="4dp"
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:text="Title"
+            android:textColor="@color/black"
+            android:textSize="@dimen/md_size_text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/postType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/border_whitebg_rounded_corner"
+            android:paddingBottom="2dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:paddingTop="2dp"
+            android:text="Event"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/xs_size_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/title"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="5dp"
+            android:paddingRight="10dp"
+            android:paddingLeft="10dp"
+            android:background="@drawable/wall_underline"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:text="Lorem Ipsum is dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries"
+            app:layout_constraintBottom_toTopOf="@+id/startDateIcon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title" />
+
+        <ImageView
+            android:id="@+id/startDateIcon"
+            android:layout_width="@dimen/row_event_icDatepicker_width"
+            android:layout_height="@dimen/row_event_icDatepicker_width"
+            android:layout_marginEnd="2dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="2dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/datepicker_white"
+            android:tint="@color/black2"
+            app:layout_constraintEnd_toStartOf="@+id/startDate"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/desc"
+            android:contentDescription="@string/default_cont_desc" />
+
+        <TextView
+            android:id="@+id/startDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/desc"
+            android:layout_marginEnd="10dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="8dp"
+            android:text="22-22-2019"
+            app:layout_constraintEnd_toStartOf="@+id/endDateIcon"
+            app:layout_constraintStart_toEndOf="@id/startDateIcon"
+            app:layout_constraintTop_toBottomOf="@+id/desc" />
+
+        <ImageView
+            android:id="@+id/endDateIcon"
+            android:layout_width="@dimen/row_event_icDatepicker_width"
+            android:layout_height="@dimen/row_event_icDatepicker_width"
+            android:layout_below="@+id/desc"
+            android:layout_marginEnd="2dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/datepicker_white"
+            android:tint="@color/black2"
+            app:layout_constraintEnd_toStartOf="@+id/endDate"
+            app:layout_constraintStart_toEndOf="@id/startDate"
+            app:layout_constraintTop_toBottomOf="@+id/desc"
+            android:contentDescription="@string/default_cont_desc" />
+
+        <TextView
+            android:id="@+id/endDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/desc"
+            android:layout_marginEnd="10dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="8dp"
+            android:text="12-11-2018"
+            app:layout_constraintEnd_toStartOf="@+id/timeIcon"
+            app:layout_constraintStart_toEndOf="@id/endDateIcon"
+            app:layout_constraintTop_toBottomOf="@+id/desc" />
+
+        <ImageView
+            android:id="@+id/timeIcon"
+            android:layout_width="@dimen/row_event_icDatepicker_width"
+            android:layout_height="@dimen/row_event_icDatepicker_width"
+            android:layout_below="@+id/desc"
+            android:layout_marginEnd="2dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/time_sm"
+            android:tint="@color/black2"
+            app:layout_constraintEnd_toStartOf="@+id/time"
+            app:layout_constraintStart_toEndOf="@id/endDate"
+            app:layout_constraintTop_toBottomOf="@+id/desc"
+            android:contentDescription="@string/default_cont_desc" />
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/desc"
+            android:layout_marginLeft="2dp"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="8dp"
+            android:text="12:13 am"
+            app:layout_constraintStart_toEndOf="@id/timeIcon"
+            app:layout_constraintTop_toBottomOf="@+id/desc" />
+        <!--</RelativeLayout>-->
+
+        <ImageView
+            android:id="@+id/attachment"
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/white_border_white_bg"
+            android:padding="3dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/tulips"
+            android:visibility="visible"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/startDateIcon"
+            android:contentDescription="@string/default_cont_desc" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

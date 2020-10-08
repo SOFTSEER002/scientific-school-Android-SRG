@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.jeannypr.scientificstudy.Dashboard.model.TodayTabItemDetail" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/regSection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#DCEDC8"
+        android:padding="12dp"
+        android:visibility="visible"
+        app:layout_constraintTop_toBottomOf="@+id/feeSection">
+
+        <TextView
+            android:id="@+id/tvRegTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@{viewModel.title}"
+            android:textColor="#5F8110"
+            android:textSize="@dimen/lg_size_text"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/white_bg"
+            android:padding="12dp"
+            app:layout_constraintTop_toBottomOf="@+id/tvRegTitle">
+
+            <com.jeannypr.scientificstudy.UI.ImFlexboxLayout
+                android:id="@+id/descRow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="4dp"
+                android:paddingBottom="4dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:viewPartMain="@+id/desc"
+                app:viewPartSlave="@+id/readMoreRow">
+
+                <TextView
+                    android:id="@+id/desc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end|bottom"
+                    android:focusableInTouchMode="false"
+                    android:gravity="start|top"
+                    android:maxLength="110"
+                    android:paddingEnd="2dp"
+                    android:text="@{viewModel.description}"
+                    android:textColor="@color/black2"
+                    android:textSize="@dimen/sm_size_text" />
+
+                <LinearLayout
+                    android:id="@+id/readMoreRow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="4dp"
+                    android:foreground="?android:selectableItemBackground"
+                    android:gravity="end"
+                    android:minWidth="60dp"
+                    android:orientation="horizontal"
+                    android:visibility='@{viewModel.description.equals("") ? View.GONE : View.VISIBLE}'
+                    tools:targetApi="m">
+
+                    <TextView
+                        android:id="@+id/readMore"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end|bottom"
+                        android:gravity="end"
+                        android:maxLines="1"
+                        android:text="@string/readMore"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+
+            </com.jeannypr.scientificstudy.UI.ImFlexboxLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnCloseChartReg"
+                style="@style/Widget.AppCompat.Button"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/close_chart_btn_bg"
+                android:drawableStart="@drawable/ic_arrow_up"
+                android:drawablePadding="8dp"
+                android:drawableTint="@color/white"
+                android:minHeight="40dp"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:text="@string/closeChart"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sm_size_text"
+                app:backgroundTint="@color/green13"
+                app:cornerRadius="12dp"
+                app:icon="@drawable/down_arrow"
+                app:layout_constraintEnd_toStartOf="@+id/btnGoToReg"
+                app:layout_constraintTop_toBottomOf="@+id/descRow"
+                tools:targetApi="m" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnGoToReg"
+                style="@style/Widget.AppCompat.Button"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/go_to_fee_btn_bg"
+                android:drawableEnd="@mipmap/right_arrow_ic"
+                android:drawablePadding="8dp"
+                android:foreground="?android:selectableItemBackground"
+                android:minHeight="40dp"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:text="@string/regReports"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sm_size_text"
+                app:backgroundTint="@color/green12"
+                app:cornerRadius="12dp"
+                app:icon="@drawable/ic_right_arrow"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/descRow"
+                tools:targetApi="m" />
+            <!--android:enabled='@{viewModel.extraKeys.registratioEnabled ? true : false}'-->
+            <com.github.mikephil.charting.charts.BarChart
+                android:id="@+id/regChart"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:minHeight="250dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnGoToReg" />
+
+            <!--250-->
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

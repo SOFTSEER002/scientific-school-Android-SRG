@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:icon="@drawable/ic_datepicker"
+        android:title="News"
+        app:showAsAction="never" />
+    <item
+        android:icon="@drawable/announcement2"
+        android:title="Notice"
+        app:showAsAction="never" />
+    <item
+        android:icon="@drawable/student_datepicker"
+        android:iconTint="@color/red"
+        android:title="Event"
+        app:showAsAction="never"
+        tools:targetApi="o" />
+   
+</menu>

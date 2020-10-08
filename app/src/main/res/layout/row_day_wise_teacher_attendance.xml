@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="1dp"
+    android:padding="@dimen/mTop0">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".65" />
+
+    <TextView
+        android:id="@+id/teacherName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:gravity="start"
+        android:maxLines="1"
+        android:textColor="@color/black9"
+        android:textSize="@dimen/md_size_text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/teacherPresent"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:background="@drawable/round_corner_green_bg"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:maxLines="1"
+        android:textColor="@color/white"
+        android:textSize="@dimen/md_size_text"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/teacherName"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/teacherAbsent"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="4dp"
+        android:background="@drawable/rounded_teacher_button"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:maxLines="1"
+        android:textColor="@color/white"
+        android:textSize="@dimen/md_size_text"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/teacherName"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/teacherHalfDay"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:background="@drawable/halfday_round_corner"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:maxLines="1"
+        android:textColor="@color/white"
+        android:textSize="@dimen/md_size_text"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/teacherName"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="@dimen/mTop0"
+        android:background="@color/black6"
+        app:layout_constraintTop_toBottomOf="@+id/teacherName" />
+
+
+    <!-- <RelativeLayout
+         android:id="@+id/deatils"
+         android:layout_width="0dp"
+         android:layout_height="wrap_content"
+         app:layout_constraintEnd_toStartOf="@id/guideline"
+         app:layout_constraintStart_toStartOf="parent">
+
+             <TextView
+                 android:id="@+id/teacherName"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_marginLeft="10dp"
+                 android:ellipsize="end"
+                 android:maxLines="1"
+                 android:text=""
+                 android:textColor="@color/black"
+                 android:textSize="@dimen/md_size_text" />
+
+             <ImageView
+                 android:id="@+id/iconDesigation"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_below="@id/teacherName"
+                 android:scaleX=".5"
+                 android:visibility="gone"
+                 android:scaleY=".5"
+                 android:src="@drawable/email" />
+
+             <TextView
+                 android:id="@+id/teacherdesigation"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_below="@id/teacherName"
+                 android:layout_toRightOf="@+id/iconDesigation"
+                 android:layout_marginLeft="10dp"
+                 android:ellipsize="end"
+                 android:visibility="gone"
+                 android:maxLines="1"
+                 android:text=""
+                 android:textColor="@color/black" />
+
+             <ImageView
+                 android:id="@+id/icoEmail"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_below="@id/teacherdesigation"
+                 android:scaleX=".5"
+                 android:visibility="gone"
+                 android:scaleY=".5"
+                 android:src="@drawable/email" />
+
+             <TextView
+                 android:id="@+id/teacherEamil"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_below="@id/teacherdesigation"
+                 android:layout_marginLeft="10dp"
+                 android:ellipsize="end"
+                 android:maxLines="1"
+                 android:visibility="gone"
+                 android:text=""
+                 android:textColor="@color/black"
+                 android:layout_toRightOf="@+id/icoEmail" />
+
+
+         </RelativeLayout>-->
+
+
+    <!--<RadioGroup
+        android:id="@+id/radAttendance"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:gravity="end"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/guideline">
+
+        <RadioButton
+            android:id="@+id/teacherPresent"
+            android:layout_width="@dimen/takeAttendanceRow_presentradio_width"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/teacherAttenRow_present_margin_right"
+            android:layout_marginRight="@dimen/teacherAttenRow_present_margin_right"
+            android:button="@drawable/present_states_lg"
+            android:checked="false"
+            android:clickable="false"
+            android:scaleX="@dimen/takeAttendanceRow_presentradio_scale_x"
+            android:scaleY="@dimen/takeAttendanceRow_presentradio_scale_y"
+            android:textColor="@color/green3"
+            android:textSize="@dimen/sm_size_text" />
+
+        <RadioButton
+            android:id="@+id/teacherAbsent"
+            android:layout_width="@dimen/takeAttendanceRow_presentradio_width"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/teacherAttenRow_present_margin_right"
+            android:layout_marginRight="@dimen/teacherAttenRow_present_margin_right"
+            android:button="@drawable/absent_states_lg"
+            android:checked="false"
+            android:clickable="false"
+            android:scaleX="@dimen/takeAttendanceRow_presentradio_scale_x"
+            android:scaleY="@dimen/takeAttendanceRow_presentradio_scale_y"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sm_size_text" />
+
+        <RadioButton
+            android:id="@+id/teacherHalfDay"
+            android:layout_width="@dimen/takeAttendanceRow_presentradio_width"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/teacherAttenRow_halfday_margin_right"
+            android:layout_marginRight="@dimen/teacherAttenRow_halfday_margin_right"
+            android:button="@drawable/halfday_states_lg"
+            android:checked="false"
+            android:clickable="false"
+            android:scaleX="@dimen/takeAttendanceRow_presentradio_scale_x"
+            android:scaleY="@dimen/takeAttendanceRow_presentradio_scale_y"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sm_size_text" />
+
+    </RadioGroup>-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>

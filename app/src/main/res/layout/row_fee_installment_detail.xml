@@ -1,0 +1,284 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="detail"
+            type="com.jeannypr.scientificstudy.Fee.model.FeeInstallmentDetailModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/row_Container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dashboardIc_padding"
+        android:background="@drawable/daily_collection_purple_bg"
+        android:padding="@dimen/mLeft0">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/vg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.70" />
+
+        <TextView
+            android:id="@+id/feeType"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="TRANSPORT"
+            android:textColor="@color/mBlack"
+            android:textSize="@dimen/md_size_text"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/vg"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/payableLbl"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="start|center_vertical"
+            android:text="Payable"
+            android:textColor="@color/mGrey"
+            android:textSize="@dimen/md_size_text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/feeType" />
+
+        <TextView
+            android:id="@+id/payableAmount"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/mLeft1"
+            android:layout_marginRight="@dimen/mRight0"
+            android:gravity="end|center_vertical"
+            android:maxLines="1"
+            android:textColor="@color/mBlack"
+            android:textSize="@dimen/md_size_text"
+            app:layout_constraintEnd_toEndOf="@id/vg"
+            app:layout_constraintStart_toEndOf="@+id/payableLbl"
+            app:layout_constraintTop_toBottomOf="@+id/feeType" />
+
+        <TextView
+            android:id="@+id/paidLbl"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="start|center_vertical"
+            android:text="Paid"
+            android:textColor="@color/mGreen"
+            android:textSize="@dimen/md_size_text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/payableLbl" />
+
+        <TextView
+            android:id="@+id/paidAmount"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/mLeft1"
+            android:layout_marginRight="@dimen/mRight0"
+            android:gravity="end|center_vertical"
+            android:maxLines="1"
+            android:textColor="@color/colorAccent"
+            android:textSize="@dimen/md_size_text"
+            app:layout_constraintEnd_toEndOf="@id/vg"
+            app:layout_constraintStart_toEndOf="@+id/paidLbl"
+            app:layout_constraintTop_toBottomOf="@+id/payableAmount" />
+
+        <TextView
+            android:id="@+id/discountLbl"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="start|center_vertical"
+            android:text="Discount"
+            android:textColor="@color/colorAccent"
+            android:textSize="@dimen/md_size_text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/paidLbl" />
+
+        <TextView
+            android:id="@+id/discount"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/mLeft1"
+            android:layout_marginRight="@dimen/mRight0"
+            android:gravity="end|center_vertical"
+            android:maxLines="1"
+            android:textColor="@color/mGreen"
+            android:textSize="@dimen/md_size_text"
+            app:layout_constraintEnd_toEndOf="@id/vg"
+            app:layout_constraintStart_toEndOf="@+id/discountLbl"
+            app:layout_constraintTop_toBottomOf="@+id/paidAmount" />
+
+        <TextView
+            android:id="@+id/duesLbl"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="start|center_vertical"
+            android:text="Dues"
+            android:textColor="@color/mRed"
+            android:textSize="@dimen/md_size_text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/discountLbl" />
+
+        <TextView
+            android:id="@+id/dueAmount"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/mLeft1"
+            android:layout_marginRight="@dimen/mRight0"
+            android:gravity="end|center_vertical"
+            android:maxLines="1"
+            android:textColor="@color/mRed"
+            android:textSize="@dimen/md_size_text"
+            app:layout_constraintEnd_toEndOf="@id/vg"
+            app:layout_constraintStart_toEndOf="@+id/duesLbl"
+            app:layout_constraintTop_toBottomOf="@+id/discount" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/payment"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/rea_light"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/vg"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/payAmount"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:maxLines="1"
+                android:textColor="@color/mRed"
+                android:textSize="@dimen/md_size_text"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout><!--<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/feeSummaryCardView"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/feeDetailRow_marginTop"
+        android:padding="@dimen/feeDetailRow_padding">
+
+
+        <TextView
+            android:id="@+id/feeType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:fontFamily="@font/open_sans_semibold"
+            android:gravity="start|center_vertical"
+            android:text=""
+            android:textColor="@color/black"
+            android:textSize="@dimen/md_size_text" />
+
+        <ImageView
+            android:id="@+id/installmentStatusImg"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/feeDetailRow_statusIcon_height"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="@dimen/feeDetailRow_statusIcon_marginTop"
+            android:src="@drawable/due" />
+
+        <TextView
+            android:id="@+id/payableAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/feeType"
+            android:layout_centerVertical="true"
+            android:gravity="start"
+            android:text=""
+            android:textColor="@color/black"
+            android:textSize="@dimen/md_size_text" />
+
+        <TextView
+            android:id="@+id/minusSymbol"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/feeType"
+            android:layout_toRightOf="@+id/payableAmount"
+            android:gravity="start"
+            android:text=" - "
+            android:textColor="@color/black"
+            android:textSize="@dimen/md_size_text" />
+
+        <TextView
+            android:id="@+id/paidAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/feeType"
+            android:layout_toRightOf="@+id/minusSymbol"
+            android:gravity="start"
+            android:text=""
+            android:textColor="@color/green3"
+            android:textSize="@dimen/md_size_text" />
+
+        <TextView
+            android:id="@+id/minusSymbol2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/feeType"
+            android:layout_toRightOf="@+id/paidAmount"
+            android:gravity="start"
+            android:text=" - "
+            android:textColor="@color/black"
+            android:textSize="@dimen/md_size_text" />
+
+        <TextView
+            android:id="@+id/discount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/feeType"
+            android:layout_toRightOf="@+id/minusSymbol2"
+            android:gravity="start"
+            android:text=""
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/md_size_text" />
+
+        <TextView
+            android:id="@+id/equalSymbol"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/feeType"
+            android:layout_toRightOf="@+id/discount"
+            android:gravity="start"
+            android:text=" =  "
+            android:textColor="@color/black"
+            android:textSize="@dimen/md_size_text" />
+        &lt;!&ndash;<ImageView&ndash;&gt;
+            &lt;!&ndash;android:id="@+id/ic_rupee"&ndash;&gt;
+            &lt;!&ndash;android:layout_width="wrap_content"&ndash;&gt;
+            &lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;
+            &lt;!&ndash;android:layout_below="@+id/feeType"&ndash;&gt;
+            &lt;!&ndash;android:layout_toRightOf="@+id/equalSymbol"&ndash;&gt;
+         &lt;!&ndash;android:src="@drawable/rupee"&ndash;&gt;
+            &lt;!&ndash;android:scaleX="@dimen/feeDetailRow_rupeeIcon_scalex"&ndash;&gt;
+            &lt;!&ndash;android:scaleY="@dimen/feeDetailRow_rupeeIcon_scalex"&ndash;&gt;
+            &lt;!&ndash;android:tint="@color/red"/>&ndash;&gt;
+
+        <TextView
+            android:id="@+id/dueAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/feeType"
+            android:layout_toRightOf="@+id/equalSymbol"
+            android:layout_marginLeft="@dimen/feeDetailRow_dueAmount_marginLeft"
+            android:gravity="start"
+            android:text=""
+            android:textColor="@color/red"
+            android:textSize="@dimen/md_size_text" />
+
+    </RelativeLayout>
+</android.support.v7.widget.CardView>-->

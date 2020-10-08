@@ -1,0 +1,307 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/route_Container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/dashboardIc_padding"
+    android:background="@drawable/daily_collection_purple_bg"
+    android:padding="@dimen/mLeft0">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/vg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.55" />
+
+    <TextView
+        android:id="@+id/studentName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:gravity="start|center_vertical"
+        android:maxLines="1"
+        android:text=""
+        android:textColor="@color/mBlack"
+        android:textSize="@dimen/md_size_text"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/vg"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/className"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:gravity="start|center_vertical"
+        android:maxLines="1"
+        android:text=""
+        android:textColor="@color/mGrey"
+        android:textSize="@dimen/sm_size_text"
+        app:layout_constraintEnd_toEndOf="@id/vg"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/studentName" />
+
+    <TextView
+        android:id="@+id/admNo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:gravity="start|center_vertical"
+        android:maxLines="1"
+        android:text=""
+        android:textColor="@color/mGrey"
+        android:textSize="@dimen/sm_size_text"
+        app:layout_constraintEnd_toEndOf="@id/vg"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/className" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/mLeft0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@id/vg"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/icStoppage"
+            android:layout_width="@dimen/route_summary_stoppage_Height"
+            android:layout_height="@dimen/route_summary_stoppage_Width"
+            android:layout_gravity="center_vertical"
+            android:contentDescription="@string/default_cont_desc"
+            android:scaleX="1"
+            android:scaleY="1"
+            android:src="@drawable/stoppage"
+            android:tint="@color/mRed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/stoppageName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:gravity="start|center_vertical"
+            android:maxLines="1"
+            android:padding="4dp"
+            android:textColor="@color/mBlack"
+            android:textSize="@dimen/sm_size_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/icStoppage"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/icvehicleNo"
+            android:layout_width="@dimen/route_summary_stoppage_Height"
+            android:layout_height="@dimen/route_summary_stoppage_Width"
+            android:layout_gravity="center_vertical"
+            android:scaleX="1"
+            android:scaleY="1"
+            android:src="@drawable/vehicle_number"
+            android:tint="@color/colorAccent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/icStoppage"
+            android:contentDescription="@string/default_cont_desc" />
+
+        <TextView
+            android:id="@+id/vehicleNo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:gravity="start|center_vertical"
+            android:maxLines="1"
+            android:padding="4dp"
+            android:textColor="@color/mBlack"
+            android:textSize="@dimen/sm_size_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/icvehicleNo"
+            app:layout_constraintTop_toBottomOf="@+id/icStoppage" />
+
+        <ImageView
+            android:id="@+id/icMobile"
+            android:layout_width="@dimen/route_summary_stoppage_Height"
+            android:layout_height="@dimen/route_summary_stoppage_Width"
+            android:layout_gravity="center_vertical"
+            android:scaleX="1"
+            android:scaleY="1"
+            android:src="@drawable/mobile"
+            android:tint="@color/colorPrimary"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/icvehicleNo"
+            android:contentDescription="@string/default_cont_desc" />
+
+        <TextView
+            android:id="@+id/mobile"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:gravity="start|center_vertical"
+            android:maxLines="1"
+            android:padding="4dp"
+            android:textColor="@color/mBlack"
+            android:textSize="@dimen/sm_size_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/icvehicleNo"
+            app:layout_constraintTop_toBottomOf="@+id/icvehicleNo" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorPrimary"
+    android:paddingBottom="0.5dp"
+    android:paddingTop="0.5dp">
+
+    <LinearLayout
+        android:id="@+id/feeSummaryRow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/feeSummaryRow_marginTop"
+        android:background="@drawable/bg_with_dots"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/feeSummaryRow_paddingLeft"
+        android:paddingRight="@dimen/feeSummaryRow_paddingLeft"
+        android:weightSum="100">
+
+        <LinearLayout
+            android:layout_width="@dimen/feeSummaryRow_innerWrapper_width"
+            android:layout_height="match_parent"
+            android:layout_weight="40"
+            android:background="@color/black7"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/studentName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:gravity="center_horizontal"
+                android:maxLines="1"
+                android:text=""
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/sm_size_text" />
+
+
+            <TextView
+                android:id="@+id/className"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:gravity="center_horizontal"
+                android:maxLines="1"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="@dimen/sm_size_text" />
+
+            <TextView
+                android:id="@+id/admNo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="@dimen/sm_size_text" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="60"
+            android:background="@color/white"
+            android:padding="6dp">
+
+            <LinearLayout
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/icStoppage"
+                    android:layout_width="26dp"
+                    android:layout_height="26dp"
+                    android:layout_gravity="center_vertical"
+                    android:scaleX="1"
+                    android:scaleY="1"
+                    android:src="@drawable/stoppage"
+                    android:tint="@color/black" />
+
+                <TextView
+                    android:id="@+id/stoppageName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="start|center_vertical"
+                    android:padding="4dp"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sm_size_text" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/payableRow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/title"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="26dp"
+                    android:layout_height="26dp"
+                    android:layout_gravity="center_vertical"
+                    android:scaleX="1"
+                    android:scaleY="1"
+                    android:src="@drawable/vehicle_number"
+                    android:tint="@color/black" />
+
+                <TextView
+                    android:id="@+id/vehicleNo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="start|center_vertical"
+                    android:padding="4dp"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sm_size_text" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/paidRow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/payableRow"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="26dp"
+                    android:layout_height="22dp"
+                    android:layout_gravity="center_vertical"
+                    android:scaleX="1"
+                    android:scaleY="1"
+                    android:src="@drawable/mobile"
+                    android:tint="@color/black" />
+
+                <TextView
+                    android:id="@+id/mobile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="start|center_vertical"
+                    android:padding="4dp"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sm_size_text" />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</LinearLayout>-->

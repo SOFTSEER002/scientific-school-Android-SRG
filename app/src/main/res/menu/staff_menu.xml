@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/add_staff"
+        android:icon="@drawable/ic_add_nav"
+        android:title="@string/addStaff"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/search_nav"
+        android:icon="@drawable/ic_search_nav"
+        android:title="@string/search"
+        app:actionViewClass="androidx.appcompat.widget.SearchView"
+        app:showAsAction="ifRoom|collapseActionView" />
+
+</menu>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/mTop1"
+    android:background="@color/black6"
+    android:minHeight="250dp">
+
+    <TextView
+        android:id="@+id/dateLbl"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/black5"
+        android:gravity="center"
+        android:padding="4dp"
+        android:text="Date"
+        android:textColor="@color/black9"
+        android:textSize="@dimen/md_size_text"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@id/vg1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/dayTypeLbl"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/black5"
+        android:gravity="center"
+        android:padding="4dp"
+        android:text="DayType"
+        android:textColor="@color/black9"
+        android:textSize="@dimen/md_size_text"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/vg1"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/vg1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".5" />
+
+    <!--  <androidx.constraintlayout.widget.Guideline
+          android:id="@+id/vg2"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:orientation="vertical"
+          app:layout_constraintGuide_percent=".6" />-->
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="2dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dateLbl">
+
+        <LinearLayout
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:orientation="vertical" />
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

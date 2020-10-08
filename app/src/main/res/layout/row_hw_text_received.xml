@@ -1,0 +1,135 @@
+<layout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:baselineAligned="false"
+        android:gravity="start"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start|center_vertical"
+            android:layout_weight=".8">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_chat_from_others"
+                android:gravity="start"
+                android:orientation="vertical"
+                android:padding="3dp">
+
+                <TextView
+                    android:id="@+id/otherUserName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="4dp"
+                    android:paddingLeft="4dp"
+                    android:text=""
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/sm_size_text"
+                    android:visibility="gone" />
+
+                <com.jeannypr.scientificstudy.UI.ImFlexboxLayout
+                    android:id="@+id/msg_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start|bottom"
+                    android:gravity="start|center_vertical"
+                    app:viewPartMain="@+id/textMsg"
+                    app:viewPartSlave="@+id/lytStatusContainer">
+
+                    <TextView
+                        android:id="@+id/textMsg"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end|bottom"
+                        android:autoLink="all"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:focusableInTouchMode="false"
+                        android:gravity="start|top"
+                        android:paddingStart="4dp"
+                        android:textColor="@color/black"
+                        android:textColorLink="@color/blue2"
+                        android:textIsSelectable="true"
+                        android:textSize="17sp" />
+
+                    <LinearLayout
+                        android:id="@+id/lytStatusContainer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:gravity="end"
+                        android:minWidth="60dp">
+
+                        <TextView
+                            android:id="@+id/date_view"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="end|bottom"
+                            android:layout_marginEnd="5dp"
+                            android:gravity="end"
+                            android:maxLines="1"
+                            android:textAllCaps="true"
+                            android:textColor="#646464"
+                            android:textSize="12sp" />
+
+                        <!--<include-->
+                        <!--android:id="@+id/lytStatus"-->
+                        <!--layout="@layout/layout_im_message_status"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_gravity="bottom"-->
+                        <!--android:layout_marginRight="5dp"-->
+                        <!--android:minWidth="40dp" />-->
+
+                    </LinearLayout>
+
+                </com.jeannypr.scientificstudy.UI.ImFlexboxLayout>
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </LinearLayout>
+    <!-- <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+         xmlns:app="http://schemas.android.com/apk/res-auto"
+         android:id="@+id/row_activity_item_file"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_marginStart="5dp"
+         android:layout_marginLeft="5dp"
+         android:layout_marginTop="10dp"
+         android:layout_marginEnd="5dp"
+         android:layout_marginRight="5dp"
+         android:background="@color/white"
+         android:minWidth="250dp"
+         android:minHeight="40dp"
+         android:padding="3dp">
+
+         <TextView
+             android:id="@+id/textMsg"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_marginStart="5dp"
+             android:layout_marginLeft="5dp"
+             android:layout_marginEnd="5dp"
+             android:layout_marginRight="5dp"
+             android:autoLink="all"
+             android:clickable="true"
+             android:text=""
+             android:textColor="@color/black"
+             android:textColorLink="@color/blue2"
+             android:textIsSelectable="true"
+             android:textSize="@dimen/sm_size_text"
+             app:layout_constraintBottom_toBottomOf="parent"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintTop_toTopOf="parent" />
+
+     </androidx.constraintlayout.widget.ConstraintLayout>-->
+</layout>

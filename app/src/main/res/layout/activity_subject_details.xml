@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:background="@color/white"
+        android:layout_height="match_parent"
+        tools:theme="@style/Coordinator">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?android:attr/actionBarSize"
+                android:background="@color/colorPrimary"
+                app:layout_scrollFlags="scroll|enterAlways"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                app:subtitleTextColor="@color/white"
+                app:titleTextColor="@color/white" />
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/parentSection"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minHeight="155dp"
+                        android:background="@mipmap/subject_detail_top"
+                        android:paddingStart="8dp"
+                        android:paddingTop="8dp"
+                        android:paddingEnd="8dp"
+                        android:paddingBottom="10dp"
+                        android:visibility="visible"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:gravity="center_vertical"
+                            android:layout_marginBottom="30dp"
+                            app:layout_constraintBottom_toBottomOf="@+id/imageView4"
+                            app:layout_constraintTop_toTopOf="@+id/imageView4"
+                            app:layout_constraintStart_toStartOf="parent">
+
+
+                            <TextView
+                                android:id="@+id/selectedHeaderTitle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="left"
+                                android:text="Mathematics"
+                                android:fontFamily="@font/segoe_ui_bold"
+                                android:textColor="#F23188"
+                                android:textSize="20dp" />
+
+                            <TextView
+                                android:id="@+id/selectedHeaderSubTitle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="left"
+                                android:fontFamily="@font/segoe_ui"
+                                android:text="14 Chapters | 20 Learning Objects"
+                                android:textColor="#324755"
+                                android:textSize="@dimen/md_size_text" />
+
+                        </LinearLayout>
+
+
+                        <ImageView
+                            android:id="@+id/imageView4"
+                            android:layout_marginRight="10dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@mipmap/calculater"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:contentDescription="@string/default_cont_desc" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    <RelativeLayout
+                        android:id="@+id/lytSyllabus"
+                        android:layout_width="0dp"
+                        android:padding="10dp"
+                        android:layout_margin="10dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:background="@mipmap/syllabus_bg"
+                        app:layout_constraintTop_toBottomOf="@+id/parentSection">
+
+
+                        <ImageView
+                            android:id="@+id/ivSyllabusIcon"
+                            android:layout_centerVertical="true"
+                            android:layout_width="85dp"
+                            android:layout_height="85dp"
+                            android:layout_alignParentStart="true"
+                            android:background="@mipmap/syllabus_icon"
+                            android:contentDescription="@string/default_cont_desc" />
+
+
+                        <LinearLayout
+                            android:layout_centerVertical="true"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@+id/ivSyllabusIcon"
+                            android:layout_toLeftOf="@+id/ivRight"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="15dp"
+                            android:paddingRight="15dp"
+                            android:orientation="vertical">
+
+
+                            <TextView
+                                android:id="@+id/tvSyllabus"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="left"
+                                android:text="Syllabus"
+                                android:fontFamily="@font/segoe_ui_bold"
+                                android:textColor="@color/white"
+                                android:textSize="20dp" />
+
+                            <TextView
+                                android:id="@+id/tvSyllabusSub"
+                                android:layout_marginTop="3dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="left"
+                                android:fontFamily="@font/segoe_ui"
+                                android:lineSpacingExtra="2dp"
+                                android:text="Mr. Shyam has shared syllabus on date"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/md_size_text" />
+
+                        </LinearLayout>
+
+
+
+
+
+                        <ImageView
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:id="@+id/ivRight"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:src="@drawable/arrow_icon"
+                            android:contentDescription="@string/default_cont_desc" />
+                    </RelativeLayout>
+
+
+            <LinearLayout
+                android:id="@+id/lytSyllabusTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_margin="10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lytSyllabus">
+
+                <ImageView
+                    android:layout_width="48dp"
+                    android:layout_height="60dp"
+                    android:src="@mipmap/chapter"
+                    android:contentDescription="@string/default_cont_desc" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Chapters"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="5dp"
+                    android:gravity="center_vertical"
+                    android:textColor="#324755"
+                    android:textSize="@dimen/lg_size_text" />
+
+            </LinearLayout>
+
+
+
+
+
+                    <ProgressBar
+                        android:id="@+id/pb"
+                        style="?android:attr/progressBarStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:indeterminate="true"
+                        android:visibility="visible"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                    <!--android:visibility="@{viewModel.isLoading ? View.VISIBLE : View.GONE }"-->
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerView"
+                        android:layout_width="0dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:visibility="visible"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/lytSyllabusTitle" />
+
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</layout>

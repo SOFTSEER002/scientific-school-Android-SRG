@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/pTop0">
+
+    <RelativeLayout
+        android:id="@+id/creditLedgers_dialog"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/spinner_container_height"
+        android:layout_marginTop="@null"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Spinner
+            android:id="@+id/ledgersSpn_dialog"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:theme="@style/spinnerTheme" />
+
+        <ImageView
+            style="@style/spinnerIcon"
+            android:layout_width="12dp"
+            android:contentDescription="@string/default_cont_desc" />
+    </RelativeLayout>
+
+    <!-- <AutoCompleteTextView
+         android:id="@+id/ledgersSpn_dialog"
+         android:layout_width="match_parent"
+         android:layout_height="@dimen/spinner_container_height"
+         android:layout_marginTop="@null"
+         android:completionThreshold="1"
+         app:layout_constraintEnd_toEndOf="parent"
+         app:layout_constraintStart_toStartOf="parent"
+         app:layout_constraintTop_toTopOf="parent">
+
+     </AutoCompleteTextView>
+ -->
+    <TextView
+        android:id="@+id/currentBalLedger_dialog"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:background="@color/colorPrimary"
+        android:gravity="end"
+        android:paddingRight="@dimen/mRight0"
+        android:text=""
+        android:textColor="@color/white"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/creditLedgers_dialog" />
+
+    <View
+        android:id="@+id/divider1"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/black6"
+        app:layout_constraintTop_toBottomOf="@+id/currentBalLedger_dialog" />
+
+
+    <EditText
+        android:id="@+id/ledgerName_dialog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:background="@color/white"
+        android:hint="Ledger Name"
+        android:minHeight="50dp"
+        android:padding="@dimen/pTop0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/divider1" />
+
+    <View
+        android:id="@+id/divider2"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/black6"
+        app:layout_constraintTop_toBottomOf="@+id/ledgerName_dialog" />
+
+
+    <EditText
+        android:id="@+id/email_dialog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:background="@color/white"
+        android:hint="Eamil (optional)"
+        android:minHeight="50dp"
+        android:padding="@dimen/pTop0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/divider2" />
+
+    <View
+        android:id="@+id/divider3"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/black6"
+        app:layout_constraintTop_toBottomOf="@+id/email_dialog" />
+
+    <EditText
+        android:id="@+id/mobile_dialog"
+        android:layout_width="match_parent"
+        android:layout_height="49dp"
+        android:layout_marginTop="1dp"
+        android:background="@color/white"
+        android:hint="Mobile (optional)"
+        android:minHeight="50dp"
+        android:padding="@dimen/pTop0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/divider3" />
+
+    <!--
+        <View
+            android:id="@+id/divider2"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/black6"
+            app:layout_constraintTop_toBottomOf="@+id/desc_dialog" />
+    -->
+
+    <!--  <EditText
+          android:id="@+id/itemAmount_dialog"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="1dp"
+          android:background="@color/white"
+          android:hint="Amount"
+          android:inputType="numberDecimal"
+          android:minHeight="50dp"
+          android:padding="@dimen/pTop0"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@id/divider2" />-->
+</androidx.constraintlayout.widget.ConstraintLayout>

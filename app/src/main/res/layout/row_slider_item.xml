@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/sptAdminWallModule"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="4dp"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:padding="@dimen/pagerContainer_padding"
+    tools:targetApi="m">
+
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:contentDescription="@string/default_cont_desc"
+        android:src="@drawable/male"
+        app:layout_constraintEnd_toStartOf="@id/iconGl"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <!--app:layout_constraintBottom_toTopOf="@id/guideline5"-->
+    <TextView
+        android:id="@+id/label"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="2dp"
+        android:ellipsize="end"
+        android:gravity="start"
+        android:maxLines="1"
+        android:text=""
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/md_size_text"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@id/browseBtn"
+        app:layout_constraintStart_toEndOf="@id/icon"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/browseBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginBottom="2dp"
+        android:background="@drawable/rounded_chat_banner"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:maxLines="1"
+        android:paddingLeft="@dimen/slider_btn_paddingL"
+        android:paddingTop="@dimen/chatBanner_btn_paddingT"
+        android:paddingRight="@dimen/slider_btn_paddingL"
+        android:paddingBottom="@dimen/chatBanner_btn_paddingT"
+        android:textColor="@color/white"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <!--android:background="@drawable/rounded_button"-->
+    <TextView
+        android:id="@+id/label1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="@dimen/mTop0"
+        android:gravity="start"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sm_size_text"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/icon" />
+    <!--android:layout_marginLeft="8dp"
+    android:layout_marginStart="8dp"-->
+    <TextView
+        android:id="@+id/label2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:gravity="start"
+        android:textColor="@color/mBlack"
+        android:textSize="@dimen/sm_size_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/label1" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/iconGl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="@dimen/pagerIc_perc" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

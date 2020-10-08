@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:layout_margin="5dp"
+        android:id="@+id/todaySection"
+        android:layout_width="187dp"
+        android:layout_height="135dp"
+        android:background="@color/transparent"
+        app:cardUseCompatPadding="false"
+        app:cardCornerRadius="5dp"
+        android:visibility="visible"
+        app:cardElevation="3dp"
+        app:layout_constraintTop_toBottomOf="@+id/staffSection">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:id="@+id/tvName"
+                    android:maxLines="2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="What's your Circuit"
+                    android:textColor="@color/black2"
+                    android:textSize="@dimen/md_size_text"
+                    android:layout_alignParentStart="true" />
+
+
+
+                <LinearLayout
+                    android:layout_margin="3dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:id="@+id/timeIcon"
+                        android:layout_width="@dimen/row_event_icDatepicker_width"
+                        android:layout_height="@dimen/row_event_icDatepicker_width"
+                        android:layout_below="@+id/desc"
+                        android:layout_marginStart="2dp"
+                        android:layout_marginEnd="2dp"
+                        android:src="@drawable/time_sm"
+                        android:tint="@color/black2"
+                        android:contentDescription="@string/default_cont_desc" />
+
+                    <TextView
+                        android:id="@+id/time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/desc"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginStart="2dp"
+                        android:textSize="@dimen/sm_size_text"
+                        android:text="2 Mins" />
+                </LinearLayout>
+
+
+
+
+                <ImageView
+                    android:id="@+id/ivContent"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/word"
+                    android:contentDescription="@string/default_cont_desc" />
+
+
+            </RelativeLayout>
+
+
+    </androidx.cardview.widget.CardView>
+</layout>

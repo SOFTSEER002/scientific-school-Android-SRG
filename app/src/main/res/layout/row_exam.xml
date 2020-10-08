@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="exam"
+            type="com.jeannypr.scientificstudy.Exam.model.ExamListModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/examRow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp"
+        android:background="@color/white"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:padding="6dp"
+        tools:targetApi="m">
+
+        <TextView
+            android:id="@+id/examName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginBottom="6dp"
+            android:text='@{exam.TestName != null ?exam.TestName:""}'
+            android:textColor="@color/black"
+            android:textSize="@dimen/md_size_text"
+            app:layout_constraintEnd_toStartOf="@id/guideline2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/SCal"
+            android:layout_width="17dp"
+            android:layout_height="17dp"
+            android:layout_marginStart="2dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginTop="4dp"
+            android:src="@drawable/datepicker_white"
+            android:tint="@color/black2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/examName"
+            android:contentDescription="@string/default_cont_desc" />
+
+        <TextView
+            android:id="@+id/from"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginTop="4dp"
+            android:text=''
+            android:textColor="@color/black"
+            android:textSize="@dimen/sm_size_text"
+            app:layout_constraintEnd_toStartOf="@id/guideline2"
+            app:layout_constraintStart_toEndOf="@id/SCal"
+            app:layout_constraintTop_toBottomOf="@id/examName" />
+        <!--@{exam.StartDate != null ?exam.StartDate:""}-->
+
+        <TextView
+            android:id="@+id/to"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginTop="4dp"
+            android:gravity="center"
+            android:text=''
+            android:textColor="@color/black"
+            android:textSize="@dimen/sm_size_text"
+            app:layout_constraintStart_toStartOf="@id/guideline2"
+            app:layout_constraintTop_toBottomOf="@id/examName" />
+
+        <ImageView
+            android:id="@+id/nextBtn"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="2dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginTop="4dp"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:src="@drawable/right_arrow_btn"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/guideline3"
+            app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="@string/default_cont_desc"
+            tools:targetApi="m" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.30" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.92" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

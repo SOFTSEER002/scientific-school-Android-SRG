@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.jeannypr.scientificstudy.Dashboard.model.HomeTabItemDetail" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/fatherdayRow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#EBE1FC"
+        android:paddingStart="8dp"
+        android:paddingTop="8dp"
+        android:paddingEnd="8dp"
+        android:paddingBottom="15dp"
+        android:visibility="visible">
+
+        <TextView
+            android:id="@+id/fday_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="@dimen/mRight1"
+            android:gravity="start"
+            android:text="@{viewModel.Title}"
+            android:textColor="#512DA8"
+            android:textSize="@dimen/lg_size_text"
+            app:layout_constraintEnd_toEndOf="@id/fday_gv"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/fday_Img"
+            android:layout_width="0dp"
+            android:layout_height="120dp"
+            android:contentDescription="@string/default_cont_desc"
+            android:src="@mipmap/fathersday_md"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/fday_gv"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/fday_funBtn"
+            style="@style/Widget.AppCompat.Button"
+            android:layout_width="120dp"
+            android:layout_height="37dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="6dp"
+            android:background="#512DA8"
+            android:gravity="center"
+            android:text="@string/findFun"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/md_size_text"
+            android:visibility="@{viewModel.adapterPosition == 0 ? View.VISIBLE : View.GONE}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fday_title" />
+
+        <com.jeannypr.scientificstudy.UI.ImFlexboxLayout
+            android:id="@+id/descRow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fday_Img"
+            app:viewPartMain="@+id/bdayDesc"
+            app:viewPartSlave="@+id/readMoreRow">
+
+            <TextView
+                android:id="@+id/bdayDesc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end|bottom"
+                android:focusableInTouchMode="false"
+                android:gravity="start|top"
+                android:maxLength="110"
+                android:paddingEnd="2dp"
+                android:text="@{viewModel.description}"
+                android:textColor="@color/black2"
+                android:textSize="@dimen/sm_size_text" />
+
+            <LinearLayout
+                android:id="@+id/readMoreRow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="4dp"
+                android:foreground="?android:selectableItemBackground"
+                android:gravity="end"
+                android:minWidth="60dp"
+                android:orientation="horizontal"
+                android:visibility='@{viewModel.description.equals("") ? View.GONE : View.VISIBLE}'
+                tools:targetApi="m">
+
+                <TextView
+                    android:id="@+id/readMore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end|bottom"
+                    android:gravity="end"
+                    android:maxLines="1"
+                    android:text="@string/readMore"
+                    android:textColor="@color/pink5"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+        </com.jeannypr.scientificstudy.UI.ImFlexboxLayout>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/fday_gv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent=".7" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

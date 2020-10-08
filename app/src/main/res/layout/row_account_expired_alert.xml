@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/pTop1">
+
+    <TextView
+        android:id="@+id/lbl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/mTop0"
+        android:text=""
+        android:textColor="@color/mBlack"
+        android:textSize="@dimen/md_size_text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ic_call"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:scaleX=".5"
+        android:scaleY=".5"
+        android:src="@drawable/ic_call_sm"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lbl"
+        android:contentDescription="@string/default_cont_desc" />
+
+    <TextView
+        android:id="@+id/contactNo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="@string/contact_number"
+        android:textColor="@color/mBlack"
+        android:textSize="@dimen/sm_size_text"
+        app:layout_constraintStart_toStartOf="@id/vg"
+        app:layout_constraintTop_toBottomOf="@+id/lbl" />
+
+    <ImageView
+        android:id="@+id/ic_mail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:scaleX=".5"
+        android:scaleY=".5"
+        android:src="@drawable/ic_mail_sm"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/contactNo"
+        android:contentDescription="@string/default_cont_desc" />
+
+    <TextView
+        android:id="@+id/email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="@string/email_Id"
+        android:textColor="@color/mBlack"
+        android:textSize="@dimen/sm_size_text"
+        app:layout_constraintStart_toStartOf="@id/vg"
+        app:layout_constraintTop_toBottomOf="@+id/contactNo" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/vg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".10" />
+
+    <include
+        layout="@layout/row_alert_dialog_buttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/mTop1"
+        app:layout_constraintTop_toBottomOf="@+id/email" />
+</androidx.constraintlayout.widget.ConstraintLayout>

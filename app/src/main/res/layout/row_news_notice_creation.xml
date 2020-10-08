@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?><!--<layout>
+
+    <data>
+
+        <variable
+            name="news"
+            type="com.jeannypr.scientificstudy.SptWall.model.NewsNoticeInputModel" />
+    </data>-->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/content_main2"
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingTop="@dimen/activity_vertical_margin">
+
+    <EditText
+        android:id="@+id/topic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="10dp"
+        android:background="#00000000"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:hint="Title..."
+        android:padding="10dp"
+        android:textSize="@dimen/sm_size_text"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:targetApi="m" />
+
+    <View
+        android:id="@+id/dividerOfTopic"
+        android:layout_width="match_parent"
+        android:layout_height="0.2dp"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:background="@color/black4"
+        app:layout_constraintTop_toBottomOf="@+id/topic" />
+
+    <EditText
+        android:id="@+id/desc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:minHeight="70dp"
+        android:layout_marginTop="10dp"
+        android:background="#00000000"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:gravity="start"
+        android:hint="Description..."
+        android:padding="10dp"
+        android:textSize="@dimen/sm_size_text"
+        app:layout_constraintTop_toBottomOf="@+id/dividerOfTopic"
+        tools:targetApi="m" />
+
+    <View
+        android:id="@+id/dividerOfDesc"
+        android:layout_width="match_parent"
+        android:layout_height="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/black4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/desc" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/dateRow"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="10dp"
+        android:background="#00000000"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:padding="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/dividerOfDesc"
+        tools:targetApi="m">
+
+
+        <TextView
+            android:id="@+id/dateLbl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginStart="5dp"
+            android:gravity="start"
+            android:text="News Date"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/dateGuideline"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/newsNoticeDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginStart="5dp"
+            android:text=""
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@id/dateGuideline2"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/arrowIc"
+            android:layout_width="0dp"
+            android:layout_height="20dp"
+            android:src="@drawable/ic_right_arrow"
+            android:tint="@color/colorPrimary"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:contentDescription="@string/default_cont_desc" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/dateGuideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.25" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/dateGuideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.66" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:id="@+id/dividerOfDate"
+        android:layout_width="match_parent"
+        android:layout_height="0.2dp"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:background="@color/black4"
+        app:layout_constraintTop_toBottomOf="@+id/dateRow" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/audienceRow"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="10dp"
+        android:background="#00000000"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:padding="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/dividerOfDate"
+        tools:targetApi="m">
+
+
+        <TextView
+            android:id="@+id/audienceLbl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginStart="5dp"
+            android:gravity="start"
+            android:text="Audience"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/audienceGuideline"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/audience"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginStart="5dp"
+            android:text=""
+            android:textColor="@color/black"
+            android:gravity="end"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@id/audienceGuideline2"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/arrowIc2"
+            android:layout_width="0dp"
+            android:layout_height="20dp"
+            android:src="@drawable/ic_right_arrow"
+            android:tint="@color/colorPrimary"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:contentDescription="@string/default_cont_desc" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/audienceGuideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.25" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/audienceGuideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.66" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+  <!--  <View
+        android:id="@+id/dividerOfAudience"
+        android:layout_width="match_parent"
+        android:layout_height="0.2dp"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:background="@color/colorTransBg"
+        app:layout_constraintTop_toBottomOf="@+id/audienceRow" />-->
+
+   <!-- <CheckBox
+        android:id="@+id/isAssignedChk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="6dp"
+        android:minHeight="45dp"
+        android:text="Publish News/Notice/Event"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/dividerOfAudience" />-->
+
+    <View
+        android:id="@+id/dividerOfAudience"
+        android:layout_width="match_parent"
+        android:layout_height="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/black4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/audienceRow" />
+
+    <LinearLayout
+        android:id="@+id/attachmentsParent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/dividerOfAudience">
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout><!--</layout>-->

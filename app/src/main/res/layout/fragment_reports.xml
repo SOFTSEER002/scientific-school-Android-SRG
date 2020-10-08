@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?><!--created by babulal-->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bodyContainer2"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/pTop0"
+    android:background="@color/white">
+
+
+    <ImageView
+        android:id="@+id/staffLeaveTodayIc"
+        android:layout_width="@dimen/enterMarksIc_w"
+        android:layout_height="@dimen/enterMarksIc_w"
+        android:layout_marginTop="@dimen/mTop1"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:src="@drawable/staff3"
+        app:layout_constraintEnd_toStartOf="@id/vg"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/default_cont_desc"
+        tools:targetApi="m" />
+
+    <TextView
+        android:id="@+id/staffLeaveToday"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:padding="@dimen/pTop1"
+        android:text="Staff On Leave Today"
+        android:textColor="@color/black"
+        android:textSize="@dimen/md_size_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/vg"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:targetApi="m" />
+
+    <View
+        android:id="@+id/toadyLeaveDiv"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/div_h"
+        android:background="@color/black6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/vg"
+        app:layout_constraintTop_toBottomOf="@+id/staffLeaveToday" />
+
+    <ImageView
+        android:id="@+id/monthStaffLeaveIc"
+        android:layout_width="@dimen/enterMarksIc_w"
+        android:layout_height="@dimen/enterMarksIc_w"
+        android:layout_marginTop="@dimen/mTop1"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:src="@drawable/month_wise_attendance"
+        app:layout_constraintEnd_toStartOf="@id/vg"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toadyLeaveDiv"
+        android:contentDescription="@string/default_cont_desc"
+        tools:targetApi="m" />
+
+    <TextView
+        android:id="@+id/monthStaffLeave"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:padding="@dimen/pTop1"
+        android:text="Month And Staff Wise Report"
+        android:textColor="@color/black"
+        android:textSize="@dimen/md_size_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/vg"
+        app:layout_constraintTop_toBottomOf="@+id/toadyLeaveDiv"
+        tools:targetApi="m" />
+
+    <View
+        android:id="@+id/monthStaffDiv"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/div_h"
+        android:background="@color/black6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/vg"
+        app:layout_constraintTop_toBottomOf="@+id/monthStaffLeave" />
+
+    <ImageView
+        android:id="@+id/monthLeaveSummaryIc"
+        android:layout_width="@dimen/enterMarksIc_w"
+        android:layout_height="@dimen/enterMarksIc_w"
+        android:layout_marginTop="@dimen/mTop1"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:src="@drawable/staff3"
+        app:layout_constraintEnd_toStartOf="@id/vg"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/monthStaffDiv"
+        android:contentDescription="@string/default_cont_desc"
+        tools:targetApi="m" />
+
+    <TextView
+        android:id="@+id/monthLeaveSummary"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:padding="@dimen/pTop1"
+        android:text="Staff Month Wise Leave Summary"
+        android:textColor="@color/black"
+        android:textSize="@dimen/md_size_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/vg"
+        app:layout_constraintTop_toBottomOf="@+id/monthStaffDiv"
+        tools:targetApi="m" />
+
+    <View
+        android:id="@+id/monthLeaveSummaryDiv"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/div_h"
+        android:background="@color/black6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/vg"
+        app:layout_constraintTop_toBottomOf="@+id/monthLeaveSummary" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/vg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".22" />
+
+
+    <!--   <androidx.constraintlayout.widget.ConstraintLayout
+           android:id="@+id/staffOnLeaveBtn"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:foreground="?android:attr/selectableItemBackground"
+           android:paddingBottom="@dimen/pBottom1"
+           android:paddingTop="@dimen/pTop1">
+
+           <ImageView
+               android:id="@+id/icon"
+               android:layout_width="20dp"
+               android:layout_height="20dp"
+               android:src="@drawable/enter_marks"
+               app:layout_constraintBottom_toBottomOf="parent"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintTop_toTopOf="parent" />
+
+           <TextView
+               android:id="@+id/label"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginLeft="@dimen/mLeft0"
+               android:text="Staff On Leave Today"
+               android:textColor="@color/black"
+               android:textSize="@dimen/md_size_text"
+               app:layout_constraintBottom_toBottomOf="parent"
+               app:layout_constraintStart_toEndOf="@id/icon"
+               app:layout_constraintTop_toTopOf="parent" />
+
+           <ImageView
+               android:id="@+id/btnGo"
+               android:layout_width="20dp"
+               android:layout_height="20dp"
+               android:src="@drawable/ic_right_arrow"
+               android:tint="@color/colorPrimary"
+               app:layout_constraintBottom_toBottomOf="parent"
+               app:layout_constraintEnd_toEndOf="parent"
+               app:layout_constraintTop_toTopOf="parent" />
+
+       </androidx.constraintlayout.widget.ConstraintLayout>
+
+       <View
+           android:id="@+id/div1"
+           android:layout_width="match_parent"
+           android:layout_height="1dp"
+           android:layout_below="@id/staffOnLeaveBtn"
+           android:background="@color/black6" />
+
+       <androidx.constraintlayout.widget.ConstraintLayout
+           android:id="@+id/monthStaffLeaveBtn"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_below="@id/div1"
+           android:foreground="?android:attr/selectableItemBackground"
+           android:paddingBottom="@dimen/pBottom1"
+           android:paddingTop="@dimen/pTop1">
+
+           <ImageView
+               android:id="@+id/icon1"
+               android:layout_width="20dp"
+               android:layout_height="20dp"
+               android:src="@drawable/month_wise_attendance"
+               app:layout_constraintBottom_toBottomOf="parent"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintTop_toTopOf="parent" />
+
+           <TextView
+               android:id="@+id/labe2"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginLeft="@dimen/mLeft0"
+               android:text="Month And Staff Wise Report"
+               android:textColor="@color/black"
+               android:textSize="@dimen/md_size_text"
+               app:layout_constraintBottom_toBottomOf="parent"
+               app:layout_constraintStart_toEndOf="@id/icon1"
+               app:layout_constraintTop_toTopOf="parent" />
+
+           <ImageView
+               android:id="@+id/btnGo1"
+               android:layout_width="20dp"
+               android:layout_height="20dp"
+               android:src="@drawable/ic_right_arrow"
+               android:tint="@color/colorPrimary"
+               app:layout_constraintBottom_toBottomOf="parent"
+               app:layout_constraintEnd_toEndOf="parent"
+               app:layout_constraintTop_toTopOf="parent" />
+
+       </androidx.constraintlayout.widget.ConstraintLayout>
+
+       <View
+           android:id="@+id/div2"
+           android:layout_width="match_parent"
+           android:layout_height="1dp"
+           android:layout_below="@id/monthStaffLeaveBtn"
+           android:background="@color/black6" />
+
+       <androidx.constraintlayout.widget.ConstraintLayout
+           android:id="@+id/monthLeaveSummaryBtn"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_below="@id/div2"
+           android:foreground="?android:attr/selectableItemBackground"
+           android:paddingBottom="@dimen/pBottom1"
+           android:paddingTop="@dimen/pTop1">
+
+           <ImageView
+               android:id="@+id/icon2"
+               android:layout_width="20dp"
+               android:layout_height="20dp"
+               android:src="@drawable/staff3"
+               app:layout_constraintBottom_toBottomOf="parent"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintTop_toTopOf="parent" />
+
+           <TextView
+               android:id="@+id/labe3"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginLeft="@dimen/mLeft0"
+               android:text="Staff Month Wise Leave Summary"
+               android:textColor="@color/black"
+               android:textSize="@dimen/md_size_text"
+               app:layout_constraintBottom_toBottomOf="parent"
+               app:layout_constraintStart_toEndOf="@id/icon2"
+               app:layout_constraintTop_toTopOf="parent" />
+
+           <ImageView
+               android:id="@+id/btnGo2"
+               android:layout_width="20dp"
+               android:layout_height="20dp"
+               android:src="@drawable/ic_right_arrow"
+               android:tint="@color/colorPrimary"
+               app:layout_constraintBottom_toBottomOf="parent"
+               app:layout_constraintEnd_toEndOf="parent"
+               app:layout_constraintTop_toTopOf="parent" />
+
+       </androidx.constraintlayout.widget.ConstraintLayout>
+
+       <View
+           android:id="@+id/div3"
+           android:layout_width="match_parent"
+           android:layout_height="1dp"
+           android:layout_below="@id/monthLeaveSummaryBtn"
+           android:background="@color/black6" />
+   -->
+
+</androidx.constraintlayout.widget.ConstraintLayout>

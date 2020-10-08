@@ -1,0 +1,286 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/row_Container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/mLeft0"
+    android:background="@drawable/daily_collection_purple_bg"
+    android:padding="@dimen/mLeft0">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/vg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.60" />
+
+    <TextView
+        android:id="@+id/studentName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="start|center_vertical"
+        android:text=""
+        android:textColor="@color/mBlack"
+        android:textSize="@dimen/md_size_text"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/vg"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/className"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="start|center_vertical"
+        android:text=""
+        android:textColor="@color/mGrey"
+        android:textSize="@dimen/sm_size_text"
+        app:layout_constraintEnd_toEndOf="@id/vg"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/studentName" />
+
+    <TextView
+        android:id="@+id/addmissionNo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="start|center_vertical"
+        android:text=""
+        android:textColor="@color/mGrey"
+        android:textSize="@dimen/sm_size_text"
+        app:layout_constraintEnd_toEndOf="@id/vg"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/className" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/paymentConatiner"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/amount_mode_purple_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/vg"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/payAmount"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:maxLines="1"
+            android:text=""
+            android:textColor="@color/colorAccent"
+            android:textSize="@dimen/md_size_text"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/paymentDate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:maxLines="1"
+            android:text=""
+            android:textColor="@color/mBlack"
+            android:textSize="@dimen/md_size_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/payAmount" />
+
+        <TextView
+            android:id="@+id/paymentMode"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:maxLines="1"
+            android:textColor="@color/white"
+            android:textSize="@dimen/md_size_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/paymentDate" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
+    <!--
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorPrimary"
+    android:paddingTop="0.5dp"
+    android:paddingBottom="0.5dp">
+
+    <LinearLayout
+        android:id="@+id/feeSummaryRow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="0.5dp"
+        android:background="@drawable/bg_with_dots"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/feeSummaryRow_paddingLeft"
+        android:paddingRight="@dimen/feeSummaryRow_paddingLeft"
+        android:weightSum="100">
+
+        <LinearLayout
+            android:layout_width="@dimen/feeSummaryRow_innerWrapper_width"
+            android:layout_height="match_parent"
+            android:layout_weight="35"
+            android:background="@color/black7"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/paymentDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="@dimen/sm_size_text" />
+
+            &lt;!&ndash;<ImageView&ndash;&gt;
+            &lt;!&ndash;android:id="@+id/paymentMode_monthwiseCollection"&ndash;&gt;
+            &lt;!&ndash;android:layout_width="@dimen/feeSummaryRow_statusImg_width"&ndash;&gt;
+            &lt;!&ndash;android:layout_height="@dimen/feeSummaryRow_statusImg_height"&ndash;&gt;
+            &lt;!&ndash;android:layout_gravity="center"&ndash;&gt;
+            &lt;!&ndash;android:layout_marginBottom="5dp"&ndash;&gt;
+            &lt;!&ndash;android:layout_marginTop="5dp"&ndash;&gt;
+            &lt;!&ndash;android:src="@drawable/due" />&ndash;&gt;
+            <TextView
+                android:id="@+id/paymentMode"
+                android:layout_width="@dimen/feeSummaryRow_statusImg_width"
+                android:layout_height="@dimen/feeSummaryRow_statusImg_height"
+                android:rotation="-10"
+                android:layout_marginTop="2dp"
+                android:background="@drawable/tint_border"
+                android:gravity="center"
+               android:layout_marginBottom="@dimen/mBottom0"
+                android:text=""
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/sm_size_text" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="65"
+            android:background="@color/white"
+            android:padding="6dp">
+
+            &lt;!&ndash;<LinearLayout&ndash;&gt;
+            &lt;!&ndash;android:id="@+id/title"&ndash;&gt;
+            &lt;!&ndash;android:layout_width="match_parent"&ndash;&gt;
+            &lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;
+            &lt;!&ndash;android:layout_marginBottom="5dp"&ndash;&gt;
+            &lt;!&ndash;android:orientation="horizontal">&ndash;&gt;
+
+            <TextView
+                android:id="@+id/studentName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="start|center_vertical"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sm_size_text" />
+            &lt;!&ndash;</LinearLayout>&ndash;&gt;
+
+            &lt;!&ndash;<LinearLayout&ndash;&gt;
+            &lt;!&ndash;android:id="@+id/payableRow"&ndash;&gt;
+            &lt;!&ndash;android:layout_width="match_parent"&ndash;&gt;
+            &lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;
+            &lt;!&ndash;android:layout_below="@+id/title"&ndash;&gt;
+            &lt;!&ndash;android:orientation="horizontal">&ndash;&gt;
+
+            &lt;!&ndash;<TextView&ndash;&gt;
+            &lt;!&ndash;android:id="@+id/payableLbl"&ndash;&gt;
+            &lt;!&ndash;android:layout_width="wrap_content"&ndash;&gt;
+            &lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;
+            &lt;!&ndash;android:gravity="start|center_vertical"&ndash;&gt;
+            &lt;!&ndash;android:text="CLASS : "&ndash;&gt;
+            &lt;!&ndash;android:textColor="@color/black"&ndash;&gt;
+            &lt;!&ndash;android:textSize="@dimen/sm_size_text" />&ndash;&gt;
+
+
+            <TextView
+                android:id="@+id/className"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/studentName"
+                android:gravity="center"
+                android:text=""
+                android:textColor="@color/black9"
+                android:textSize="@dimen/sm_size_text" />
+            &lt;!&ndash;</LinearLayout>&ndash;&gt;
+
+            &lt;!&ndash;<LinearLayout&ndash;&gt;
+            &lt;!&ndash;android:id="@+id/paidRow"&ndash;&gt;
+            &lt;!&ndash;android:layout_width="wrap_content"&ndash;&gt;
+            &lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;
+            &lt;!&ndash;android:layout_below="@+id/payableRow"&ndash;&gt;
+            &lt;!&ndash;android:orientation="horizontal">&ndash;&gt;
+
+            &lt;!&ndash;<TextView&ndash;&gt;
+            &lt;!&ndash;android:id="@+id/paidLbl"&ndash;&gt;
+            &lt;!&ndash;android:layout_width="wrap_content"&ndash;&gt;
+            &lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;
+            &lt;!&ndash;android:gravity="start|center_vertical"&ndash;&gt;
+            &lt;!&ndash;android:text="AMOUNT : "&ndash;&gt;
+            &lt;!&ndash;android:textColor="@color/colorPrimary"&ndash;&gt;
+            &lt;!&ndash;android:textSize="@dimen/sm_size_text" />&ndash;&gt;
+
+            <TextView
+                android:id="@+id/ic_rupees2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/className"
+                android:layout_gravity="center_vertical"
+                android:text="Rs. "
+                android:textSize="@dimen/sm_size_text"
+                android:textColor="@color/colorPrimary" />
+
+            <TextView
+                android:id="@+id/amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/className"
+                android:layout_toRightOf="@+id/ic_rupees2"
+                android:gravity="center"
+                android:text=""
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/sm_size_text" />
+            &lt;!&ndash;</LinearLayout>&ndash;&gt;
+
+            &lt;!&ndash;<LinearLayout&ndash;&gt;
+            &lt;!&ndash;android:id="@+id/dueRow"&ndash;&gt;
+            &lt;!&ndash;android:layout_width="wrap_content"&ndash;&gt;
+            &lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;
+            &lt;!&ndash;android:layout_below="@+id/paidRow"&ndash;&gt;
+            &lt;!&ndash;android:orientation="horizontal">&ndash;&gt;
+
+            &lt;!&ndash;<TextView&ndash;&gt;
+            &lt;!&ndash;android:id="@+id/dueLbl"&ndash;&gt;
+            &lt;!&ndash;android:layout_width="wrap_content"&ndash;&gt;
+            &lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;
+            &lt;!&ndash;android:gravity="start|center_vertical"&ndash;&gt;
+            &lt;!&ndash;android:text="Adm No. : "&ndash;&gt;
+            &lt;!&ndash;android:textColor="@color/black"&ndash;&gt;
+            &lt;!&ndash;android:textSize="@dimen/sm_size_text" />&ndash;&gt;
+
+
+            <TextView
+                android:id="@+id/admNo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/amount"
+                android:gravity="center"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="@dimen/sm_size_text" />
+            &lt;!&ndash;</LinearLayout>&ndash;&gt;
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</LinearLayout>-->

@@ -1,0 +1,3 @@
+include ':app' ,':caldroid',  ':whtsapp_messenger_view'
+//':showmoretextview' ,
+/*include ':crop-picture'*/

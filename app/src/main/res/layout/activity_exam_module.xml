@@ -1,0 +1,1142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:subtitleTextColor="@color/white"
+            app:titleTextColor="@color/white" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/bodyContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/mTop0"
+        android:padding="@dimen/mTop0"
+        app:layout_constraintTop_toBottomOf="@+id/appBar">
+
+        <RelativeLayout
+            android:id="@+id/classSpinner"
+            style="@style/spinnerContainer"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <Spinner
+                android:id="@+id/classList"
+                style="@style/spinner"
+                android:theme="@style/spinnerTheme" />
+
+            <ImageView style="@style/spinnerIcon"
+                android:contentDescription="@string/default_cont_desc"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/subjectSpinner"
+            style="@style/spinnerContainer"
+            app:layout_constraintTop_toBottomOf="@+id/classSpinner"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <Spinner
+                android:id="@+id/subjectList"
+                style="@style/spinner"
+                android:theme="@style/spinnerTheme" />
+
+            <ImageView style="@style/spinnerIcon"
+                android:contentDescription="@string/default_cont_desc"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/testSpinner"
+            style="@style/spinnerContainer"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/subjectSpinner">
+
+            <Spinner
+                android:id="@+id/testList"
+                style="@style/spinner"
+                android:theme="@style/spinnerTheme" />
+
+            <ImageView style="@style/spinnerIcon"
+                android:contentDescription="@string/default_cont_desc"/>
+        </RelativeLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/dataEntryIc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/default_cont_desc"
+        android:layout_marginTop="@dimen/mTop1"
+        android:src="@drawable/ic_data_entry"
+        app:layout_constraintEnd_toStartOf="@id/vg2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bodyContainer" />
+
+    <TextView
+        android:id="@+id/dataentryLbl"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/mTop1"
+        android:text="@string/dataEntry"
+        android:textColor="@color/colorAccent"
+        android:textSize="@dimen/md_size_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/vg2"
+        app:layout_constraintTop_toBottomOf="@+id/bodyContainer" />
+
+    <View
+        android:id="@+id/dataDiv"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="4dp"
+        android:background="@color/colorAccent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dataEntryIc" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/entermarksRow"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:paddingTop="@dimen/pTop1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dataDiv"
+        tools:targetApi="m">
+
+        <ImageView
+            android:id="@+id/entermarksIc"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/default_cont_desc"
+            android:src="@drawable/ic_bulleted_arrow_16"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/marksVg"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/entermarkstxt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Enter Exam Marks"
+            android:textColor="@color/mBlack"
+            android:textSize="@dimen/md_size_text"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/marksVg"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/marksVg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent=".15" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:id="@+id/marksDiv"
+        android:layout_width="0dp"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="4dp"
+        android:background="@color/black6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/vg2"
+        app:layout_constraintTop_toBottomOf="@+id/entermarksRow" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/remarksRow"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:paddingTop="@dimen/pTop1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/marksDiv"
+        tools:targetApi="m">
+
+        <ImageView
+            android:id="@+id/remarksIc"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/default_cont_desc"
+            android:src="@drawable/ic_bulleted_arrow_16"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/remarksVg"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/remarkstxt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Enter Exam Remarks and Attendance"
+            android:textColor="@color/mBlack"
+            android:textSize="@dimen/md_size_text"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/remarksVg"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/remarksVg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent=".15" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:id="@+id/remarksDiv"
+        android:layout_width="0dp"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="4dp"
+        android:background="@color/black6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/vg2"
+        app:layout_constraintTop_toBottomOf="@+id/remarksRow" />
+
+    <ImageView
+        android:id="@+id/reportIc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/default_cont_desc"
+        android:layout_marginTop="@dimen/mTop1"
+        android:src="@drawable/ic_report_32"
+        app:layout_constraintEnd_toStartOf="@id/vg2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/remarksDiv" />
+
+    <TextView
+        android:id="@+id/reportLbl"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/mTop1"
+        android:text="Reports"
+        android:textColor="@color/colorAccent"
+        android:textSize="@dimen/md_size_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/vg2"
+        app:layout_constraintTop_toBottomOf="@+id/remarksDiv" />
+
+    <View
+        android:id="@+id/reportDiv"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="4dp"
+        android:background="@color/colorAccent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/reportIc" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/examAbsentRow"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:paddingTop="@dimen/pTop1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/reportDiv"
+        tools:targetApi="m">
+
+        <ImageView
+            android:id="@+id/absentIc"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_bulleted_arrow_16"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:contentDescription="@string/default_cont_desc"
+            app:layout_constraintEnd_toStartOf="@id/absentVg"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/absenttxt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Absent Report Exam"
+            android:textColor="@color/mBlack"
+            android:textSize="@dimen/md_size_text"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/absentVg"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/absentVg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent=".15" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:id="@+id/absentDiv"
+        android:layout_width="0dp"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="4dp"
+        android:background="@color/black6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/vg2"
+        app:layout_constraintTop_toBottomOf="@+id/examAbsentRow" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/classWiseSubjectRow"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:paddingTop="@dimen/pTop1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/absentDiv"
+        tools:targetApi="m">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_bulleted_arrow_16"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/classSubjectVg"
+            android:contentDescription="@string/default_cont_desc"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Class Wise Subject Report"
+            android:textColor="@color/mBlack"
+            android:textSize="@dimen/md_size_text"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/classSubjectVg"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/classSubjectVg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent=".15" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:id="@+id/classSubjectDiv"
+        android:layout_width="0dp"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="4dp"
+        android:background="@color/black6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/vg2"
+        app:layout_constraintTop_toBottomOf="@+id/classWiseSubjectRow" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/teacherWiseSubjectRow"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:paddingTop="@dimen/pTop1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/classSubjectDiv"
+        tools:targetApi="m">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_bulleted_arrow_16"
+            android:contentDescription="@string/default_cont_desc"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/teacherSubjectVg"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Teacher Wise Subject Report"
+            android:textColor="@color/mBlack"
+            android:textSize="@dimen/md_size_text"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/teacherSubjectVg"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/teacherSubjectVg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent=".15" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:id="@+id/teacherSubjectDiv"
+        android:layout_width="0dp"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="4dp"
+        android:background="@color/black6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/vg2"
+        app:layout_constraintTop_toBottomOf="@+id/teacherWiseSubjectRow" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/vg2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".15" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout><!--<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:subtitleTextColor="@color/white"
+            app:titleTextColor="@color/white" />
+    </android.support.design.widget.AppBarLayout>
+
+    <LinearLayout
+        android:id="@+id/bodyContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/appBar"
+        android:background="@color/black7"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/pBottom0"
+        android:paddingLeft="@dimen/mLeft0"
+        android:paddingRight="@dimen/mRight0"
+        app:layout_constraintTop_toBottomOf="@id/appBar">
+
+        &lt;!&ndash;  <RelativeLayout
+              style="@style/spinnerContainer"
+              android:layout_marginBottom="@dimen/mBottom1">
+
+              <Spinner
+                  android:id="@+id/ddlClassList"
+                  style="@style/spinner"
+                  android:theme="@style/spinnerTheme" />
+
+              <ImageView style="@style/spinnerIcon" />
+          </RelativeLayout>&ndash;&gt;
+
+        <RelativeLayout style="@style/spinnerContainer">
+
+            <Spinner
+                android:id="@+id/classList"
+                style="@style/spinner"
+                android:theme="@style/spinnerTheme" />
+
+            <ImageView style="@style/spinnerIcon" />
+        </RelativeLayout>
+
+        <RelativeLayout style="@style/spinnerContainer">
+
+            <Spinner
+                android:id="@+id/subjectList"
+                style="@style/spinner"
+                android:theme="@style/spinnerTheme" />
+
+            <ImageView style="@style/spinnerIcon" />
+        </RelativeLayout>
+
+        <RelativeLayout style="@style/spinnerContainer">
+
+            <Spinner
+                android:id="@+id/testList"
+                style="@style/spinner"
+                android:theme="@style/spinnerTheme" />
+
+            <ImageView style="@style/spinnerIcon" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/enterMarksIc"
+        android:layout_width="@dimen/enterMarksIc_w"
+        android:layout_height="@dimen/enterMarksIc_w"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:src="@drawable/enter_marks"
+        app:layout_constraintBottom_toTopOf="@+id/div1"
+        app:layout_constraintEnd_toStartOf="@+id/vg2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bodyContainer" />
+
+    <TextView
+        android:id="@+id/enterMarksLbl"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/mRight0"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:gravity="start"
+        android:padding="@dimen/pTop1"
+        android:text="Enter Exam Marks"
+        android:textColor="@color/black"
+        android:textSize="@dimen/md_size_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/vg2"
+        app:layout_constraintTop_toBottomOf="@+id/bodyContainer" />
+
+    <View
+        android:id="@+id/div1"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/div_h"
+        android:layout_marginRight="@dimen/mRight0"
+        android:background="@color/black6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/vg2"
+        app:layout_constraintTop_toBottomOf="@+id/enterMarksLbl" />
+
+    <ImageView
+        android:id="@+id/remarksIc"
+        android:layout_width="@dimen/enterMarksIc_w"
+        android:layout_height="@dimen/enterMarksIc_w"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:src="@drawable/exam_remark_attendance"
+        app:layout_constraintBottom_toTopOf="@+id/div2"
+        app:layout_constraintEnd_toStartOf="@+id/vg2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/div1" />
+
+    <TextView
+        android:id="@+id/remarksLbl"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/mRight0"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:gravity="start"
+        android:padding="@dimen/pTop1"
+        android:text="Enter Exam Remarks and Attendance"
+        android:textColor="@color/black"
+        android:textSize="@dimen/md_size_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/vg2"
+        app:layout_constraintTop_toBottomOf="@+id/div1" />
+
+    <View
+        android:id="@+id/div2"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/div_h"
+        android:layout_marginRight="@dimen/mRight0"
+        android:background="@color/black6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/vg2"
+        app:layout_constraintTop_toBottomOf="@+id/remarksLbl" />
+
+    <ImageView
+        android:id="@+id/absentExamIc"
+        android:layout_width="@dimen/enterMarksIc_w"
+        android:layout_height="@dimen/enterMarksIc_w"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:src="@drawable/exam_remark_attendance"
+        app:layout_constraintBottom_toTopOf="@+id/div3"
+        app:layout_constraintEnd_toStartOf="@+id/vg2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/div2" />
+
+    <TextView
+        android:id="@+id/absentExamLbl"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/mRight0"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:gravity="start"
+        android:padding="@dimen/pTop1"
+        android:text="Absent Report Exam"
+        android:textColor="@color/black"
+        android:textSize="@dimen/md_size_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/vg2"
+        app:layout_constraintTop_toBottomOf="@+id/div2" />
+
+    <View
+        android:id="@+id/div3"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/div_h"
+        android:layout_marginRight="@dimen/mRight0"
+        android:background="@color/black6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/vg2"
+        app:layout_constraintTop_toBottomOf="@+id/absentExamLbl" />
+
+    <ImageView
+        android:id="@+id/classListIc"
+        android:layout_width="@dimen/enterMarksIc_w"
+        android:layout_height="@dimen/enterMarksIc_w"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:src="@drawable/class_wise_attendance"
+        app:layout_constraintBottom_toTopOf="@+id/div4"
+        app:layout_constraintEnd_toStartOf="@+id/vg2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/div3" />
+
+    <TextView
+        android:id="@+id/classListLbl"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/mRight0"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:gravity="start"
+        android:padding="@dimen/pTop1"
+        android:text="Class Wise Subject Report"
+        android:textColor="@color/black"
+        android:textSize="@dimen/md_size_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/vg2"
+        app:layout_constraintTop_toBottomOf="@+id/div3" />
+
+    <View
+        android:id="@+id/div4"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginRight="@dimen/mRight0"
+        android:background="@color/black6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/vg2"
+        app:layout_constraintTop_toBottomOf="@+id/classListLbl" />
+
+    <ImageView
+        android:id="@+id/tacherIc"
+        android:layout_width="@dimen/enterMarksIc_w"
+        android:layout_height="@dimen/enterMarksIc_w"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:src="@drawable/student_wise_attendance"
+        app:layout_constraintBottom_toTopOf="@+id/div5"
+        app:layout_constraintEnd_toStartOf="@+id/vg2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/div4" />
+
+    <TextView
+        android:id="@+id/tacherLbl"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/mRight0"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:gravity="start"
+        android:padding="@dimen/pTop1"
+        android:text="Teacher Wise Subject Report"
+        android:textColor="@color/black"
+        android:textSize="@dimen/md_size_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/vg2"
+        app:layout_constraintTop_toBottomOf="@+id/div4" />
+
+    <View
+        android:id="@+id/div5"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/div_h"
+        android:layout_marginRight="@dimen/mRight0"
+        android:background="@color/black6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/vg2"
+        app:layout_constraintTop_toBottomOf="@+id/tacherLbl" />
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/vg2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="@dimen/vg_div_perc" />
+
+
+    &lt;!&ndash;<RelativeLayout
+        android:id="@+id/bodyContainer2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_below="@+id/appBar"
+        android:layout_marginTop="@dimen/mTop0"
+        android:paddingLeft="@dimen/mLeft1"
+        android:paddingRight="@dimen/mRight1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bodyContainer">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/studentListBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/pBottom1"
+            android:paddingTop="@dimen/pTop1"
+            android:foreground="?android:attr/selectableItemBackground">
+
+            <ImageView
+                android:id="@+id/icon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/enter_marks"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/mLeft0"
+                android:text="Enter Exam Marks"
+                android:textColor="@color/black"
+                android:textSize="@dimen/md_size_text"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/icon"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/btnGo"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_right_arrow"
+                android:tint="@color/colorPrimary"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:id="@+id/div1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/studentListBtn"
+            android:background="@color/black6" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/remarksModule"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/div1"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:paddingBottom="@dimen/pBottom1"
+            android:paddingTop="@dimen/pTop1">
+
+            <ImageView
+                android:id="@+id/remarksIc"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/exam_remark_attendance"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/remarksLbl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/mLeft0"
+                android:text="Enter Exam Remarks and Attendance"
+                android:textColor="@color/black"
+                android:textSize="@dimen/md_size_text"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/remarksIc"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/btnGo2"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_right_arrow"
+                android:tint="@color/colorPrimary"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:id="@+id/div2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:visibility="visible"
+            android:layout_below="@id/remarksModule"
+            android:background="@color/black6" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/absentExamBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/div2"
+            android:visibility="visible"
+            android:paddingBottom="@dimen/pBottom1"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:paddingTop="@dimen/pTop1">
+
+            <ImageView
+                android:id="@+id/classIcon1"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/exam_remark_attendance"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/absentExamLbl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/mLeft0"
+                android:text="Absent Report Exam"
+                android:textColor="@color/black"
+                android:textSize="@dimen/md_size_text"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/classIcon1"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/btnGo3"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_right_arrow"
+                android:tint="@color/colorPrimary"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:id="@+id/div3"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/absentExamBtn"
+            android:background="@color/black6" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/classSubjectBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/div3"
+            android:visibility="visible"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:paddingBottom="@dimen/pBottom1"
+            android:paddingTop="@dimen/pTop1">
+
+            <ImageView
+                android:id="@+id/classIcon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/class_wise_attendance"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/classListLbl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/mLeft0"
+                android:text="Class Wise Subject Report"
+                android:textColor="@color/black"
+                android:textSize="@dimen/md_size_text"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/classIcon"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/btnGo4"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_right_arrow"
+                android:tint="@color/colorPrimary"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:id="@+id/div4"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/classSubjectBtn"
+            android:background="@color/black6" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/teacherSubjectBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/div4"
+            android:visibility="visible"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:paddingBottom="@dimen/pBottom1"
+            android:paddingTop="@dimen/pTop1">
+
+            <ImageView
+                android:id="@+id/teacherIcon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/student_wise_attendance"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tacherLbl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/mLeft0"
+                android:text="Teacher Wise Subject Report"
+                android:textColor="@color/black"
+                android:textSize="@dimen/md_size_text"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/teacherIcon"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/btnGo5"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_right_arrow"
+                android:tint="@color/colorPrimary"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <View
+            android:id="@+id/div5"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/teacherSubjectBtn"
+            android:background="@color/black6" />
+
+
+    </RelativeLayout>&ndash;&gt;
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:layout_marginTop="35dp"
+        android:indeterminate="true"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>-->
+
+    <!--
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        style="@style/moduleMainContainer">
+
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/appBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?android:attr/actionBarSize"
+                android:background="@color/colorPrimary"
+                app:layout_scrollFlags="scroll|enterAlways"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                app:subtitleTextColor="@color/white"
+                app:titleTextColor="@color/white" />
+        </android.support.design.widget.AppBarLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/appBar">
+
+            <LinearLayout style="@style/bodyContainer">
+
+                <RelativeLayout style="@style/spinnerContainer">
+
+                    <Spinner
+                        android:id="@+id/classList"
+                        style="@style/spinner"
+                        android:theme="@style/spinnerTheme" />
+
+                    <ImageView style="@style/spinnerIcon" />
+                </RelativeLayout>
+
+                <RelativeLayout style="@style/spinnerContainer">
+
+                    <Spinner
+                        android:id="@+id/subjectList"
+                        style="@style/spinner"
+                        android:theme="@style/spinnerTheme" />
+
+                    <ImageView style="@style/spinnerIcon" />
+                </RelativeLayout>
+
+                <RelativeLayout style="@style/spinnerContainer">
+
+                    <Spinner
+                        android:id="@+id/testList"
+                        style="@style/spinner"
+                        android:theme="@style/spinnerTheme" />
+
+                    <ImageView style="@style/spinnerIcon" />
+                </RelativeLayout>
+
+                <android.support.v7.widget.CardView style="@style/firstCardView">
+
+                    <RelativeLayout style="@style/wrapperInsideCardView">
+
+                        <ImageView
+                            style="@style/leftDrawableOfCardView"
+                            android:src="@drawable/enter_marks" />
+
+                        <TextView
+                            style="@style/cardViewText"
+                            android:text="Enter Exam Marks" />
+
+                        <Button
+                            android:id="@+id/btnGo"
+                            style="@style/rightDrawableOfCardView"
+                            android:background="@drawable/right_arrow_btn" />
+                    </RelativeLayout>
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/remarksModule"
+                    style="@style/cardView">
+
+                    <RelativeLayout style="@style/wrapperInsideCardView">
+
+                        <ImageView
+                            style="@style/leftDrawableOfCardView"
+                            android:src="@drawable/exam_remark_attendance" />
+
+                        <TextView
+                            style="@style/cardViewText"
+                            android:text="Enter Exam Remarks and Attendance" />
+
+                        <Button
+                            android:id="@+id/btnGo2"
+                            style="@style/rightDrawableOfCardView"
+                            android:background="@drawable/right_arrow_btn" />
+                    </RelativeLayout>
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/studentListBtn"
+                    style="@style/cardView"
+                    android:visibility="gone">
+
+                    <RelativeLayout style="@style/wrapperInsideCardView">
+
+                        <ImageView
+                            style="@style/leftDrawableOfCardView"
+                            android:src="@drawable/exam_dates" />
+
+                        <TextView
+                            style="@style/cardViewText"
+                            android:text="Exam Dates" />
+
+                        <Button
+                            style="@style/rightDrawableOfCardView"
+                            android:background="@drawable/right_arrow_btn" />
+                    </RelativeLayout>
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    style="@style/cardView"
+                    android:visibility="gone">
+
+                    <RelativeLayout style="@style/wrapperInsideCardView">
+
+                        <ImageView
+                            style="@style/leftDrawableOfCardView"
+                            android:src="@drawable/subject_wise_report" />
+
+                        <TextView
+                            style="@style/cardViewText"
+                            android:text="Subject Wise Report" />
+
+                        <Button
+                            style="@style/rightDrawableOfCardView"
+                            android:background="@drawable/right_arrow_btn" />
+                    </RelativeLayout>
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    style="@style/cardView"
+                    android:visibility="gone">
+
+                    <RelativeLayout style="@style/wrapperInsideCardView">
+
+                        <ImageView
+                            style="@style/leftDrawableOfCardView"
+                            android:src="@drawable/exam_wise_report" />
+
+                        <TextView
+                            style="@style/cardViewText"
+                            android:text="Exam Wise Report" />
+
+                        <Button
+                            style="@style/rightDrawableOfCardView"
+                            android:background="@drawable/right_arrow_btn" />
+                    </RelativeLayout>
+                </android.support.v7.widget.CardView>
+            </LinearLayout>
+        </ScrollView>
+
+    </RelativeLayout>-->

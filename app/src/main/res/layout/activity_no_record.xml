@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:id="@+id/noRecord"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingTop="35dp"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/noRecordIc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/default_cont_desc"
+            android:src="@drawable/no_record" />
+
+        <TextView
+            android:id="@+id/noRecordMsg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:gravity="center_horizontal"
+            android:maxWidth="250dp"
+            android:textColor="@color/black9"
+            android:textSize="@dimen/md_size_text" />
+
+        <TextView
+            android:id="@+id/noRecordMsg2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:gravity="center_horizontal"
+            android:maxWidth="250dp"
+            android:textColor="@color/black9"
+            android:textSize="@dimen/sm_size_text" />
+    </LinearLayout>
+</layout>

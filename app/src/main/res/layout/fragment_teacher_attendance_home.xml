@@ -1,0 +1,667 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/takeAttendanceContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/mTop0">
+
+        <!--  <androidx.cardview.widget.CardView
+              android:id="@+id/takeAttendance"
+              android:layout_width="@dimen/cardViewText_width"
+              android:layout_height="@dimen/cardview_height"
+              android:elevation="1dp"
+              android:foreground="?android:attr/selectableItemBackground"
+              app:cardCornerRadius="@dimen/mLeft1"
+              app:layout_constraintEnd_toEndOf="parent"
+              app:layout_constraintStart_toStartOf="parent"
+              app:layout_constraintTop_toTopOf="parent">
+
+              <LinearLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:background="@color/colorAccent"
+                  android:orientation="horizontal">
+
+                  <TextView
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:layout_marginTop="@dimen/mTop1"
+                      android:gravity="center_horizontal"
+                      android:text="@string/takeAttendance"
+                      android:textColor="@color/white"
+                      android:textSize="@dimen/lg_size_text" />
+
+              </LinearLayout>
+          </androidx.cardview.widget.CardView>-->
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/takeAttendance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="26dp"
+            android:elevation="4dp"
+            android:paddingStart="42dp"
+            android:paddingTop="8dp"
+            android:paddingEnd="42dp"
+            android:paddingBottom="8dp"
+            android:text="@string/takeAttendance"
+            android:textAllCaps="false"
+            android:textSize="@dimen/lg_size_text"
+            app:backgroundTint="@color/colorAccent"
+            app:cornerRadius="6dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/reportIc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/mTop1"
+            android:contentDescription="@string/default_cont_desc"
+            android:src="@drawable/ic_report_32"
+            app:layout_constraintEnd_toStartOf="@id/vg2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/takeAttendance" />
+
+        <TextView
+            android:id="@+id/reportLbl"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/mTop1"
+            android:text="Reports"
+            android:textColor="@color/colorAccent"
+            android:textSize="@dimen/md_size_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/vg2"
+            app:layout_constraintTop_toBottomOf="@+id/takeAttendance" />
+
+        <View
+            android:id="@+id/reportDiv"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="4dp"
+            android:background="@color/colorAccent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/reportIc" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/dayWiseAttendancetRow"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:paddingTop="@dimen/pTop1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/reportDiv"
+            tools:targetApi="m">
+
+            <ImageView
+                android:id="@+id/dayWiseAttendancetIc"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/default_cont_desc"
+                android:src="@drawable/ic_bulleted_arrow_16"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/dayWiseVg"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/dayWiseAttendance"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/dayWiseAttendance"
+                android:textColor="@color/black9"
+                android:textSize="@dimen/md_size_text"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/dayWiseVg"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/dayWiseVg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent=".15" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:id="@+id/dayAttendanceDiv"
+            android:layout_width="0dp"
+            android:layout_height=".5dp"
+            android:layout_marginTop="4dp"
+            android:background="@color/black6"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/vg2"
+            app:layout_constraintTop_toBottomOf="@+id/dayWiseAttendancetRow" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/monthAttendanceReportRow"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:paddingTop="@dimen/pTop1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dayAttendanceDiv"
+            tools:targetApi="m">
+
+            <ImageView
+                android:id="@+id/monthWiseAttendanceIc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/default_cont_desc"
+                android:src="@drawable/ic_bulleted_arrow_16"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/monthAttendanceVg"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/monthWiseAttendance"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/monthWiseattendance"
+                android:textColor="@color/black9"
+                android:textSize="@dimen/md_size_text"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/monthAttendanceVg"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/monthAttendanceVg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent=".15" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:id="@+id/monthAttendanceDiv"
+            android:layout_width="0dp"
+            android:layout_height=".5dp"
+            android:layout_marginTop="4dp"
+            android:background="@color/black6"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/vg2"
+            app:layout_constraintTop_toBottomOf="@+id/monthAttendanceReportRow" />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/staffWiseAttendanceReportRow"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:paddingTop="@dimen/pTop1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/monthAttendanceDiv"
+            tools:targetApi="m">
+
+            <ImageView
+                android:id="@+id/staffWiseAttendanceIc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/default_cont_desc"
+                android:src="@drawable/ic_bulleted_arrow_16"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/staffWiseAttendanceVg"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/staffWiseAttendance"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/staffWiseAttendance"
+                android:textColor="@color/black9"
+                android:textSize="@dimen/md_size_text"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/staffWiseAttendanceVg"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/staffWiseAttendanceVg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent=".15" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:id="@+id/staffAttendanceDiv"
+            android:layout_width="0dp"
+            android:layout_height=".5dp"
+            android:layout_marginTop="4dp"
+            android:background="@color/black6"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/vg2"
+            app:layout_constraintTop_toBottomOf="@+id/staffWiseAttendanceReportRow" />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/extraDayReportReportRow"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:paddingTop="@dimen/pTop1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/staffAttendanceDiv"
+            tools:targetApi="m">
+
+            <ImageView
+                android:id="@+id/extraDayReportIc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/default_cont_desc"
+                android:src="@drawable/ic_bulleted_arrow_16"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/extraDayReportVg"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/extraDayReport"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/extraDayReport"
+                android:textColor="@color/black9"
+                android:textSize="@dimen/md_size_text"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/extraDayReportVg"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/extraDayReportVg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent=".15" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:id="@+id/extraDayDiv"
+            android:layout_width="0dp"
+            android:layout_height=".5dp"
+            android:layout_marginTop="4dp"
+            android:background="@color/black6"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/vg2"
+            app:layout_constraintTop_toBottomOf="@+id/extraDayReportReportRow" />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/outDoorReportRow"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:paddingTop="@dimen/pTop1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/extraDayDiv"
+            tools:targetApi="m">
+
+            <ImageView
+                android:id="@+id/outDoorReportIc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/default_cont_desc"
+                android:src="@drawable/ic_bulleted_arrow_16"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/outDoorReportVg"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/outDoorReport"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/outDoorReport"
+                android:textColor="@color/black9"
+                android:textSize="@dimen/md_size_text"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/outDoorReportVg"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/outDoorReportVg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent=".15" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:id="@+id/outDoorDiv"
+            android:layout_width="0dp"
+            android:layout_height=".5dp"
+            android:layout_marginTop="4dp"
+            android:background="@color/black6"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/vg2"
+            app:layout_constraintTop_toBottomOf="@+id/outDoorReportRow" />
+
+
+        <!--<androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/pTop0"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/reportDiv">
+
+            <ImageView
+                android:id="@+id/dayWiseAttendanceIc"
+                android:layout_width="@dimen/enterMarksIc_w"
+                android:layout_height="@dimen/enterMarksIc_w"
+                android:layout_marginTop="@dimen/mTop1"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:src="@drawable/day_wise_attendance"
+                app:layout_constraintEnd_toStartOf="@id/vg1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/dayWiseAttendance"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:padding="@dimen/pTop1"
+                android:text="@string/dayWiseAttendance"
+                android:textColor="@color/black"
+                android:textSize="@dimen/md_size_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/vg1"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/div1"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/div_h"
+                android:background="@color/black6"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/vg1"
+                app:layout_constraintTop_toBottomOf="@+id/dayWiseAttendance" />
+
+            <ImageView
+                android:id="@+id/monthWiseAttendanceIc"
+                android:layout_width="@dimen/enterMarksIc_w"
+                android:layout_height="@dimen/enterMarksIc_w"
+                android:layout_marginTop="@dimen/mTop1"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:src="@drawable/month_wise_attendance"
+                app:layout_constraintEnd_toStartOf="@id/vg1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/div1" />
+
+            <TextView
+                android:id="@+id/monthWiseAttendance"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:padding="@dimen/pTop1"
+                android:text="@string/monthWiseattendance"
+                android:textColor="@color/black"
+                android:textSize="@dimen/md_size_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/vg1"
+                app:layout_constraintTop_toBottomOf="@+id/div1" />
+
+            <View
+                android:id="@+id/div2"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/div_h"
+                android:background="@color/black6"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/vg1"
+                app:layout_constraintTop_toBottomOf="@+id/monthWiseAttendance" />
+
+            <ImageView
+                android:id="@+id/staffWiseAttendanceIc"
+                android:layout_width="@dimen/enterMarksIc_w"
+                android:layout_height="@dimen/enterMarksIc_w"
+                android:layout_marginTop="@dimen/mTop1"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:src="@drawable/staff_wise_attendance"
+                app:layout_constraintEnd_toStartOf="@id/vg1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/div2" />
+
+            <TextView
+                android:id="@+id/staffWiseAttendance"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:padding="@dimen/pTop1"
+                android:text="@string/staffWiseAttendance"
+                android:textColor="@color/black"
+                android:textSize="@dimen/md_size_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/vg1"
+                app:layout_constraintTop_toBottomOf="@+id/div2" />
+
+            <View
+                android:id="@+id/div3"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/div_h"
+                android:background="@color/black6"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/vg1"
+                app:layout_constraintTop_toBottomOf="@+id/staffWiseAttendance" />
+
+            <ImageView
+                android:id="@+id/extraDayReportIc"
+                android:layout_width="@dimen/enterMarksIc_w"
+                android:layout_height="@dimen/enterMarksIc_w"
+                android:layout_marginTop="@dimen/mTop1"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:src="@drawable/extra_day_report"
+                app:layout_constraintEnd_toStartOf="@id/vg1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/div3" />
+
+            <TextView
+                android:id="@+id/extraDayReport"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:padding="@dimen/pTop1"
+                android:text="@string/extraDayReport"
+                android:textColor="@color/black"
+                android:textSize="@dimen/md_size_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/vg1"
+                app:layout_constraintTop_toBottomOf="@+id/div3" />
+
+            <View
+                android:id="@+id/div4"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/div_h"
+                android:background="@color/black6"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/vg1"
+                app:layout_constraintTop_toBottomOf="@+id/extraDayReport" />
+
+            <ImageView
+                android:id="@+id/outDoorReportIc"
+                android:layout_width="@dimen/enterMarksIc_w"
+                android:layout_height="@dimen/enterMarksIc_w"
+                android:layout_marginTop="@dimen/mTop1"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:src="@drawable/outdoor"
+                app:layout_constraintEnd_toStartOf="@id/vg1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/div4" />
+
+            <TextView
+                android:id="@+id/outDoorReport"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:padding="@dimen/pTop1"
+                android:text="@string/outDoorReport"
+                android:textColor="@color/black"
+                android:textSize="@dimen/md_size_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/vg1"
+                app:layout_constraintTop_toBottomOf="@+id/div4" />
+
+            <View
+                android:id="@+id/div5"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/div_h"
+                android:background="@color/black6"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/vg1"
+                app:layout_constraintTop_toBottomOf="@+id/outDoorReport" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/vg1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="@dimen/vg_div_perc" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+        <!--<android.support.v7.widget.CardView
+            android:id="@+id/dayWiseAttendance"
+            style="@style/cardView"
+            android:visibility="visible">
+
+            <RelativeLayout style="@style/wrapperInsideCardView">
+
+                <ImageView
+                    style="@style/leftDrawableOfCardView"
+                    android:src="@drawable/day_wise_attendance" />
+
+                <TextView
+                    style="@style/cardViewText"
+                    android:text="@string/dayWiseAttendance" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    style="@style/rightDrawableOfCardView"
+                    android:src="@drawable/right_arrow_btn" />
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>-->
+
+        <!--<android.support.v7.widget.CardView
+            android:id="@+id/monthWiseAttendance"
+            style="@style/cardView"
+            android:visibility="visible">
+
+            <RelativeLayout style="@style/wrapperInsideCardView">
+
+                <ImageView
+                    style="@style/leftDrawableOfCardView"
+                    android:src="@drawable/month_wise_attendance" />
+
+                <TextView
+                    style="@style/cardViewText"
+                    android:text="@string/monthWiseattendance" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    style="@style/rightDrawableOfCardView"
+                    android:src="@drawable/right_arrow_btn" />
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>-->
+
+        <!--  <android.support.v7.widget.CardView
+              android:id="@+id/staffWiseAttendance"
+              style="@style/cardView"
+              android:visibility="visible">
+
+              <RelativeLayout style="@style/wrapperInsideCardView">
+
+                  <ImageView
+                      style="@style/leftDrawableOfCardView"
+                      android:src="@drawable/staff_wise_attendance" />
+
+                  <TextView
+                      style="@style/cardViewText"
+                      android:text="@string/staffWiseAttendance" />
+
+                  <de.hdodenhof.circleimageview.CircleImageView
+                      style="@style/rightDrawableOfCardView"
+                      android:src="@drawable/right_arrow_btn" />
+              </RelativeLayout>
+          </android.support.v7.widget.CardView>-->
+
+        <!--<android.support.v7.widget.CardView
+            android:id="@+id/extraDayReport"
+            style="@style/cardView"
+            android:visibility="visible">
+
+            <RelativeLayout style="@style/wrapperInsideCardView">
+
+                <ImageView
+                    style="@style/leftDrawableOfCardView"
+                    android:src="@drawable/extra_day_report" />
+
+                <TextView
+                    style="@style/cardViewText"
+                    android:text="@string/extraDayReport" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    style="@style/rightDrawableOfCardView"
+                    android:src="@drawable/right_arrow_btn" />
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>-->
+
+        <!--<android.support.v7.widget.CardView
+            android:id="@+id/outDoorReport"
+            style="@style/cardView"
+            android:visibility="visible">
+
+            <RelativeLayout style="@style/wrapperInsideCardView">
+
+                <ImageView
+                    style="@style/leftDrawableOfCardView"
+                    android:src="@drawable/outdoor" />
+
+                <TextView
+                    style="@style/cardViewText"
+                    android:text="@string/outDoorReport" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    style="@style/rightDrawableOfCardView"
+                    android:src="@drawable/right_arrow_btn" />
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>-->
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/vg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent=".5" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/vg2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent=".15" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</ScrollView>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="vehicle"
+            type="com.jeannypr.scientificstudy.Transport.model.VehiclesModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/vehicleRow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="2dp"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:paddingStart="@dimen/pTop0"
+
+        android:paddingTop="4dp"
+        android:paddingEnd="@dimen/pTop0"
+        tools:targetApi="m">
+
+        <RadioButton
+            android:id="@+id/radBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/mLeft1"
+            android:ellipsize="end"
+            android:gravity="start|center_vertical"
+            android:maxLines="1"
+            android:paddingStart="@dimen/pLeft1"
+            android:text="@{vehicle.getModelName}"
+            android:textAllCaps="true"
+            android:textSize="@dimen/md_size_text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <!--android:background="@drawable/lg_radio_btn_states"
+        android:button="@null"-->
+        <!--android:scaleX="1.2"
+        android:scaleY="1.2"
+        android:translationX="25dp"-->
+        <TextView
+            android:id="@+id/vechicleTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text='@{vehicle.AdapterPosition == 0 ? "Vehicle number is "+vehicle.getVehicleNo +" and \n"+"it is a "+ vehicle.getVehicleType : vehicle.getVehicleNo +", "+ vehicle.getVehicleType}'
+            android:textSize="@dimen/sm_size_text"
+            app:layout_constraintStart_toStartOf="@id/vg1"
+            app:layout_constraintTop_toBottomOf="@+id/radBtn" />
+
+        <TextView
+            android:id="@+id/assignedRouteTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/sm_size_text"
+            app:layout_constraintStart_toStartOf="@id/vg1"
+            app:layout_constraintTop_toBottomOf="@+id/vechicleTxt" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height=".5dp"
+            android:layout_marginTop="@dimen/mTop0"
+            android:background="@color/black6"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/vg1"
+            app:layout_constraintTop_toBottomOf="@+id/assignedRouteTxt" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/vg1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent=".18" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

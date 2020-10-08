@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="greetingsLbl">హాలో</string>
+    <string name="notify_parents_notes_hint">వ్యాఖ్యలు</string>
+    <string name="somethingWrongMsg">ఏదో తప్పు జరిగింది దయచేసి మళ్లీ ప్రయత్నించండి.</string>
+    <string name="noRecordMsg">రికార్డు కనుగొనబడలేదు</string>
+
+    <string name="noPresent">మీ బిడ్డ ఈరోజు లేదు. కాబట్టి స్థానం ట్రాక్ చేయబడదు</string>
+    <string name="noJourneyStart">ప్రయాణం ఇంకా ప్రారంభించబడలేదు.</string>
+    <string name="completeJourney">ప్రయాణం పూర్తయింది.</string>
+
+    <string name="noLatLong">కొన్ని సాంకేతిక సమస్య కారణంగా మేము స్థానాన్ని ట్రాక్ చేయలేకపోయాము. కొంత సమయం తర్వాత దయచేసి ప్రయత్నించండి. అసౌకర్యానికి క్షమించండి.</string>
+    <string name="journeyCompleted_pick">ప్రయాణం పూర్తయింది. మీ బిడ్డ పాఠశాలను చేరుకుంది</string>
+    <string name="journeyCompleted_drop">ప్రయాణం పూర్తయింది. అన్ని విద్యార్థులు వారి గమ్యస్థానానికి చేరుకున్నారు.</string>
+    <string name="picked_journeyMode">picked</string>
+    <string name="dropped_journeyMode">dropped</string>
+    <string name="noJourney">ఈ సమయంలో, ఏ ప్రయాణాలు జరుగుతున్నాయి</string>
+    <string name="startedButNoLocation">ప్రయాణం ప్రారంభమైంది కానీ కొంత సమస్య కారణంగా మేము స్థానాన్ని ట్రాక్ చేయలేకపోయాము. అసౌకర్యానికి క్షమించండి.</string>
+
+    <string name="messages_puncture_rad">పంక్చర్</string>
+    <string name="messages_PunctureSubtitle">టైర్ పంక్చర్ కారణంగా ఆలస్యం</string>
+    <string name="messages_traffic_rad">ట్రాఫిక్ </string>
+    <string name="messages_trafficSubtitle">टట్రాఫిక్ కారణంగా ఆలస్యం అవుతుంది</string>
+    <string name="messages_accident_rad">ప్రమాదం</string>
+    <string name="messages_accidentSubtitle">ప్రమాదం కారణంగా ఆలస్యం అవుతుంది</string>
+    <string name="messages_other_rad">ఇతర</string>
+    <string name="messages_otherSubtitle">ఏదైనా ఇతర కారణం ఆలస్యం అవుతుంది</string>
+
+    <string name="successMsg">విజయవంతంగా కమ్యూనికేట్ చేయబడింది</string>
+    <string name="failedMsg">తెలియదు</string>
+    <string name="driver_home_frag_userName">%S</string>
+    <string name="startJourneyBtn">ప్రయాణం ప్రారంభించండి</string>
+    <string name="dialogTitle">మీ ట్రిప్ని పూర్తి చేయండి</string>
+    <string name="dialogPositiveButtonOk">సరే</string>
+    <string name="dialogMsg">దయచేసి లాగ్అవుట్కు మీ ట్రిప్ని పూర్తి చేయండి.</string>
+    <string name="route_selectMode">మోడ్ను ఎంచుకోండి</string>
+    <string name="radRoute_radPickup">पఆ పైకి</string>
+    <string name="radRoute_radDrop">డ్రాప్స్</string>
+    <string name="selectRoute_lbl">మీ మార్గాన్ని ఎంచుకోండి</string>
+
+    <string name="route_setToolbar">ప్రయాణం ప్రారంభించండి</string>
+    <string name="vehicle_lbl">మీ వాహనాన్ని ఎంచుకోండి</string>
+    <string name="vehicle_dialogTitle">ప్రయాణాన్ని నిర్ధారించండి</string>
+    <string name="vehicle_positiveBtn">సరే</string>
+    <string name="dialogNegativeButtonCancel">రద్దు </string>
+    <string name="route_assigned">ఈ మార్గం కేటాయించబడింది.</string>
+    <string name="vehicle_assigned">ఈ వాహనం కేటాయించబడింది.</string>
+    <string name="successMsg_Journey">ఈ ప్రయాణం విజయవంతంగా పూర్తయింది.</string>
+    <string name="confirmJourneyMsg">మీరు మీ ప్రయాణం పూర్తి చేయబోతున్నారు.</string>
+
+    <string name="driver_frag_jourBtn_dTitle">స్పేస్ అనుమతి</string>
+    <string name="driver_frag_jBtn_dMsg">దయచేసి కొనసాగడానికి స్థానాన్ని అనుమతించండి.</string>
+    <string name="driver_frag_dialog_Title">స్థాన ట్రాక్ అనుమతి</string>
+    <string name="driver_frag_dialog_Msg">దయచేసి ప్రయాణాన్ని ప్రారంభించడానికి నగర అనుమతిని మంజూరు చేయండి.</string>
+
+    <string name="driver_frag_startTime">సమయం @</string>
+    <string name="driver_frag_routeName">మార్గం </string>
+    <string name="driver_frag_vehicleNo">వాహనం </string>
+    <string name="drivre_notificationBtn">సందేశం పంపండి</string>
+    <string name="driver_frag_notify_lbl">మీ సందేశాన్ని ఎంచుకోండి</string>
+
+    <string name="driverDashboardHomeTab">హోమ్</string>
+    <string name="driverDashboardNotifyTab">Notifai</string>
+    <string name="driverDashboardLogoutTab">లాగౌట్</string>
+
+    <string name="check_app_update">నవీకరణల కోసం తనిఖీ చేయండి</string>
+    <string name="nav_help">సహాయం పొందండి</string>
+    <string name="nav_earn">భాగస్వామ్యం చేయండి మరియు సంపాదించండి</string>
+    <string name="nav_share">అనువర్తనాన్ని భాగస్వామ్యం చేయండి</string>
+    <string name="nav_rating">మాకు రేట్ చేయండి</string>
+    <string name="nav_terms">ఉపయోగ నిబంధనలు</string>
+    <string name="nav_about_us">Scientific Study గురించి</string>
+    <string name="nav_logout">లాగ్ అవుట్ చేయండి</string>
+
+    <string name="changeLang_loadingMsg">దయచేసి భాషని అనువదిస్తున్నందున వేచి ఉండండి, కొంత సమయం పట్టవచ్చు.</string>
+    <string name="notify_subtitle">ఈ సందేశం తల్లిదండ్రులకు మరియు దరఖాస్తులకు పంపబడుతుంది.</string>
+    <string name="startJourneyConfirmLbl">మీరు కొత్త ప్రయాణం మొదలుపెట్టబోతున్నారు.</string>
+    <string name="currentJourneyLbl">లైవ్ ట్రావెల్</string>
+    <string name="notificationMsgErr">దయచేసి ఒక సందేశాన్ని ఎంచుకోండి</string>
+
+    <string name="selectedRouteLbl">ఎంచుకున్న మార్గం </string>
+    <string name="selectedVehicleLbl">ఎంచుకున్న వాహనం యొక్క నమూనా</string>
+    <string name="selectedVehicleNo">ఇది యొక్క సంఖ్య మరియు</string>
+
+    <string name="driverDashboardEmergancyContact">అత్యవసర</string>
+    <string name="driverdashbordEmergencydialogTitle">మీరు కాల్ చేయాలనుకునే పరిచయ సంఖ్యపై క్లిక్ చేయండి.</string>
+    <string name="driverdashbordEmergencydialogTxt">కాంటాక్ట్స్</string>
+
+    <string name="emergencyTitle">ఏదైనా అత్యవసర పరిస్థితిలో, దయచేసి ఈ సంఖ్యలు కాల్ చేయండి</string>
+</resources>

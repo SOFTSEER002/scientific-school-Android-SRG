@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/dateText"
+        android:icon="@drawable/datepicker_white"
+        android:orderInCategory="1"
+        android:title=""
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/allPresent"
+        android:checkable="true"
+        android:checked="false"
+        android:orderInCategory="3"
+        android:title="Present All"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/allAbsent"
+        android:checkable="true"
+        android:orderInCategory="4"
+        android:title="Absent All"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/clearAll"
+        android:checkable="true"
+        android:orderInCategory="5"
+        android:title="Clear All"
+        app:showAsAction="never" />
+
+</menu>

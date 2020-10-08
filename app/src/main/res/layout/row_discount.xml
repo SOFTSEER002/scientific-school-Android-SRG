@@ -1,0 +1,116 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/row_Container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/dashboardIc_padding"
+    android:background="@drawable/daily_collection_red_bg"
+    android:padding="@dimen/mLeft0">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/vg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.60" />
+
+    <TextView
+        android:id="@+id/installmentTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="start|center_vertical"
+        android:text=""
+        android:textColor="@color/mBlack"
+        android:textSize="@dimen/md_size_text"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/vg"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/payableAmount"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="start|center_vertical"
+        android:text=""
+        android:textColor="@color/mGrey"
+        android:textSize="@dimen/sm_size_text"
+        app:layout_constraintEnd_toEndOf="@id/vg"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/installmentTitle" />
+
+    <TextView
+        android:id="@+id/paidAmount"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="start|center_vertical"
+        android:text=""
+        android:textColor="@color/mGrey"
+        android:textSize="@dimen/sm_size_text"
+        app:layout_constraintEnd_toEndOf="@id/vg"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/payableAmount" />
+
+    <TextView
+        android:id="@+id/dueAmount"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="start|center_vertical"
+        android:text=""
+        android:textColor="@color/mGrey"
+        android:textSize="@dimen/sm_size_text"
+        app:layout_constraintEnd_toEndOf="@id/vg"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/paidAmount" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/paymentConatiner"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/amount_mode_red_bg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/vg"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- <TextView
+             android:id="@+id/payAmount"
+             android:layout_width="0dp"
+             android:layout_height="wrap_content"
+             android:gravity="center"
+             android:maxLines="1"
+             android:text=""
+             android:textColor="@color/colorAccent"
+             android:textSize="@dimen/md_size_text"
+             android:textStyle="bold"
+             app:layout_constraintEnd_toEndOf="parent"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintTop_toTopOf="parent" />-->
+
+        <TextView
+            android:id="@+id/installmentDate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:maxLines="1"
+            android:text=""
+            android:textColor="@color/mBlack"
+            android:textSize="@dimen/md_size_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/installmentStatus"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:maxLines="1"
+            android:textColor="@color/white"
+            android:textSize="@dimen/md_size_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/installmentDate" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

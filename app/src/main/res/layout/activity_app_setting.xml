@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black7">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:subtitleTextColor="@color/white"
+            app:titleTextColor="@color/white" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ImageView
+        android:id="@+id/notificationIc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:padding="@dimen/pTop1"
+        android:src="@drawable/ic_notifiction1"
+        android:tint="@color/colorPrimary"
+        app:layout_constraintEnd_toStartOf="@id/vg_notify"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appBar"
+        android:contentDescription="@string/default_cont_desc"
+        tools:targetApi="m" />
+
+    <TextView
+        android:id="@+id/notificationLbl"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:gravity="start"
+        android:padding="@dimen/pTop1"
+        android:text="Notifications"
+        android:textColor="@color/black"
+        android:textSize="@dimen/md_size_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/vg_notify"
+        app:layout_constraintTop_toBottomOf="@+id/appBar"
+        tools:targetApi="m" />
+
+    <View
+        android:id="@+id/notificationDiv"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@color/black6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/vg_notify"
+        app:layout_constraintTop_toBottomOf="@+id/notificationLbl" />
+
+    <ImageView
+        android:id="@+id/helpIc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:padding="@dimen/pTop1"
+        android:src="@drawable/ic_action_help"
+        android:tint="@color/colorPrimary"
+        android:visibility="gone"
+        android:contentDescription="@string/default_cont_desc"
+        app:layout_constraintEnd_toStartOf="@id/vg_notify"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/notificationDiv"
+        tools:targetApi="m" />
+
+    <TextView
+        android:id="@+id/helpLbl"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:gravity="start"
+        android:padding="@dimen/pTop1"
+        android:text="Help"
+        android:textColor="@color/black"
+        android:textSize="@dimen/md_size_text"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/vg_notify"
+        app:layout_constraintTop_toBottomOf="@+id/notificationDiv"
+        tools:targetApi="m" />
+
+    <View
+        android:id="@+id/helpDiv"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@color/black6"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/vg_notify"
+        app:layout_constraintTop_toBottomOf="@+id/helpLbl" />
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/vg_notify"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".22" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

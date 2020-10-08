@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.jeannypr.scientificstudy.Base.Model.UserModel" />
+    </data>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/swipeContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/home_tab_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="1dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/parentSection"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@mipmap/home_tab_header_bg"
+                android:minHeight="220dp"
+                android:paddingStart="8dp"
+                android:paddingTop="8dp"
+                android:paddingEnd="8dp"
+                android:paddingBottom="15dp"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:id="@+id/lytTop"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" >
+
+                    <ImageView
+                        android:id="@+id/notifyIc"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:layout_marginStart="4dp"
+                        android:contentDescription="@string/default_cont_desc"
+                        android:foreground="?android:selectableItemBackground"
+                        android:src="@mipmap/notification_sm"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:targetApi="m" />
+
+                    <ImageView
+                        android:id="@+id/doctorIc"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:layout_marginStart="6dp"
+                        android:contentDescription="@string/default_cont_desc"
+                        android:foreground="?android:selectableItemBackground"
+                        android:src="@mipmap/doctor_sm"
+                        android:visibility="gone"
+                        app:layout_constraintStart_toEndOf="@+id/notifyIc"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:targetApi="m" />
+
+                    <ImageView
+                        android:id="@+id/helpIc"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:layout_marginStart="6dp"
+                        android:contentDescription="@string/default_cont_desc"
+                        android:foreground="?android:selectableItemBackground"
+                        android:src="@mipmap/help_ic"
+                        app:layout_constraintStart_toEndOf="@+id/doctorIc"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:targetApi="m" />
+
+                    <ImageView
+                        android:id="@+id/busIc"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:layout_marginStart="6dp"
+                        android:contentDescription="@string/default_cont_desc"
+                        android:foreground="?android:selectableItemBackground"
+                        android:src="@mipmap/bus_sm"
+                        app:layout_constraintStart_toEndOf="@+id/helpIc"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:targetApi="m" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/familyLbl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:drawableEnd="@mipmap/down_arrow_ic"
+                    android:drawablePadding="6dp"
+                    android:drawableTint="@color/black"
+                    android:fontFamily="@font/roboto_medium"
+                    android:gravity="center"
+                    android:text="@string/roy_family"
+                    android:textColor="@color/black9"
+                    android:textSize="@dimen/lg_size_text"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/lytTop"
+                    tools:targetApi="m" />
+
+                <ImageView
+                    android:id="@+id/sclLogo"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginBottom="6dp"
+                    android:contentDescription="@string/default_cont_desc"
+                    android:src="@mipmap/logo_principlesec_md"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <androidx.recyclerview.widget.RecyclerView xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/familyMembersRV"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="12dp"
+                    android:minHeight="70dp"
+                    android:orientation="horizontal"
+                    android:scrollbars="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintEnd_toStartOf="@+id/selectedChildImgRow"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/familyLbl" />
+
+                <FrameLayout
+                    android:id="@+id/selectedChildImgRow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/familyLbl">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/selectedChildImg"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/first_letter_img_bg"
+                        android:src="@mipmap/profile_md"
+                        app:civ_border_color="@color/colorAccent" />
+
+                    <ImageView
+                        android:id="@+id/pencilIc"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginTop="30dp"
+                        android:contentDescription="@string/default_cont_desc"
+                        android:src="@mipmap/edit_md" />
+                </FrameLayout>
+
+                <TextView
+                    android:id="@+id/selectedChildName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/prashant"
+                    android:textColor="@color/black9"
+                    android:textSize="@dimen/md_size_text"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/selectedChildImgRow" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <ProgressBar
+                android:id="@+id/pb"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:indeterminate="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+            <!--android:visibility="@{viewModel.isLoading ? View.VISIBLE : View.GONE }"-->
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingBottom="50dp"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/parentSection" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+</layout>

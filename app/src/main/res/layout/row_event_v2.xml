@@ -1,0 +1,98 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/row_event">
+
+    <TextView
+        android:id="@+id/postCreator"
+        style="@style/row_event.postCreator"
+        android:fontFamily="@font/open_sans_semibold"
+        android:text="kannu" />
+
+    <TextView
+        android:id="@+id/postTime"
+        style="@style/row_event.postTime"
+        android:layout_toEndOf="@+id/postCreator"
+        android:text="12:12" />
+
+    <TextView
+        android:id="@+id/title"
+        style="@style/row_event.title"
+        android:layout_below="@+id/postCreator"
+        android:maxWidth="220dp"
+        android:text="title"
+        android:textColor="@color/colorPrimaryDark" />
+
+    <TextView
+        android:id="@+id/postType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/postCreator"
+        android:layout_marginTop="2dp"
+        android:layout_toRightOf="@+id/title"
+        android:background="@drawable/border_whitebg_rounded_corner"
+        android:backgroundTint="@color/colorPrimary"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:text="News"
+        android:textColor="@color/white"
+        android:textSize="@dimen/xs_size_text" />
+
+    <TextView
+        android:id="@+id/desc"
+        style="@style/row_event.desc"
+        android:layout_below="@+id/title"
+        android:text="yidhf dfsd gdfijgd odfjk dfjjgdf ldfkjg kdfm kdfgk"/>
+
+    <ImageView
+        android:id="@+id/attachment"
+        style="@style/row_event.attachment"
+        android:layout_below="@+id/desc"
+        android:src="@drawable/tulips"
+        android:visibility="visible"
+        android:contentDescription="@string/default_cont_desc" />
+
+
+    <LinearLayout
+        style="@style/row_event.dateTimeRow"
+        android:layout_below="@+id/attachment"
+        android:background="@drawable/wall_underline">
+
+        <ImageView
+            android:id="@+id/startDateIcon"
+            style="@style/icDatepicker"
+            android:contentDescription="@string/default_cont_desc" />
+
+        <TextView
+            android:id="@+id/startDate"
+            style="@style/startDate"
+            android:text="22-22-2019" />
+
+        <ImageView
+            android:id="@+id/endDateIcon"
+            style="@style/icDatepicker"
+            android:contentDescription="@string/default_cont_desc" />
+
+        <TextView
+            android:id="@+id/endDate"
+            style="@style/startDate"
+            android:text="12-11-2018" />
+
+        <ImageView
+            android:id="@+id/timeIcon"
+            style="@style/icDatepicker"
+            android:src="@drawable/time_sm"
+            android:contentDescription="@string/default_cont_desc" />
+
+        <TextView
+            android:id="@+id/time"
+            style="@style/startDate"
+            android:text="12:13 am" />
+
+        <ImageView
+            android:id="@+id/attachmentLink"
+            style="@style/icDatepicker"
+            android:autoLink="web"
+            android:src="@drawable/attachment"
+            android:visibility="gone"
+            android:contentDescription="@string/default_cont_desc" />
+    </LinearLayout>
+</RelativeLayout>

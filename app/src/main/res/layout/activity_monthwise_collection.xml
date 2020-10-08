@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:subtitleTextColor="@color/white"
+            app:titleTextColor="@color/white">
+
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/dateSectionRow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/mLeft0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appBar">
+
+        <TextView
+            android:id="@+id/datePicker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/calender_round_corner"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:gravity="center"
+            android:padding="@dimen/dashboardIc_padding"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/lg_size_text"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:targetApi="m" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/totalCollection"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/red_gradient"
+        android:gravity="end|center_vertical"
+        android:padding="@dimen/dashboardIc_padding"
+        android:textColor="@color/white"
+        android:textSize="@dimen/md_size_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dateSectionRow" />
+
+    <include
+        layout="@layout/activity_no_record"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/totalCollection" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/monthwise_collection_list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:scrollbars="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/totalCollection" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:indeterminate="true"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout><!--
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black7"
+    tools:context=".Chat.activity.ChatActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:subtitleTextColor="@color/white"
+            app:titleTextColor="@color/white" />
+    </android.support.design.widget.AppBarLayout>
+
+    <RelativeLayout
+        android:id="@+id/dateSection_monthwiseFeeCollection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/black7"
+        android:gravity="center"
+        android:padding="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appBar">
+
+        <ImageView
+            android:id="@+id/fromDateIc_monthwiseFeeCollection"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:scaleX="1.1"
+            android:scaleY="1.1"
+            android:src="@drawable/ic_datepicker"
+            android:tint="@color/colorPrimary" />
+
+        <TextView
+            android:id="@+id/datepickerSpinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toEndOf="@+id/fromDateIc_monthwiseFeeCollection"
+            android:layout_toRightOf="@+id/fromDateIc_monthwiseFeeCollection"
+            android:text=""
+            android:textAllCaps="true"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/md_size_text" />
+        &lt;!&ndash;<android.support.design.widget.FloatingActionButton&ndash;&gt;
+        &lt;!&ndash;android:id="@+id/monthwiseCollectionBtn"&ndash;&gt;
+        &lt;!&ndash;android:layout_width="38dp"&ndash;&gt;
+        &lt;!&ndash;android:layout_height="38dp"&ndash;&gt;
+        &lt;!&ndash;android:layout_marginEnd="10dp"&ndash;&gt;
+        &lt;!&ndash;android:layout_marginRight="10dp"&ndash;&gt;
+        &lt;!&ndash;android:scaleType="center"&ndash;&gt;
+        &lt;!&ndash;android:tint="@color/white"&ndash;&gt;
+        &lt;!&ndash;app:fabSize="mini"&ndash;&gt;
+        &lt;!&ndash;android:layout_alignParentRight="true"&ndash;&gt;
+        &lt;!&ndash;app:srcCompat="@drawable/send" />&ndash;&gt;
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/grossTotal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:padding="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/dateSection_monthwiseFeeCollection">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Total Collection"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/md_size_text" />
+
+      &lt;!&ndash;  <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:layout_toLeftOf="@+id/totalCollection"
+            android:scaleX="1"
+            android:scaleY="1"
+            android:src="@drawable/rupee"
+            android:tint="@color/colorPrimary" />&ndash;&gt;
+
+        <TextView
+            android:id="@+id/totalCollection"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/md_size_text"
+            android:layout_alignParentEnd="true"
+            tools:ignore="RtlHardcoded" />
+    </RelativeLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="35dp"
+        android:indeterminate="true"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/grossTotal" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/reyclerview_monthwise_collection_list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:scrollbars="vertical"
+        app:layoutManager="android.support.v7.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.063"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/grossTotal" />
+</androidx.constraintlayout.widget.ConstraintLayout>-->

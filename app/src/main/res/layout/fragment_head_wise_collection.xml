@@ -1,0 +1,519 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/date_pickerHeader"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/pTop0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/fromDateLbl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/mLeft0"
+            android:background="@drawable/calender_round_corner"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:gravity="center"
+            android:padding="4dp"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/md_size_text"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:targetApi="m" />
+
+        <TextView
+            android:id="@+id/toDateLbl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/mLeft0"
+            android:background="@drawable/calender_round_corner"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:gravity="center"
+            android:padding="4dp"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/md_size_text"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/fromDateLbl"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:targetApi="m" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/headLbl"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/red_gradient"
+        android:gravity="start|center_vertical"
+        android:padding="@dimen/dashboardIc_padding"
+        android:text="Head wise collection"
+        android:textColor="@color/white"
+        android:textSize="@dimen/md_size_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/date_pickerHeader" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/head_collectionList"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="2dp"
+        android:paddingBottom="2dp"
+        android:scrollbars="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toTopOf="@+id/subheader"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/headLbl" />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/subheader"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/black6"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/hg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/head_collectionList">
+
+        <TextView
+            android:id="@+id/headTotalLbl"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:padding="4dp"
+            android:text="Total"
+            android:textColor="@color/mBlack"
+            android:textSize="@dimen/md_size_text"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/discountLbl"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:padding="4dp"
+            android:text="Discount"
+            android:textColor="@color/mBlack"
+            android:textSize="@dimen/md_size_text"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/headTotalLbl" />
+
+        <TextView
+            android:id="@+id/headTotalVal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:maxLines="1"
+            android:padding="4dp"
+            android:textColor="@color/mBlack"
+            android:textSize="@dimen/md_size_text"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/headTotalLbl"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/discountVal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:maxLines="1"
+            android:padding="4dp"
+            android:textColor="@color/mBlack"
+            android:textSize="@dimen/md_size_text"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/discountLbl"
+            app:layout_constraintTop_toBottomOf="@+id/headTotalLbl" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/modeLbl"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:background="@drawable/red_gradient"
+        android:gravity="start|center_vertical"
+        android:padding="@dimen/dashboardIc_padding"
+        android:text="Mode wise collection"
+        android:textColor="@color/white"
+        android:textSize="@dimen/md_size_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hg" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/mode_collectionList"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="2dp"
+        android:scrollbars="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toTopOf="@+id/mode_CollectionTotal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/modeLbl" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/mode_CollectionTotal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/black6"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mode_collectionList">
+
+        <TextView
+            android:id="@+id/modeTotalLbl"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:padding="@dimen/pTop0"
+            android:text="Total"
+            android:textColor="@color/mBlack"
+            android:textSize="@dimen/md_size_text"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/modeTotalVal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:padding="@dimen/pTop0"
+            android:textColor="@color/mBlack"
+            android:textSize="@dimen/md_size_text"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:indeterminate="true"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <include
+        layout="@layout/activity_no_record"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/headLbl" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/hg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".60" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/date_pickerHeader"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/pTop0"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:id="@+id/fromDateLbl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/mLeft0"
+                android:background="@drawable/calender_round_corner"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:gravity="center"
+                android:padding="4dp"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/md_size_text"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/toDateLbl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/mLeft0"
+                android:background="@drawable/calender_round_corner"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:gravity="center"
+                android:padding="4dp"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/md_size_text"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/fromDateLbl"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        &lt;!&ndash; <androidx.constraintlayout.widget.ConstraintLayout
+             android:id="@+id/date_pickerHeader"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             app:layout_constraintEnd_toEndOf="parent"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintTop_toTopOf="parent">
+
+             <ImageView
+                 android:id="@+id/fromDateIc_Collection"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_alignParentLeft="true"
+                 android:layout_alignParentStart="true"
+                 android:layout_marginBottom="6dp"
+                 android:layout_marginLeft="10dp"
+                 android:layout_marginStart="10dp"
+                 android:layout_marginTop="6dp"
+                 android:scaleX="0.7"
+                 android:scaleY="0.7"
+                 android:src="@drawable/ic_datepicker"
+                 android:tint="@color/colorPrimary"
+                 app:layout_constraintStart_toStartOf="parent"
+                 app:layout_constraintTop_toTopOf="parent"
+                 tools:ignore="RtlHardcoded" />
+
+             <TextView
+                 android:id="@+id/fromDateVal_Collection"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_marginTop="14dp"
+                 android:layout_toEndOf="@+id/fromDateIc_Collection"
+                 android:layout_toRightOf="@+id/fromDateIc_Collection"
+                 android:foreground="?android:attr/selectableItemBackground"
+                 android:text=""
+                 android:textColor="@color/colorPrimary"
+                 android:textSize="@dimen/sm_size_text"
+                 app:layout_constraintStart_toEndOf="@id/fromDateIc_Collection"
+                 app:layout_constraintTop_toTopOf="parent"
+                 tools:ignore="RtlHardcoded" />
+
+             <ImageView
+                 android:id="@+id/toDateIc_Collection"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_marginBottom="6dp"
+                 android:layout_marginStart="22dp"
+                 android:layout_marginTop="6dp"
+                 android:scaleX="0.7"
+                 android:scaleY="0.7"
+                 android:src="@drawable/ic_datepicker"
+                 android:tint="@color/colorPrimary"
+                 app:layout_constraintEnd_toStartOf="@id/toDateVal_Collection"
+                 app:layout_constraintStart_toEndOf="@id/fromDateVal_Collection"
+                 app:layout_constraintTop_toTopOf="parent" />
+
+             <TextView
+                 android:id="@+id/toDateVal_Collection"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_alignParentEnd="true"
+                 android:layout_alignParentRight="true"
+                 android:layout_marginBottom="14dp"
+                 android:layout_marginTop="14dp"
+                 android:foreground="?android:attr/selectableItemBackground"
+                 android:text=""
+                 android:textColor="@color/colorPrimary"
+                 android:textSize="@dimen/sm_size_text"
+                 app:layout_constraintStart_toEndOf="@id/toDateIc_Collection"
+                 app:layout_constraintTop_toTopOf="parent" />
+         </androidx.constraintlayout.widget.ConstraintLayout>&ndash;&gt;
+
+        <TextView
+            android:id="@+id/headLbl"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="start|center_vertical"
+            android:text="Head wise collection"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/date_pickerHeader" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/head_collectionList"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:background="@color/white"
+            android:minHeight="100dp"
+            android:paddingBottom="2dp"
+            android:scrollbars="vertical"
+            app:layoutManager="android.support.v7.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toTopOf="@+id/subheader"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/headLbl" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/subheader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/black6"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/head_collectionList">
+
+            <TextView
+                android:id="@+id/headTotalLbl"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/mTop1"
+                android:gravity="start"
+                android:padding="@dimen/pTop0"
+                android:text="Total"
+                android:textColor="@color/mBlack"
+                android:textSize="@dimen/md_size_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/headTotalVal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/mTop1"
+                android:layout_marginRight="@dimen/mTop1"
+                android:gravity="end"
+                android:padding="@dimen/pTop0"
+                android:textColor="@color/mBlack"
+                android:textSize="@dimen/md_size_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:id="@+id/collectionDiv"
+            android:layout_width="0dp"
+            android:layout_height="0.5dp"
+            android:layout_marginBottom="@dimen/mBottom0"
+            android:layout_marginTop="@dimen/mTop0"
+            android:background="@color/colorAccent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/subheader" />
+
+        <TextView
+            android:id="@+id/modeLbl"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="start|center_vertical"
+            android:text="Mode wise collection"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/collectionDiv" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/mode_collectionList"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:background="@color/white"
+            android:minHeight="100dp"
+            android:paddingBottom="10dp"
+            android:scrollbars="vertical"
+            app:layoutManager="android.support.v7.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toTopOf="@+id/mode_CollectionTotal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/modeLbl" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/mode_CollectionTotal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/black6"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mode_collectionList">
+
+            <TextView
+                android:id="@+id/modeTotalLbl"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/mTop1"
+                android:gravity="start"
+                android:padding="@dimen/pTop0"
+                android:text="Total"
+                android:textColor="@color/mBlack"
+                android:textSize="@dimen/md_size_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/modeTotalVal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/mTop1"
+                android:layout_marginRight="@dimen/mTop1"
+                android:gravity="end"
+                android:padding="@dimen/pTop0"
+                android:textColor="@color/mBlack"
+                android:textSize="@dimen/md_size_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="35dp"
+            android:indeterminate="true"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <include
+            layout="@layout/activity_no_record"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="35dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/date_pickerHeader" />
+    </androidx.constraintlayout.widget.ConstraintLayout>-->

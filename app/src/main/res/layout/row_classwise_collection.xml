@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/mTop0">
+
+    <TextView
+        android:id="@+id/className_classwiseCollection"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/mLeft0"
+        android:layout_marginEnd="@dimen/mTop0"
+        android:gravity="start"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text=""
+        android:textColor="@color/mBlack"
+        android:textSize="@dimen/md_size_text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/gv_collection"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/amount_classwiseCollection"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/mTop0"
+        android:gravity="end"
+        android:text=""
+        android:textColor="@color/mGrey"
+        android:textSize="@dimen/md_size_text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/gv_collection"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="@dimen/mTop0"
+        android:background="@color/black6"
+        app:layout_constraintTop_toBottomOf="@+id/amount_classwiseCollection" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gv_collection"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".60" />
+
+</androidx.constraintlayout.widget.ConstraintLayout><!--
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:paddingLeft="@dimen/pLeft0"
+    android:paddingTop="@dimen/pTop0"
+    android:paddingRight="@dimen/pRight0"
+    android:layout_marginBottom="1dp"
+    android:paddingBottom="@dimen/pBottom0">
+
+    <TextView
+        android:id="@+id/className_classwiseCollection"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/sm_size_text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    &lt;!&ndash;<ImageView&ndash;&gt;
+        &lt;!&ndash;android:layout_width="wrap_content"&ndash;&gt;
+        &lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;
+        &lt;!&ndash;android:layout_marginTop="2dp"&ndash;&gt;
+        &lt;!&ndash;android:scaleX="1"&ndash;&gt;
+        &lt;!&ndash;android:scaleY="1"&ndash;&gt;
+        &lt;!&ndash;android:src="@drawable/rupee"&ndash;&gt;
+        &lt;!&ndash;android:tint="@color/black"&ndash;&gt;
+        &lt;!&ndash;app:layout_constraintEnd_toStartOf="@id/amount_classwiseCollection"&ndash;&gt;
+        &lt;!&ndash;app:layout_constraintTop_toTopOf="parent" />&ndash;&gt;
+
+    <TextView
+        android:id="@+id/amount_classwiseCollection"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textColor="@color/black"
+        android:textSize="@dimen/sm_size_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    &lt;!&ndash;<View&ndash;&gt;
+        &lt;!&ndash;android:layout_width="match_parent"&ndash;&gt;
+        &lt;!&ndash;android:layout_height="1dp"&ndash;&gt;
+        &lt;!&ndash;android:background="@color/lightGrey"&ndash;&gt;
+        &lt;!&ndash;app:layout_constraintTop_toBottomOf="@+id/amount_classwiseCollection"/>&ndash;&gt;
+</androidx.constraintlayout.widget.ConstraintLayout>-->

@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/pTop1">
+
+    <TextView
+        android:id="@+id/lbl"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="start"
+        android:text="@string/driverdashbordEmergencydialogTitle"
+        android:textColor="@color/black9"
+        android:textSize="@dimen/md_size_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RadioGroup
+        android:id="@+id/messages"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/mTop0"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lbl"
+        tools:layout_editor_absoluteX="0dp">
+
+        <RadioButton
+            android:id="@+id/contactNo1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/mLeft1"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:paddingStart="@dimen/pLeft1"
+            android:textSize="@dimen/md_size_text"
+            tools:targetApi="m" />
+        <!--android:button="@drawable/lg_radio_btn_states"-->
+
+        <RadioButton
+            android:id="@+id/contactNo2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/mLeft1"
+            android:layout_marginTop="@dimen/mTop0"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:paddingStart="@dimen/pLeft1"
+            android:textSize="@dimen/md_size_text"
+            tools:targetApi="m" />
+        <!--android:button="@drawable/lg_radio_btn_states"-->
+
+    </RadioGroup>
+
+
+    <!--<androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/rowfristcontactNo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:foreground="?android:attr/selectableItemBackground"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lbl">
+
+        <ImageView
+            android:id="@+id/ic_contactNo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleX=".5"
+            android:scaleY=".5"
+            android:src="@drawable/ic_dot"
+            android:tint="@color/colorPrimary"
+            app:layout_constraintEnd_toEndOf="@id/vg2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/firstcontactNo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/black9"
+            android:textSize="@dimen/md_size_text"
+            app:layout_constraintEnd_toEndOf="@id/vg"
+            app:layout_constraintStart_toStartOf="@id/vg2"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <RadioButton
+            android:id="@+id/fcontactNo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/md_size_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/vg"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/vg2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent=".10" />
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/vg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent=".90" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+
+    <!--<androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/rowscondcontactNo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:foreground="?android:attr/selectableItemBackground"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rowfristcontactNo">
+
+        <ImageView
+            android:id="@+id/ic_scondConatct"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleX=".5"
+            android:scaleY=".5"
+            android:src="@drawable/ic_dot"
+            android:tint="@color/colorPrimary"
+            app:layout_constraintEnd_toEndOf="@id/vg3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/scondconatctNo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/black9"
+            android:textSize="@dimen/md_size_text"
+            app:layout_constraintEnd_toEndOf="@id/vg1"
+            app:layout_constraintStart_toStartOf="@id/vg3"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <RadioButton
+            android:id="@+id/scontactNo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/md_size_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/vg1"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/vg3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent=".10" />
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/vg1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent=".90" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>

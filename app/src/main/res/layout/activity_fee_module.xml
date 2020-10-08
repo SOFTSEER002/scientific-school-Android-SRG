@@ -1,0 +1,702 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:theme="@style/Coordinator">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:subtitleTextColor="@color/white"
+            app:titleTextColor="@color/white" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/pTop0"
+            app:layout_constraintTop_toBottomOf="@id/appBar">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/todaysCollectionCard"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:translationZ="@dimen/mis_box_translationZ"
+                app:cardCornerRadius="@dimen/mis_box_corner_radius"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:theme="@style/CardView.Light">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/red_gradient"
+                    android:padding="@dimen/pTop0">
+
+                    <TextView
+                        android:id="@+id/todaysCollectionLbl"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Today's"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/lg_size_text"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/today_collectionRow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/todaysCollectionLbl">
+
+                        <TextView
+                            android:id="@+id/todaysCollectionTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Collection: "
+                            android:textColor="@color/white"
+                            android:gravity="center"
+                            android:textSize="@dimen/md_size_text"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+
+                        <TextView
+                            android:id="@+id/todaysCollectionAmount"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:textColor="@color/mYellow"
+                            android:textSize="@dimen/md_size_text"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/todaysCollectionTxt"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/today_discountRow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/today_collectionRow">
+
+                        <TextView
+                            android:id="@+id/discountText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Discount: "
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/md_size_text"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/discountVal"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:maxLines="1"
+                            android:text=""
+                            android:textColor="@color/mYellow"
+                            android:textSize="@dimen/md_size_text"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/discountText"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/today_dueRow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/today_discountRow">
+
+                        <TextView
+                            android:id="@+id/dueText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Due: "
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/md_size_text"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/dueValue"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:maxLines="1"
+                            android:text=""
+                            android:textColor="@color/mYellow"
+                            android:textSize="@dimen/md_size_text"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/dueText"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <View
+                        android:id="@+id/div"
+                        android:layout_width="0.5dp"
+                        android:layout_height="0dp"
+                        android:layout_marginBottom="@dimen/mBottom0"
+                        android:background="@color/black6"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/todaysCollectionLbl" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/monthsCollectionCard"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/mTop0"
+                android:translationZ="@dimen/mis_box_translationZ"
+                app:cardCornerRadius="@dimen/mis_box_corner_radius"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/todaysCollectionCard"
+                tools:theme="@style/CardView.Light">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/indigo_gradient"
+                    android:padding="@dimen/pTop0">
+
+                    <TextView
+                        android:id="@+id/monthsCollectionLbl"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text=""
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/lg_size_text"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/monthsCollectionAmount"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:gravity="center"
+                        android:textColor="@color/yellow4"
+                        android:textSize="@dimen/lg_size_text"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/monthsCollectionLbl" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/yearlyCollectionCard"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/mTop0"
+                android:translationZ="@dimen/mis_box_translationZ"
+                app:cardCornerRadius="@dimen/mis_box_corner_radius"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/monthsCollectionCard"
+                tools:theme="@style/CardView.Light">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/blue_gradient"
+                    android:padding="@dimen/pTop0">
+
+                    <TextView
+                        android:id="@+id/yearlyCollectionLbl"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text=""
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/lg_size_text"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/yearlyCollectionAmount"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:gravity="center"
+                        android:textColor="@color/yellow4"
+                        android:textSize="@dimen/lg_size_text"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/yearlyCollectionLbl" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <ImageView
+                android:id="@+id/collectionIc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/mTop1"
+                android:contentDescription="@string/default_cont_desc"
+                android:src="@drawable/ic_collection_sm"
+                app:layout_constraintEnd_toStartOf="@id/vg2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/yearlyCollectionCard" />
+
+            <TextView
+                android:id="@+id/collectionLbl"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/mTop1"
+                android:text="Collections"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/md_size_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/vg2"
+                app:layout_constraintTop_toBottomOf="@+id/yearlyCollectionCard" />
+
+            <View
+                android:id="@+id/collectionDiv"
+                android:layout_width="0dp"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="4dp"
+                android:background="@color/colorAccent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/collectionIc" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/DateWiseReportRow"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:paddingTop="@dimen/pTop1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/collectionDiv"
+                tools:targetApi="m">
+
+                <ImageView
+                    android:id="@+id/dateIc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/default_cont_desc"
+                    android:src="@drawable/ic_bulleted_arrow_16"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/dateVg"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/dateLbl"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Daily Collection Reports"
+                    android:textColor="@color/black9"
+                    android:textSize="@dimen/md_size_text"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/dateVg"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/dateVg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent=".15" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <View
+                android:id="@+id/div1"
+                android:layout_width="0dp"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="4dp"
+                android:background="@color/black6"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/vg2"
+                app:layout_constraintTop_toBottomOf="@+id/DateWiseReportRow" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/classWiseReportRow"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:paddingTop="@dimen/pTop1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/div1"
+                tools:targetApi="m">
+
+                <ImageView
+                    android:id="@+id/classIc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/default_cont_desc"
+                    android:src="@drawable/ic_bulleted_arrow_16"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/classVg"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/classLbl"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Class Wise Collection"
+                    android:textColor="@color/black9"
+                    android:textSize="@dimen/md_size_text"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/classVg"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/classVg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent=".15" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View
+                android:id="@+id/div2"
+                android:layout_width="0dp"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="4dp"
+                android:background="@color/black6"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/vg2"
+                app:layout_constraintTop_toBottomOf="@+id/classWiseReportRow" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/monthWiseReportRow"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:paddingTop="@dimen/pTop1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/div2"
+                tools:targetApi="m">
+
+                <ImageView
+                    android:id="@+id/monthIc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_bulleted_arrow_16"
+                    android:contentDescription="@string/default_cont_desc"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/monthVg"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/monthLbl"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Month Wise Collection"
+                    android:textColor="@color/black9"
+                    android:textSize="@dimen/md_size_text"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/monthVg"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/monthVg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent=".15" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View
+                android:id="@+id/div3"
+                android:layout_width="0dp"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="4dp"
+                android:background="@color/black6"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/vg2"
+                app:layout_constraintTop_toBottomOf="@+id/monthWiseReportRow" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/installmentWiseReportRow"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:paddingTop="@dimen/pTop1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/div3"
+                tools:targetApi="m">
+
+                <ImageView
+                    android:id="@+id/installmentIc"
+                    android:layout_width="wrap_content"
+                    android:contentDescription="@string/default_cont_desc"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_bulleted_arrow_16"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/installmentVg"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/installmentLbl"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Installment Wise Summary"
+                    android:textColor="@color/black9"
+                    android:textSize="@dimen/md_size_text"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/installmentVg"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/installmentVg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent=".15" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <View
+                android:id="@+id/installmentDiv"
+                android:layout_width="0dp"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="4dp"
+                android:background="@color/black6"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/vg2"
+                app:layout_constraintTop_toBottomOf="@+id/installmentWiseReportRow" />
+
+            <ImageView
+                android:id="@+id/dueIc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/mTop1"
+                android:contentDescription="@string/default_cont_desc"
+                android:src="@drawable/ic_report_32"
+                app:layout_constraintEnd_toStartOf="@id/vg2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/installmentDiv" />
+
+
+            <TextView
+                android:id="@+id/dueLbl"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/mTop1"
+                android:text="Due Reports"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/md_size_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/vg2"
+                app:layout_constraintTop_toBottomOf="@+id/installmentDiv" />
+
+            <View
+                android:id="@+id/dueDiv"
+                android:layout_width="0dp"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="4dp"
+                android:background="@color/colorAccent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/dueIc" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/classWiseDueReportRow"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:paddingTop="@dimen/pTop1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/dueDiv"
+                tools:targetApi="m">
+
+                <ImageView
+                    android:id="@+id/classDueIc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_bulleted_arrow_16"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:contentDescription="@string/default_cont_desc"
+                    app:layout_constraintEnd_toStartOf="@id/classDueVg"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/classDueLbl"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Class Wise Due Report"
+                    android:textColor="@color/black9"
+                    android:textSize="@dimen/md_size_text"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/classDueVg"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/classDueVg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent=".15" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View
+                android:id="@+id/div4"
+                android:layout_width="0dp"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="4dp"
+                android:background="@color/black6"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/vg2"
+                app:layout_constraintTop_toBottomOf="@+id/classWiseDueReportRow" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/studentWiseDueReportRow"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:paddingTop="@dimen/pTop1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/div4"
+                tools:targetApi="m">
+
+                <ImageView
+                    android:id="@+id/studentDueIc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_bulleted_arrow_16"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:contentDescription="@string/default_cont_desc"
+                    app:layout_constraintEnd_toStartOf="@id/studentDueVg"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/studentDueLbl"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Student Wise Due Report"
+                    android:textColor="@color/black9"
+                    android:textSize="@dimen/md_size_text"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/studentDueVg"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/studentDueVg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent=".15" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <View
+                android:id="@+id/studentDiv"
+                android:layout_width="0dp"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="4dp"
+                android:background="@color/black6"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/vg2"
+                app:layout_constraintTop_toBottomOf="@+id/studentWiseDueReportRow" />
+
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/vg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent=".5" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/vg2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent=".15" />
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="35dp"
+                android:indeterminate="true"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

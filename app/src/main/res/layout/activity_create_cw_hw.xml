@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:subtitleTextColor="@color/white"
+            app:title=""
+            app:titleTextColor="@color/white" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!--<include layout="@layout/fab_menu" />-->
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/content_main2"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingTop="@dimen/activity_vertical_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingBottom="@dimen/activity_vertical_margin">
+
+            <TextView
+                android:id="@+id/groupLbl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Class :"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/chooseAudienceBtn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/circle"
+                android:contentDescription="@string/default_cont_desc"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:src="@android:drawable/ic_input_add"
+                android:tint="@color/colorPrimary"
+                app:layout_constraintEnd_toStartOf="@id/guideline"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/groupLbl"
+                tools:targetApi="m" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/sectionsParent"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="4dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/guideline"
+                app:layout_constraintTop_toBottomOf="@+id/groupLbl">
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View
+                android:id="@+id/divider"
+                android:layout_width="match_parent"
+                android:layout_height="0.3dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/black3"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/horizontalBarrier" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/submissionDateRow"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/input_field_bg"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:padding="@dimen/create_cw_padding"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/barrier2"
+                app:layout_constraintTop_toBottomOf="@+id/divider"
+                tools:targetApi="m">
+
+                <ImageView
+                    android:id="@+id/submissionDatepicker"
+                    android:layout_width="0dp"
+                    android:layout_height="25dp"
+                    android:contentDescription="@string/default_cont_desc"
+                    android:src="@drawable/datepicker_white"
+                    android:tint="@color/colorPrimary"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/guideline2"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/submissionDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:textColor="@color/black"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/guideline2"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.12" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/subject"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/input_field_bg"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:hint="Subject: "
+                android:minHeight="45dp"
+                android:padding="@dimen/create_cw_padding"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/divider"
+                tools:targetApi="m" />
+
+            <EditText
+                android:id="@+id/topic"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/input_field_bg"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:hint="Topic..."
+                android:padding="@dimen/create_cw_padding"
+                android:textSize="@dimen/sm_size_text"
+                app:layout_constraintTop_toBottomOf="@+id/submissionDateRow"
+                tools:targetApi="m" />
+
+            <EditText
+                android:id="@+id/desc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/input_field_bg"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:gravity="start"
+                android:hint="Description..."
+                android:minHeight="100dp"
+                android:padding="@dimen/create_cw_padding"
+                android:textSize="@dimen/sm_size_text"
+                app:layout_constraintTop_toBottomOf="@+id/topic"
+                tools:targetApi="m" />
+
+            <!-- <CheckBox
+                 android:id="@+id/isAssignedChk"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:text="Assigned To Class"
+                 app:layout_constraintStart_toStartOf="parent"
+                 app:layout_constraintTop_toBottomOf="@id/desc" />-->
+
+            <CheckBox
+                android:id="@+id/isAssignedChk"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Assigned To Class"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/md_size_text"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/desc" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/attachmentBtn"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:inputType="textCapWords"
+                android:text="@string/attachments"
+                android:textAlignment="viewStart"
+                android:textColor="@color/indigo"
+                android:textSize="@dimen/lg_size_text"
+                app:iconTint="@color/indigo"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/isAssignedChk" />
+
+            <LinearLayout
+                android:id="@+id/attachmentsParent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical"
+                app:layout_constraintTop_toBottomOf="@+id/attachmentBtn" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.10" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.4" />
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/barrier2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:barrierDirection="end"
+                app:constraint_referenced_ids="subject" />
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/horizontalBarrier"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:barrierDirection="bottom"
+                app:constraint_referenced_ids="sectionsParent,chooseAudienceBtn" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <com.jeannypr.scientificstudy.FloatingActionButton.MovableFloatingActionButton
+        android:id="@+id/saveActivityBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="@dimen/fab_margin"
+        android:layout_marginBottom="@dimen/fab_margin"
+        android:clipToPadding="false"
+        android:gravity="center_vertical"
+        android:padding="@dimen/standard_12"
+        app:backgroundTint="@color/colorAccent"
+        app:fabSize="normal"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+        app:srcCompat="@drawable/right_tick_sm"
+        app:tint="@color/white" />
+
+<!--    <include layout="@layout/layout_bottom_sheet" />-->
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/enterMarksHeader"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:indeterminate="true"
+        android:visibility="gone" />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

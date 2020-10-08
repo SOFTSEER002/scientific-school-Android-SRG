@@ -1,0 +1,904 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/historyFrag"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="@dimen/pTop0">
+
+    <com.jeannypr.scientificstudy.FloatingActionButton.MovableFloatingActionButton
+        android:id="@+id/requestLeaveBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/fab_margin"
+        android:layout_marginEnd="@dimen/fab_margin"
+        android:clipToPadding="false"
+        android:gravity="center_vertical"
+        android:padding="@dimen/standard_12"
+        android:tint="@color/white"
+        app:fabSize="normal"
+        app:srcCompat="@android:drawable/ic_input_add"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <TextView
+        android:id="@+id/incurredLeavesLbl"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/mLeft0"
+        android:gravity="center"
+        android:text="Leave Incurred/Entitled"
+        android:textColor="@color/black"
+        android:textSize="@dimen/md_size_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/incurredLeavesDivider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="@dimen/mLeft1"
+        android:layout_marginRight="@dimen/mRight1"
+        android:layout_marginTop="@dimen/mTop0"
+        android:background="@color/black7"
+        app:layout_constraintTop_toBottomOf="@id/incurredLeavesLbl" />
+
+    <ProgressBar
+        android:id="@+id/pb"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/incurredLeavesDivider" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/availableLeaves"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/mBottom0"
+        android:layout_marginTop="@dimen/mTop0"
+        android:background="@color/black6"
+        android:paddingBottom="1dp"
+        android:scrollbars="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/pb" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/totalLeavesRow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/black6"
+        android:padding="1dp"
+        app:layout_constraintBottom_toTopOf="@id/staffNameFilter"
+        app:layout_constraintTop_toBottomOf="@id/availableLeaves">
+
+        <TextView
+            android:id="@+id/totalLeavesLbl"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:padding="@dimen/pLeft0"
+            android:text="Total"
+            android:textColor="@color/black9"
+            android:textSize="@dimen/md_size_text"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/vg_leaveType"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <!--android:background="@drawable/round_corner_theme_bg"-->
+
+        <TextView
+            android:id="@+id/totalLeaveRatio"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:padding="@dimen/pLeft0"
+            android:textColor="@color/black9"
+            android:textSize="@dimen/md_size_text"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/vg_ratio"
+            app:layout_constraintStart_toEndOf="@id/vg_leaveType"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/pieChartRowTL"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/vg_ratio"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <!-- ProgressBar that represents a total of 100% -->
+            <ProgressBar
+                android:id="@+id/bg_pb"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:indeterminate="false"
+                android:max="100"
+                android:progressDrawable="@drawable/stats_full"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!-- ProgressBar that represents a chart slice, where "android:progress" is the % value of the slice -->
+            <ProgressBar
+                android:id="@+id/front_pb"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:indeterminate="false"
+                android:max="100"
+                android:progressDrawable="@drawable/stats_progress"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/vg_leaveType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.55" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/vg_ratio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.85" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- <TextView
+         android:id="@+id/historyLbl"
+         android:layout_width="0dp"
+         android:layout_height="wrap_content"
+         android:layout_marginLeft="@dimen/mLeft0"
+         android:layout_marginTop="32dp"
+         android:gravity="center"
+         android:textSize="@dimen/md_size_text"
+         android:text="History"
+         android:textColor="@color/black"
+         app:layout_constraintEnd_toEndOf="parent"
+         app:layout_constraintStart_toStartOf="parent"
+         app:layout_constraintTop_toBottomOf="@+id/availableLeaves" />
+
+     <View
+         android:id="@+id/historyDivider"
+         android:layout_width="match_parent"
+         android:layout_height="1dp"
+         android:layout_marginLeft="@dimen/mLeft1"
+         android:layout_marginRight="@dimen/mRight1"
+         android:layout_marginTop="@dimen/mTop0"
+         android:background="@color/black7"
+         app:layout_constraintTop_toBottomOf="@id/historyLbl" />-->
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/staffNameFilter"
+        style="@style/editText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:padding="4dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/totalLeavesRow" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/leaveLogList"
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/pTop1"
+        android:layout_height="0dp"
+        android:layout_marginBottom="@dimen/mBottom0"
+        android:background="@color/black4"
+        android:paddingBottom="1dp"
+        android:scrollbars="vertical"
+        android:visibility="visible"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/staffNameFilter" />
+
+
+    <include
+        layout="@layout/activity_no_record"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/availableLeaves" />
+
+    <!-- <ProgressBar
+         android:id="@+id/leaveHistoryPB"
+         style="?android:attr/progressBarStyle"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_marginTop="@dimen/mTop1"
+         android:indeterminate="true"
+         android:visibility="gone"
+         app:layout_constraintEnd_toEndOf="parent"
+         app:layout_constraintStart_toStartOf="parent"
+         app:layout_constraintTop_toBottomOf="@id/historyDivider" />-->
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <!--<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/availableLeaves"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="@dimen/mBottom0"
+            android:paddingBottom="1dp"
+            android:paddingTop="1dp"
+            android:scrollbars="vertical"
+            app:layoutManager="android.support.v7.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/availableLeavesRow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="1dp">
+
+            <TextView
+                android:id="@+id/leaveName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/pLeft0"
+                android:text="Casual Leave"
+                android:textColor="@color/colorPrimary"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+            &lt;!&ndash;android:background="@drawable/round_corner_theme_bg"&ndash;&gt;
+
+            <TextView
+                android:id="@+id/leaveRatio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="35/100"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/pieChartRow"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/pieChartRow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                &lt;!&ndash; ProgressBar that represents a total of 100% &ndash;&gt;
+                <ProgressBar
+                    android:id="@+id/background_progressbar"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:indeterminate="false"
+                    android:max="100"
+                    android:progress="100"
+                    android:progressDrawable="@drawable/stats_full"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                &lt;!&ndash; ProgressBar that represents a chart slice, where "android:progress" is the % value of the slice &ndash;&gt;
+                <ProgressBar
+                    android:id="@+id/stats_progressbar"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:indeterminate="false"
+                    android:max="100"
+                    android:progress="35"
+                    android:progressDrawable="@drawable/stats_progress"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                &lt;!&ndash; The text that goes in a center of the chart &ndash;&gt;
+                <TextView
+                    android:id="@+id/number_of_calories"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1500/2000"
+                    android:textSize="20sp"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/black7"
+            app:layout_constraintTop_toBottomOf="@id/availableLeavesRow" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/row2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/pLeft0"
+            app:layout_constraintTop_toBottomOf="@id/divider">
+
+            <TextView
+                android:id="@+id/leaveName2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/round_corner_theme_bg"
+                android:padding="@dimen/pLeft0"
+                android:text="Special Leave"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/leaveRatio2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="90/100"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/pieChartRow2"
+                app:layout_constraintStart_toEndOf="@id/leaveName2"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/pieChartRow2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                &lt;!&ndash; ProgressBar that represents a total of 100% &ndash;&gt;
+                <ProgressBar
+                    android:id="@+id/background_progressbar2"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:indeterminate="false"
+                    android:max="100"
+                    android:progress="100"
+                    android:progressDrawable="@drawable/stats_full_ratio"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                &lt;!&ndash; ProgressBar that represents a chart slice, where "android:progress" is the % value of the slice &ndash;&gt;
+                <ProgressBar
+                    android:id="@+id/stats_progressbar2"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:indeterminate="false"
+                    android:max="100"
+                    android:progress="90"
+                    android:progressDrawable="@drawable/stats_progress_ratio"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                &lt;!&ndash; The text that goes in a center of the chart &ndash;&gt;
+                <TextView
+                    android:id="@+id/number_of_calories2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1500/2000"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sm_size_text"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        &lt;!&ndash; <View
+             android:id="@+id/divider2"
+             android:layout_width="match_parent"
+             android:layout_height="1dp"
+             android:background="@color/black7"
+             app:layout_constraintTop_toBottomOf="@id/row2" />&ndash;&gt;
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/historyContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/mTop1"
+            app:layout_constraintTop_toBottomOf="@id/row2">
+
+            <TextView
+                android:id="@+id/historyLbl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/mLeft0"
+                android:text="History"
+                android:textColor="@color/black2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/divider3"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="@dimen/mLeft1"
+                android:layout_marginRight="@dimen/mRight1"
+                android:layout_marginTop="@dimen/mTop0"
+                android:background="@color/black7"
+                app:layout_constraintTop_toBottomOf="@id/historyLbl" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/historyRow1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/mTop0"
+                android:background="@color/black7"
+                android:padding="@dimen/pLeft0"
+                app:layout_constraintTop_toBottomOf="@id/divider3">
+
+                <TextView
+                    android:id="@+id/leaveType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Casual Leave"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/md_size_text"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_corner_red_bg"
+                    android:drawableLeft="@drawable/cross_in_circle"
+                    android:drawablePadding="@dimen/mLeft0"
+                    android:drawableTint="@color/white"
+                    android:paddingBottom="2dp"
+                    android:paddingLeft="@dimen/pLeft0"
+                    android:paddingRight="@dimen/pRight0"
+                    android:paddingTop="2dp"
+                    android:text="Rejected"
+                    android:textColor="@color/white"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/totalDays" />
+
+                <TextView
+                    android:id="@+id/sDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="12 Aug,2018"
+                    android:textColor="@color/black2"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/leaveType" />
+
+                <TextView
+                    android:id="@+id/eDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" - 15 Aug,2018"
+                    android:textColor="@color/black2"
+                    app:layout_constraintStart_toEndOf="@id/sDate"
+                    app:layout_constraintTop_toBottomOf="@id/leaveType" />
+
+
+                <TextView
+                    android:id="@+id/totalDays"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3 Days"
+                    android:textColor="@color/black2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                &lt;!&ndash;   <TextView
+                       android:id="@+id/reason"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:text="This is raeson for taking leave."
+                       android:textColor="@color/black2"
+                       app:layout_constraintStart_toStartOf="parent"
+                       app:layout_constraintTop_toBottomOf="@id/sDate" />
+       &ndash;&gt;
+                <com.jeannypr.scientificstudy.UI.ImFlexboxLayout
+                    android:id="@+id/msg_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="start|center_vertical"
+                    app:layout_constraintTop_toBottomOf="@id/status"
+                    app:viewPartMain="@+id/reason"
+                    app:viewPartSlave="@+id/viewMoreLessRow">
+
+                    <TextView
+                        android:id="@+id/reason"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end|bottom"
+                        android:focusableInTouchMode="false"
+                        android:gravity="start|top"
+                        android:text=""
+                        android:textColor="@color/black2"
+                        android:textSize="@dimen/sm_size_text" />
+
+                    <LinearLayout
+                        android:id="@+id/viewMoreLessRow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/mRight0"
+                        android:layout_marginLeft="@dimen/mLeft1"
+                        android:layout_marginRight="@dimen/mRight0"
+                        android:layout_marginStart="@dimen/mLeft1"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:gravity="end"
+                        android:minWidth="12dp"
+                        android:orientation="horizontal"
+                        android:padding="@dimen/pLeft0">
+
+                        <ImageView
+                            android:id="@+id/viewMoreLessIc"
+                            android:layout_width="wrap_content"
+                            android:layout_height="12dp"
+                            android:layout_gravity="end|bottom"
+                            android:layout_marginBottom="1dp"
+                            android:layout_marginEnd="4dp"
+                            android:layout_marginRight="4dp"
+                            android:gravity="end"
+                            android:src="@android:drawable/arrow_down_float"
+                            android:tint="@color/black2"
+                            android:visibility="invisible" />
+
+                    </LinearLayout>
+
+                </com.jeannypr.scientificstudy.UI.ImFlexboxLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/historyRow2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:background="@color/black7"
+                android:padding="@dimen/pLeft0"
+                app:layout_constraintTop_toBottomOf="@id/historyRow1">
+
+                <TextView
+                    android:id="@+id/leaveType2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Earned Leave"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/md_size_text"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/status2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_corner_green_bg"
+                    android:drawableLeft="@drawable/tickmark_in_circle"
+                    android:drawablePadding="@dimen/mLeft0"
+                    android:drawableTint="@color/white"
+                    android:paddingBottom="2dp"
+                    android:paddingLeft="@dimen/pLeft0"
+                    android:paddingRight="@dimen/pRight0"
+                    android:paddingTop="2dp"
+                    android:text="Approved"
+                    android:textColor="@color/white"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/totalDays2" />
+
+                <TextView
+                    android:id="@+id/sDate2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="14 Aug, 2018"
+                    android:textColor="@color/black2"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/leaveType2" />
+
+                <TextView
+                    android:id="@+id/eDate2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" - 18 Aug, 2018"
+                    android:textColor="@color/black2"
+                    app:layout_constraintStart_toEndOf="@id/sDate2"
+                    app:layout_constraintTop_toBottomOf="@id/leaveType2" />
+
+
+                <TextView
+                    android:id="@+id/totalDays2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="4 Days"
+                    android:textColor="@color/black2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                &lt;!&ndash;   <TextView
+                       android:id="@+id/reason"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:text="This is raeson for taking leave."
+                       android:textColor="@color/black2"
+                       app:layout_constraintStart_toStartOf="parent"
+                       app:layout_constraintTop_toBottomOf="@id/sDate" />
+       &ndash;&gt;
+                <com.jeannypr.scientificstudy.UI.ImFlexboxLayout
+                    android:id="@+id/msg_layout2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="start|center_vertical"
+                    android:visibility="gone"
+                    app:layout_constraintTop_toBottomOf="@id/status2"
+                    app:viewPartMain="@+id/reason"
+                    app:viewPartSlave="@+id/viewMoreLessRow">
+
+                    <TextView
+                        android:id="@+id/reason2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end|bottom"
+                        android:focusableInTouchMode="false"
+                        android:gravity="start|top"
+                        android:text=""
+                        android:textColor="@color/black2"
+                        android:textSize="@dimen/sm_size_text" />
+
+                    <LinearLayout
+                        android:id="@+id/viewMoreLessRow2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/mRight0"
+                        android:layout_marginLeft="@dimen/mLeft1"
+                        android:layout_marginRight="@dimen/mRight0"
+                        android:layout_marginStart="@dimen/mLeft1"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:gravity="end"
+                        android:minWidth="12dp"
+                        android:orientation="horizontal"
+                        android:padding="@dimen/pLeft0">
+
+                        <ImageView
+                            android:id="@+id/viewMoreLessIc2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="12dp"
+                            android:layout_gravity="end|bottom"
+                            android:layout_marginBottom="1dp"
+                            android:layout_marginEnd="4dp"
+                            android:layout_marginRight="4dp"
+                            android:gravity="end"
+                            android:src="@android:drawable/arrow_down_float"
+                            android:tint="@color/black2"
+                            android:visibility="invisible" />
+
+                    </LinearLayout>
+
+                </com.jeannypr.scientificstudy.UI.ImFlexboxLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/historyRow3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:background="@color/black7"
+                android:padding="@dimen/pLeft0"
+                app:layout_constraintTop_toBottomOf="@id/historyRow2">
+
+                <TextView
+                    android:id="@+id/leaveType3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Special Leave"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/md_size_text"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/status3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_corner_red_bg"
+                    android:drawableLeft="@drawable/cross_in_circle"
+                    android:drawablePadding="@dimen/mLeft0"
+                    android:drawableTint="@color/white"
+                    android:paddingBottom="2dp"
+                    android:paddingLeft="@dimen/pLeft0"
+                    android:paddingRight="@dimen/pRight0"
+                    android:paddingTop="2dp"
+                    android:text="Pending"
+                    android:textColor="@color/white"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/totalDays3" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/slider"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/blue_bg_round_corner"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/vg_slider"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <android.support.design.widget.FloatingActionButton
+                        android:id="@+id/sliderBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:layout_marginBottom="4dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginTop="4dp"
+                        app:backgroundTint="@color/transparent"
+                        app:borderWidth="0dp"
+                        app:fabSize="mini"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                    &lt;!&ndash;app:layout_constraintStart_toStartOf="parent"
+                    android:src="@drawable/ic_right_arrow"&ndash;&gt;
+                    <TextView
+                        android:id="@+id/sliderLbl"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Pending"
+                        android:textColor="@color/white"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/sliderBtn"
+                        app:layout_constraintTop_toTopOf="parent" />
+                    &lt;!&ndash;app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/sliderBtn"&ndash;&gt;
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/vg_slider"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.71" />
+
+                <TextView
+                    android:id="@+id/sDate3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="12 Aug,2018"
+                    android:textColor="@color/black2"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/leaveType3" />
+
+                <TextView
+                    android:id="@+id/eDate3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" - 15 Aug,2018"
+                    android:textColor="@color/black2"
+                    app:layout_constraintStart_toEndOf="@id/sDate3"
+                    app:layout_constraintTop_toBottomOf="@id/leaveType3" />
+
+
+                <TextView
+                    android:id="@+id/totalDays3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3 Days"
+                    android:textColor="@color/black2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/slider" />
+
+                &lt;!&ndash;   <TextView
+                       android:id="@+id/reason"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:text="This is raeson for taking leave."
+                       android:textColor="@color/black2"
+                       app:layout_constraintStart_toStartOf="parent"
+                       app:layout_constraintTop_toBottomOf="@id/sDate" />
+       &ndash;&gt;
+                <com.jeannypr.scientificstudy.UI.ImFlexboxLayout
+                    android:id="@+id/msg_layout3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="start|center_vertical"
+                    app:layout_constraintTop_toBottomOf="@id/status3"
+                    app:viewPartMain="@+id/reason"
+                    app:viewPartSlave="@+id/viewMoreLessRow">
+
+                    <TextView
+                        android:id="@+id/reason3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end|bottom"
+                        android:focusableInTouchMode="false"
+                        android:gravity="start|top"
+                        android:text="Reason : This is for testing only."
+                        android:textColor="@color/black2"
+                        android:textSize="@dimen/sm_size_text" />
+
+                    <LinearLayout
+                        android:id="@+id/viewMoreLessRow3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/mRight0"
+                        android:layout_marginLeft="@dimen/mLeft1"
+                        android:layout_marginRight="@dimen/mRight0"
+                        android:layout_marginStart="@dimen/mLeft1"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:gravity="end"
+                        android:minWidth="12dp"
+                        android:orientation="horizontal"
+                        android:padding="@dimen/pLeft0">
+
+                        <ImageView
+                            android:id="@+id/viewMoreLessIc3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="12dp"
+                            android:layout_gravity="end|bottom"
+                            android:layout_marginBottom="1dp"
+                            android:layout_marginEnd="4dp"
+                            android:layout_marginRight="4dp"
+                            android:gravity="end"
+                            android:src="@android:drawable/arrow_down_float"
+                            android:tint="@color/black2"
+                            android:visibility="invisible" />
+
+                    </LinearLayout>
+
+                </com.jeannypr.scientificstudy.UI.ImFlexboxLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>-->

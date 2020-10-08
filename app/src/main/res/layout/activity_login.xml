@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/app_new_bg"
+    android:padding="@dimen/pTop1"
+    tools:theme="@style/Coordinator">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/mTop0"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="center_horizontal"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="@dimen/lg_size_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/haveAccountLbl1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/mTop0"
+                android:gravity="center_horizontal"
+                android:text="@string/login_haveAccount1"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sm_size_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/title" />
+
+            <TextView
+                android:id="@+id/haveAccountLbl2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="@string/loginFormTitle"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sm_size_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/haveAccountLbl1" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:background="@drawable/app_background"
+                android:elevation="2dp"
+                android:translationZ="2dp"
+                app:cardCornerRadius="4dp"
+                app:fabAlignmentMode="center"
+                app:layout_constraintTop_toBottomOf="@+id/haveAccountLbl2">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="200dp"
+                    android:padding="@dimen/pTop1">
+
+                    <Spinner
+                        android:id="@+id/userRole"
+                        style="@style/Widget.AppCompat.Spinner.Underlined"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:entries="@array/userRoles"
+                        android:minHeight="50dp"
+                        android:visibility="gone"
+                        app:layout_constraintTop_toTopOf="@+id/hg" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/emailRow"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/mTop1"
+                        android:hint="@string/login_emailRow"
+                        app:errorEnabled="true"
+                        app:layout_constraintTop_toBottomOf="@+id/userRole">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/email"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:imeActionLabel="@string/ImeActionNext"
+                            android:imeOptions="actionNext"
+                            android:inputType="text"
+                            android:textSize="@dimen/sm_size_text" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/passwordRow"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/login_passwordRow"
+                        app:layout_constraintTop_toBottomOf="@+id/emailRow"
+                        app:passwordToggleEnabled="true">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/password"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawableEnd="@drawable/tickmark_in_circle"
+                            android:drawableRight="@drawable/tickmark_in_circle"
+                            android:imeActionLabel="@string/ImeActionNext"
+                            android:imeOptions="actionDone"
+                            android:inputType="textPassword"
+                            android:textSize="@dimen/sm_size_text" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <TextView
+                        android:id="@+id/unableToLogin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/mTop0"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:gravity="end"
+                        android:padding="2dp"
+                        android:text="@string/forgetPassword"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/sm_size_text"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/passwordRow"
+                        tools:targetApi="m" />
+
+                    <TextView
+                        android:id="@+id/helpLink"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/mTop0"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:gravity="start"
+                        android:text="@string/help"
+                        android:padding="2dp"
+                        android:textColor="@color/red"
+                        android:textSize="@dimen/sm_size_text"
+                        app:layout_constraintTop_toBottomOf="@+id/passwordRow"
+                        app:layout_constraintStart_toStartOf="parent"
+                        tools:targetApi="m" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/loginBtn"
+                        style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/mTop1"
+                        android:minHeight="50dp"
+                        android:padding="@dimen/pTop0"
+                        android:text="@string/loginBtn"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/md_size_text"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/unableToLogin" />
+
+                    <TextView
+                        android:id="@+id/regLink"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:gravity="center_horizontal"
+                        android:padding="2dp"
+                        android:text="@string/reglink"
+                        android:textColor="@color/mRed"
+                        android:textSize="@dimen/sm_size_text"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/loginBtn"
+                        tools:targetApi="m" />
+
+                    <ProgressBar
+                        android:id="@+id/progressBar"
+                        style="?android:attr/progressBarStyle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/unableToLogin" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/hg"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        app:layout_constraintGuide_percent=".10" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:id="@+id/getSchoolKey"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:gravity="center_horizontal"
+                android:padding="4dp"
+                android:text="@string/changeSchoolKey"
+                android:textColor="@color/black9"
+                android:textSize="@dimen/md_size_text"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/card"
+                tools:targetApi="m" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <!--<FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_anchor="@id/card"
+        app:layout_anchorGravity="top|center_horizontal">
+
+        <ImageView
+            android:layout_width="105dp"
+            android:layout_height="105dp"
+            android:background="@drawable/logo_bg" />
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:layout_gravity="center"
+            android:src="@drawable/logo" />
+    </FrameLayout>-->
+    <!-- <FrameLayout
+         android:layout_width="105dp"
+         android:layout_height="105dp"
+         app:layout_anchor="@id/card"
+         app:layout_anchorGravity="top|center_horizontal">
+
+         <ImageView
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:background="@drawable/logo_bg" />
+
+         <ImageView
+             android:id="@+id/logo"
+             android:layout_width="wrap_content"
+             android:layout_margin="16dp"
+             android:layout_height="wrap_content"
+             android:layout_gravity="center"
+             android:src="@drawable/logo" />
+     </FrameLayout>-->
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/logo"
+        android:layout_width="85dp"
+        android:layout_height="85dp"
+        android:background="@drawable/logo_bg"
+        android:src="@drawable/default_school2"
+        android:translationZ="2dp"
+        app:layout_anchor="@id/card"
+        app:layout_anchorGravity="top|center_horizontal" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

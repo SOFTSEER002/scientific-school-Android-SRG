@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <bool name="is_right_to_left">false</bool>
+    <color name="colorAccent">#BB74FF</color>
+    <color name="colorPrimary">#7BAC42</color>
+    <color name="colorPrimaryDark">#486327</color>
+    <color name="purple">#9c27b0</color>
+    <string name="app_info">"A WhatsApp style audio recording view to send voice notes in chat.\nHold the Mic to record, then slide left to cancel or swipe up to Lock and record.\n\nCredit:\nVarun John\nhttps://github.com/varunjohn\nvarunjohn1990@gmail.com"</string>
+    <string name="app_name">Demo APP</string>
+    <string name="slide_to_cancel">"Slide to cancel"</string>
+    <string name="type_a_message">Type a message</string>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+    <style name="TextAttachmentOptions">
+        <item name="android:fontFamily">sans-serif-condensed</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+</resources>

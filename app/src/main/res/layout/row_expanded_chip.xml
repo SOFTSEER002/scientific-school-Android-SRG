@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/chipDialog"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/mTop1"
+    android:background="@drawable/expanded_chip_bg"
+    android:minHeight="120dp"
+    android:translationZ="2dp"
+    app:cardElevation="4dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/chipHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:padding="@dimen/pTop1"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/ledgerName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="@dimen/md_size_text"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/closeIc"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:contentDescription="@string/default_cont_desc"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:src="@drawable/ic_close"
+                android:tint="@color/white"
+                android:translationZ="2dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:targetApi="m" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/chipBody"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/pTop1"
+            app:layout_constraintTop_toBottomOf="@+id/chipHeader">
+
+            <ImageView
+                android:id="@+id/rs_Ic"
+                android:layout_width="0dp"
+                android:layout_height="25dp"
+                android:contentDescription="@string/default_cont_desc"
+                android:src="@drawable/fee"
+                app:layout_constraintEnd_toStartOf="@id/vg_chip"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/chipAmount"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/mLeft0"
+                android:gravity="start"
+                android:textColor="@color/black9"
+                android:textSize="@dimen/md_size_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/rs_Ic"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/desc_Ic"
+                android:layout_width="0dp"
+                android:layout_height="25dp"
+                android:layout_marginTop="@dimen/mTop0"
+                android:contentDescription="@string/default_cont_desc"
+                android:src="@drawable/notes"
+                app:layout_constraintEnd_toStartOf="@id/vg_chip"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rs_Ic" />
+
+            <TextView
+                android:id="@+id/chipDesc"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/mLeft0"
+                android:layout_marginTop="4dp"
+                android:gravity="start"
+                android:text="sajdjkasdkasjdkasjd"
+                android:textColor="@color/black9"
+                android:textSize="@dimen/md_size_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/desc_Ic"
+                app:layout_constraintTop_toBottomOf="@+id/rs_Ic" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/vg_chip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent=".1" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

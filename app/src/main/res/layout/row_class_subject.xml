@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="subject"
+            type="com.jeannypr.scientificstudy.Exam.model.ClassWiseSubjectModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="1dp"
+        android:padding="@dimen/mTop1">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent=".60" />
+
+        <TextView
+            android:id="@+id/teacherName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:ellipsize="end"
+            android:gravity="start"
+            android:maxLines="1"
+            android:text='@{subject.getTeacherName == null || subject.getTeacherName.equals("") ? "NA" : subject.getTeacherName.substring(0,1).toUpperCase()+subject.getTeacherName.substring(1).toLowerCase()}'
+            android:textColor='@{subject.getTeacherName == null || subject.getTeacherName.equals("") ? @color/mRed : @color/mBlack}'
+            android:textSize="@dimen/md_size_text"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/guideline"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/subjetcName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:gravity="end"
+            android:maxLines="1"
+            android:text="@{subject.getSubjectName.substring(0,1).toUpperCase()+subject.subjectName.substring(1).toLowerCase()}"
+            android:textColor="@color/mGrey"
+            android:textSize="@dimen/md_size_text"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/guideline"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="@dimen/mTop0"
+            android:background="@color/black6"
+            app:layout_constraintTop_toBottomOf="@+id/subjetcName" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="1dp"
+        android:layout_marginTop="1dp"
+        android:background="@color/white"
+        android:padding="@dimen/standard_12">
+
+
+        <TextView
+            android:id="@+id/teacherName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text='@{subject.getTeacherName == null || subject.getTeacherName.equals("") ? "NA" : subject.getTeacherName}'
+            android:textColor='@{subject.getTeacherName == null || subject.getTeacherName.equals("") ? @color/red : @color/black}'
+            android:textSize="@dimen/sm_size_text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/subjetcName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{subject.getSubjectName}"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sm_size_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+</layout>

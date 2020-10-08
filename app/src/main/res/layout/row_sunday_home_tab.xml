@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.jeannypr.scientificstudy.Dashboard.model.HomeTabItemDetail" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/sundayRow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#DCEDC8"
+        android:paddingStart="8dp"
+        android:paddingTop="8dp"
+        android:paddingEnd="8dp"
+        android:paddingBottom="15dp"
+        android:visibility="visible"
+        app:layout_constraintTop_toBottomOf="@+id/bdayScroll">
+
+        <TextView
+            android:id="@+id/sunday_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@{viewModel.Title}"
+            android:textColor="#5F8110"
+            android:textSize="@dimen/lg_size_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <!--android:text="@{viewModel.Title.substring(0,1).toUpperCase()+ viewModel.Title.substring(1).toLowerCase()}"-->
+
+        <ImageView
+            android:id="@+id/sundayImg"
+            android:layout_width="220dp"
+            android:layout_height="130dp"
+            android:src="@mipmap/sunday_md"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sunday_title"
+            android:contentDescription="@string/default_cont_desc" />
+
+        <!--   <TextView
+               android:id="@+id/sunday_smgLbl"
+               android:layout_width="0dp"
+               android:layout_height="wrap_content"
+               android:ellipsize="end"
+               android:maxLines="2"
+               android:paddingStart="6dp"
+               android:paddingEnd="6dp"
+               android:text="@{viewModel.description}"
+               android:textColor="@color/black2"
+               android:textSize="@dimen/sm_size_text"
+               app:layout_constraintEnd_toStartOf="@+id/readMoreIc"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintTop_toBottomOf="@+id/sundayImg" />
+
+           <ImageView
+               android:id="@+id/readMoreIc"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:contentDescription="@string/default_cont_desc"
+               android:foreground="?android:selectableItemBackground"
+               android:src="@drawable/ic_arrow_down"
+               android:visibility='@{viewModel.description.equals("") ? View.GONE : View.VISIBLE}'
+               app:layout_constraintEnd_toEndOf="parent"
+               app:layout_constraintTop_toBottomOf="@+id/sundayImg" />-->
+
+        <com.jeannypr.scientificstudy.UI.ImFlexboxLayout
+            android:id="@+id/descRow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sundayImg"
+            app:viewPartMain="@+id/bdayDesc"
+            app:viewPartSlave="@+id/readMoreRow">
+
+            <TextView
+                android:id="@+id/bdayDesc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end|bottom"
+                android:focusableInTouchMode="false"
+                android:gravity="start|top"
+                android:maxLength="110"
+                android:paddingEnd="2dp"
+                android:text="@{viewModel.description}"
+                android:textColor="@color/black2"
+                android:textSize="@dimen/sm_size_text" />
+
+            <LinearLayout
+                android:id="@+id/readMoreRow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="4dp"
+                android:foreground="?android:selectableItemBackground"
+                android:gravity="end"
+                android:minWidth="60dp"
+                android:orientation="horizontal"
+                android:visibility='@{viewModel.description.equals("") ? View.GONE : View.VISIBLE}'
+                tools:targetApi="m">
+
+                <TextView
+                    android:id="@+id/readMore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end|bottom"
+                    android:gravity="end"
+                    android:maxLines="1"
+                    android:text="@string/readMore"
+                    android:textColor="@color/purple2"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+        </com.jeannypr.scientificstudy.UI.ImFlexboxLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/sundayfunBtn"
+            style="@style/Widget.MaterialComponents.Button"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:backgroundTint="#5F8110"
+            android:elevation="3dp"
+            android:gravity="center"
+            android:text="Find Fun"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/md_size_text"
+            app:cornerRadius="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/descRow" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

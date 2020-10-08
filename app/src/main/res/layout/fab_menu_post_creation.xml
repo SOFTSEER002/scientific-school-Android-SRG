@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/fabMenuLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="end"
+    android:background="#c7acaaaa"
+    android:gravity="bottom|end"
+    android:orientation="vertical"
+    android:padding="4dp"
+    android:visibility="gone">
+
+
+    <LinearLayout
+        android:id="@+id/newsLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="News" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/newsFab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:tint="@color/white"
+            app:backgroundTint="@color/green"
+            app:fabSize="mini"
+            app:srcCompat="@drawable/news" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/noticeLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical">
+        <!--standard_23-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Notice" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/noticeFab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:tint="@color/white"
+            app:backgroundTint="@color/red"
+            app:fabSize="mini"
+            app:srcCompat="@drawable/news" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/eventLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Event" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/eventFab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:tint="@color/white"
+            app:backgroundTint="@color/colorPrimary"
+            app:fabSize="mini"
+            app:srcCompat="@drawable/news" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/galleryLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:visibility="visible">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Gallery" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/galleryFab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:tint="@android:color/white"
+            app:backgroundTint="@color/orange"
+            app:fabSize="mini"
+            app:srcCompat="@drawable/gallery2" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/audioLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:visibility="gone">
+        <!--standard_23-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Audio" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/audioFab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            app:backgroundTint="@color/yellow"
+            app:fabSize="mini"
+            app:srcCompat="@drawable/audio" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/documentsLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:visibility="visible">
+        <!--standard_23-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Documents" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/documentsFab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:tint="@color/white"
+            app:backgroundTint="@color/colorPrimary"
+            app:fabSize="mini"
+            app:srcCompat="@drawable/gallery2" />
+    </LinearLayout>
+</LinearLayout>
+

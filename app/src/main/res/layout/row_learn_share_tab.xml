@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.jeannypr.scientificstudy.Dashboard.model.LearnTabItemDetail" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/shareSection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="15dp"
+        android:minHeight="330dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="#FFF4D1"
+        app:layout_constraintStart_toStartOf="parent"
+        android:visibility="visible"
+        app:layout_constraintTop_toBottomOf="@+id/tvWhtsGoingOn">
+
+
+            <TextView
+                android:id="@+id/tvStoryTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text='@{viewModel.title.equals("") ? "" :viewModel.title}'
+                android:textColor="#282621"
+                android:textSize="@dimen/lg_size_text"
+                android:typeface="normal"
+                android:paddingRight="10dp"
+                android:paddingLeft="10dp"
+                android:fontFamily="@font/kg_broken_vessels_sketch"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvStoryTitle">
+
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_weight=".25"
+                    android:background="@android:color/transparent"
+                    android:layout_height="match_parent"/>
+
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnAnger"
+                    android:layout_width="0dp"
+                    android:layout_weight=".9"
+                    android:layout_height="wrap_content"
+                    android:minHeight="45dp"
+                    android:text="Articles"
+                    android:textAllCaps="false"
+                    android:fontFamily="@font/segoe_ui"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sm_size_text"
+                    app:backgroundTint="#EF3A82"
+                    app:cornerRadius="5dp" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_weight=".1"
+                    android:background="@android:color/transparent"
+                    android:layout_height="match_parent"/>
+
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btKids"
+                    android:layout_width="0dp"
+                    android:layout_weight=".9"
+                    android:layout_height="wrap_content"
+                    android:minHeight="45dp"
+                    android:text="Poem"
+                    android:fontFamily="@font/segoe_ui"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sm_size_text"
+                    app:backgroundTint="#FF9429"
+                    app:cornerRadius="5dp" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_weight=".15"
+                    android:background="@android:color/transparent"
+                    android:layout_height="match_parent"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnChild"
+                    android:layout_width="0dp"
+                    android:layout_weight=".9"
+                    android:layout_height="wrap_content"
+                    android:minHeight="45dp"
+                    android:text="Stories"
+                    android:textAllCaps="false"
+                    android:fontFamily="@font/segoe_ui"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sm_size_text"
+                    app:backgroundTint="#68A70A"
+                    app:cornerRadius="5dp" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_weight=".25"
+                    android:background="@android:color/transparent"
+                    android:layout_height="match_parent"/>
+
+
+            </LinearLayout>
+
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/ic_story"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:contentDescription="@string/default_cont_desc" />
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:src="@mipmap/ic_poem"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/imageView"
+                android:contentDescription="@string/default_cont_desc" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

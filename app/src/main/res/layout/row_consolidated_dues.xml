@@ -1,0 +1,110 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorPrimary"
+    android:paddingBottom="0.5dp"
+    android:paddingTop="0.5dp">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/feeSummaryRow_marginTop"
+        android:background="@drawable/bg_with_dots"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/feeSummaryRow_paddingLeft"
+        android:paddingRight="@dimen/feeSummaryRow_paddingLeft"
+        android:weightSum="100">
+
+        <RelativeLayout
+            android:layout_width="@dimen/feeSummaryRow_innerWrapper_width"
+            android:layout_height="match_parent"
+            android:layout_weight="50"
+            android:background="@color/black7"
+            android:gravity="center"
+            android:padding="5dp">
+
+            <TextView
+                android:id="@+id/className"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text=""
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/sm_size_text"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/feeType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/className"
+                android:gravity="center_horizontal"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="@dimen/sm_size_text" />
+
+            <ImageView
+                android:id="@+id/statusImg"
+                android:layout_width="@dimen/feeSummaryRow_statusImg_width"
+                android:layout_height="@dimen/feeSummaryRow_statusImg_height"
+                android:layout_toRightOf="@+id/className"
+                android:src="@drawable/paid"
+                android:contentDescription="@string/default_cont_desc" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="50"
+            android:background="@color/white"
+            android:paddingRight="8dp"
+            android:paddingTop="6dp">
+
+            <TextView
+                android:id="@+id/expectedAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:fontFamily="@font/open_sans_semibold"
+                android:gravity="start|center_vertical"
+                android:text=""
+                android:textColor="@color/yellow"
+                android:textSize="@dimen/sm_size_text" />
+
+
+            <TextView
+                android:id="@+id/paidAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/expectedAmount"
+                android:gravity="center"
+                android:text=""
+                android:textColor="@android:color/holo_green_dark"
+                android:textSize="@dimen/sm_size_text" />
+
+            <View
+                android:id="@+id/divider"
+                android:layout_width="50dp"
+                android:layout_height="1dp"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/paidAmount"
+                android:background="#050505" />
+
+            <TextView
+                android:id="@+id/dueAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/paidAmount"
+                android:gravity="center"
+                android:text=""
+                android:textColor="@android:color/holo_red_light"
+                android:textSize="@dimen/sm_size_text" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

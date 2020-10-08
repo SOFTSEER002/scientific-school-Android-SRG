@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black7"
+    tools:context=".Chat.activity.ChatActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/consolidatedDuesToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:subtitleTextColor="@color/white"
+            app:titleTextColor="@color/white" />
+
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <LinearLayout
+        android:id="@+id/fromInstallmentInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@color/white"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:padding="6dp"
+        android:visibility="visible"
+        android:weightSum="100"
+        app:layout_constraintBottom_toTopOf="@+id/toInstallmentInput"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appBar">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="54"
+            android:paddingLeft="5dp"
+            android:paddingRight="10dp"
+            android:text="From Installment :"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sm_size_text" />
+
+        <TextView
+            android:id="@+id/fromInstallment"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="40"
+            android:gravity="end"
+            android:text=""
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/sm_size_text" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/toInstallmentInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:background="@color/white"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:padding="6dp"
+        android:visibility="visible"
+        android:weightSum="100"
+        app:layout_constraintBottom_toTopOf="@+id/totalExpectedContainer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fromInstallmentInput">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="54"
+            android:paddingLeft="5dp"
+            android:paddingRight="10dp"
+            android:text="To Installment :"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sm_size_text" />
+
+        <TextView
+            android:id="@+id/toInstallment"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="40"
+            android:gravity="end"
+            android:text=""
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/sm_size_text" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/totalExpectedContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@color/white"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:padding="6dp"
+        android:visibility="visible"
+        android:weightSum="100"
+        app:layout_constraintBottom_toTopOf="@+id/totalPaidContainer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toInstallmentInput">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="6"
+            android:contentDescription="@string/default_cont_desc"
+            android:src="@drawable/calendar_label"
+            android:tint="@color/yellow" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="54"
+            android:paddingLeft="5dp"
+            android:paddingRight="10dp"
+            android:text="EXPECTED(Rs.)"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sm_size_text" />
+
+        <TextView
+            android:id="@+id/totalexpectedAmount"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="40"
+            android:gravity="end"
+            android:text=""
+            android:textColor="@color/yellow"
+            android:textSize="@dimen/sm_size_text" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/totalPaidContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:padding="6dp"
+        android:visibility="visible"
+        android:weightSum="100"
+        app:layout_constraintBottom_toTopOf="@+id/totalDueContainer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/totalExpectedContainer">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="6"
+            android:contentDescription="@string/default_cont_desc"
+            android:src="@drawable/calendar_label"
+            android:tint="@android:color/holo_green_light" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="54"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:text="PAID(Rs.)"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sm_size_text" />
+
+        <TextView
+            android:id="@+id/totalPaidAmount"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="40"
+            android:gravity="end"
+            android:text=""
+            android:textColor="@android:color/holo_green_light"
+            android:textSize="@dimen/sm_size_text" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/totalDueContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:padding="6dp"
+        android:visibility="visible"
+        android:weightSum="100"
+        app:layout_constraintBottom_toTopOf="@+id/reyclerview_consolidated_dues_list"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/totalPaidContainer">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="20dp"
+            android:layout_weight="6"
+            android:contentDescription="@string/default_cont_desc"
+            android:src="@drawable/calendar_label"
+            android:tint="@android:color/holo_red_light" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="54"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:text="DUE(Rs.)"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sm_size_text" />
+
+
+        <TextView
+            android:id="@+id/totalDueAmount"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="40"
+            android:gravity="end"
+            android:text=""
+            android:textColor="@android:color/holo_red_light"
+            android:textSize="@dimen/sm_size_text" />
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:indeterminate="true"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/totalDueContainer" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/reyclerview_consolidated_dues_list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="15dp"
+        android:paddingBottom="2dp"
+        android:scrollbars="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/totalDueContainer" />
+
+    <include
+        layout="@layout/activity_no_record"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/totalDueContainer" />
+</androidx.constraintlayout.widget.ConstraintLayout>

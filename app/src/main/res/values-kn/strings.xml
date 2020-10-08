@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="greetingsLbl">ಹಲೋ</string>
+    <string name="notify_parents_notes_hint">ಪ್ರತಿಕ್ರಿಯೆಗಳು</string>
+    <string name="somethingWrongMsg">ಯಾವುದೋ ತಪ್ಪು ಸಂಭವಿಸಿದೆ ದಯವಿಟ್ಟು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.</string>
+    <string name="noRecordMsg">ಯಾವುದೇ ದಾಖಲೆ ಕಂಡುಬಂದಿಲ್ಲ</string>
+
+    <string name="noPresent">ನಿಮ್ಮ ಮಗು ಇಂದು ಇರುವುದಿಲ್ಲ. ಆದ್ದರಿಂದ ಸ್ಥಳವನ್ನು ಟ್ರ್ಯಾಕ್ ಮಾಡಲು ಸಾಧ್ಯವಿಲ್ಲ</string>
+    <string name="noJourneyStart">ಪ್ರಯಾಣ ಇನ್ನೂ ಪ್ರಾರಂಭಿಸಿಲ್ಲ.</string>
+    <string name="completeJourney">ಪ್ರಯಾಣ ಪೂರ್ಣಗೊಂಡಿದೆ.</string>
+
+    <string name="noLatLong">ಕೆಲವು ತಾಂತ್ರಿಕ ಸಮಸ್ಯೆಯಿಂದಾಗಿ ಸ್ಥಳವನ್ನು ನಮಗೆ ಟ್ರ್ಯಾಕ್ ಮಾಡಲು ಸಾಧ್ಯವಾಗುತ್ತಿಲ್ಲ. ದಯವಿಟ್ಟು ಸ್ವಲ್ಪ ಸಮಯದ ನಂತರ ಪ್ರಯತ್ನಿಸಿ. ಅನಾನುಕೂಲತೆಗಾಗಿ ಕ್ಷಮಿಸಿ.</string>
+    <string name="journeyCompleted_pick">ಪ್ರಯಾಣ ಪೂರ್ಣಗೊಂಡಿದೆ. ನಿಮ್ಮ ಮಗು ಶಾಲೆಗೆ ತಲುಪಿದೆ</string>
+    <string name="journeyCompleted_drop">ಪ್ರಯಾಣ ಪೂರ್ಣಗೊಂಡಿದೆ. ಎಲ್ಲಾ ವಿದ್ಯಾರ್ಥಿಗಳು ತಮ್ಮ ಗಮ್ಯಸ್ಥಾನವನ್ನು ತಲುಪಿದ್ದಾರೆ.</string>
+    <string name="picked_journeyMode">picked</string>
+    <string name="dropped_journeyMode">dropped</string>
+    <string name="noJourney">ಈ ಸಮಯದಲ್ಲಿ, ಯಾವುದೇ ಪ್ರವಾಸಗಳು ನಡೆಯುತ್ತಿಲ್ಲ</string>
+    <string name="startedButNoLocation">ಪ್ರಯಾಣ ಪ್ರಾರಂಭಿಸಿದೆ ಆದರೆ ಕೆಲವು ಸಮಸ್ಯೆಯ ಕಾರಣ ಸ್ಥಳವನ್ನು ಪತ್ತೆಹಚ್ಚಲು ನಮಗೆ ಸಾಧ್ಯವಾಗುತ್ತಿಲ್ಲ. ಅನಾನುಕೂಲತೆಗಾಗಿ ಕ್ಷಮಿಸಿ.</string>
+
+    <string name="messages_puncture_rad">ರಂಧ್ರ</string>
+    <string name="messages_PunctureSubtitle">ಟೈರ್ ರಂಧ್ರದಿಂದಾಗಿ ವಿಳಂಬ</string>
+    <string name="messages_traffic_rad">ಸಂಚಾರ </string>
+    <string name="messages_trafficSubtitle">ಸಂಚಾರ ವಿಳಂಬವಾಗುತ್ತದೆ</string>
+    <string name="messages_accident_rad">ಅಪಘಾತ</string>
+    <string name="messages_accidentSubtitle">ಅಪಘಾತದಿಂದಾಗಿ ವಿಳಂಬವಾಗುತ್ತದೆ</string>
+    <string name="messages_other_rad">ಇತರೆ</string>
+    <string name="messages_otherSubtitle">ಯಾವುದೇ ಕಾರಣಕ್ಕೂ ವಿಳಂಬವಾಗುತ್ತದೆ</string>
+
+    <string name="successMsg">ಯಶಸ್ವಿಯಾಗಿ ಸಂವಹನ ಮಾಡಲಾಗಿದೆ</string>
+    <string name="failedMsg">ತಿಳಿಸಲಾಗಿಲ್ಲ</string>
+    <string name="driver_home_frag_userName">%S</string>
+    <string name="startJourneyBtn">ಪ್ರಯಾಣ ಪ್ರಾರಂಭಿಸಿ</string>
+    <string name="dialogTitle">ನಿಮ್ಮ ಟ್ರಿಪ್ ಪೂರ್ಣಗೊಳಿಸಿ</string>
+    <string name="dialogPositiveButtonOk">ಸರಿ</string>
+    <string name="dialogMsg">ದಯವಿಟ್ಟು ನಿಮ್ಮ ಪ್ರವಾಸವನ್ನು ಲಾಗ್ಔಟ್ಗೆ ಪೂರ್ಣಗೊಳಿಸಿ.</string>
+    <string name="route_selectMode">ಮೋಡ್ ಆಯ್ಕೆಮಾಡಿ</string>
+    <string name="radRoute_radPickup">पಅದು ಅಪ್</string>
+    <string name="radRoute_radDrop">ಡ್ರಾಪ್</string>
+    <string name="selectRoute_lbl">ನಿಮ್ಮ ಮಾರ್ಗವನ್ನು ಆಯ್ಕೆ ಮಾಡಿ</string>
+
+    <string name="route_setToolbar">ಪ್ರಯಾಣ ಪ್ರಾರಂಭಿಸಿ</string>
+    <string name="vehicle_lbl">ನಿಮ್ಮ ವಾಹನವನ್ನು ಆಯ್ಕೆ ಮಾಡಿ</string>
+    <string name="vehicle_dialogTitle">यಪತ್ರವನ್ನು ದೃಢೀಕರಿಸಿ</string>
+    <string name="vehicle_positiveBtn">ಸರಿ</string>
+    <string name="dialogNegativeButtonCancel">ಕ್ಯಾನ್ಸರ್ </string>
+    <string name="route_assigned">ಈ ಮಾರ್ಗವನ್ನು ನಿಗದಿಪಡಿಸಲಾಗಿದೆ.</string>
+    <string name="vehicle_assigned">ಈ ವಾಹನವನ್ನು ನಿಯೋಜಿಸಲಾಗಿದೆ.</string>
+    <string name="successMsg_Journey">ಪ್ರಯಾಣ ಯಶಸ್ವಿಯಾಗಿ ಪೂರ್ಣಗೊಂಡಿದೆ.</string>
+    <string name="confirmJourneyMsg">ನಿಮ್ಮ ಪ್ರಯಾಣವನ್ನು ನೀವು ಪೂರ್ಣಗೊಳಿಸಲಿದ್ದೀರಿ.</string>
+
+    <string name="driver_frag_jourBtn_dTitle">ಸ್ಪೇಸ್ ಪರವಾನಗಿ</string>
+    <string name="driver_frag_jBtn_dMsg">ಸ್ಥಳವನ್ನು ಮುಂದುವರಿಸಲು ದಯವಿಟ್ಟು ಅನುಮತಿಸಿ.</string>
+    <string name="driver_frag_dialog_Title">सಸ್ಥಳ ಟ್ರ್ಯಾಕಿಂಗ್ಗಾಗಿ ಅನುಮತಿ</string>
+    <string name="driver_frag_dialog_Msg">ಪ್ರಯಾಣ ಆರಂಭಿಸಲು ಸ್ಥಳ ಅನುಮತಿ ನೀಡಿ.</string>
+
+    <string name="driver_frag_startTime">ಸಮಯ @</string>
+    <string name="driver_frag_routeName">ದಾರಿ </string>
+    <string name="driver_frag_vehicleNo">ವಾಹನ </string>
+    <string name="drivre_notificationBtn">ಸಂದೇಶ ಕಳುಹಿಸಿ</string>
+    <string name="driver_frag_notify_lbl">ನಿಮ್ಮ ಸಂದೇಶವನ್ನು ಆಯ್ಕೆ ಮಾಡಿ</string>
+
+    <string name="driverDashboardHomeTab">ಮುಖಪುಟ</string>
+    <string name="driverDashboardNotifyTab">ಸೂಚಿಸಿ</string>
+    <string name="driverDashboardLogoutTab">ಲಾಗ್ಔಟ್</string>
+
+    <string name="check_app_update">ನವೀಕರಣಗಳಿಗಾಗಿ ಪರಿಶೀಲಿಸಿ</string>
+    <string name="nav_help">ಸಹಾಯ ಪಡೆಯಿರಿ</string>
+    <string name="nav_earn">ಹಂಚಿಕೊಳ್ಳಿ ಮತ್ತು ಸಂಪಾದಿಸಿ</string>
+    <string name="nav_share">ಅಪ್ಲಿಕೇಶನ್ ಹಂಚಿಕೊಳ್ಳಿ</string>
+    <string name="nav_rating">ನಮಗೆ ರೇಟ್ ಮಾಡಿ</string>
+    <string name="nav_terms">ಬಳಕೆಯ ನಿಯಮಗಳು</string>
+    <string name="nav_about_us">Scientific Study ಬಗ್ಗೆ</string>
+    <string name="nav_logout">ಲಾಗ್ ಔಟ್</string>
+
+    <string name="changeLang_loadingMsg">ನಾವು ಭಾಷೆಯನ್ನು ಭಾಷಾಂತರಿಸುವ ಕಾರಣ ದಯವಿಟ್ಟು ನಿರೀಕ್ಷಿಸಿ, ಸ್ವಲ್ಪ ಸಮಯ ತೆಗೆದುಕೊಳ್ಳಬಹುದು.</string>
+    <string name="notify_subtitle">ಈ ಸಂದೇಶವನ್ನು ಪೋಷಕರು ಮತ್ತು ಪ್ರವೇಶಗಳಿಗೆ ಕಳುಹಿಸಲಾಗುವುದು.</string>
+    <string name="startJourneyConfirmLbl">ನೀವು ಹೊಸ ಪ್ರಯಾಣವನ್ನು ಪ್ರಾರಂಭಿಸುತ್ತಿದ್ದೀರಿ.</string>
+    <string name="currentJourneyLbl">ಲೈವ್ ಪ್ರಯಾಣ</string>
+    <string name="notificationMsgErr">ದಯವಿಟ್ಟು ಒಂದು ಸಂದೇಶವನ್ನು ಆಯ್ಕೆ ಮಾಡಿ</string>
+
+    <string name="selectedRouteLbl">ಆಯ್ಕೆ ಮಾರ್ಗವಾಗಿದೆ </string>
+    <string name="selectedVehicleLbl">ಆಯ್ಕೆಮಾಡಿದ ವಾಹನದ ಮಾದರಿ ಇಲ್ಲಿದೆ</string>
+    <string name="selectedVehicleNo">ಇದು ತಂದೆಯ ಸಂಖ್ಯೆ ಮತ್ತು</string>
+
+    <string name="driverDashboardEmergancyContact">ತುರ್ತು</string>
+    <string name="driverdashbordEmergencydialogTitle">ನೀವು ಕರೆ ಮಾಡಲು ಬಯಸುವವರಿಗೆ ಸಂಪರ್ಕ ಸಂಖ್ಯೆ ಕ್ಲಿಕ್ ಮಾಡಿ.</string>
+    <string name="driverdashbordEmergencydialogTxt">ಸಂಪರ್ಕಗಳು</string>
+
+    <string name="emergencyTitle">ಯಾವುದೇ ತುರ್ತು ಪರಿಸ್ಥಿತಿಯಲ್ಲಿ, ದಯವಿಟ್ಟು ಈ ಸಂಖ್ಯೆಗಳನ್ನು ಕರೆ ಮಾಡಿ</string>
+</resources>

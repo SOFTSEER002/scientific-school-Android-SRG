@@ -1,0 +1,101 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/childDetail"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="@dimen/childDetail_padding"
+    android:weightSum="100">
+
+    <RelativeLayout
+        android:id="@+id/leftSection"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="80"
+        android:foreground="?android:attr/selectableItemBackground"
+        tools:targetApi="m">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/kidImg"
+            android:layout_width="@dimen/kidImg_width"
+            android:layout_height="@dimen/kidImg_height"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/kidImg_marginR"
+            android:src="@drawable/profile" />
+
+        <TextView
+            android:id="@+id/kidName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/kidImg"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text=""
+            android:textColor="@color/white"
+            android:textSize="@dimen/md_size_text" />
+
+
+        <TextView
+            android:id="@+id/className"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/kidName"
+            android:layout_toRightOf="@+id/kidImg"
+            android:text=""
+            android:textColor="@color/white"
+            android:textSize="@dimen/sm_size_text" />
+
+        <TextView
+            android:id="@+id/rollLbl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/kidName"
+            android:layout_marginLeft="15dp"
+            android:layout_toRightOf="@+id/className"
+            android:text="Roll : "
+            android:textColor="@color/white"
+            android:textSize="@dimen/sm_size_text" />
+
+        <TextView
+            android:id="@+id/roll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/kidName"
+            android:layout_toRightOf="@+id/rollLbl"
+            android:text=""
+            android:textColor="@color/white"
+            android:textSize="@dimen/sm_size_text" />
+
+        <TextView
+            android:id="@+id/kidAdmLbl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/className"
+            android:layout_toRightOf="@+id/kidImg"
+            android:text="Adm No : "
+            android:textColor="@color/white"
+            android:textSize="@dimen/sm_size_text" />
+
+        <TextView
+            android:id="@+id/kidAdmVal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/className"
+            android:layout_toRightOf="@+id/kidAdmLbl"
+            android:text=""
+            android:textColor="@color/white"
+            android:textSize="@dimen/sm_size_text" />
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/transportDetail"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/transportDetail_height"
+        android:layout_weight="20"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:src="@drawable/bus"
+        android:tint="@color/white"
+        android:contentDescription="@string/default_cont_desc"
+        tools:targetApi="m" />
+
+</LinearLayout>

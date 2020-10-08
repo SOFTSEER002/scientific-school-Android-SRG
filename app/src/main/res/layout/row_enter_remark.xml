@@ -1,0 +1,188 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingEnd="@dimen/pRight0"
+    android:paddingStart="@dimen/pLeft0"
+    android:paddingTop="@dimen/pTop0"
+    app:layout_constraintTop_toBottomOf="@+id/enterMarksHeader">
+
+    <FrameLayout
+        android:id="@+id/imgRow"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@id/vg1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/studentImg"
+            android:layout_width="@dimen/studentImg_width"
+            android:layout_height="@dimen/studentImg_width"
+            android:layout_gravity="center"
+            android:background="@drawable/first_letter_img_bg" />
+
+        <TextView
+            android:id="@+id/firstLetter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxLines="1"
+            android:textColor="@color/white"
+            android:textSize="@dimen/md_size_text" />
+    </FrameLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/vg1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.18" />
+
+    <TextView
+        android:id="@+id/studentName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:gravity="start|center_vertical"
+        android:maxLines="1"
+        android:textColor="@color/mBlack"
+        android:textSize="@dimen/md_size_text"
+        app:layout_constraintEnd_toStartOf="@id/vg_row"
+        app:layout_constraintStart_toEndOf="@id/imgRow"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/rollno"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="start|center_vertical"
+        android:textColor="@color/colorAccent"
+        android:textSize="@dimen/sm_size_text"
+        app:layout_constraintEnd_toStartOf="@id/vg_row"
+        app:layout_constraintStart_toEndOf="@id/imgRow"
+        app:layout_constraintTop_toBottomOf="@+id/studentName" />
+
+    <View
+        android:id="@+id/vDiv"
+        android:layout_width="0.5dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="4dp"
+        android:layout_marginTop="4dp"
+        android:background="@color/black6"
+        app:layout_constraintBottom_toTopOf="@+id/hDiv"
+        app:layout_constraintStart_toStartOf="@id/vg_row"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/attendance"
+        style="@style/enter_remarks_editbox_states"
+        android:layout_width="@dimen/enterMarks_marks_width"
+        android:layout_height="wrap_content"
+        android:gravity="end|center_vertical"
+        android:hint="00"
+        android:inputType="numberDecimal"
+        android:textColor="@color/mBlack"
+        android:textSize="@dimen/md_size_text"
+        android:layout_marginTop="@dimen/mTop1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/vg_row" />
+
+    <EditText
+        android:id="@+id/remark"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="4dp"
+        android:hint="Enter remarks"
+        android:textColor="@color/mBlack"
+        android:textSize="@dimen/sm_size_text"
+        app:layout_constraintEnd_toStartOf="@id/vg_row"
+        app:layout_constraintStart_toEndOf="@id/imgRow"
+        app:layout_constraintTop_toBottomOf="@id/rollno" />
+
+    <View
+        android:id="@+id/hDiv"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="@dimen/mTop1"
+        android:background="@color/black6"
+        app:layout_constraintTop_toBottomOf="@+id/remark" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/vg_row"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.75" />
+
+</androidx.constraintlayout.widget.ConstraintLayout><!--
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/enterRemarks_row_margin_bottom"
+    android:background="@drawable/input_field_bg"
+    android:padding="5dp">
+
+    <TextView
+        android:id="@+id/rollInEnterRemarksModule"
+        style="@style/studentRollInRemarks"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/enterRemarks_roll_margin_left"
+        android:layout_marginStart="@dimen/enterRemarks_roll_margin_left"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/studentName"
+        android:layout_width="@dimen/enterRemarks_studentName_width"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/enterRemarks_edit_margin_left"
+        android:layout_marginStart="@dimen/enterRemarks_edit_margin_left"
+        android:layout_toEndOf="@+id/rollInEnterRemarksModule"
+        android:layout_toRightOf="@+id/rollInEnterRemarksModule"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text=""
+        android:textColor="@color/black"
+        android:textSize="@dimen/sm_size_text" />
+    &lt;!&ndash;enterRemarks_studentName_margin_left&ndash;&gt;
+
+    <EditText
+        android:id="@+id/attendance"
+        style="@drawable/enter_remarks_editbox_states"
+        android:layout_width="@dimen/enterRemarks_atten_width"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginEnd="@dimen/enterRemarks_atten_margin_right"
+        android:layout_marginRight="@dimen/enterRemarks_atten_margin_right"
+        android:gravity="end"
+        android:hint="00"
+        android:inputType="number"
+        android:textColor="@color/black2"
+        android:textSize="@dimen/md_size_text" />
+
+    <EditText
+        android:id="@+id/remark"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/studentName"
+        android:layout_marginEnd="@dimen/enterRemarks_edit_margin_right"
+        android:layout_marginLeft="@dimen/enterRemarks_edit_margin_left"
+        android:layout_marginRight="@dimen/enterRemarks_edit_margin_right"
+        android:layout_marginStart="@dimen/enterRemarks_edit_margin_left"
+        android:layout_marginTop="@dimen/enterRemarks_edit_margin_top"
+        android:layout_toEndOf="@+id/rollInEnterRemarksModule"
+        android:layout_toRightOf="@+id/rollInEnterRemarksModule"
+        android:hint="Enter Remarks"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sm_size_text" />
+</RelativeLayout>
+
+
+-->

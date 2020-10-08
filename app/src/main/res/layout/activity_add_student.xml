@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.jeannypr.scientificstudy.Student.model.StudentInputModel" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+        <include
+            android:id="@+id/custom_toolbar"
+            layout="@layout/custom_expandable_header" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginBottom="26dp"
+                app:layout_constraintBottom_toTopOf="@+id/saveBtn"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.core.widget.NestedScrollView
+                    android:id="@+id/scroll"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fillViewport="true"
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/constraint_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:padding="8dp"
+                        app:layout_constraintBottom_toTopOf="@+id/saveBtn"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:id="@+id/personalDetails"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="4dp"
+                            android:fontFamily="@font/roboto_medium"
+                            android:gravity="start"
+                            android:text="@string/personalDetail"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/lg_size_text"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/studentPersonalDetailIc"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <ImageView
+                            android:id="@+id/studentPersonalDetailIc"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:contentDescription="@string/default_cont_desc"
+                            android:src="@drawable/ic_child"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/fnameTv"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="18dp"
+                            android:hint="@string/firstName"
+                            android:theme="@style/StudentTextInputStyle"
+                            app:boxBackgroundColor="@android:color/transparent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/personalDetails">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/fnameEd"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:imeOptions="actionNext"
+                                android:inputType="textPersonName"
+                                android:text="@={viewModel.firstName}" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/lastNameTv"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:hint="@string/lastName"
+                            android:theme="@style/StudentTextInputStyle"
+                            app:boxBackgroundColor="@android:color/transparent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/fnameTv">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/lastNameEd"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:imeOptions="actionNext"
+                                android:inputType="textPersonName"
+                                android:text="@={viewModel.lastName}" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <Spinner
+                            android:id="@+id/genderSpinner"
+                            style="@style/SpinnerTheme"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="26dp"
+                            android:entries="@array/gender"
+                            android:focusable="true"
+                            android:focusableInTouchMode="true"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/lastNameTv" />
+
+                        <ImageView
+                            android:id="@+id/studentAcademicDetailIc"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:contentDescription="@string/default_cont_desc"
+                            android:src="@drawable/ic_book"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/genderSpinner" />
+
+                        <TextView
+                            android:id="@+id/academicDetails"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="4dp"
+                            android:layout_marginTop="20dp"
+                            android:fontFamily="@font/roboto_medium"
+                            android:text="@string/academicDetail"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/lg_size_text"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/studentAcademicDetailIc"
+                            app:layout_constraintTop_toBottomOf="@+id/genderSpinner" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/admNoTv"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:hint="@string/admissionNo"
+                            android:theme="@style/StudentTextInputStyle"
+                            app:boxBackgroundColor="@android:color/transparent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/studentAcademicDetailIc">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/admNoEd"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:imeOptions="actionNext"
+                                android:inputType="text"
+                                android:text="@={viewModel.admissionNumber}" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <!-- <Spinner
+                             android:id="@+id/classSpinner"
+                             style="@style/SpinnerTheme"
+                             android:layout_width="0dp"
+                             android:layout_height="wrap_content"
+                             android:layout_marginTop="20dp"
+                             android:focusable="true"
+                             android:focusableInTouchMode="true"
+                             app:layout_constraintEnd_toEndOf="parent"
+                             app:layout_constraintStart_toStartOf="parent"
+                             app:layout_constraintTop_toBottomOf="@+id/admNoTv" />-->
+
+                        <Spinner
+                            android:id="@+id/studentStatusSpinner"
+                            style="@style/SpinnerTheme"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:focusable="true"
+                            android:focusableInTouchMode="true"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/admNoTv" />
+
+                        <androidx.constraintlayout.widget.Guideline
+                            android:id="@+id/guideline"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            app:layout_constraintGuide_percent=".48" />
+
+                        <ImageView
+                            android:id="@+id/fatherDetailIc"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:contentDescription="@string/default_cont_desc"
+                            android:src="@drawable/ic_male"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/studentStatusSpinner" />
+
+                        <TextView
+                            android:id="@+id/fatherDetails"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="4dp"
+                            android:layout_marginTop="20dp"
+                            android:fontFamily="@font/roboto_medium"
+                            android:text="@string/fatherDetail"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/lg_size_text"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/fatherDetailIc"
+                            app:layout_constraintTop_toBottomOf="@+id/studentStatusSpinner" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/fathersNameTv"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="18dp"
+                            android:hint="@string/fatherName"
+                            android:theme="@style/StudentTextInputStyle"
+                            app:boxBackgroundColor="@android:color/transparent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/fatherDetails">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/fathersNameEd"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:imeOptions="actionNext"
+                                android:inputType="textPersonName"
+                                android:text="@={viewModel.fatherFirstName}" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/mobileTv"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:hint="@string/fatherMobileLbl"
+                            android:theme="@style/StudentTextInputStyle"
+                            app:boxBackgroundColor="@android:color/transparent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/fathersNameTv">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/fathersMobileEd"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:imeOptions="actionDone"
+                                android:inputType="phone"
+                                android:maxLength="10"
+                                android:text="@={viewModel.fatherMobile}" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.core.widget.NestedScrollView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/saveBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|center_horizontal"
+                android:layout_margin="26dp"
+                android:elevation="4dp"
+                android:paddingStart="42dp"
+                android:paddingEnd="42dp"
+                android:text="@string/save"
+                android:textAllCaps="false"
+                android:textSize="@dimen/lg_size_text"
+                app:backgroundTint="@color/purple7"
+                app:cornerRadius="26dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:indeterminate="true"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

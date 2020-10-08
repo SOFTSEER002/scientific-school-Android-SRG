@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/rowTeacher"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="6dp"
+        android:layout_marginBottom="6dp"
+        android:background="@color/white"
+        android:foreground="?android:attr/selectableItemBackground"
+        tools:targetApi="m">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSubject"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/segoe_ui"
+            android:minHeight="75dp"
+            android:text="@string/anger"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/md_size_text"
+            app:backgroundTint="#FF92FF"
+            app:cornerRadius="4dp"
+            app:layout_constraintEnd_toEndOf="@+id/guideline"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
+

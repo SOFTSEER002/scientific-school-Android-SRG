@@ -1,0 +1,452 @@
+<?xml version="1.0" encoding="utf-8"?><!--created by babulal-->
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bodyContainer2"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/pTop0">
+
+    <ImageView
+        android:id="@+id/dayBookIc"
+        android:layout_width="@dimen/enterMarksIc_w"
+        android:layout_height="@dimen/enterMarksIc_w"
+        android:layout_marginTop="@dimen/mTop1"
+        android:contentDescription="@string/default_cont_desc"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:src="@drawable/enter_marks"
+        app:layout_constraintEnd_toStartOf="@id/vg1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:targetApi="m" />
+
+    <TextView
+        android:id="@+id/dayBook"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:padding="@dimen/pTop1"
+        android:text="Day Book Report"
+        android:textColor="@color/black"
+        android:textSize="@dimen/md_size_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/vg1"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:targetApi="m" />
+
+    <View
+        android:id="@+id/dayDiv"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/div_h"
+        android:background="@color/black6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/vg1"
+        app:layout_constraintTop_toBottomOf="@+id/dayBook" />
+
+    <ImageView
+        android:id="@+id/purchaseSaleIc"
+        android:layout_width="@dimen/enterMarksIc_w"
+        android:layout_height="@dimen/enterMarksIc_w"
+        android:layout_marginTop="@dimen/mTop1"
+        android:contentDescription="@string/default_cont_desc"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:src="@drawable/enter_marks"
+        android:visibility="gone"
+        app:layout_constraintEnd_toStartOf="@id/vg1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/dayBook"
+        tools:targetApi="m" />
+
+    <TextView
+        android:id="@+id/purchaseSale"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:padding="@dimen/pTop1"
+        android:text="Purchase Summary"
+        android:textColor="@color/black"
+        android:textSize="@dimen/md_size_text"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/vg1"
+        app:layout_constraintTop_toBottomOf="@id/dayBook"
+        tools:targetApi="m" />
+
+    <View
+        android:id="@+id/purchaseDiv"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/div_h"
+        android:background="@color/black6"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/vg1"
+        app:layout_constraintTop_toBottomOf="@+id/purchaseSale" />
+
+    <ImageView
+        android:id="@+id/saleSummaryIc"
+        android:layout_width="@dimen/enterMarksIc_w"
+        android:layout_height="@dimen/enterMarksIc_w"
+        android:layout_marginTop="@dimen/mTop1"
+        android:contentDescription="@string/default_cont_desc"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:src="@drawable/enter_marks"
+        android:visibility="gone"
+        app:layout_constraintEnd_toStartOf="@id/vg1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/purchaseDiv"
+        tools:targetApi="m" />
+
+    <TextView
+        android:id="@+id/saleSummary"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:padding="@dimen/pTop1"
+        android:text="Sale Summary"
+        android:textColor="@color/black"
+        android:textSize="@dimen/md_size_text"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/vg1"
+        app:layout_constraintTop_toBottomOf="@id/purchaseDiv"
+        tools:targetApi="m" />
+
+    <View
+        android:id="@+id/saleDiv"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/div_h"
+        android:background="@color/black6"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/vg1"
+        app:layout_constraintTop_toBottomOf="@+id/saleSummary" />
+
+    <ImageView
+        android:id="@+id/ledgerIc"
+        android:layout_width="@dimen/enterMarksIc_w"
+        android:layout_height="@dimen/enterMarksIc_w"
+        android:layout_marginTop="@dimen/mTop1"
+        android:contentDescription="@string/default_cont_desc"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:src="@drawable/enter_marks"
+        android:visibility="gone"
+        app:layout_constraintEnd_toStartOf="@id/vg1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/saleDiv"
+        tools:targetApi="m" />
+
+    <TextView
+        android:id="@+id/saleLeger"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:padding="@dimen/pTop1"
+        android:text="Ledger Report"
+        android:textColor="@color/black"
+        android:textSize="@dimen/md_size_text"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/vg1"
+        app:layout_constraintTop_toBottomOf="@id/saleDiv"
+        tools:targetApi="m" />
+
+    <View
+        android:id="@+id/ledgerDiv"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/div_h"
+        android:background="@color/black6"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/vg1"
+        app:layout_constraintTop_toBottomOf="@+id/saleLeger" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/vg1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="@dimen/vg_div_perc" />
+
+
+    <!--<ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/appBar">
+
+        <LinearLayout style="@style/bodyContainer">
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/routeRow"
+                style="@style/firstCardView">
+
+                <RelativeLayout style="@style/wrapperInsideCardView">
+
+                    <ImageView
+                        style="@style/leftDrawableOfCardView"
+                        android:src="@drawable/transport2" />
+
+                    <TextView
+                        style="@style/cardViewText"
+                        android:text="Route Wise Details" />
+
+                    <Button
+                        android:id="@+id/routeBtn"
+                        style="@style/rightDrawableOfCardView"
+                        android:background="@drawable/right_arrow_btn" />
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/stoppageRow"
+                style="@style/cardView">
+
+                <RelativeLayout style="@style/wrapperInsideCardView">
+
+                    <ImageView
+                        style="@style/leftDrawableOfCardView"
+                        android:src="@drawable/stoppage" />
+
+                    <TextView
+                        style="@style/cardViewText"
+                        android:text="Stoppage Wise Details" />
+
+                    <Button
+                        android:id="@+id/stoppageBtn"
+                        style="@style/rightDrawableOfCardView"
+                        android:background="@drawable/right_arrow_btn" />
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/classRow"
+                style="@style/cardView">
+
+                <RelativeLayout style="@style/wrapperInsideCardView">
+
+                    <ImageView
+                        style="@style/leftDrawableOfCardView"
+                        android:src="@drawable/class_wise_attendance" />
+
+                    <TextView
+                        style="@style/cardViewText"
+                        android:text="Class Wise Details" />
+
+                    <Button
+                        android:id="@+id/classBtn"
+                        style="@style/rightDrawableOfCardView"
+                        android:background="@drawable/right_arrow_btn" />
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+    </ScrollView>-->
+
+</androidx.constraintlayout.widget.ConstraintLayout><!--
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/bodyContainer2"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/mTop0"
+    android:paddingLeft="@dimen/mLeft1"
+    android:paddingRight="@dimen/mRight1">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/dayBookBtn"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:paddingBottom="@dimen/pBottom1"
+    android:paddingTop="@dimen/pTop1">
+
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/enter_marks"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/dayBook"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/mLeft0"
+        android:text="Day Book Report"
+        android:textColor="@color/black"
+        android:textSize="@dimen/md_size_text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/icon"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/dayBookIc"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/ic_right_arrow"
+        android:tint="@color/colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:id="@+id/dayBookDiv"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/dayBookBtn"
+        android:background="@color/black6" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/purchaseSaleBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:paddingBottom="@dimen/pBottom1"
+        android:paddingTop="@dimen/pTop1"
+        android:visibility="gone"
+        android:layout_below="@id/dayBookDiv">
+
+        <ImageView
+            android:id="@+id/icon1"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/enter_marks"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/purchaseSale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/mLeft0"
+            android:text="Purchase Summary"
+            android:textColor="@color/black"
+            android:textSize="@dimen/md_size_text"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/icon1"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/purchaseSaleIc"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/ic_right_arrow"
+            android:tint="@color/colorPrimary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:id="@+id/purchaseSaleDiv"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/purchaseSaleBtn"
+        android:background="@color/black6" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/saleSummaryBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:paddingBottom="@dimen/pBottom1"
+        android:paddingTop="@dimen/pTop1"
+        android:visibility="gone"
+        android:layout_below="@id/purchaseSaleDiv">
+
+        <ImageView
+            android:id="@+id/iconSale"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/enter_marks"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/saleSummary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/mLeft0"
+            android:text="Sale Summary"
+            android:textColor="@color/black"
+            android:textSize="@dimen/md_size_text"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/iconSale"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/saleIc"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/ic_right_arrow"
+            android:tint="@color/colorPrimary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:id="@+id/saleDiv"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/saleSummaryBtn"
+        android:background="@color/black6" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/ledgerReportBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:paddingBottom="@dimen/pBottom1"
+        android:paddingTop="@dimen/pTop1"
+        android:visibility="gone"
+        android:layout_below="@id/saleDiv">
+
+        <ImageView
+            android:id="@+id/iconLedger"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/enter_marks"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/saleLeger"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/mLeft0"
+            android:text="Ledger Report"
+            android:textColor="@color/black"
+            android:textSize="@dimen/md_size_text"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/iconLedger"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/ledgerIc"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/ic_right_arrow"
+            android:tint="@color/colorPrimary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:id="@+id/ledgerDiv"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/ledgerReportBtn"
+        android:background="@color/black6" />
+
+
+</RelativeLayout>-->

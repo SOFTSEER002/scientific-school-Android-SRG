@@ -1,0 +1,87 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/createEventRowContainer"
+    tools:showIn="@layout/activity_create_post">
+
+    <ImageView
+        android:id="@+id/closeAttachmentIcon"
+        style="@style/closeAttachmentIcon"
+        android:contentDescription="@string/default_cont_desc" />
+
+    <RelativeLayout
+        style="@style/createEventContainer"
+        android:layout_below="@+id/closeAttachmentIcon">
+
+        <RelativeLayout
+            android:id="@+id/titleContainer"
+            style="@style/titleContainer">
+
+            <ImageView
+                android:id="@+id/icTitle"
+                style="@style/icTitle"
+                android:contentDescription="@string/default_cont_desc"
+                android:src="@drawable/student_datepicker" />
+
+            <EditText
+                android:id="@+id/title"
+                style="@style/createEventTitle"
+                android:layout_toRightOf="@+id/icTitle"
+                android:text="Title" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/startDateContainer"
+            style="@style/titleContainer"
+            android:layout_below="@+id/titleContainer">
+
+            <ImageView
+                android:id="@+id/startdateDatepicker"
+                style="@style/icTitle"
+                android:contentDescription="@string/default_cont_desc"
+                android:src="@drawable/student_datepicker" />
+
+            <EditText
+                style="@style/createEventTitle"
+                android:layout_toRightOf="@+id/startdateDatepicker"
+                android:text="Start Date" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/endDateContainer"
+            style="@style/titleContainer"
+            android:layout_below="@+id/startDateContainer">
+
+            <ImageView
+                android:id="@+id/enddateDatepicker"
+                style="@style/icTitle"
+                android:contentDescription="@string/default_cont_desc"
+                android:src="@drawable/student_datepicker" />
+
+            <EditText
+                style="@style/createEventTitle"
+                android:layout_toRightOf="@+id/enddateDatepicker"
+                android:text="End Date" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            style="@style/titleContainer"
+            android:layout_below="@+id/endDateContainer">
+
+            <ImageView
+                android:id="@+id/icTime"
+                style="@style/icTitle"
+                android:contentDescription="@string/default_cont_desc"
+                android:src="@drawable/student_datepicker" />
+
+            <EditText
+                style="@style/createEventTitle"
+                android:layout_toRightOf="@+id/icTime"
+                android:text="Time" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

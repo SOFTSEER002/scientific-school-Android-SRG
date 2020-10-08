@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/notification_bg"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/black8"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="@dimen/pTop0">
+
+        <ImageView
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/logo"
+            android:contentDescription="@string/default_cont_desc" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.7"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:paddingLeft="@dimen/pLeft0"
+            android:paddingRight="@dimen/profileInfoIcon_height"
+            android:text="Scientificstudy - Shri Mahaveer Ji School"
+            android:textSize="12sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="10m"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="@dimen/pTop0">
+
+        <ImageView
+            android:id="@+id/user_image"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/dummy_user"
+            android:contentDescription="@string/default_cont_desc" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.8"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/pLeft0"
+            android:paddingRight="@dimen/pRight0">
+
+            <TextView
+                android:id="@+id/headline"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:text="Kannu garg"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/short_message"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:text="this is for demo only"
+                android:paddingBottom="2dp"
+                android:singleLine="true"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/context_icon"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center"
+            android:layout_marginRight="2dp"
+            android:layout_weight="0"
+            android:scaleType="centerCrop"
+            android:src="@drawable/messenger"
+            android:contentDescription="@string/default_cont_desc" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,18 @@
+<resources>
+    <string name="studentModule">Student</string>
+    <string name="registrationModule">Registration</string>
+
+    <string name="bloodGroupLabel" type="string">Blood Group</string>
+
+    <string name="fatherMobileLbl">Father Mobile</string>
+
+    <string name="dobLbl">Date of Birth</string>
+
+    <string name="motherMobLbl">Mother Mobile</string>
+
+    <string name="manageRollNoLbl">Manage Student Roll Number</string>
+    <string name="bulkUpdateLbl">Bulk Update Student Details</string>
+    <string name="studentListLbl">View All Students</string>
+    <string name="manageMobileNumber">Manage Mobile Number</string>
+
+</resources>

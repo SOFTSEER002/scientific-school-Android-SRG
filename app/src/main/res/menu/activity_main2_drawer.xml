@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+
+<!--
+        <item
+            android:id="@+id/nav_setting"
+            android:icon="@drawable/ic_action_setting"
+            android:iconTint="@color/black"
+            android:title="@string/action_settings"
+            android:visible="false" />
+-->
+
+        <item
+            android:id="@+id/check_app_update"
+            android:icon="@drawable/ic_action_info"
+            android:iconTint="@color/black"
+            android:title="@string/check_app_update"
+            tools:targetApi="o" />
+
+        <item
+            android:id="@+id/nav_help"
+            android:icon="@drawable/ic_action_help"
+            android:iconTint="@color/black"
+            android:title="@string/nav_help"
+            tools:targetApi="o" />
+        <item
+            android:id="@+id/nav_earn"
+            android:icon="@drawable/ic_action_money"
+            android:iconTint="@color/black"
+            android:title="@string/nav_earn"
+            tools:targetApi="o" />
+        <item
+            android:id="@+id/nav_share"
+            android:icon="@drawable/ic_action_share"
+            android:iconTint="@color/black"
+            android:title="@string/nav_share"
+            tools:targetApi="o" />
+
+        <item
+            android:id="@+id/nav_rating"
+            android:icon="@drawable/ic_action_star_rate"
+            android:iconTint="@color/black"
+            android:title="@string/nav_rating"
+            tools:targetApi="o" />
+        <item
+            android:id="@+id/nav_terms"
+            android:icon="@drawable/ic_action_terms"
+            android:iconTint="@color/black"
+            android:title="@string/nav_terms"
+            tools:targetApi="o" />
+        <item
+            android:id="@+id/nav_about_us"
+            android:icon="@drawable/ic_action_info"
+            android:iconTint="@color/black"
+            android:title="@string/nav_about_us"
+            tools:targetApi="o" />
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/ic_action_logout"
+            android:iconTint="@color/black"
+            android:title="@string/nav_logout"
+            tools:targetApi="o" />
+
+        <item android:title="" />
+
+        <!--  <item
+              android:id="@+id/nav_about_us2"
+              android:icon="@drawable/ic_action_info"
+              android:iconTint="@color/black"
+              android:title="About Scientific Study2" />
+          <item
+              android:id="@+id/nav_logout2"
+              android:icon="@drawable/ic_action_logout"
+              android:iconTint="@color/black"
+              android:title="Logout2" />-->
+
+    </group>
+
+    <!--<item android:title="Communicate">-->
+    <!--<menu>-->
+    <!--<item-->
+    <!--android:id="@+id/nav_share"-->
+    <!--android:icon="@drawable/ic_menu_share"-->
+    <!--android:title="Share" />-->
+    <!--<item-->
+    <!--android:id="@+id/nav_send"-->
+    <!--android:icon="@drawable/ic_menu_send"-->
+    <!--android:title="Send" />-->
+    <!--</menu>-->
+    <!--</item>-->
+
+</menu>

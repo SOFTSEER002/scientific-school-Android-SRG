@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/listViewRowContainer">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/teacherImg"
+        style="@style/studentImage"
+        android:src="@drawable/profile" />
+
+    <TextView
+        android:id="@+id/myClassTeacherName"
+        style="@style/studentName"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/teacherImg"
+        android:text="" />
+
+    <ImageView
+        android:id="@+id/ic_books"
+        android:layout_width="@dimen/teacherEmailIcon_width"
+        android:layout_height="@dimen/teacherEmailIcon_height"
+        android:layout_below="@+id/myClassTeacherName"
+        android:layout_toEndOf="@+id/teacherImg"
+        android:scaleX="0.8"
+        android:scaleY="0.8"
+        android:src="@drawable/book"
+        android:contentDescription="@string/default_cont_desc" />
+
+    <TextView
+        android:id="@+id/subject"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/myClassTeacherName"
+        android:layout_toEndOf="@+id/ic_books"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textColor="@color/green2"
+        android:textSize="@dimen/sm_size_text" />
+
+</RelativeLayout>

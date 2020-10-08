@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:subtitleTextColor="@color/white"
+            app:titleTextColor="@color/white" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <TextView
+        android:id="@+id/totalAmount"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/red_gradient"
+        android:gravity="end|center_vertical"
+        android:padding="4dp"
+        android:textColor="@color/white"
+        android:textSize="@dimen/md_size_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appBar" />
+
+    <!-- <androidx.constraintlayout.widget.ConstraintLayout
+         android:id="@+id/subheader"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         app:layout_constraintEnd_toEndOf="parent"
+         app:layout_constraintStart_toStartOf="parent"
+         app:layout_constraintTop_toBottomOf="@+id/appBar">
+
+         <TextView
+             android:layout_width="0dp"
+             android:layout_height="wrap_content"
+             android:background="@drawable/indigo_gradient"
+             android:gravity="start"
+             android:padding="@dimen/pTop0"
+             android:text="Installment"
+             android:textColor="@color/white"
+             android:textSize="@dimen/md_size_text"
+             app:layout_constraintEnd_toStartOf="@id/vg"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintTop_toTopOf="parent" />
+
+         <TextView
+             android:id="@+id/totalAmount"
+             android:layout_width="0dp"
+             android:layout_height="wrap_content"
+             android:background="@drawable/red_gradient"
+             android:gravity="end"
+             android:padding="@dimen/pTop0"
+             android:textColor="@color/white"
+             android:textSize="@dimen/md_size_text"
+             app:layout_constraintEnd_toEndOf="parent"
+             app:layout_constraintStart_toStartOf="@id/vg"
+             app:layout_constraintTop_toTopOf="parent" />
+
+         <androidx.constraintlayout.widget.Guideline
+             android:id="@+id/vg"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:orientation="vertical"
+             app:layout_constraintGuide_percent=".50" />
+
+     </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/installmentSummary"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:scrollbars="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/totalAmount" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

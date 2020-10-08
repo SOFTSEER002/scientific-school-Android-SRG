@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!--  <data>
+
+          <variable
+              name="viewModel"
+              type="" />
+      </data>-->
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/staffSection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@mipmap/staff_bg"
+        android:padding="12dp"
+        android:visibility="visible"
+        app:layout_constraintTop_toBottomOf="@+id/messengerSection">
+
+        <TextView
+            android:id="@+id/tvStaffTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/staff"
+            android:textColor="@color/white"
+            android:textSize="@dimen/lg_size_text"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/staff_section_bg"
+            android:padding="12dp"
+            app:layout_constraintTop_toBottomOf="@+id/tvStaffTitle">
+
+            <ImageView
+                android:id="@+id/ic_call"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:contentDescription="@string/default_cont_desc"
+                android:src="@mipmap/phone_ic2"
+                android:tint="@color/colorPrimary"
+                app:layout_constraintEnd_toStartOf="@+id/tvStaffHeading1"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvStaffHeading1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:paddingTop="4dp"
+                android:paddingBottom="4dp"
+                android:text="@string/makeACall"
+                android:textColor="@color/black"
+                android:textSize="@dimen/md_size_text"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/ic_call"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/principalImageCL"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:layout_constraintEnd_toStartOf="@+id/adminImageCL"
+                app:layout_constraintHorizontal_chainStyle="spread"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvStaffHeading1">
+
+                <FrameLayout
+                    android:id="@+id/principalImageRow"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/principalPic"
+                        android:layout_width="@dimen/parent_pic_width"
+                        android:layout_height="@dimen/parent_pic_width"
+                        android:layout_gravity="center"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:src="@drawable/woman_64"
+                        app:civ_border_color="@color/blue13"
+                        app:civ_border_width="1dp"
+                        tools:targetApi="m" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="28dp"
+                        android:layout_marginTop="12dp"
+                        android:contentDescription="@string/default_cont_desc"
+                        android:src="@mipmap/phone_ic" />
+
+                </FrameLayout>
+
+                <TextView
+                    android:id="@+id/principalImageLbl"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/principal"
+                    android:textColor="@color/mGrey"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/principalImageRow" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/adminImageCL"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/principalImageCL"
+                app:layout_constraintTop_toBottomOf="@+id/tvStaffHeading1">
+
+                <FrameLayout
+                    android:id="@+id/adminImageRow"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/adminPic"
+                        android:layout_width="@dimen/parent_pic_width"
+                        android:layout_height="@dimen/parent_pic_width"
+                        android:layout_gravity="center"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:src="@drawable/woman_64"
+                        app:civ_border_color="@color/blue13"
+                        app:civ_border_width="1dp"
+                        tools:targetApi="m" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="28dp"
+                        android:layout_marginTop="12dp"
+                        android:contentDescription="@string/default_cont_desc"
+                        android:src="@mipmap/phone_ic" />
+                </FrameLayout>
+
+                <TextView
+                    android:id="@+id/adminImageLbl"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/admin"
+                    android:textColor="@color/mGrey"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/adminImageRow" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/allStaffsBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:minWidth="130dp"
+                android:minHeight="50dp"
+                android:text="@string/all_staffs"
+                android:textAllCaps="false"
+                android:textSize="@dimen/sm_size_text"
+                app:backgroundTint="@color/pink6"
+                app:cornerRadius="4dp"
+                app:layout_constraintEnd_toStartOf="@+id/allStudentsBtn"
+                app:layout_constraintHorizontal_chainStyle="spread"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/principalImageCL" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/allStudentsBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:minWidth="130dp"
+                android:minHeight="50dp"
+                android:text="@string/all_students"
+                android:textAllCaps="false"
+                android:textSize="@dimen/sm_size_text"
+                app:backgroundTint="@color/pink6"
+                app:cornerRadius="4dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/allStaffsBtn"
+                app:layout_constraintTop_toBottomOf="@+id/principalImageCL" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

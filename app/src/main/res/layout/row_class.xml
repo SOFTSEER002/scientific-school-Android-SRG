@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="cls"
+            type="com.jeannypr.scientificstudy.Base.Model.ClassModel" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/rowClass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:descendantFocusability="beforeDescendants"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:padding="@dimen/pRight0"
+        tools:targetApi="m">
+
+        <!--
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/classTeacherImg"
+                            android:layout_width="@dimen/studentImg_width"
+                            android:layout_height="@dimen/studentImg_width"
+                            android:layout_marginBottom="@dimen/mBottom0"
+                            android:layout_marginTop="@dimen/mTop0"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            android:src="@drawable/profile"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@id/vg1"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+        -->
+
+        <FrameLayout
+            android:id="@+id/imgRow"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            app:layout_constraintEnd_toStartOf="@id/vg1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/classTeacherImg"
+                android:layout_width="@dimen/studentImg_width"
+                android:layout_height="@dimen/studentImg_width"
+                android:layout_gravity="center"
+                android:background="@drawable/first_letter_img_bg" />
+
+            <TextView
+                android:id="@+id/firstLetter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:maxLines="1"
+                android:textColor="@color/white"
+                android:textSize="@dimen/md_size_text" />
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/className"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/mTop0"
+            android:ellipsize="end"
+            android:gravity="start"
+            android:maxLines="1"
+            android:text="@{cls.Name}"
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textSize="@dimen/md_size_text"
+            app:layout_constraintEnd_toStartOf="@id/totalStudents"
+            app:layout_constraintStart_toStartOf="@id/vg1"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/classTeacherLbl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:maxLines="1"
+            android:text="Class Teacher - "
+            android:textColor="@color/black2"
+            android:textSize="@dimen/sm_size_text"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="@id/vg1"
+            app:layout_constraintTop_toBottomOf="@+id/className"
+            tools:targetApi="m" />
+
+        <TextView
+            android:id="@+id/classTeacherName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:maxLines="1"
+            android:textSize="@dimen/sm_size_text"
+            app:layout_constraintStart_toEndOf="@id/classTeacherLbl"
+            app:layout_constraintTop_toBottomOf="@+id/className"
+            tools:targetApi="m" />
+
+        <!-- android:text='@{cls.ClassTeacher == null || cls.ClassTeacher.equals("") ? "No class teacher !" : cls.ClassTeacher}'
+         android:textColor='@{cls.ClassTeacher == null || cls.ClassTeacher.equals("") ? @color/red : @color/blueColorText }'-->
+
+        <TextView
+            android:id="@+id/totalStudents"
+            style="@style/studentRoll"
+            android:layout_width="@dimen/studentRoll_width"
+            android:layout_height="@dimen/studentRoll_width"
+            android:background="@drawable/text_oval"
+            android:text="@{String.valueOf(cls.getTotalNoStudents())}"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sm_size_text"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height=".5dp"
+            android:background="@color/black6"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/vg1" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/vg1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.2" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--   <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+           android:id="@+id/rowClass"
+           style="@style/listViewRowContainer">
+
+           <RelativeLayout
+               android:id="@+id/classContainer"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content">
+
+               <de.hdodenhof.circleimageview.CircleImageView
+                   android:id="@+id/classTeacherImg"
+                   style="@style/studentImage" />
+
+               <TextView
+                   android:id="@+id/className"
+                   style="@style/studentName"
+                   android:layout_toEndOf="@+id/classTeacherImg"
+                   android:layout_toRightOf="@+id/classTeacherImg"
+                   android:text="@{cls.Name}" />
+
+               <TextView
+                   android:id="@+id/classTeacherName"
+                   style="@style/studentAdmNo"
+                   android:layout_below="@+id/className"
+                   android:layout_toEndOf="@+id/classTeacherImg"
+                   android:layout_toRightOf="@+id/classTeacherImg"
+                   android:text='@{cls.ClassTeacher == null || cls.ClassTeacher.equals("") ? "No class teacher !" : cls.ClassTeacher}'
+                   android:textColor='@{cls.ClassTeacher == null || cls.ClassTeacher.equals("") ? @color/red : @color/blueColorText }' />
+           </RelativeLayout>
+
+
+           <TextView
+               android:id="@+id/totalStudents"
+               style="@style/studentRoll"
+               android:text="@{cls.getTotalNoStudents()}" />
+
+       </RelativeLayout>-->
+</layout>

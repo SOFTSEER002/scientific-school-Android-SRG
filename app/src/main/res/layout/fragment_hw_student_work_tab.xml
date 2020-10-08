@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="12dp">
+
+        <TextView
+            android:id="@+id/assignedMIS"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="@color/black"
+            android:textSize="@dimen/lg_size_text"
+            app:layout_constraintEnd_toStartOf="@+id/guideline1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/assignedLbl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:background="@drawable/round_bg_grey_bg"
+            android:foreground="?android:selectableItemBackground"
+            android:gravity="center"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:text="@string/assigned"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sm_size_text"
+            app:layout_constraintEnd_toStartOf="@+id/guideline1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/assignedMIS" />
+
+        <View
+            android:id="@+id/underline1"
+            android:layout_width="1dp"
+            android:layout_height="80dp"
+            android:background="@color/black9"
+            app:layout_constraintStart_toStartOf="@id/guideline1"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent=".33" />
+
+        <TextView
+            android:id="@+id/inProgressMIS"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="@color/black"
+            android:textSize="@dimen/lg_size_text"
+            app:layout_constraintEnd_toStartOf="@+id/guideline2"
+            app:layout_constraintStart_toStartOf="@id/guideline1"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/inProgressLbl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:background="@drawable/round_corner_theme_bg"
+            android:foreground="?android:selectableItemBackground"
+            android:gravity="center"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:text="@string/inProgress"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sm_size_text"
+            app:layout_constraintEnd_toStartOf="@+id/guideline2"
+            app:layout_constraintStart_toStartOf="@id/guideline1"
+            app:layout_constraintTop_toBottomOf="@id/inProgressMIS" />
+
+        <View
+            android:id="@+id/underline2"
+            android:layout_width="1dp"
+            android:layout_height="80dp"
+            android:background="@color/black9"
+            app:layout_constraintStart_toStartOf="@id/guideline2"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent=".66" />
+
+        <TextView
+            android:id="@+id/completedMIS"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="@color/black"
+            android:textSize="@dimen/lg_size_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/guideline2"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/completedLbl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:background="@drawable/round_corner_green_bg"
+            android:foreground="?android:selectableItemBackground"
+            android:gravity="center"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:text="@string/completed"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sm_size_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/guideline2"
+            app:layout_constraintTop_toBottomOf="@id/completedMIS" />
+
+        <CheckBox
+            android:id="@+id/checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:checked="false"
+            android:text="@string/selectAll"
+            android:textColor="@color/colorAccent"
+            android:textSize="@dimen/lg_size_text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/assignedLbl" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/studentRV"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="4dp"
+            android:scrollbars="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toTopOf="@+id/btnRework"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/checkbox" />
+
+        <include
+            android:id="@+id/noRecordLayout"
+            layout="@layout/activity_no_record"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/mTop0"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/checkbox" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminate="true"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.50" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnRework"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp"
+            android:text="@string/rework"
+            android:textColor="@color/mGreen"
+            android:textSize="@dimen/md_size_text"
+            app:backgroundTint="@color/white"
+            app:cornerRadius="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/vGuideline"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <!-- <com.google.android.material.button.MaterialButton
+             android:id="@+id/btnRework"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:ellipsize="end"
+             android:gravity="center"
+             android:maxLines="2"
+             android:text="@string/rework"
+             android:textAllCaps="false"
+             android:textColor="@color/white"
+             android:textSize="@dimen/md_size_text"
+             app:backgroundTint="@color/mGreen"
+             app:cornerRadius="8dp"
+             app:iconSize="15dp"
+             app:iconTint="@color/white"
+             app:layout_constraintBottom_toBottomOf="parent"
+             app:layout_constraintEnd_toStartOf="@id/vGuideline"
+             app:layout_constraintStart_toStartOf="parent"
+             app:strokeColor="@color/white" />-->
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnCompleted"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="4dp"
+            android:text="@string/markAsCompleted"
+            android:textColor="@color/white"
+            android:textSize="@dimen/md_size_text"
+            app:backgroundTint="@color/mGreen"
+            app:cornerRadius="16dp"
+            app:icon="@drawable/tickmark"
+            app:iconSize="15dp"
+            app:iconTint="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/vGuideline" />
+
+        <!--  <com.google.android.material.button.MaterialButton
+              android:id="@+id/btnCompleted"
+              style="@style/Widget.MaterialComponents.Button"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:ellipsize="end"
+              android:gravity="center"
+              android:maxLines="2"
+              android:text="@string/markAsCompleted"
+              android:textAllCaps="false"
+              android:textColor="@color/white"
+              android:textSize="@dimen/md_size_text"
+              app:backgroundTint="@color/mGreen"
+              app:cornerRadius="8dp"
+              app:icon="@drawable/tickmark"
+              app:iconSize="15dp"
+              app:layout_constraintBottom_toBottomOf="parent"
+              app:layout_constraintEnd_toEndOf="parent"
+              app:layout_constraintStart_toEndOf="@id/vGuideline2"
+              app:strokeColor="@color/white" />
+  -->
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/vGuideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent=".45" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/vGuideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent=".6" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

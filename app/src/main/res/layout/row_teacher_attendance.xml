@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data class="RowTeacherAttendanceBinding">
+
+        <variable
+            name="teacher"
+            type="com.jeannypr.scientificstudy.Attendance.model.TeacherAttendanceModel" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/teacherAttenRow_margin_top"
+        android:background="@color/white"
+        android:paddingTop="4dp"
+        android:paddingBottom="2dp">
+
+        <TextView
+            android:id="@+id/teacherName"
+            android:layout_width="@dimen/teacherAttenRow_teacherName_width"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="@dimen/teacherAttenRow_teacherName_margin_left"
+            android:layout_marginLeft="@dimen/teacherAttenRow_teacherName_margin_left"
+            android:layout_marginTop="@dimen/teacherAttenRow_teacherName_margin_top"
+            android:ellipsize="end"
+            android:gravity="center_vertical|start"
+            android:maxLines="1"
+            android:text="@{teacher.Name}"
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sm_size_text" />
+
+        <LinearLayout
+            android:id="@+id/edodContainer"
+            android:layout_width="@dimen/teacherAttenRow_edod_width"
+            android:layout_height="@dimen/teacherAttenRow_edod_height"
+            android:layout_below="@+id/teacherName"
+            android:layout_alignStart="@+id/teacherName"
+            android:layout_alignLeft="@+id/teacherName"
+            android:layout_marginStart="@dimen/teacherAttenRow_edod_margin_left"
+            android:layout_marginLeft="@dimen/teacherAttenRow_edod_margin_left"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/chkIsExtraDuty"
+                android:layout_width="@dimen/teacherAttenRow_ed_width"
+                android:layout_height="match_parent"
+                android:checked="@={teacher.IsExtra}"
+                android:enabled="@{teacher.Attendance!=0?true:false}"
+                android:scaleX="@dimen/teacherAttenRow_edod_scale_x"
+                android:scaleY="@dimen/teacherAttenRow_edod_scale_y"
+                android:text="ED"
+                android:textColor="@color/black"
+                android:textSize="@dimen/md_size_text" />
+
+            <CheckBox
+                android:id="@+id/chkIsOutdoorDuty"
+                android:layout_width="@dimen/teacherAttenRow_od_width"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/teacherAttenRow_od_margin_left"
+                android:layout_marginLeft="@dimen/teacherAttenRow_od_margin_left"
+                android:checked="@={teacher.IsOutdoor}"
+                android:enabled="@{teacher.Attendance!=0? true:false}"
+                android:scaleX="@dimen/teacherAttenRow_edod_scale_x"
+                android:scaleY="@dimen/teacherAttenRow_edod_scale_y"
+                android:text="OD"
+                android:textColor="@color/black"
+                android:textSize="@dimen/md_size_text" />
+
+        </LinearLayout>
+
+        <RadioGroup
+            android:id="@+id/radAttendance"
+            android:layout_width="@dimen/teacherAttenRow_radGroup_width"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="end"
+            android:gravity="end"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/radPresent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/teacherAttenRow_present_margin_right"
+                android:background="@drawable/present_states_lg"
+                android:button="@color/transparent"
+                android:checked="@{teacher.Attendance!=null &amp;&amp; teacher.Attendance == 1}"
+                android:scaleX="@dimen/teacherAttenRow_radBtn_scale_y"
+                android:scaleY="@dimen/teacherAttenRow_radBtn_scale_x"
+                android:textColor="@color/green3" />
+            <!--android:onClick="@{()->teacher.onAttendanceClicked(1)}"-->
+            <RadioButton
+                android:id="@+id/radAbsent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/teacherAttenRow_present_margin_right"
+                android:background="@drawable/absent_states_lg"
+                android:button="@color/transparent"
+                android:checked="@{teacher.Attendance!=null &amp;&amp; teacher.Attendance == 0}"
+                android:scaleX="@dimen/teacherAttenRow_radBtn_scale_y"
+                android:scaleY="@dimen/teacherAttenRow_radBtn_scale_x"
+                android:textColor="@color/white" />
+            <!--android:onClick="@{()->teacher.onAttendanceClicked(0)}"
+            @dimen/teacherAttenRow_present_width
+            @dimen/teacherAttenRow_present_height-->
+
+            <RadioButton
+                android:id="@+id/radHalfDay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/teacherAttenRow_halfday_margin_right"
+                android:layout_marginRight="@dimen/teacherAttenRow_halfday_margin_right"
+                android:background="@drawable/halfday_states_lg"
+                android:button="@color/transparent"
+                android:checked="@{teacher.Attendance!=null &amp;&amp; teacher.Attendance == 2}"
+                android:scaleX="@dimen/teacherAttenRow_radBtn_scale_y"
+                android:scaleY="@dimen/teacherAttenRow_radBtn_scale_x"
+                android:textColor="@color/white" />
+
+            <!--android:onClick="@{()->teacher.onAttendanceClicked(2)}"-->
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/edodNotes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/edodContainer"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginStart="@dimen/teacherAttenRow_edodNotes_margin_left"
+            android:layout_marginLeft="@dimen/teacherAttenRow_edodNotes_margin_left"
+            android:layout_marginEnd="@dimen/teacherAttenRow_edodNotes_margin_right"
+            android:layout_marginRight="@dimen/teacherAttenRow_edodNotes_margin_right"
+            android:hint="Notes for ED/OD..."
+            android:text="@{teacher.Notes}"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sm_size_text" />
+    </RelativeLayout>
+</layout>

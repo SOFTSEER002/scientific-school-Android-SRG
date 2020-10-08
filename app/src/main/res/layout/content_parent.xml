@@ -1,0 +1,781 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <androidx.core.widget.NestedScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/dashboard_parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:paddingStart="16dp"
+            android:paddingTop="16dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="65dp"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            tools:context=".Base.activity.MainActivity"
+            tools:showIn="@layout/app_bar_main2">
+
+            <TextView
+                android:id="@+id/academicLbl"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/roboto_medium"
+                android:gravity="start"
+                android:padding="3dp"
+                android:text="@string/schoolAcademics"
+                android:textColor="@color/black"
+                android:textSize="@dimen/md_size_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/academicIc"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/academicIc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/default_cont_desc"
+                android:scaleX=".7"
+                android:scaleY=".7"
+                android:src="@drawable/academic_ic"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/academicDiv"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/blue27"
+                app:layout_constraintTop_toBottomOf="@+id/academicIc" />
+
+            <GridLayout
+                android:id="@+id/academicTools"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="16dp"
+                android:alignmentMode="alignBounds"
+                android:columnCount="@integer/totalColumn"
+                android:columnOrderPreserved="false"
+                android:rowCount="35"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/academicDiv">
+
+                <LinearLayout
+                    android:id="@+id/myChildTimetable"
+                    style="@style/wrapperInsideCardViewBox">
+
+                    <ImageView
+                        style="@style/cardViewImg"
+                        android:src="@drawable/timetable"
+                        android:contentDescription="@string/default_cont_desc" />
+
+                    <TextView
+                        style="@style/cardViewTitle"
+                        android:text="@string/timetable" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/myChildExam"
+                    style="@style/wrapperInsideCardViewBox">
+
+                    <ImageView
+                        style="@style/cardViewImg"
+                        android:src="@drawable/marks"
+                        android:contentDescription="@string/default_cont_desc" />
+
+                    <TextView
+                        style="@style/cardViewTitle"
+                        android:text="@string/exam_module" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/myChildAttendanceModule"
+                    style="@style/wrapperInsideCardViewBox">
+
+                    <ImageView
+                        style="@style/cardViewImg"
+                        android:src="@drawable/attendance"
+                        android:contentDescription="@string/default_cont_desc" />
+
+                    <TextView
+                        style="@style/cardViewTitle"
+                        android:text="@string/attendanceModule" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/classTeacherModule"
+                    style="@style/wrapperInsideCardViewBox">
+
+                    <ImageView
+                        style="@style/cardViewImg"
+                        android:src="@drawable/staff"
+                        android:contentDescription="@string/default_cont_desc" />
+
+                    <TextView
+                        style="@style/cardViewTitle"
+                        android:text="@string/my_teachers_module" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/myChildHomework"
+                    style="@style/wrapperInsideCardViewBox">
+
+                    <ImageView
+                        style="@style/cardViewImg"
+                        android:src="@drawable/homework"
+                        android:contentDescription="@string/default_cont_desc" />
+
+                    <TextView
+                        style="@style/cardViewTitle"
+                        android:text="@string/homework" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/myChildClasswork"
+                    style="@style/wrapperInsideCardViewBox">
+
+                    <ImageView
+                        style="@style/cardViewImg"
+                        android:src="@drawable/classwork"
+                        android:contentDescription="@string/default_cont_desc" />
+
+                    <TextView
+                        style="@style/cardViewTitle"
+                        android:text="@string/classwork" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/myChildLeaves"
+                    style="@style/wrapperInsideCardViewBox">
+
+                    <ImageView
+                        style="@style/cardViewImg"
+                        android:src="@drawable/my_leave"
+                        android:contentDescription="@string/default_cont_desc" />
+
+                    <TextView
+                        style="@style/cardViewTitle"
+                        android:text="@string/my_leave" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/syllabus"
+                    style="@style/wrapperInsideCardViewBox">
+
+                    <ImageView
+                        style="@style/cardViewImg"
+                        android:src="@drawable/ic_syllabus_module"
+                        android:contentDescription="@string/default_cont_desc" />
+
+                    <TextView
+                        style="@style/cardViewTitle"
+                        android:text="@string/syllabus" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/feedback"
+                    style="@style/wrapperInsideCardViewBox">
+
+                    <ImageView
+                        style="@style/cardViewImg"
+                        android:src="@drawable/ic_feedback_module"
+                        android:contentDescription="@string/default_cont_desc" />
+
+                    <TextView
+                        style="@style/cardViewTitle"
+                        android:text="@string/feedback" />
+                </LinearLayout>
+
+            </GridLayout>
+
+            <TextView
+                android:id="@+id/communicationLbl"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:fontFamily="@font/roboto_medium"
+                android:gravity="start"
+                android:padding="3dp"
+                android:text="@string/communicationNUpdate"
+                android:textColor="@color/black"
+                android:textSize="@dimen/md_size_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/communicationIc"
+                app:layout_constraintTop_toBottomOf="@+id/academicTools" />
+
+            <ImageView
+                android:id="@+id/communicationIc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:contentDescription="@string/default_cont_desc"
+                android:scaleX=".7"
+                android:scaleY=".7"
+                android:src="@drawable/comunication_ic"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/academicTools" />
+
+            <View
+                android:id="@+id/communicationDiv"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/blue27"
+                app:layout_constraintTop_toBottomOf="@+id/communicationIc" />
+
+            <GridLayout
+                android:id="@+id/communicationTools"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="16dp"
+                android:alignmentMode="alignBounds"
+                android:columnCount="@integer/totalColumn"
+                android:columnOrderPreserved="false"
+                android:rowCount="35"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/communicationDiv">
+
+                <LinearLayout
+                    android:id="@+id/newsModule"
+                    style="@style/wrapperInsideCardViewBox">
+
+                    <ImageView
+                        style="@style/cardViewImg"
+                        android:src="@drawable/ic_news_module"
+                        android:contentDescription="@string/default_cont_desc" />
+
+                    <TextView
+                        style="@style/cardViewTitle"
+                        android:text="@string/news_module" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/noticeModule"
+                    style="@style/wrapperInsideCardViewBox">
+
+                    <ImageView
+                        style="@style/cardViewImg"
+                        android:src="@drawable/ic_notice_module"
+                        android:contentDescription="@string/default_cont_desc" />
+
+                    <TextView
+                        style="@style/cardViewTitle"
+                        android:text="@string/notice_module" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/eventModule"
+                    style="@style/wrapperInsideCardViewBox">
+
+                    <ImageView
+                        style="@style/cardViewImg"
+                        android:src="@drawable/ic_event_module"
+                        android:contentDescription="@string/default_cont_desc" />
+
+                    <TextView
+                        style="@style/cardViewTitle"
+                        android:text="@string/event_module" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/holidayModule"
+                    style="@style/wrapperInsideCardViewBox">
+
+                    <ImageView
+                        style="@style/cardViewImg"
+                        android:src="@drawable/holidays"
+                        android:contentDescription="@string/default_cont_desc" />
+
+                    <TextView
+                        style="@style/cardViewTitle"
+                        android:text="@string/holiday_module" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/notificationModule"
+                    style="@style/wrapperInsideCardViewBox">
+
+                    <ImageView
+                        style="@style/cardViewImg"
+                        android:src="@drawable/ic_notification_module"
+                        android:contentDescription="@string/default_cont_desc" />
+
+                    <TextView
+                        style="@style/cardViewTitle"
+                        android:text="@string/notification" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/surveyModule"
+                    style="@style/wrapperInsideCardViewBox">
+
+                    <ImageView
+                        style="@style/cardViewImg"
+                        android:src="@drawable/ic_survey_module"
+                        android:contentDescription="@string/default_cont_desc" />
+
+                    <TextView
+                        style="@style/cardViewTitle"
+                        android:text="@string/survey" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/transportModule"
+                    style="@style/wrapperInsideCardViewBox">
+
+                    <ImageView
+                        style="@style/cardViewImg"
+                        android:src="@drawable/ic_transport_module2"
+                        android:contentDescription="@string/default_cont_desc" />
+
+                    <TextView
+                        style="@style/cardViewTitle"
+                        android:text="@string/transport" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/helpdeskModule"
+                    style="@style/wrapperInsideCardViewBox">
+
+                    <ImageView
+                        style="@style/cardViewImg"
+                        android:src="@drawable/ic_helpdesk_module"
+                        android:contentDescription="@string/default_cont_desc" />
+
+                    <TextView
+                        style="@style/cardViewTitle"
+                        android:text="@string/helpdesk" />
+                </LinearLayout>
+
+            </GridLayout>
+
+            <View
+                android:id="@+id/msgDiv"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="4dp"
+                android:background="@color/blue27"
+                app:layout_constraintTop_toBottomOf="@+id/communicationTools" />
+
+            <ImageView
+                android:id="@+id/groupMsgIc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:contentDescription="@string/default_cont_desc"
+                android:scaleX=".7"
+                android:scaleY=".7"
+                android:src="@drawable/group_msg_ic"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/msgDiv" />
+
+            <TextView
+                android:id="@+id/groupMsgLbl"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/roboto_medium"
+                android:gravity="start"
+                android:padding="3dp"
+                android:text="@string/groupMsg"
+                android:textColor="@color/black"
+                android:textSize="@dimen/md_size_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/groupMsgIc"
+                app:layout_constraintTop_toBottomOf="@+id/msgDiv" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/groupMsgRow"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:elevation="5dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/groupMsgIc">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/msg_bg"
+                    android:padding="12dp">
+
+                    <TextView
+                        android:id="@+id/groupMsg"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="start"
+                        android:text="@string/parentChatMsg"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/md_size_text"
+                        app:layout_constraintEnd_toStartOf="@+id/guideline5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/sendMsgBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/chat"
+                        android:textAllCaps="false"
+                        android:textSize="@dimen/sm_size_text"
+                        app:backgroundTint="#5F8110"
+                        app:cornerRadius="4dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/groupMsg" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guideline5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.6" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <ImageView
+                android:id="@+id/ptmIc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:contentDescription="@string/default_cont_desc"
+                android:scaleX=".7"
+                android:scaleY=".7"
+                android:src="@drawable/ptm_ic"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/groupMsgRow" />
+
+            <TextView
+                android:id="@+id/ptmLbl"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/roboto_medium"
+                android:gravity="start"
+                android:padding="3dp"
+                android:text="@string/ptm"
+                android:textColor="@color/black"
+                android:textSize="@dimen/md_size_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/groupMsgIc"
+                app:layout_constraintTop_toBottomOf="@+id/groupMsgRow" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/ptmRow"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:elevation="3dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ptmIc">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ptm_bg"
+                    android:padding="12dp">
+
+                    <TextView
+                        android:id="@+id/ptmMsg"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="start"
+                        android:text="@string/ptmMsg"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/md_size_text"
+                        app:layout_constraintEnd_toStartOf="@+id/guideline8"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/ptmBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/findPtmDate"
+                        android:textAllCaps="false"
+                        android:textSize="@dimen/sm_size_text"
+                        app:backgroundTint="#5F8110"
+                        app:cornerRadius="4dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/ptmMsg" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guideline8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.6" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <ImageView
+                android:id="@+id/feeIc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:contentDescription="@string/default_cont_desc"
+                android:scaleX=".7"
+                android:scaleY=".7"
+                android:src="@drawable/schoolfee_ic"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ptmRow" />
+
+            <TextView
+                android:id="@+id/feeLbl"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/roboto_medium"
+                android:gravity="start"
+                android:padding="3dp"
+                android:text="@string/schoolFee"
+                android:textColor="@color/black"
+                android:textSize="@dimen/md_size_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/groupMsgIc"
+                app:layout_constraintTop_toBottomOf="@+id/ptmRow" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/feeRow"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:elevation="3dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/feeIc">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/pay_fee_ic"
+                    android:padding="12dp">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/paidFeeRow"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:foreground="?attr/selectableItemBackground"
+                        app:layout_constraintEnd_toStartOf="@+id/guideline7"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:targetApi="m">
+
+                        <ImageView
+                            android:id="@+id/bulletIc1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:contentDescription="@string/default_cont_desc"
+                            android:src="@drawable/ic_circle_bullet"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/paidFeeLbl"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="4dp"
+                            android:gravity="start"
+                            android:text="@string/paidIns"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/md_size_text"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/bulletIc1"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <ImageView
+                            android:id="@+id/arrowIc1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="4dp"
+                            android:contentDescription="@string/default_cont_desc"
+                            android:src="@drawable/ic_arrow_right_alt"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/paidFeeLbl"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/dueFeeRow"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:foreground="?attr/selectableItemBackground"
+                        app:layout_constraintEnd_toStartOf="@+id/guideline7"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/paidFeeRow"
+                        tools:targetApi="m">
+
+                        <ImageView
+                            android:id="@+id/bulletIc2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:contentDescription="@string/default_cont_desc"
+                            android:src="@drawable/ic_circle_bullet2"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/dueFeeLbl"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="4dp"
+                            android:gravity="start"
+                            android:text="@string/dueIns"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/md_size_text"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/bulletIc2"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <ImageView
+                            android:id="@+id/arrowIc2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="2dp"
+                            android:contentDescription="@string/default_cont_desc"
+                            android:src="@drawable/ic_arrow_right_alt"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/dueFeeLbl"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/feeBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:drawableEnd="@drawable/ic_arrow_right_alt"
+                        android:text="@string/payFee"
+                        android:textAllCaps="false"
+                        android:textSize="@dimen/sm_size_text"
+                        app:backgroundTint="#5F8110"
+                        app:cornerRadius="4dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/dueFeeRow" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guideline7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.6" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <ImageView
+                android:id="@+id/onlineClassIc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:contentDescription="@string/default_cont_desc"
+                android:scaleX=".7"
+                android:scaleY=".7"
+                android:src="@drawable/group_msg_ic"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/feeRow" />
+
+            <TextView
+                android:id="@+id/onlineClassLbl"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/roboto_medium"
+                android:gravity="start"
+                android:padding="3dp"
+                android:text="@string/myClassRoom"
+                android:textColor="@color/black"
+                android:textSize="@dimen/md_size_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/groupMsgIc"
+                app:layout_constraintTop_toBottomOf="@+id/feeRow" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/onlineClassRow"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:elevation="5dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/onlineClassIc">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ptm_bg"
+                    android:padding="12dp">
+
+                    <TextView
+                        android:id="@+id/onlineClass"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="start"
+                        android:text="@string/openYourStudyTable"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/md_size_text"
+                        app:layout_constraintEnd_toStartOf="@+id/guideline6"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/onlineClassBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/openStudyTable"
+                        android:textAllCaps="false"
+                        android:textSize="@dimen/sm_size_text"
+                        app:backgroundTint="#5F8110"
+                        app:cornerRadius="4dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/onlineClass" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guideline6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.6" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/hGuideline30"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.3" />
+
+            <ProgressBar
+                android:id="@+id/pb"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:indeterminate="true"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

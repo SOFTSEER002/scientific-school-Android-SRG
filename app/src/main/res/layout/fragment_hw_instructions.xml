@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraint_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="12dp">
+
+            <TextView
+                android:id="@+id/assignedOnLbl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="2dp"
+                android:text="@string/assignedOn"
+                android:textColor="@color/black9"
+                android:textSize="@dimen/sm_size_text"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/assignedOnDate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:padding="2dp"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="@dimen/sm_size_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/assignedOnLbl"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/submissionDateLbl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="2dp"
+                android:text="@string/submissionDate"
+                android:textColor="@color/black9"
+                android:textSize="@dimen/sm_size_text"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/assignedOnLbl" />
+
+            <!-- <TextView
+                 android:id="@+id/submissionDate"
+                 android:layout_width="0dp"
+                 android:layout_height="wrap_content"
+                 android:gravity="start"
+                 android:padding="2dp"
+                 android:text=""
+                 android:textColor="@color/black"
+                 android:textSize="@dimen/sm_size_text"
+                 app:layout_constraintEnd_toEndOf="parent"
+                 app:layout_constraintStart_toEndOf="@+id/submissionDateLbl"
+                 app:layout_constraintTop_toBottomOf="@+id/assignedOnDate" />-->
+
+            <LinearLayout
+                android:id="@+id/lytSubDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/red_bg_round_corner"
+                android:gravity="start"
+                android:orientation="horizontal"
+                android:padding="2dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias=".03"
+                app:layout_constraintStart_toEndOf="@+id/submissionDateLbl"
+                app:layout_constraintTop_toBottomOf="@+id/assignedOnDate">
+
+                <ImageView
+                    android:id="@+id/dateIcon"
+                    android:layout_width="@dimen/row_event_icDatepicker_width"
+                    android:layout_height="@dimen/row_event_icDatepicker_width"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="2dp"
+                    android:contentDescription="@string/default_cont_desc"
+                    android:src="@drawable/datepicker_white"
+                    android:tint="@color/white"
+                    app:layout_constraintEnd_toStartOf="@+id/startDate"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/divider" />
+
+                <TextView
+                    android:id="@+id/submissionDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="2dp"
+                    android:layout_marginEnd="10dp"
+                    android:textColor="@color/white"
+                    app:layout_constraintEnd_toStartOf="@+id/timeIcon"
+                    app:layout_constraintStart_toEndOf="@id/startDateIcon"
+                    app:layout_constraintTop_toBottomOf="@+id/divider" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/gradesLbl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="2dp"
+                android:text="@string/grades"
+                android:textColor="@color/black9"
+                android:textSize="@dimen/sm_size_text"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/submissionDateLbl" />
+
+            <TextView
+                android:id="@+id/grades"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:padding="2dp"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="@dimen/sm_size_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/gradesLbl"
+                app:layout_constraintTop_toBottomOf="@+id/lytSubDate" />
+
+            <View
+                android:id="@+id/underline1"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="12dp"
+                android:background="@color/colorAccent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/gradesLbl" />
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/lg_size_text"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/underline1" />
+
+            <TextView
+                android:id="@+id/desc"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text=""
+                android:textColor="@color/mBlack"
+                android:textSize="@dimen/sm_size_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/title" />
+
+            <View
+                android:id="@+id/underline3"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="12dp"
+                android:background="@color/colorAccent"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/desc" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnCompleted"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/markAsCompleted"
+                android:textAllCaps="false"
+                android:textColor="@color/mGreen"
+                android:textSize="@dimen/md_size_text"
+                android:textStyle="bold"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/underline3" />
+
+            <TextView
+                android:id="@+id/attachmentsLbl"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="@string/attachments"
+                android:textColor="@color/black2"
+                android:textSize="@dimen/sm_size_text"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnCompleted" />
+
+            <View
+                android:id="@+id/underline2"
+                android:layout_width="90dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="6dp"
+                android:background="@color/black9"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/attachmentsLbl" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/activityItems"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:scrollbars="vertical"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/underline2"
+                app:layout_constraintVertical_bias=".001" />
+
+            <!--     <View
+                     android:id="@+id/underline3"
+                     android:layout_width="0dp"
+                     android:layout_height="1dp"
+                     android:layout_marginTop="12dp"
+                     android:background="@color/black9"
+                     android:visibility="gone"
+                     app:layout_constraintEnd_toEndOf="parent"
+                     app:layout_constraintStart_toStartOf="parent"
+                     app:layout_constraintTop_toBottomOf="@+id/activityItems" />-->
+
+            <!--    <TextView
+                    android:id="@+id/commentsLbl"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="@string/hwDiscussion"
+                    android:textColor="@color/black2"
+                    android:textSize="@dimen/sm_size_text"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/underline3" />
+
+                <FrameLayout
+                    android:id="@+id/layoutMain"
+                    android:layout_width="match_parent"
+                    android:layout_height="500dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@color/blue19"
+                    android:minHeight="550dp"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/commentsLbl" />-->
+
+            <ProgressBar
+                android:id="@+id/pb"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:indeterminate="true"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!-- <ProgressBar
+                 android:id="@+id/commentsPB"
+                 style="?android:attr/progressBarStyle"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_marginTop="40dp"
+                 android:indeterminate="true"
+                 android:visibility="gone"
+                 app:layout_constraintEnd_toEndOf="parent"
+                 app:layout_constraintStart_toStartOf="parent"
+                 app:layout_constraintTop_toTopOf="@id/layoutMain" />-->
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+    <!-- <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="12dp">
+
+        <TextView
+            android:id="@+id/assignedOnLbl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="2dp"
+            android:text="@string/assignedOn"
+            android:textColor="@color/black9"
+            android:textSize="@dimen/sm_size_text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/assignedOnDate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:padding="2dp"
+            android:text="04 Aug,2020"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sm_size_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/assignedOnLbl"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/submissionDateLbl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="2dp"
+            android:text="@string/submissionDate"
+            android:textColor="@color/black9"
+            android:textSize="@dimen/sm_size_text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/assignedOnLbl" />
+
+        <TextView
+            android:id="@+id/submissionDate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:padding="2dp"
+            android:text="04 Aug,2020"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sm_size_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/submissionDateLbl"
+            app:layout_constraintTop_toBottomOf="@+id/assignedOnDate" />
+
+        <TextView
+            android:id="@+id/gradesLbl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="2dp"
+            android:text="@string/grades"
+            android:textColor="@color/black9"
+            android:textSize="@dimen/sm_size_text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/submissionDateLbl" />
+
+        <TextView
+            android:id="@+id/grades"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:padding="2dp"
+            android:text="IV, V"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sm_size_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/gradesLbl"
+            app:layout_constraintTop_toBottomOf="@+id/submissionDate" />
+
+        <View
+            android:id="@+id/underline1"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/black9"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/gradesLbl" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="Title Demo"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="@dimen/lg_size_text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/underline1" />
+
+        <TextView
+            android:id="@+id/desc"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="This is desc. This is desc. This is desc. This is desc. This is desc.This is desc. This is desc. This is desc. This is desc. This is desc."
+            android:textColor="@color/black9"
+            android:textSize="@dimen/sm_size_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title" />
+
+        <View
+            android:id="@+id/underline2"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/black9"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/desc" />
+
+        <TextView
+            android:id="@+id/attachmentsLbl"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/attachments"
+            android:textColor="@color/black2"
+            android:textSize="@dimen/sm_size_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/underline2" />
+    </androidx.constraintlayout.widget.ConstraintLayout>-->
+</layout>

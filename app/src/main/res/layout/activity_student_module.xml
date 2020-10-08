@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:subtitleTextColor="@color/white"
+            app:titleTextColor="@color/white" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <LinearLayout
+        android:id="@+id/bodyContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/appBar"
+        android:background="@color/black7"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/mLeft0"
+        android:paddingRight="@dimen/mRight0"
+        app:layout_constraintTop_toBottomOf="@id/appBar">
+
+        <RelativeLayout
+            style="@style/spinnerContainer"
+            android:layout_marginBottom="@dimen/mBottom1">
+
+            <Spinner
+                android:id="@+id/ddlClassList"
+                style="@style/spinner"
+                android:theme="@style/spinnerTheme" />
+
+            <ImageView style="@style/spinnerIcon"
+                android:contentDescription="@string/default_cont_desc" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/bodyContainer2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_below="@+id/appBar"
+        android:layout_marginTop="@dimen/mTop0"
+        android:paddingLeft="@dimen/mLeft1"
+        android:paddingRight="@dimen/mRight1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bodyContainer">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/studentListBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/pBottom1"
+            android:paddingTop="@dimen/pTop1">
+
+            <ImageView
+                android:id="@+id/icon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/view_student"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:contentDescription="@string/default_cont_desc" />
+
+            <TextView
+                android:id="@+id/label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/mLeft0"
+                android:text="@string/studentListLbl"
+                android:textColor="@color/black"
+                android:textSize="@dimen/md_size_text"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/icon"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/btn"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_right_arrow"
+                android:tint="@color/colorPrimary"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:contentDescription="@string/default_cont_desc" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:id="@+id/div1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/studentListBtn"
+            android:background="@color/black6" />
+
+        <androidx.cardview.widget.CardView
+            style="@style/firstCardView"
+            android:visibility="gone"
+            tools:style="@style/CardView">
+
+            <RelativeLayout style="@style/wrapperInsideCardView">
+
+                <ImageView
+                    style="@style/leftDrawableOfCardView"
+                    android:src="@drawable/roll_no"
+                    android:contentDescription="@string/default_cont_desc" />
+
+                <TextView
+                    style="@style/cardViewText"
+                    android:text="@string/manageRollNoLbl" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/manageRollNoBtn"
+                    style="@style/rightDrawableOfCardView"
+                    android:src="@drawable/right_arrow_btn" />
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            style="@style/cardView"
+            android:visibility="gone"
+            tools:style="@style/CardView">
+
+            <RelativeLayout style="@style/wrapperInsideCardView">
+
+                <ImageView
+                    style="@style/leftDrawableOfCardView"
+                    android:src="@drawable/student_detail"
+                    android:contentDescription="@string/default_cont_desc" />
+
+                <TextView
+                    style="@style/cardViewText"
+                    android:text="@string/bulkUpdateLbl" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/bulkUpdateBtn"
+                    style="@style/rightDrawableOfCardView"
+                    android:src="@drawable/right_arrow_btn" />
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/studentListBtn2"
+            style="@style/cardView"
+            android:visibility="gone"
+            tools:style="@style/CardView">
+
+            <RelativeLayout style="@style/wrapperInsideCardView">
+
+                <ImageView
+                    style="@style/leftDrawableOfCardView"
+                    android:src="@drawable/view_student"
+                    android:contentDescription="@string/default_cont_desc" />
+
+                <TextView
+                    style="@style/cardViewText"
+                    android:text="@string/studentListLbl" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    style="@style/rightDrawableOfCardView"
+                    android:src="@drawable/right_arrow_btn" />
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            style="@style/cardView"
+            android:visibility="gone"
+            tools:style="@style/CardView">
+
+            <RelativeLayout style="@style/wrapperInsideCardView">
+
+                <ImageView
+                    style="@style/leftDrawableOfCardView"
+                    android:src="@drawable/mobile"
+                    android:contentDescription="@string/default_cont_desc" />
+
+                <TextView
+                    style="@style/cardViewText"
+                    android:text="@string/manageMobileNumber" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    style="@style/rightDrawableOfCardView"
+                    android:src="@drawable/right_arrow_btn" />
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:layout_marginTop="35dp"
+        android:indeterminate="true"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

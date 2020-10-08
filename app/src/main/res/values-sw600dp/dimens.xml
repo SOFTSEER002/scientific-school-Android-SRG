@@ -1,0 +1,337 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="nav_header_vertical_spacing">8dp</dimen>
+    <dimen name="nav_header_height">250dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+
+    <!--dimens of dropdown_bg drawables-->
+    <dimen name="dropdown_bg_bottom">3dp</dimen>
+    <dimen name="dropdown_bg_left">1dp</dimen>
+    <dimen name="dropdown_bg_right">1dp</dimen>
+    <dimen name="dropdown_bg_corner_radius">8dp</dimen>
+
+    <!-- spinner theme-->
+    <!--<dimen name="dropdown_theme_text_size">35sp</dimen>-->
+
+
+    <!--different text size-->
+    <!--<dimen name="xs_size_text">12sp</dimen>-->
+    <!--<dimen name="sm_size_text">20sp</dimen>-->
+    <!--<dimen name="md_size_text">27sp</dimen>-->
+    <!--<dimen name="lg_size_text">32sp</dimen>-->
+    <!--<dimen name="xlg_size_text">46sp</dimen>-->
+
+    <dimen name="logo_width">110dp</dimen>
+    <dimen name="logo_height">110dp</dimen>
+    <dimen name="logo_margin_bottom">18dp</dimen>
+    <dimen name="logo_margin_top">40dp</dimen>
+
+    <!--<dimen name="app_name_height">60dp</dimen>-->
+    <dimen name="app_name_width">450dp</dimen>
+    <dimen name="app_name_margin_bottom">60dp</dimen>
+
+    <dimen name="form_title_width">500dp</dimen>
+    <dimen name="form_title_margin_bottom">25dp</dimen>
+    <dimen name="form_title_margin_top">-50dp</dimen>
+
+    <!--<dimen name="spinner_container_width">740dp</dimen>-->
+    <dimen name="spinner_container_height">70dp</dimen>
+    <dimen name="spinner_container_margin_top">6dp</dimen>
+    <dimen name="spinner_container_padding_right">22dp</dimen>
+    <dimen name="spinner_container_padding_left">22dp</dimen>
+
+    <dimen name="spinnerIcon_width">22dp</dimen>
+    <dimen name="spinnerIcon_height">22dp</dimen>
+    <dimen name="spinnerIcon_margin_right">26dp</dimen>
+
+    <!--padding for input fields-->
+    <dimen name="input_field_padding_left">25dp</dimen>
+
+    <dimen name="btn_height">80dp</dimen>
+    <dimen name="btn_weight">70</dimen>
+    <dimen name="btn_margin_top">40dp</dimen>
+
+
+    <dimen name="footer_link_width">500dp</dimen>
+    <dimen name="footer_link_margin_top">18dp</dimen>
+    <dimen name="footer_link2_margin_top">0dp</dimen>
+
+    <dimen name="cross_btn_width">30dp</dimen>
+    <dimen name="cross_btn_height">30dp</dimen>
+    <dimen name="cross_btn_margin_top">-100dp</dimen>
+    <dimen name="cross_btn_margin_left">35dp</dimen>
+
+    <!--link in right side of screen-->
+    <dimen name="right_side_link_width">400dp</dimen>
+    <dimen name="right_side_link_margin_right">20dp</dimen>
+    <dimen name="right_side_link_margin_top">15dp</dimen>
+
+    <dimen name="subheader_height">65dp</dimen>
+
+    <dimen name="back_arrow_height">35dp</dimen>
+    <dimen name="back_arrow_padding">3dp</dimen>
+
+    <!--<dimen name="subHeaderTitle_weight">88</dimen>-->
+    <!--<dimen name="rightDrawingOfsubHeader_weight">7</dimen>-->
+
+    <!--<dimen name="subHeaderTitleForTwoImg_weight">83</dimen>-->
+    <!--<dimen name="subHeaderTitleForThreeImg_weight">77</dimen>-->
+
+
+    <dimen name="body_container_margin_left">20dp</dimen>
+    <dimen name="body_container_margin_right">20dp</dimen>
+
+    <dimen name="cardview_height">90dp</dimen>
+    <dimen name="cardview_margin_top">4dp</dimen>
+    <dimen name="cardview_margin_left">0dp</dimen>
+    <dimen name="cardview_margin_right">0dp</dimen>
+
+    <dimen name="first_cardview_margin_top">18dp</dimen>
+
+    <dimen name="wrapper_inside_cardview_margin_left">18dp</dimen>
+    <dimen name="wrapper_inside_cardview_margin_top">0dp</dimen>
+
+    <dimen name="leftDrawableOfCardView_width">46dp</dimen>
+    <dimen name="leftDrawableOfCardView_margin_left">0dp</dimen>
+    <dimen name="leftDrawableOfCardView_height">46dp</dimen>
+
+    <dimen name="cardViewText_width">390dp</dimen>
+    <dimen name="cardViewText_margin_left">45dp</dimen>
+    <dimen name="cardViewText_padding_left">8dp</dimen>
+
+    <dimen name="rightDrawableOfCardView_width">56dp</dimen>
+    <dimen name="rightDrawableOfCardView_height">62dp</dimen>
+    <dimen name="rightDrawableOfCardView_margin_right">10dp</dimen>
+    <dimen name="rightDrawableOfCardView_margin_left">0dp</dimen>
+
+    <!--Take Attendance Row-->
+    <dimen name="takeAttendanceRow_presentradio_width">70dp</dimen>
+    <dimen name="takeAttendanceRow_presentradio_margin_right">0dp</dimen>
+    <dimen name="takeAttendanceRow_absentradio_margin_right">3dp</dimen>
+
+    <!--enter marks-->
+    <dimen name="enterMarksContainer_margin_left">10dp</dimen>
+    <dimen name="enterMarksContainer_margin_top">8dp</dimen>
+    <dimen name="enterMarksRow_margin_bottom">5dp</dimen>
+    <dimen name="enterMarksRow_student_pic_width">50dp</dimen>
+    <dimen name="enterMarksRow_student_pic_height">50dp</dimen>
+
+    <dimen name="absent_icon_width">28dp</dimen>
+    <dimen name="examAttendance_padding_left">1dp</dimen>
+    <dimen name="enterMarksHeader_padding_left">60dp</dimen>
+    <dimen name="enterMarksHeader_padding_bottom">5dp</dimen>
+    <dimen name="enterMarksHeader_padding_top">5dp</dimen>
+
+    <dimen name="ExamSpinner_height">50dp</dimen>
+    <dimen name="examSpinnerIcon_width">20dp</dimen>
+    <dimen name="appLogo_enterKey_margin_top">70dp</dimen>
+
+
+    <!--list view-->
+    <dimen name="listViewRowContainer_height">90dp</dimen>
+    <dimen name="listViewRowContainer_margin_bottom">4dp</dimen>
+    <dimen name="studentImg_width">80dp</dimen><!--110-->
+    <dimen name="studentImg_padding">6dp</dimen>
+    <dimen name="studentName_width">300dp</dimen>
+    <dimen name="studentName_margin_top">20dp</dimen>
+    <dimen name="studentAdm_width">275dp</dimen>
+    <dimen name="studentRoll_width">45dp</dimen>
+    <dimen name="studentRoll_height">45dp</dimen>
+    <dimen name="studentRoll_margin_right">12dp</dimen>
+
+    <dimen name="editText_enterSclKey_margin_top">30dp</dimen>
+    <dimen name="formTitle_unableToLogin_margin_bottom">20dp</dimen>
+    <dimen name="formTitle_unableToLogin_margin_top">30dp</dimen>
+    <dimen name="appLogo_unableToLogin_width">120dp</dimen>
+    <dimen name="appLogo_unableToLogin_height">120dp</dimen>
+
+    <!--Dashboard Cardviews-->
+    <dimen name="cardViewImg_width">80dp</dimen>
+    <dimen name="cardViewImg_height">80dp</dimen>
+    <dimen name="cardViewImg_margin_bottom">10dp</dimen>
+    <dimen name="cardViewTitle_width">130dp</dimen>
+
+    <!--<dimen name="teacherEmail_margin_left">154dp</dimen>-->
+    <dimen name="teacherEmailIcon_width">40dp</dimen>
+    <dimen name="teacherEmailIcon_height">30dp</dimen>
+
+    <!--view profile-->
+    <dimen name="viewProfile_pic_width">125dp</dimen>
+    <dimen name="viewProfile_pic_height">125dp</dimen>
+    <dimen name="viewProfile_pic_margin_top">5dp</dimen>
+    <dimen name="viewProfile_userName_width">460dp</dimen>
+    <dimen name="viewProfile_userName_margin_bottom">6dp</dimen>
+    <dimen name="viewProfile_userEmail_width">500dp</dimen>
+    <dimen name="viewProfile_userEmail_margin_top">4dp</dimen>
+
+    <dimen name="viewProfile_underline_left">23dp</dimen>
+    <dimen name="viewProfile_underline_right">23dp</dimen>
+    <dimen name="viewProfile_underline_top">70dp</dimen>
+    <dimen name="viewProfile_underline_width">0.5dp</dimen>
+    <dimen name="viewProfile_underline_height">2dp</dimen>
+
+    <dimen name="viewStuProfile_pic_width">135dp</dimen>
+    <dimen name="parent_pic_width">90dp</dimen>
+
+    <dimen name="viewStuProfile_pic_height">160dp</dimen>
+    <dimen name="viewStuProfile_pic_margin_top">18dp</dimen>
+
+    <dimen name="viewProfile_header_weight">230dp</dimen>
+    <dimen name="viewProfileRow_height">90dp</dimen>
+    <dimen name="viewProfileRow_margin_top">-5dp</dimen>
+    <dimen name="viewProfileRow_padding_right">10dp</dimen>
+    <dimen name="profileInfoIcon_width">30dp</dimen>
+    <dimen name="profileInfoIcon_height">45dp</dimen>
+    <dimen name="profileInfoIcon_margin_left">10dp</dimen>
+    <dimen name="profileInfoTitle_width">200dp</dimen>
+    <dimen name="profileInfoTitle_margin_left">15dp</dimen>
+    <dimen name="profileInfoTitleVal_width">310dp</dimen>
+
+    <dimen name="appLogo_enterKey_height">90dp</dimen>
+    <dimen name="appLogo_enterKey_width">90dp</dimen>
+    <dimen name="appLogo_login_height">70dp</dimen>
+    <dimen name="appLogo_login_width">70dp</dimen>
+
+    <!--common header-->
+
+    <dimen name="editText_enterSclKey_height">80dp</dimen>
+
+    <!--row spinner-->
+    <dimen name="rowSpinner_height">70dp</dimen>
+    <dimen name="rowSpinner_padding_left">10dp</dimen>
+
+    <dimen name="radGroup_height">80dp</dimen>
+    <dimen name="radGroup_margin_top">10dp</dimen>
+    <dimen name="radBtn_padding_left">10dp</dimen>
+    <dimen name="radBtn_margin_left">20dp</dimen>
+
+    <dimen name="back_arrow_margin_left">5dp</dimen>
+    <dimen name="subHeaderTitle_padding_left">25dp</dimen>
+
+    <!--<dimen name="rightDrawingOfsubHeader_inputDate_weight">20</dimen>-->
+    <!--<dimen name="subHeaderTitleForThreeImg_inputDate_weight">55</dimen>-->
+
+    <dimen name="takeAttendanceRow_presentradio_scale_x">0.8</dimen>
+    <dimen name="takeAttendanceRow_presentradio_scale_y">0.8</dimen>
+
+    <!--take Attendance Row : teacher-->
+    <dimen name="teacherAttenRow_margin_top">10dp</dimen>
+    <dimen name="teacherAttenRow_teacherName_width">330dp</dimen>
+    <dimen name="teacherAttenRow_teacherName_margin_left">22dp</dimen>
+    <dimen name="teacherAttenRow_teacherName_margin_top">0dp</dimen>
+    <dimen name="teacherAttenRow_edod_width">170dp</dimen>
+    <dimen name="teacherAttenRow_ed_width">70dp</dimen>
+    <dimen name="teacherAttenRow_od_width">70dp</dimen>
+    <dimen name="teacherAttenRow_od_margin_left">0dp</dimen>
+    <dimen name="teacherAttenRow_radGroup_width">240dp</dimen>
+    <dimen name="teacherAttenRow_present_width">70dp</dimen>
+    <dimen name="teacherAttenRow_present_height">70dp</dimen>
+    <dimen name="teacherAttenRow_present_margin_right">-5dp</dimen>
+    <dimen name="teacherAttenRow_radBtn_scale_y">0.8</dimen>
+    <dimen name="teacherAttenRow_radBtn_scale_x">0.8</dimen>
+    <dimen name="teacherAttenRow_edodNotes_margin_right">15dp</dimen>
+    <dimen name="teacherAttenRow_edodNotes_margin_left">22dp</dimen>
+    <dimen name="teacherAttenRow_halfday_margin_right">4dp</dimen>
+    <dimen name="teacherAttenRow_edod_scale_x">1</dimen>
+    <dimen name="teacherAttenRow_edod_scale_y">1</dimen>
+    <dimen name="teacherAttenRow_edod_height">30dp</dimen>
+    <dimen name="teacherAttenRow_edod_margin_left">-6dp</dimen>
+
+    <!--enter remarks and marks-->
+    <dimen name="enterRemarks_row_margin_bottom">5dp</dimen>
+    <dimen name="studentRollInRemarks_width">52dp</dimen>
+    <dimen name="studentRollInRemarks_height">58dp</dimen>
+    <dimen name="enterRemarks_studentName_width">550dp</dimen>
+    <dimen name="enterRemarks_studentName_margin_left">8dp</dimen>
+    <dimen name="enterRemarks_roll_margin_left">9dp</dimen>
+    <dimen name="enterRemarks_atten_width">70dp</dimen>
+    <dimen name="enterRemarks_atten_margin_right">15dp</dimen>
+    <dimen name="enterRemarks_edit_margin_right">120dp</dimen>
+    <dimen name="enterRemarks_edit_margin_top">-10dp</dimen>
+    <dimen name="enterRemarks_edit_margin_left">8dp</dimen>
+
+    <dimen name="enterMarks_stuName_margin_top">12dp</dimen>
+    <dimen name="enterMarks_marks_width">70dp</dimen>
+    <dimen name="enterMarks_marks_margin_end">31dp</dimen>
+    <dimen name="enterMarks_marks_padding_left">5dp</dimen>
+    <dimen name="enterMarks_marks_padding_right">5dp</dimen>
+
+    <dimen name="enterMarksRow_student_pic_margin">8dp</dimen>
+    <dimen name="absent_icon_scale_x">1</dimen>
+    <dimen name="absent_icon_scale_y">1</dimen>
+
+    <dimen name="enterMarks_attendanceLbl_margin_top">3dp</dimen>
+    <dimen name="enterMarks_attendanceBtn_margin_bottom">5dp</dimen>
+
+    <dimen name="row_event_margin_bottom">10dp</dimen>
+    <dimen name="row_event_paddingTop">12dp</dimen>
+    <dimen name="row_event_paddingLeft">10dp</dimen>
+    <dimen name="row_event_postCreator_width">250dp</dimen>
+    <dimen name="row_event_postCreator_margin_bottom">2dp</dimen>
+    <dimen name="row_event_postCreator_margin_top">2dp</dimen>
+    <!--<dimen name="row_event_postTime_height">20dp</dimen>-->
+    <dimen name="row_event_postTime_margin_top">4dp</dimen>
+    <dimen name="row_event_title_margin_right">20dp</dimen>
+    <dimen name="row_event_desc_margin_bottom">6dp</dimen>
+    <dimen name="row_event_attachment_height">70dp</dimen>
+    <dimen name="row_event_attachment_margin_top">10dp</dimen>
+    <dimen name="row_event_dateTimeRow_margin_top">12dp</dimen>
+    <dimen name="row_event_icDatepicker_height">13dp</dimen>
+    <dimen name="row_event_icDatepicker_width">13dp</dimen>
+    <dimen name="row_event_startDate_margin_right">10dp</dimen>
+    <dimen name="row_event_startDate_padding_left">4dp</dimen>
+    <dimen name="wallBodyContainer_padding_left">50dp</dimen>
+    <dimen name="createPost_editBox_margin_top">0dp</dimen>
+    <dimen name="createPost_editBox_pading_top">10dp</dimen>
+
+    <dimen name="dropdown_bg_top">1dp</dimen>
+    <dimen name="feeSummaryCardview_height">60dp</dimen>
+
+    <dimen name="feeDetail_payableLbl_marginRight">10dp</dimen>
+    <dimen name="feeDetail_payableLbl_paddingLeft">3dp</dimen>
+
+    <dimen name="recycle_msgList_height">0dp</dimen>
+    <dimen name="view_width">0dp</dimen>
+    <dimen name="chatBox_width">0dp</dimen>
+    <dimen name="chatBox_minHeight">60dp</dimen>
+    <dimen name="edittext_chatbox_width">0dp</dimen>
+    <dimen name="edittext_chatbox_height">50dp</dimen>
+    <dimen name="edittext_chatbox_marginLeft">16dp</dimen>
+    <dimen name="edittext_chatbox_paddingBottom">10dp</dimen>
+    <dimen name="edittext_chatbox_paddingLeft">20dp</dimen>
+    <dimen name="button_chatbox_send_marginRight">10dp</dimen>
+
+    <dimen name="feeDetailRow_marginTop">0dp</dimen>
+    <dimen name="feeDetailRow_statusIcon_height">40dp</dimen>
+    <dimen name="feeDetailRow_statusIcon_marginTop">10dp</dimen>
+    <dimen name="feeDetailRow_dueAmount_marginLeft">-6dp</dimen>
+    <dimen name="feeSummaryRow_marginTop">4dp</dimen>
+    <dimen name="feeSummaryRow_paddingLeft">10dp</dimen>
+    <dimen name="feeSummaryRow_innerWrapper_width">0dp</dimen>
+    <dimen name="feeSummaryRow_statusImg_width">150dp</dimen>
+    <dimen name="feeSummaryRow_statusImg_height">30dp</dimen>
+    <dimen name="feeDetailRow_padding">15dp</dimen>
+
+    <dimen name="wallUnderline_left">5dp</dimen>
+    <dimen name="wallUnderline_top">46dp</dimen>
+
+    <dimen name="childrenList_marginB">20dp</dimen>
+    <dimen name="childrenList_marginT">8dp</dimen>
+    <dimen name="childrenList_paddingL">10dp</dimen>
+    <dimen name="leftSection_width">140dp</dimen>
+    <dimen name="leftSection_marginR">10dp</dimen>
+    <dimen name="kidsLbl_paddingB">5dp</dimen>
+    <dimen name="childDetail_padding">12dp</dimen>
+    <dimen name="kidImg_width">32dp</dimen>
+    <dimen name="kidImg_height">32dp</dimen>
+    <dimen name="kidImg_marginR">10dp</dimen>
+    <dimen name="transportDetail_height">35dp</dimen>
+    <dimen name="childrenList_minHeight">180dp</dimen>
+
+    <!--<dimen name="totalColumn">4</dimen>-->
+    <integer name="totalColumn">4</integer>
+    <dimen name="viewProfile_backBtn_wh">40dp</dimen>
+    <dimen name="camera_mLeft">-50dp</dimen>
+    <dimen name="camera_mTop">-50dp</dimen>
+    <dimen name="grossTotal_mTop">12dp</dimen>
+</resources>

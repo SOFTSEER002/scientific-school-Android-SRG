@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/mTop1"
+    android:background="@drawable/timetable_row_gradient">
+
+    <TextView
+        android:id="@+id/periodNumber"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        android:background="@drawable/timetable_left_section_gradient"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="@dimen/lg_size_text"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/subject"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:ellipsize="end"
+        android:gravity="start|center_vertical"
+        android:maxLines="1"
+        android:paddingEnd="@dimen/pRight0"
+        android:paddingStart="@dimen/pLeft0"
+        android:textColor="@color/mGrey"
+        android:textSize="@dimen/sm_size_text"
+        app:layout_constraintEnd_toStartOf="@id/guideline2"
+        app:layout_constraintStart_toEndOf="@id/periodNumber"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/teacher"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:layout_marginBottom="1dp"
+        android:background="@color/colorAccentLight"
+        android:ellipsize="end"
+        android:gravity="start|center_vertical"
+        android:maxLines="1"
+        android:paddingEnd="@dimen/pRight0"
+        android:paddingStart="@dimen/pLeft0"
+        android:textColor="@color/colorAccent"
+        android:textSize="@dimen/sm_size_text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/guideline2"
+        app:layout_constraintStart_toEndOf="@id/periodNumber"
+        app:layout_constraintTop_toBottomOf="@id/subject" />
+
+    <TextView
+        android:id="@+id/from"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:background="@drawable/timetable_right_top_section_gradient"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:maxLines="1"
+        android:textColor="@color/colorAccent"
+        android:textSize="@dimen/sm_size_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/guideline2"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/to"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:layout_marginBottom="1dp"
+        android:layout_marginEnd="1dp"
+        android:background="@drawable/timetable_right_bottom_section_gradient"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:maxLines="1"
+        android:textColor="@color/colorAccent"
+        android:textSize="@dimen/sm_size_text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/guideline2"
+        app:layout_constraintTop_toBottomOf="@id/from" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.20" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.80" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

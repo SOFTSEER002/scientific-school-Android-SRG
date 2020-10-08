@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/availableLeavesRow"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="1dp"
+    android:background="@color/white"
+    android:padding="@dimen/p_availableLeaveRow">
+
+    <TextView
+        android:id="@+id/leaveName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="start"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:textSize="@dimen/md_size_text"
+        android:padding="@dimen/pLeft0"
+        android:text=""
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/vg_leaveType"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <!--android:background="@drawable/round_corner_theme_bg"-->
+
+    <TextView
+        android:id="@+id/leaveRatio"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:padding="@dimen/pLeft0"
+        android:text=""
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/vg_ratio"
+        app:layout_constraintStart_toEndOf="@id/vg_leaveType"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/pieChartRow"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/vg_ratio"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- ProgressBar that represents a total of 100% -->
+        <ProgressBar
+            android:id="@+id/background_progressbar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="@dimen/pie_wh"
+            android:layout_height="@dimen/pie_wh"
+            android:indeterminate="false"
+            android:max="100"
+            android:progress="100"
+            android:progressDrawable="@drawable/stats_full"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+<!--50-->
+        <!-- ProgressBar that represents a chart slice, where "android:progress" is the % value of the slice -->
+        <ProgressBar
+            android:id="@+id/stats_progressbar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="@dimen/pie_wh"
+            android:layout_height="@dimen/pie_wh"
+            android:indeterminate="false"
+            android:max="100"
+            android:progress="35"
+            android:progressDrawable="@drawable/stats_progress"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- The text that goes in a center of the chart -->
+        <TextView
+            android:id="@+id/number_of_calories"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1500/2000"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/vg_leaveType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.55" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/vg_ratio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.85" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

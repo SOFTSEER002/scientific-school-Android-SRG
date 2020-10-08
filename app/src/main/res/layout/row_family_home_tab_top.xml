@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.jeannypr.scientificstudy.Base.Model.ChildModel" />
+    </data>
+
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/frameLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:foreground="?android:selectableItemBackground"
+        android:paddingEnd="1dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profileImg"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_gravity="top"
+            android:background="@drawable/first_letter_img_bg"
+            android:src="@mipmap/profile_md"
+            app:civ_border_color="@color/colorAccent" />
+
+        <ImageView
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="13dp"
+            android:contentDescription="@string/default_cont_desc"
+            android:src="@mipmap/edit_md"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/heartIc"
+            android:layout_width="11dp"
+            android:layout_height="11dp"
+            android:layout_marginEnd="2dp"
+            android:layout_gravity="top|end"
+            android:contentDescription="@string/default_cont_desc"
+            android:src="@mipmap/redheart_md" />
+    </FrameLayout>
+</layout>

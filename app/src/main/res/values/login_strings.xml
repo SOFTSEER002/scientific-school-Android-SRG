@@ -1,0 +1,97 @@
+<resources>
+    <string name="enterSchoolcodeBtn" type="string">NEXT</string>
+    <string name="getSchoolKey">Find your school key</string>
+    <string name="getSchool">Find your school</string>
+    <string name="getSchoolKeyBtn">Get School Key</string>
+    <string name="changeSchoolKey">Change your school Key</string>
+    <string name="reglink">New customer? Please register here to start using it.</string>
+
+    <string name="unableToLoginTitle">Trouble signing in? We can help</string>
+    <string name="unableToLoginBtn">Send me Password</string>
+    <string name="loginBtn">LOGIN</string>
+    <string name="backToHome">Back To Home</string>
+    <string name="help">Help?</string>
+
+    <string name="loginFormTitle">Login</string>
+
+    <string-array name="userRoles">
+        <item>Select Role</item>
+        <!--<item>Select Class</item>-->
+        <item>Teacher</item>
+        <item>Parent</item>
+        <item>Driver</item>
+    </string-array>
+
+    <string-array name="absentReasons">
+        <item>AB</item>
+        <item>SC</item>
+        <item>SL</item>
+    </string-array>
+
+
+    <string name="selectRSVP">Are you attending?</string>
+    <string name="yesAttending">Yes, attending</string>
+    <string name="notAttending">Sorry, not attending</string>
+    <string name="notSure">Not sure</string>
+
+    <string-array name="rsvp">
+        <item>@string/selectRSVP</item>
+        <item>@string/yesAttending</item>
+        <item>@string/notAttending</item>
+        <item>@string/notSure</item>
+    </string-array>
+
+    <string-array name="countryArray">
+        <item>India</item>
+    </string-array>
+
+    <string-array name="audience">
+        <item>Select Audience</item>
+        <item>School</item>
+        <item>Teacher</item>
+        <item>Parent</item>
+        <item>Alumni</item>
+        <item>Enquiry Visitor</item>
+    </string-array>
+
+    <string-array name="discountType">
+        <item>Select Discount Type</item>
+        <!--<item>Select Class</item>-->
+        <item>PERCENTAGE</item>
+        <item>FLAT</item>
+    </string-array>
+
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="other">Other</string>
+
+    <string-array name="gender">
+        <item>@string/selectGender</item>
+        <item>@string/male</item>
+        <item>@string/female</item>
+        <item>@string/other</item>
+    </string-array>
+
+    <string name="admin_role">Admin</string>
+    <string name="staff_role">Staff</string>
+    <string name="principal_role">Principal</string>
+    <string name="alumni_role">Alumni</string>
+    <string name="selectSclKey">Select School Key</string>
+
+    <string-array name="role"> Dont change the sequence, <!--adapter position is based on sequence.-->
+        <item>@string/selectRole</item>
+        <item>@string/staff_role</item>
+        <item>@string/admin_role</item>
+        <item>@string/principal_role</item>
+        <item>@string/alumni_role</item>
+    </string-array>
+
+    <string-array name="jhpoddar_school_keys_array">
+        <item>@string/selectSclKey</item>
+        <item>jhpenglishcol</item>
+        <item>jhphindi</item>
+        <item>jhpenglishsec</item>
+        <item>jhpenglish</item>
+        <item>jhppre</item>
+    </string-array>
+</resources>

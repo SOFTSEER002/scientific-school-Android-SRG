@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/coordinator_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?android:attr/actionBarSize"
+                android:background="@color/colorPrimary"
+                app:layout_scrollFlags="scroll|enterAlways"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                app:subtitleTextColor="@color/white"
+                app:title=""
+                app:titleTextColor="@color/white" />
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <!--  <androidx.core.widget.NestedScrollView
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:fillViewport="true"
+              app:layout_behavior="@string/appbar_scrolling_view_behavior">-->
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:fillViewport="true"
+            android:padding="8dp"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/appBar">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text=""
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="@dimen/lg_size_text"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/studentName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="@dimen/sm_size_text"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/title" />
+
+            <TextView
+                android:id="@+id/submissionDateLbl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/submissionDate"
+                android:textColor="@color/black9"
+                android:textSize="@dimen/sm_size_text"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/studentName" />
+
+            <LinearLayout
+                android:id="@+id/lytSubDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/red_bg_round_corner"
+                android:gravity="start"
+                android:orientation="horizontal"
+                android:padding="2dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias=".03"
+                app:layout_constraintStart_toEndOf="@+id/submissionDateLbl"
+                app:layout_constraintTop_toBottomOf="@+id/studentName">
+
+                <ImageView
+                    android:id="@+id/dateIcon"
+                    android:layout_width="@dimen/row_event_icDatepicker_width"
+                    android:layout_height="@dimen/row_event_icDatepicker_width"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="2dp"
+                    android:contentDescription="@string/default_cont_desc"
+                    android:src="@drawable/datepicker_white"
+                    android:tint="@color/white"
+                    app:layout_constraintEnd_toStartOf="@+id/startDate"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/divider" />
+
+                <TextView
+                    android:id="@+id/submissionDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="2dp"
+                    android:layout_marginEnd="10dp"
+                    android:textColor="@color/white"
+                    app:layout_constraintEnd_toStartOf="@+id/timeIcon"
+                    app:layout_constraintStart_toEndOf="@id/startDateIcon"
+                    app:layout_constraintTop_toBottomOf="@+id/divider" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/currentStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sm_size_text"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lytSubDate" />
+
+            <View
+                android:id="@+id/underline1"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="12dp"
+                android:background="@color/colorAccent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/currentStatus" />
+
+            <!--  <com.google.android.material.button.MaterialButton
+                  android:id="@+id/btnRework"
+                  style="@style/Widget.MaterialComponents.Button"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="12dp"
+                  android:ellipsize="end"
+                  android:gravity="center"
+                  android:maxLines="1"
+                  android:text="@string/rework"
+                  android:textColor="@color/white"
+                  android:textSize="@dimen/md_size_text"
+                  app:backgroundTint="@color/mGreen"
+                  app:cornerRadius="8dp"
+                  app:iconSize="15dp"
+                  app:iconTint="@color/white"
+                  app:layout_constraintEnd_toStartOf="@id/vGuideline"
+                  app:layout_constraintStart_toStartOf="parent"
+                  app:layout_constraintTop_toBottomOf="@+id/underline1"
+                  app:strokeColor="@color/white" />
+
+              <com.google.android.material.button.MaterialButton
+                  android:id="@+id/btnCompleted"
+                  style="@style/Widget.MaterialComponents.Button"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="12dp"
+                  android:ellipsize="end"
+                  android:gravity="center"
+                  android:maxLines="1"
+                  android:text="@string/markAsCompleted"
+                  android:textColor="@color/white"
+                  android:textSize="@dimen/md_size_text"
+                  app:backgroundTint="@color/mGreen"
+                  app:cornerRadius="8dp"
+                  app:icon="@drawable/tickmark"
+                  app:iconSize="15dp"
+                  app:layout_constraintEnd_toEndOf="parent"
+                  app:layout_constraintStart_toEndOf="@id/vGuideline"
+                  app:layout_constraintTop_toBottomOf="@+id/underline1"
+                  app:strokeColor="@color/white" />-->
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnRework"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:layout_marginBottom="4dp"
+                android:text="@string/rework"
+                android:textColor="@color/mGreen"
+                android:textSize="@dimen/md_size_text"
+                android:textStyle="bold"
+                app:backgroundTint="@color/white"
+                app:cornerRadius="16dp"
+                app:layout_constraintEnd_toStartOf="@id/vGuideline"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/underline1" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnCompleted"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="18dp"
+                android:layout_marginBottom="4dp"
+                android:text="@string/markAsCompleted"
+                android:textColor="@color/mGreen"
+                android:textSize="@dimen/md_size_text"
+                android:textStyle="bold"
+                app:cornerRadius="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/vGuideline"
+                app:layout_constraintTop_toBottomOf="@+id/underline1" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/vGuideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent=".45" />
+
+            <TextView
+                android:id="@+id/commentsLbl"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:padding="4dp"
+                android:text="@string/hwDiscussion"
+                android:textColor="@color/black2"
+                android:textSize="@dimen/sm_size_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnCompleted" />
+
+            <TextView
+                android:id="@+id/link"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:autoLink="all"
+                android:clickable="true"
+                android:focusable="true"
+                android:padding="8dp"
+                android:text="@string/youCanSubmit"
+                android:textColor="@color/blue26"
+                android:textIsSelectable="true"
+                android:textSize="@dimen/sm_size_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/commentsLbl" />
+
+            <FrameLayout
+                android:id="@+id/layoutMain"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="2dp"
+                android:background="@color/blue19"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/link" />
+
+            <ProgressBar
+                android:id="@+id/pb"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:indeterminate="true"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ProgressBar
+                android:id="@+id/commentsPB"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:indeterminate="true"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/layoutMain" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!--        </androidx.core.widget.NestedScrollView>-->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

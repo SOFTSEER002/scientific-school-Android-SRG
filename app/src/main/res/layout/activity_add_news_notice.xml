@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.jeannypr.scientificstudy.Events.viewmodel.NewsNoticeViewModel" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+        <include
+            android:id="@+id/custom_toolbar"
+            layout="@layout/custom_expandable_header" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginBottom="26dp"
+                app:layout_constraintBottom_toTopOf="@+id/saveBtn"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.core.widget.NestedScrollView
+                    android:id="@+id/scroll"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fillViewport="true"
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/constraint_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="8dp">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/titleTv"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="18dp"
+                            android:hint="@string/title"
+                            android:theme="@style/NewsTextInputStyle"
+                            app:boxBackgroundColor="@android:color/transparent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/titleEd"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:imeOptions="actionNext"
+                                android:inputType="textPersonName"
+                                android:text="@={viewModel.title}" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/newsDateTv"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:hint="@string/flashSdate"
+                            android:theme="@style/NewsTextInputStyle"
+                            app:boxBackgroundColor="@android:color/transparent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/titleTv">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/newsDateEd"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:focusable="false"
+                                android:imeOptions="actionNext"
+                                android:inputType="date"
+                                android:text="@={viewModel.newsDate}" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/desc"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="18dp"
+                            android:hint="@string/newsDesc"
+                            android:theme="@style/NewsTextInputStyle"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/newsDateTv">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/descEd"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="textMultiLine"
+                                android:maxLength="1000"
+                                android:maxLines="4"
+                                android:minHeight="120dp"
+                                android:overScrollMode="always"
+                                android:scrollIndicators="end"
+                                android:scrollbarAlwaysDrawVerticalTrack="true"
+                                android:scrollbarStyle="insideInset"
+                                android:scrollbars="vertical"
+                                android:singleLine="false"
+                                android:text="@={viewModel.desc}"
+                                tools:targetApi="m" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/attachmentTv"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:hint="@string/uploadDoc"
+                            android:theme="@style/NewsTextInputStyle"
+                            app:boxBackgroundColor="@android:color/transparent"
+                            app:layout_constraintEnd_toStartOf="@+id/browseBtn"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/desc">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/attachmentEd"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:focusable="false"
+                                android:imeOptions="actionDone"
+                                android:inputType="textUri"
+                                android:text="@={viewModel.attachmentName}" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/browseBtn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="22dp"
+                            android:text="@string/browse"
+                            android:textAllCaps="true"
+                            android:textSize="@dimen/md_size_text"
+                            app:backgroundTint="@color/purple10"
+                            app:cornerRadius="6dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/desc" />
+
+                        <TextView
+                            android:id="@+id/audienceLbl"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="12dp"
+                            android:text="@string/audience"
+                            android:textColor="@color/black13"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/attachmentTv" />
+
+                        <com.google.android.material.chip.ChipGroup
+                            android:id="@+id/chipGroup"
+                            android:layout_width="0dp"
+                            android:layout_height="115dp"
+                            android:layout_marginTop="2dp"
+                            android:background="@drawable/border_white_bg"
+                            android:padding="@dimen/mTop1"
+                            app:chipSpacingHorizontal="8dp"
+                            app:chipSpacingVertical="8dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/audienceLbl"
+                            app:singleLine="false"
+                            app:singleSelection="true" />
+
+                        <CheckBox
+                            android:id="@+id/checkbox"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:checked="@={viewModel.isPublished()}"
+                            android:text="@string/publish"
+                            android:textColor="@color/purple10"
+                            android:textSize="@dimen/lg_size_text"
+                            android:theme="@style/checkboxTheme"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/chipGroup" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.core.widget.NestedScrollView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/saveBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|center_horizontal"
+                android:layout_margin="26dp"
+                android:elevation="4dp"
+                android:paddingStart="42dp"
+                android:paddingEnd="42dp"
+                android:text="@string/save"
+                android:onClick="@{()->viewModel.performValidation()}"
+                android:textAllCaps="false"
+                android:textSize="@dimen/lg_size_text"
+                app:backgroundTint="@color/purple10"
+                app:cornerRadius="26dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:indeterminate="true"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</layout>

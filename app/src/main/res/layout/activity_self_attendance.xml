@@ -1,0 +1,770 @@
+<?xml version="1.0" encoding="utf-8"?>
+   <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+       xmlns:app="http://schemas.android.com/apk/res-auto"
+       xmlns:tools="http://schemas.android.com/tools"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:background="@color/white">
+
+       <com.google.android.material.appbar.AppBarLayout
+           android:id="@+id/appBar"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+           app:layout_constraintLeft_toLeftOf="parent"
+           app:layout_constraintRight_toRightOf="parent"
+           app:layout_constraintTop_toTopOf="parent">
+
+           <androidx.appcompat.widget.Toolbar
+               android:id="@+id/toolbar"
+               android:layout_width="match_parent"
+               android:layout_height="?android:attr/actionBarSize"
+               android:background="@color/colorPrimary"
+               app:layout_scrollFlags="scroll|enterAlways"
+               app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+               app:subtitleTextColor="@color/white"
+               app:titleTextColor="@color/white" />
+       </com.google.android.material.appbar.AppBarLayout>
+
+       <!--<ScrollView-->
+       <!--android:id="@+id/scroll"-->
+       <!--android:layout_width="match_parent"-->
+       <!--android:layout_height="0dp"-->
+       <!--app:layout_constraintLeft_toLeftOf="parent"-->
+       <!--app:layout_constraintRight_toRightOf="parent"-->
+       <!--app:layout_constraintTop_toBottomOf="@id/appBar"-->
+       <!--android:fillViewport="true">-->
+
+       <!--<RelativeLayout-->
+       <!--android:layout_width="match_parent"-->
+       <!--android:layout_height="wrap_content">-->
+
+
+       <RelativeLayout
+           android:id="@+id/selfAttendanceStatusSection"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:visibility="gone"
+           app:layout_constraintBottom_toTopOf="@+id/takeSelfAttendanceSection"
+           app:layout_constraintLeft_toLeftOf="parent"
+           app:layout_constraintRight_toRightOf="parent"
+           app:layout_constraintTop_toBottomOf="@id/appBar">
+
+           <LinearLayout
+               android:id="@+id/infoSection"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:background="@color/black7"
+               android:gravity="center"
+               android:orientation="horizontal"
+               android:padding="10dp">
+
+               <ImageView
+                   android:id="@+id/info"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:scaleX="0.9"
+                   android:scaleY="0.9"
+                   android:src="@android:drawable/ic_dialog_info"
+                   android:tint="@color/colorPrimary"
+                   android:contentDescription="@string/default_cont_desc" />
+
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:gravity="center"
+                   android:padding="5dp"
+                   android:text="Attendance already taken"
+                   android:textColor="@color/colorPrimary"
+                   android:textSize="@dimen/md_size_text" />
+           </LinearLayout>
+
+           <RelativeLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_below="@+id/infoSection"
+               android:layout_marginTop="10dp"
+               android:background="@color/black7"
+               android:gravity="start"
+               android:padding="10dp">
+
+               <ImageView
+                   android:id="@+id/icDate"
+                   android:layout_width="20dp"
+                   android:layout_height="22dp"
+                   android:layout_marginTop="2dp"
+                   android:layout_toLeftOf="@+id/attendanceDate"
+                   android:layout_toStartOf="@+id/attendanceDate"
+                   android:scaleX="1"
+                   android:scaleY="1"
+                   android:src="@drawable/student_datepicker"
+                   android:tint="@color/black"
+                   android:contentDescription="@string/default_cont_desc" />
+
+               <TextView
+                   android:id="@+id/attendanceDate"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_alignParentEnd="true"
+                   android:layout_alignParentRight="true"
+                   android:gravity="start"
+                   android:padding="5dp"
+                   android:text="43-24-2222"
+                   android:textColor="@color/black"
+                   android:textSize="@dimen/sm_size_text" />
+
+               <ImageView
+                   android:id="@+id/icTime"
+                   android:layout_width="20dp"
+                   android:layout_height="18dp"
+                   android:layout_below="@+id/attendanceDate"
+                   android:layout_toLeftOf="@+id/attendanceTime"
+                   android:scaleX="1"
+                   android:scaleY="1"
+                   android:src="@drawable/time_lg"
+                   android:tint="@color/black"
+                   android:contentDescription="@string/default_cont_desc" />
+
+               <TextView
+                   android:id="@+id/attendanceTime"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_alignParentRight="true"
+                   android:layout_below="@+id/icDate"
+                   android:gravity="start"
+                   android:padding="5dp"
+                   android:text="12;12 am"
+                   android:textColor="@color/black"
+                   android:textSize="@dimen/sm_size_text" />
+
+               <!--<ImageView-->
+               <!--android:id="@+id/icAttendanceStatus"-->
+               <!--android:layout_width="40dp"-->
+               <!--android:layout_height="40dp"-->
+               <!--android:layout_below="@+id/icTime"-->
+               <!--android:scaleX="0.5"-->
+               <!--android:scaleY="0.5"-->
+               <!--android:src="@drawable/day_wise_attendance"-->
+               <!--android:tint="@color/black" />-->
+
+               <Button
+                   android:id="@+id/attendanceStatus"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_marginTop="8dp"
+
+                   android:gravity="center"
+                   android:padding="10dp"
+                   android:text=""
+                   android:textColor="@color/white"
+                   android:textSize="@dimen/md_size_text" />
+               <!--android:background="@drawable/border_whitebg_rounded_corner"-->
+               <!--android:backgroundTint="@android:color/holo_green_dark"-->
+               <TextView
+                   android:id="@+id/edOdLbl"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_below="@+id/attendanceTime"
+                   android:layout_marginTop="5dp"
+                   android:gravity="center"
+                   android:padding="5dp"
+                   android:text="ED/OD : "
+                   android:textColor="@color/black"
+                   android:textSize="@dimen/sm_size_text" />
+
+               <TextView
+                   android:id="@+id/edOdVal"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_below="@+id/attendanceTime"
+                   android:layout_marginTop="5dp"
+                   android:layout_toRightOf="@+id/edOdLbl"
+                   android:gravity="center"
+                   android:padding="5dp"
+                   android:text=""
+                   android:textColor="@color/black"
+                   android:textSize="@dimen/sm_size_text" />
+
+               <TextView
+                   android:id="@+id/noteLbl"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_below="@+id/edOdLbl"
+                   android:gravity="center"
+                   android:padding="5dp"
+                   android:text="Note : "
+                   android:textColor="@color/black"
+                   android:textSize="@dimen/sm_size_text" />
+
+               <TextView
+                   android:id="@+id/noteVal"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_below="@+id/edOdLbl"
+                   android:layout_toRightOf="@+id/noteLbl"
+                   android:gravity="start"
+                   android:padding="5dp"
+                   android:text=""
+                   android:textColor="@color/black"
+                   android:textSize="@dimen/sm_size_text" />
+           </RelativeLayout>
+
+       </RelativeLayout>
+
+       <RelativeLayout
+           android:id="@+id/takeSelfAttendanceSection"
+           android:layout_width="match_parent"
+           android:layout_height="0dp"
+           android:layout_marginBottom="2dp"
+           android:visibility="visible"
+           app:layout_constraintBottom_toBottomOf="parent"
+           app:layout_constraintLeft_toLeftOf="parent"
+           app:layout_constraintRight_toRightOf="parent"
+           app:layout_constraintTop_toBottomOf="@id/selfAttendanceStatusSection">
+
+           <TextView
+               android:id="@+id/todaysDate"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:background="@color/black7"
+               android:gravity="center"
+               android:padding="5dp"
+               android:text=""
+               android:textColor="@color/colorPrimary"
+               android:textSize="@dimen/lg_size_text" />
+
+           <TextView
+               android:id="@+id/presentBtn"
+               android:layout_width="140dp"
+               android:layout_height="140dp"
+               android:layout_below="@+id/todaysDate"
+               android:layout_centerHorizontal="true"
+               android:layout_marginBottom="10dp"
+               android:layout_marginTop="10dp"
+               android:background="@drawable/self_attendance_btn"
+               android:foreground="?android:attr/selectableItemBackground"
+               android:gravity="center"
+               android:text="Present"
+               android:textColor="@color/white"
+               android:textSize="@dimen/md_size_text"
+               tools:targetApi="m" />
+
+           <CheckBox
+               android:id="@+id/chkIsHalfday"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_below="@+id/presentBtn"
+               android:checked="false"
+               android:enabled="false"
+               android:text="Is it half day?"
+               android:textColor="@color/black"
+               android:textSize="@dimen/md_size_text" />
+
+           <CheckBox
+               android:id="@+id/chkIsExtraDutyOrOutdoor"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_below="@+id/chkIsHalfday"
+               android:layout_marginBottom="6dp"
+               android:checked="false"
+               android:enabled="true"
+               android:text="Are you on Outdoor/Extra Duty?"
+               android:textColor="@color/black"
+               android:textSize="@dimen/md_size_text"
+               android:visibility="gone" />
+
+           <CheckBox
+               android:id="@+id/outdoorBtn"
+               style="@style/halfdayBtnInSelfattendance"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_below="@+id/chkIsExtraDutyOrOutdoor"
+               android:layout_marginLeft="8dp"
+               android:layout_marginRight="20dp"
+               android:button="@android:color/transparent"
+               android:checked="false"
+               android:enabled="true"
+               android:padding="8dp"
+               android:text="Outdoor Duty"
+               android:textColor="@android:color/holo_green_light"
+               android:textSize="@dimen/md_size_text"
+               android:visibility="gone" />
+
+           <CheckBox
+               android:id="@+id/extraDutyBtn"
+               style="@style/halfdayBtnInSelfattendance"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_below="@+id/chkIsExtraDutyOrOutdoor"
+               android:layout_toRightOf="@+id/outdoorBtn"
+               android:button="@android:color/transparent"
+               android:checked="false"
+               android:enabled="true"
+               android:padding="8dp"
+               android:text="Extra Duty"
+               android:textColor="@android:color/holo_green_light"
+               android:textSize="@dimen/md_size_text"
+               android:visibility="gone" />
+
+           <EditText
+               android:id="@+id/txtNote"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_below="@+id/extraDutyBtn"
+               android:layout_marginLeft="8dp"
+               android:layout_marginRight="8dp"
+               android:layout_marginTop="5dp"
+               android:background="@drawable/border_grey_bg"
+               android:gravity="start"
+               android:hint="Write note here..."
+               android:minHeight="100dp"
+               android:padding="15dp"
+               android:textColor="@color/black"
+               android:textSize="@dimen/md_size_text"
+               android:visibility="gone" />
+
+           <com.jeannypr.scientificstudy.FloatingActionButton.MovableFloatingActionButton
+               android:id="@+id/saveSelfattendanceBtn"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_alignParentBottom="true"
+               android:layout_alignParentRight="true"
+               android:layout_marginBottom="10dp"
+               android:layout_marginRight="10dp"
+               android:tint="@color/white"
+               app:srcCompat="@drawable/right_tick_sm" />
+
+           <!--<RelativeLayout-->
+           <!--android:id="@+id/currentLocationSection"-->
+           <!--android:layout_width="match_parent"-->
+           <!--android:layout_height="wrap_content"-->
+           <!--android:layout_alignParentBottom="true"-->
+           <!--android:background="@color/bgColor"-->
+           <!--android:gravity="center_horizontal"-->
+           <!--android:padding="15dp">-->
+
+           <!--<ImageView-->
+           <!--android:id="@+id/navigationIcon"-->
+           <!--android:layout_width="wrap_content"-->
+           <!--android:layout_height="wrap_content"-->
+           <!--android:scaleX="0.7"-->
+           <!--android:scaleY="0.7"-->
+           <!--android:src="@drawable/navigation" />-->
+
+           <!--<TextView-->
+           <!--android:id="@+id/location"-->
+           <!--android:layout_width="wrap_content"-->
+           <!--android:layout_height="wrap_content"-->
+           <!--android:layout_centerVertical="true"-->
+           <!--android:layout_toEndOf="@+id/navigationIcon"-->
+           <!--android:layout_toRightOf="@+id/navigationIcon"-->
+           <!--android:text="Your Current LocationTrack : "-->
+           <!--android:textColor="@color/colorPrimary"-->
+           <!--android:textSize="@dimen/sm_size_text" />-->
+           <!--</RelativeLayout>-->
+
+
+       </RelativeLayout>
+
+
+       <!--</RelativeLayout>-->
+       <!--</ScrollView>-->
+
+       <ProgressBar
+           android:id="@+id/progressBar"
+           style="?android:attr/progressBarStyle"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:indeterminate="true"
+           android:visibility="gone"
+           app:layout_constraintBottom_toBottomOf="parent"
+           app:layout_constraintEnd_toEndOf="parent"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintTop_toTopOf="parent"
+           app:layout_constraintVertical_bias="0.50" />
+
+   </androidx.constraintlayout.widget.ConstraintLayout>
+<!--<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:subtitleTextColor="@color/white"
+            app:titleTextColor="@color/white" />
+    </android.support.design.widget.AppBarLayout>
+
+    <RelativeLayout
+        android:id="@+id/selfAttendanceStatusSection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/takeSelfAttendanceSection"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appBar">
+
+        <LinearLayout
+            android:id="@+id/infoSection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/black7"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <ImageView
+                android:id="@+id/info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleX="0.9"
+                android:scaleY="0.9"
+                android:src="@android:drawable/ic_dialog_info"
+                android:tint="@color/colorPrimary" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="Attendance already taken"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/md_size_text" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/infoSection"
+            android:layout_marginTop="10dp"
+            android:background="@color/black7"
+            android:gravity="start"
+            android:padding="10dp">
+
+            <ImageView
+                android:id="@+id/icDate"
+                android:layout_width="20dp"
+                android:layout_height="22dp"
+                android:layout_marginTop="2dp"
+                android:layout_toLeftOf="@+id/attendanceDate"
+                android:layout_toStartOf="@+id/attendanceDate"
+                android:scaleX="1"
+                android:scaleY="1"
+                android:src="@drawable/student_datepicker"
+                android:tint="@color/black" />
+
+            <TextView
+                android:id="@+id/attendanceDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:gravity="start"
+                android:padding="5dp"
+                android:text="43-24-2222"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sm_size_text" />
+
+            <ImageView
+                android:id="@+id/icTime"
+                android:layout_width="20dp"
+                android:layout_height="18dp"
+                android:layout_below="@+id/attendanceDate"
+                android:layout_toLeftOf="@+id/attendanceTime"
+                android:scaleX="1"
+                android:scaleY="1"
+                android:src="@drawable/time_lg"
+                android:tint="@color/black" />
+
+            <TextView
+                android:id="@+id/attendanceTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/icDate"
+                android:gravity="start"
+                android:padding="5dp"
+                android:text="12;12 am"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sm_size_text" />
+
+            <Button
+                android:id="@+id/attendanceStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text=""
+                android:textColor="@color/white"
+                android:textSize="@dimen/md_size_text" />
+
+            <TextView
+                android:id="@+id/edOdLbl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/attendanceTime"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="ED/OD : "
+                android:textColor="@color/black"
+                android:textSize="@dimen/sm_size_text" />
+
+            <TextView
+                android:id="@+id/edOdVal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/attendanceTime"
+                android:layout_marginTop="5dp"
+                android:layout_toRightOf="@+id/edOdLbl"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="@dimen/sm_size_text" />
+
+            <TextView
+                android:id="@+id/noteLbl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/edOdLbl"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="Note : "
+                android:textColor="@color/black"
+                android:textSize="@dimen/sm_size_text" />
+
+            <TextView
+                android:id="@+id/noteVal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/edOdLbl"
+                android:layout_toRightOf="@+id/noteLbl"
+                android:gravity="start"
+                android:padding="5dp"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="@dimen/sm_size_text" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/takeSelfAttendanceSection"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="2dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/selfAttendanceStatusSection">
+
+        <TextView
+            android:id="@+id/todaysDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorAccentLight"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text=""
+            android:textColor="@color/colorAccent"
+            android:textSize="@dimen/lg_size_text" />
+
+        <TextView
+            android:id="@+id/messageLbl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/todaysDate"
+            android:gravity="center"
+            android:padding="@dimen/mTop0"
+            android:text="Click on the button to marks as present"
+            android:textColor="@color/mGrey"
+            android:textSize="@dimen/md_size_text" />
+
+        <TextView
+            android:id="@+id/presentBtn"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:layout_below="@+id/messageLbl"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/self_attendance_btn"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:gravity="center"
+            android:text="Present"
+            android:textColor="@color/white"
+            android:textSize="@dimen/md_size_text" />
+
+        <CheckBox
+            android:id="@+id/chkIsHalfday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/presentBtn"
+            android:checked="false"
+            android:enabled="false"
+            android:text="Is it half day?"
+            android:textColor="@color/black"
+            android:textSize="@dimen/md_size_text" />
+
+        <View
+            android:id="@+id/div_halfDay"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_below="@+id/chkIsHalfday"
+            android:layout_marginTop="@dimen/dashboardIc_padding"
+            android:background="@color/black6"
+            android:visibility="gone" />
+
+        <CheckBox
+            android:id="@+id/chkIsExtraDutyOrOutdoor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/div_halfDay"
+            android:layout_marginBottom="6dp"
+            android:checked="false"
+            android:enabled="true"
+            android:text="Are you on Outdoor/Extra Duty?"
+            android:textColor="@color/black"
+            android:textSize="@dimen/md_size_text"
+            android:visibility="gone" />
+
+        <View
+            android:id="@+id/div_extarDay"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_below="@+id/chkIsExtraDutyOrOutdoor"
+            android:layout_marginTop="@dimen/dashboardIc_padding"
+            android:background="@color/black6"
+            android:visibility="gone" />
+
+
+        <CheckBox
+            android:id="@+id/outdoorBtn"
+            style="@style/halfdayBtnInSelfattendance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/div_extarDay"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="@dimen/mTop0"
+            android:button="@android:color/transparent"
+            android:checked="false"
+            android:enabled="true"
+            android:padding="8dp"
+            android:text="Outdoor Duty"
+            android:textColor="@android:color/holo_green_light"
+            android:textSize="@dimen/md_size_text"
+            android:visibility="gone" />
+
+        <CheckBox
+            android:id="@+id/extraDutyBtn"
+            style="@style/halfdayBtnInSelfattendance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/div_extarDay"
+            android:layout_marginTop="@dimen/mTop0"
+            android:layout_toRightOf="@+id/outdoorBtn"
+            android:button="@android:color/transparent"
+            android:checked="false"
+            android:enabled="true"
+            android:padding="8dp"
+            android:text="Extra Duty"
+            android:textColor="@android:color/holo_green_light"
+            android:textSize="@dimen/md_size_text"
+            android:visibility="gone" />
+
+        <EditText
+            android:id="@+id/txtNote"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/extraDutyBtn"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/border_grey_bg"
+            android:gravity="start"
+            android:hint="Write note here..."
+            android:minHeight="100dp"
+            android:padding="15dp"
+            android:textColor="@color/black"
+            android:textSize="@dimen/md_size_text"
+            android:visibility="gone" />
+
+        <com.jeannypr.scientificstudy.FloatingActionButton.MovableFloatingActionButton
+            android:id="@+id/saveSelfattendanceBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="10dp"
+            android:tint="@color/white"
+            app:srcCompat="@drawable/right_tick_sm" />
+
+        &lt;!&ndash;<RelativeLayout&ndash;&gt;
+        &lt;!&ndash;android:id="@+id/currentLocationSection"&ndash;&gt;
+        &lt;!&ndash;android:layout_width="match_parent"&ndash;&gt;
+        &lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;
+        &lt;!&ndash;android:layout_alignParentBottom="true"&ndash;&gt;
+        &lt;!&ndash;android:background="@color/bgColor"&ndash;&gt;
+        &lt;!&ndash;android:gravity="center_horizontal"&ndash;&gt;
+        &lt;!&ndash;android:padding="15dp">&ndash;&gt;
+
+        &lt;!&ndash;<ImageView&ndash;&gt;
+        &lt;!&ndash;android:id="@+id/navigationIcon"&ndash;&gt;
+        &lt;!&ndash;android:layout_width="wrap_content"&ndash;&gt;
+        &lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;
+        &lt;!&ndash;android:scaleX="0.7"&ndash;&gt;
+        &lt;!&ndash;android:scaleY="0.7"&ndash;&gt;
+        &lt;!&ndash;android:src="@drawable/navigation" />&ndash;&gt;
+
+        &lt;!&ndash;<TextView&ndash;&gt;
+        &lt;!&ndash;android:id="@+id/location"&ndash;&gt;
+        &lt;!&ndash;android:layout_width="wrap_content"&ndash;&gt;
+        &lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;
+        &lt;!&ndash;android:layout_centerVertical="true"&ndash;&gt;
+        &lt;!&ndash;android:layout_toEndOf="@+id/navigationIcon"&ndash;&gt;
+        &lt;!&ndash;android:layout_toRightOf="@+id/navigationIcon"&ndash;&gt;
+        &lt;!&ndash;android:text="Your Current LocationTrack : "&ndash;&gt;
+        &lt;!&ndash;android:textColor="@color/colorPrimary"&ndash;&gt;
+        &lt;!&ndash;android:textSize="@dimen/sm_size_text" />&ndash;&gt;
+        &lt;!&ndash;</RelativeLayout>&ndash;&gt;
+
+
+    </RelativeLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.50" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>-->
+
+

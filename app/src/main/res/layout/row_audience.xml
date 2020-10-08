@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/row1"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="12dp"
+    android:gravity="center_vertical"
+    app:layout_constraintEnd_toEndOf="parent"
+    android:foreground="?android:attr/selectableItemBackground"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    tools:targetApi="m">
+
+    <ImageView
+        android:id="@+id/arrowIc"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:visibility="invisible"
+        android:layout_marginRight="2dp"
+        android:src="@drawable/ic_right_arrow"
+        android:tint="@color/colorPrimary"
+        android:layout_marginEnd="2dp"
+        android:contentDescription="@string/default_cont_desc" />
+
+    <TextView
+        android:id="@+id/audience"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_toEndOf="@+id/arrowIc"
+        android:layout_toRightOf="@+id/arrowIc"
+        android:gravity="end"
+        android:text="School"
+        android:textColor="@color/black"
+        android:textSize="@dimen/md_size_text"
+        android:layout_marginStart="@dimen/activity_horizontal_margin" />
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="0.2dp"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_toRightOf="@+id/arrowIc"
+        android:background="@color/black4"
+        android:layout_marginTop="12dp"
+        android:layout_below="@+id/audience"
+        android:layout_toEndOf="@+id/arrowIc"
+        android:layout_marginStart="@dimen/activity_horizontal_margin" />
+
+</RelativeLayout>

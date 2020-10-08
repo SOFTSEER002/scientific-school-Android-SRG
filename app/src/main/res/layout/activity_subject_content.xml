@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:theme="@style/Coordinator">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?android:attr/actionBarSize"
+                android:background="@color/colorPrimary"
+                app:layout_scrollFlags="scroll|enterAlways"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                app:subtitleTextColor="@color/white"
+                app:titleTextColor="@color/white" />
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/parentSection"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@mipmap/subject_detail_top"
+                        android:paddingStart="8dp"
+                        android:minHeight="@dimen/standard_100"
+                        android:paddingTop="8dp"
+                        android:paddingEnd="8dp"
+                        android:paddingBottom="15dp"
+                        android:visibility="visible"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <RelativeLayout
+                            android:id="@+id/lytSyllabus"
+                            android:layout_width="0dp"
+                            android:padding="10dp"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent">
+
+
+                            <ImageView
+                                android:id="@+id/ivSyllabusIcon"
+                                android:layout_centerVertical="true"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:background="@mipmap/syllabus_icon"
+                                android:contentDescription="@string/default_cont_desc" />
+
+
+                            <LinearLayout
+                                android:layout_centerVertical="true"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_toRightOf="@+id/ivSyllabusIcon"
+                                android:gravity="center_vertical"
+                                android:paddingLeft="10dp"
+                                android:paddingRight="10dp"
+                                android:orientation="vertical">
+
+
+                                <TextView
+                                    android:id="@+id/tvTitle"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="left"
+                                    android:text="Relation and functions"
+                                    android:textStyle="bold"
+                                    android:textColor="#F23188"
+                                    android:textSize="@dimen/lg_size_text" />
+
+                                <TextView
+                                    android:id="@+id/tvGoodBadSubTitle"
+                                    android:layout_marginTop="3dp"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="left"
+                                    android:lineSpacingExtra="2dp"
+                                    android:text="connect with your school friends here "
+                                    android:textColor="#324755"
+                                    android:textSize="@dimen/md_size_text" />
+
+                            </LinearLayout>
+
+
+                        </RelativeLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:visibility="gone"
+                            android:orientation="vertical"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent">
+
+
+                            <TextView
+                                android:id="@+id/selectedHeaderTitle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="left"
+                                android:text="Mathematics"
+                                android:textColor="#F23188"
+                                android:textSize="@dimen/lg_size_text"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/selectedHeaderSubTitle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:gravity="left"
+                                android:lineSpacingExtra="2dp"
+                                android:text="14 Chapters | 20 Learning Objects"
+                                android:textColor="#324755"
+                                android:textSize="@dimen/sm_size_text"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+
+
+                        <ImageView
+                            android:visibility="gone"
+                            android:id="@+id/imageView4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@mipmap/calculater"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:contentDescription="@string/default_cont_desc" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+            <View
+                android:id="@+id/lytSyllabus1"
+                android:layout_width="match_parent"
+                android:layout_height=".8dp"
+                android:layout_marginTop="10dp"
+                android:background="#F23188"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/parentSection"/>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="@dimen/standard_12"
+                android:orientation="vertical"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lytSyllabus1">
+
+
+
+
+
+
+
+            <LinearLayout
+                android:id="@+id/lytSyllabusTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_vertical"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lytSyllabus1">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Documents"
+                    android:textStyle="bold"
+                    android:drawablePadding="5dp"
+                    android:gravity="center_vertical"
+                    android:drawableLeft="@mipmap/chapter"
+                    android:textColor="#324755"
+                    android:textSize="@dimen/lg_size_text" />
+
+            </LinearLayout>
+
+
+
+
+
+
+                    <!--android:visibility="@{viewModel.isLoading ? View.VISIBLE : View.GONE }"-->
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="visible"
+                        android:fadeScrollbars="true"
+                        android:gravity="center_horizontal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/lytSyllabusTitle" />
+
+                <!--video section-->
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center_vertical"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/lytSyllabus1">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Video"
+                        android:layout_marginTop="20dp"
+                        android:textStyle="bold"
+                        android:drawablePadding="5dp"
+                        android:gravity="center_vertical"
+                        android:drawableLeft="@mipmap/video_title"
+                        android:textColor="#324755"
+                        android:textSize="@dimen/lg_size_text" />
+
+                </LinearLayout>
+
+                <!--android:visibility="@{viewModel.isLoading ? View.VISIBLE : View.GONE }"-->
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvVideo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="visible"
+                    android:fadeScrollbars="true"
+                    android:gravity="center_horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/lytSyllabusTitle" />
+
+
+                <!--Link section-->
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center_vertical"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/lytSyllabus1">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Links"
+                        android:layout_marginTop="20dp"
+                        android:textStyle="bold"
+                        android:drawablePadding="5dp"
+                        android:gravity="center_vertical"
+                        android:drawableLeft="@mipmap/link"
+                        android:textColor="#324755"
+                        android:textSize="@dimen/lg_size_text" />
+
+                </LinearLayout>
+
+                <!--android:visibility="@{viewModel.isLoading ? View.VISIBLE : View.GONE }"-->
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvLink"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/lytSyllabusTitle" />
+
+            </LinearLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</layout>

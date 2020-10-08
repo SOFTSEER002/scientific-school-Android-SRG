@@ -1,0 +1,158 @@
+<layout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/pdfRow"
+            android:layout_width="230dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_margin="6dp"
+            android:background="@drawable/white_border_white_bg"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:minWidth="250dp"
+            android:minHeight="50dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:targetApi="m">
+
+            <ImageView
+                android:id="@+id/thumbnail"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:contentDescription="@string/default_cont_desc"
+                android:scaleType="fitXY"
+                android:src="@drawable/pdf_thumbnail"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/deleteIc"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="-3dp"
+                android:layout_marginEnd="-3dp"
+                android:background="@drawable/border_whitebg_rounded_corner"
+                android:contentDescription="@string/default_cont_desc"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:src="@android:drawable/ic_menu_delete"
+                android:tint="@color/black2"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:targetApi="m" />
+
+            <RelativeLayout
+                android:id="@+id/contentRow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#c275c7ea"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:minWidth="250dp"
+                android:minHeight="50dp"
+                android:padding="6dp"
+                app:layout_constraintTop_toBottomOf="@+id/thumbnail"
+                tools:targetApi="m">
+
+                <ImageView
+                    android:id="@+id/icFile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginRight="5dp"
+                    android:contentDescription="@string/default_cont_desc"
+                    android:src="@drawable/doc" />
+
+                <TextView
+                    android:id="@+id/fileUrl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_toStartOf="@+id/icDownload"
+                    android:layout_toEndOf="@+id/icFile"
+                    android:text=""
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/sm_size_text"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/icDownload"
+                    app:layout_constraintStart_toEndOf="@id/icFile"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/icDownload"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/round_bg_grey_bg"
+                    android:contentDescription="@string/default_cont_desc"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:padding="10dp"
+                    android:src="@android:drawable/stat_sys_download"
+                    android:tint="@color/white"
+                    android:visibility="visible"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:targetApi="m" />
+
+                <TextView
+                    android:id="@+id/date_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/icDownload"
+                    android:layout_alignParentEnd="true"
+                    android:layout_gravity="end|bottom"
+                    android:layout_marginTop="14dp"
+                    android:layout_marginEnd="6dp"
+                    android:gravity="end"
+                    android:paddingTop="2dp"
+                    android:maxLines="1"
+                    android:text=""
+                    android:textAllCaps="true"
+                    android:textColor="#646464"
+                    android:textSize="12sp" />
+
+                <ProgressBar
+                    android:id="@+id/progressBar"
+                    style="?android:attr/progressBarStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/round_bg_grey_bg"
+                    android:indeterminate="true"
+                    android:visibility="gone" />
+
+            </RelativeLayout>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.25" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
