@@ -390,7 +390,6 @@ public class Utility {
             return fileUri;
         }
         return null;
-
     }
 
     public static Uri getUriFromFileUrl(String fileUrl) {
