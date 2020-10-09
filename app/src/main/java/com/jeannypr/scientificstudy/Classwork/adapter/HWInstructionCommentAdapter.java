@@ -5,6 +5,7 @@ import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -820,11 +821,13 @@ public class HWInstructionCommentAdapter extends RecyclerView.Adapter<RecyclerVi
 //            if (isLastItem) mListner.setCurrentStatus(item.getCurrentStatus());
             mViewBinding.size.setText(item.getFileSize() == null ? "" : item.getFileSize());
             mViewBinding.dateView.setText(item.getSentOn());
+//            Log.e("TAG", "bind: " + item.getFilePath());
 
 //            item.setFilePath("http://mobile.scientificstudy.in/" + item.getFilePath());
             if (Utility.IsFileExists(item.getFilePath())) { //http://mobile.scientificstudy.in/SCHOOLDATA/dev/ClassWork/66/Screenshot(319).png
                 mViewBinding.downloadIcRow.setVisibility(View.GONE);
 
+                Log.e("TAG", "bind: " + Utility.getUriFromPath(item.getFilePath()));
                 Uri uri = Utility.getUriFromPath(item.getFilePath());
                 if (uri != null)
                     Glide.with(mContext).load(uri).into(mViewBinding.image);

@@ -193,6 +193,8 @@ dependencies {
     implementation 'androidx.multidex:multidex:2.0.0'
     //Expandable layout
     implementation 'com.github.aakira:expandable-layout:1.6.0@aar'
+    implementation "androidx.core:core-ktx:+"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
 //Whatsapp Messenger View
 /*    implementation 'com.varunjohn1990.libraries:WhatsappMessengerView:2.1.0'

@@ -87,8 +87,8 @@ public class Constants {
 
     public static String IMAGE_BASE_URL = "http://mobile.scientificstudy.in"; //http://mobile.scientificstudy.in/
     public static String BUILD_TYPE = "Production";
-//    public static String FILE_AUTHORITY = "com.jeannypr.scientificstudy.file";
-    public static String FILE_AUTHORITY = "com.jeannypr.doozycod.file";
+    public static String FILE_AUTHORITY = "com.jeannypr.scientificstudy.file";
+    //    public static String FILE_AUTHORITY = "com.jeannypr.doozycod.file";
     public static String ACTIVITY_UPLOAD_URL = IMAGE_BASE_URL + "/api/class/activity/upload";
     public static String HTTPS = "https://";
     public static String HTTP = "http://"; //http://

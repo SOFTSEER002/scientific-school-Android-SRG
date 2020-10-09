@@ -102,6 +102,7 @@ import java.util.regex.Pattern;
 
 import static android.content.Context.CONNECTIVITY_SERVICE;
 import static android.content.Context.INPUT_METHOD_SERVICE;
+import static com.jeannypr.scientificstudy.Utilities.TrackLocationTask.TAG;
 
 public class Utility {
     public static ProgressDialog showProgressDialog(Context context, String message) {
@@ -364,7 +365,7 @@ public class Utility {
         String path = uri.getPath();
         final String fileName = path.substring(path.lastIndexOf('/') + 1);
         File storage = Environment.getExternalStorageDirectory();
-        final File file = new File(storage,Constants.Directory.Base + File.separator+ fileName);
+        final File file = new File(storage, Constants.Directory.Base + File.separator + fileName);
         if (file.exists()) {
             Uri fileUri = Uri.fromFile(file);
             return fileUri;
@@ -376,13 +377,21 @@ public class Utility {
     public static Uri getUriFromPath(String url) {
         URI uri = null;
         try {
+            if (url.contains(" ")) {
+                url = url.replace(" ", "%20");
+            }
             uri = new URI(url);
         } catch (URISyntaxException e) {
             e.printStackTrace();
         }
+        Log.e(TAG, "getUriFromPath: URL " + url);
 
         String path = uri.getPath();
-        final String fileName = path.substring(path.lastIndexOf('/') + 1);
+        String fileName = path.substring(path.lastIndexOf('/') + 1);
+
+        if (fileName.contains("%20")) {
+            fileName = fileName.replace("%20", " ");
+        }
         File storage = Environment.getExternalStorageDirectory();
         final File file = new File(storage, Constants.Directory.Base + File.separator + fileName);
         if (file.exists()) {
