@@ -1,4 +1,4 @@
-apply plugin: 'com.android.application'
+checkapply plugin: 'com.android.application'
 
 apply plugin: 'kotlin-android'
 
@@ -38,6 +38,11 @@ android {
             dimension "school"
             resValue "string", "flavored_app_name", "DEV school"
         }
+        yadgar_public_school {
+            applicationIdSuffix ".yadgar_public_school"
+            dimension "school"
+            resValue "string", "flavored_app_name", "Yadgar public school"
+        }
 
         jh_poddar_bh {
             applicationIdSuffix ".jh_poddar_bh"
@@ -74,6 +79,10 @@ android {
         Dev_school {
             java.srcDirs('src/doozycod/java') //package name
             res.srcDirs('src/doozycod/res') //package name
+        }
+        yadgar_public_school {
+            java.srcDirs('src/yadgar_public_school/java') //package name
+            res.srcDirs('src/yadgar_public_school/res') //package name
         }
         jh_poddar_bh {
             java.srcDirs('src/jh_poddar_bh/java')
