@@ -1,4 +1,4 @@
-checkapply plugin: 'com.android.application'
+apply plugin: 'com.android.application'
 
 apply plugin: 'kotlin-android'
 
@@ -21,7 +21,7 @@ android {
     }
 
     flavorDimensions "school"
-    productFlavors  {
+    productFlavors {
         scientificstudy {
             applicationIdSuffix ".scientificstudy"
             dimension "school"
@@ -38,11 +38,11 @@ android {
             dimension "school"
             resValue "string", "flavored_app_name", "DEV school"
         }
-        yadgar_public_school {
-            applicationIdSuffix ".yadgar_public_school"
-            dimension "school"
-            resValue "string", "flavored_app_name", "Yadgar public school"
-        }
+        /* yadgar_public_school {
+             applicationIdSuffix ".yadgar_public_school"
+             dimension "school"
+             resValue "string", "flavored_app_name", "Yadgar public school"
+         }*/
 
         jh_poddar_bh {
             applicationIdSuffix ".jh_poddar_bh"
@@ -75,15 +75,15 @@ android {
             java.srcDirs('src/little_one_jaipuria_preschool/java')
             res.srcDirs('src/little_one_jaipuria_preschool/res')
         }
-     //school name
+        //school name
         Dev_school {
             java.srcDirs('src/doozycod/java') //package name
             res.srcDirs('src/doozycod/res') //package name
         }
-        yadgar_public_school {
+        /*yadgar_public_school {
             java.srcDirs('src/yadgar_public_school/java') //package name
             res.srcDirs('src/yadgar_public_school/res') //package name
-        }
+        }*/
         jh_poddar_bh {
             java.srcDirs('src/jh_poddar_bh/java')
             res.srcDirs('src/jh_poddar_bh/res')
@@ -183,7 +183,7 @@ dependencies {
     implementation 'com.commonsware.cwac:provider:0.5.3'
     implementation 'androidx.room:room-runtime:2.0.0'
     kapt 'androidx.room:room-compiler:2.0.0'
-
+    kapt 'com.android.databinding:compiler:3.0.1'
     /* // ViewModel and LiveData
      implementation 'androidx.lifecycle:lifecycle-extensions:2.0.0'
      kapt 'androidx.lifecycle:lifecycle-compiler:2.0.0'*/
@@ -241,4 +241,5 @@ apply plugin: 'com.google.gms.google-services'
 //    println 'signing.properties not found'
 //    android.buildTypes.release.signingConfig = null
 //}
-com.google.gms.googleservices.GoogleServicesPlugin.config.disableVersionCheck = true
+googleServices.disableVersionCheck = true
+//com.google.gms.googleservices.GoogleServicesPlugin.config.disableVersionCheck = true

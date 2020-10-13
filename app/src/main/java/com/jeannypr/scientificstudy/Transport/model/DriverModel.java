@@ -2,6 +2,7 @@ package com.jeannypr.scientificstudy.Transport.model;
 
 import androidx.databinding.BaseObservable;
 import androidx.databinding.Bindable;
+
 import android.os.Parcel;
 import android.os.Parcelable;
 

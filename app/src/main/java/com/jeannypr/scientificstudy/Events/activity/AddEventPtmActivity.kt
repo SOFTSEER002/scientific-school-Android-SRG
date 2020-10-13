@@ -53,7 +53,6 @@ import retrofit2.Response
 import java.io.File
 import java.io.FileNotFoundException
 import java.io.IOException
-import java.text.ParseException
 import java.util.*
 
 class AddEventPtmActivity : BaseActivity<ActivityAddEventPtmBinding, EventViewModel>(), View.OnClickListener, EventNavigator {
